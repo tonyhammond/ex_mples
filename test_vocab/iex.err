@@ -1,0 +1,99 @@
+% iex -S mix
+Erlang/OTP 21 [erts-10.0.6] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:1] [hipe] [dtrace]
+
+Compiling 1 file (.ex)
+Compiling vocabulary namespace for http://purl.org/dc/elements/1.1/
+Compiling vocabulary namespace for http://purl.org/ontology/bibo/
+warning: 'http://purl.org/ontology/bibo/bdarcus' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/fgiasson' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+Compiling vocabulary namespace for http://purl.org/dc/terms/
+warning: 'http://purl.org/dc/terms/references' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+Compiling vocabulary namespace for http://purl.org/NET/c4dm/event.owl#
+Compiling vocabulary namespace for http://xmlns.com/foaf/0.1/
+Compiling vocabulary namespace for http://prismstandard.org/namespaces/1.2/basic/
+Compiling vocabulary namespace for http://schemas.talis.com/2005/address/schema#
+Compiling vocabulary namespace for http://purl.org/ontology/bibo/status/
+warning: 'http://purl.org/ontology/bibo/status/accepted' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/draft' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/forthcoming' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/legal' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/nonPeerReviewed' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/peerReviewed' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/published' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/rejected' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+warning: 'http://purl.org/ontology/bibo/status/unpublished' is a lowercased non-property resource
+  lib/rdf/vocabulary_namespace.ex:489: anonymous fn/4 in RDF.Vocabulary.Namespace.handle_case_violations/5
+  (elixir) lib/enum.ex:1925: Enum."-reduce/3-lists^foldl/2-0-"/3
+  (stdlib) maps.erl:257: :maps.fold_1/3
+  lib/rdf/vocabulary_namespace.ex:487: RDF.Vocabulary.Namespace.handle_case_violations/5
+  lib/rdf/vocabulary_namespace.ex:46: RDF.Vocabulary.Namespace."MACRO-defvocab"/3
+
+Generated test_vocab app
+Interactive Elixir (1.7.3) - press Ctrl+C to exit (type h() ENTER for help)
+

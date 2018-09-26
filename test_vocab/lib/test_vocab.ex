@@ -1,0 +1,83 @@
+defmodule TestVocab do
+  @moduledoc """
+  Test module used in "Early steps in Elixir and RDF" post
+  """
+
+  use RDF.Vocabulary.Namespace
+
+  # DC namespaces
+  defvocab DC,
+    base_iri: "http://purl.org/dc/elements/1.1/",
+    file: "dc.ttl"
+
+  # BIBO namespaces
+  defvocab BIBO,
+    base_iri: "http://purl.org/ontology/bibo/",
+    file: "bibo.ttl"
+
+  defvocab DCTERMS,
+    base_iri: "http://purl.org/dc/terms/",
+    file: "bibo.ttl"
+
+  defvocab EVENT,
+    base_iri: "http://purl.org/NET/c4dm/event.owl#",
+    file: "bibo.ttl"
+
+  defvocab FOAF,
+    base_iri: "http://xmlns.com/foaf/0.1/",
+    file: "bibo.ttl"
+
+  defvocab PRISM,
+    base_iri: "http://prismstandard.org/namespaces/1.2/basic/",
+    file: "bibo.ttl"
+
+  defvocab SCHEMA,
+    base_iri: "http://schemas.talis.com/2005/address/schema#",
+    file: "bibo.ttl"
+
+  defvocab STATUS,
+    base_iri: "http://purl.org/ontology/bibo/status/",
+    file: "bibo.ttl"
+
+
+  def use_case(), do: use_case(:short)
+
+  def use_case(keyword) do
+    case keyword do
+      :long  -> use_case_long()
+      :short -> use_case_short()
+      _      -> raise "! Error: usage is use_case( :long | :short )"
+    end
+  end
+
+  def use_case_long() do
+
+    s = RDF.iri("urn:isbn:978-1-68050-252-7")
+
+    t0 = {s, RDF.type, RDF.iri(BIBO.Book)}
+    t1 = {s, DC.creator, RDF.iri("https://twitter.com/bgmarx")}
+    t2 = {s, DC.creator, RDF.iri("https://twitter.com/josevalim")}
+    t3 = {s, DC.creator, RDF.iri("https://twitter.com/redrapids")}
+    t4 = {s, DC.title, RDF.literal("Adopting Elixir", language: "en")}
+    t5 = {s, DC.date, RDF.literal("2018-03-14")}
+    t6 = {s, DC.publisher, RDF.iri("https://pragprog.com/")}
+
+    RDF.Description.new [t0, t1, t2, t3, t4, t5, t6]
+
+  end
+
+  def use_case_short() do
+
+    import RDF.Sigils
+
+    ~I<urn:isbn:978-1-68050-252-7>
+    |> RDF.type(BIBO.Book)
+    |> DC.creator(~I<https://twitter.com/bgmarx>,
+         ~I<https://twitter.com/josevalim>, ~I<https://twitter.com/redrapids>)
+    |> DC.title(~L"Adopting Elixir"en)
+    |> DC.date(~L"2018-03-14")
+    |> DC.publisher(~I<https://pragprog.com/>)
+
+  end
+
+end
