@@ -13,11 +13,13 @@ defmodule TestVocab do
   # BIBO namespaces
   defvocab BIBO,
     base_iri: "http://purl.org/ontology/bibo/",
-    file: "bibo.ttl"
+    file: "bibo.ttl",
+    case_violations: :ignore
 
   defvocab DCTERMS,
     base_iri: "http://purl.org/dc/terms/",
-    file: "bibo.ttl"
+    file: "bibo.ttl",
+    case_violations: :ignore
 
   defvocab EVENT,
     base_iri: "http://purl.org/NET/c4dm/event.owl#",
@@ -37,7 +39,8 @@ defmodule TestVocab do
 
   defvocab STATUS,
     base_iri: "http://purl.org/ontology/bibo/status/",
-    file: "bibo.ttl"
+    file: "bibo.ttl",
+    case_violations: :ignore
 
 
   def use_case(), do: use_case(:short)
@@ -52,17 +55,20 @@ defmodule TestVocab do
 
   def use_case_long() do
 
+    alias RDF.NS.{XSD}
+
     s = RDF.iri("urn:isbn:978-1-68050-252-7")
 
     t0 = {s, RDF.type, RDF.iri(BIBO.Book)}
     t1 = {s, DC.creator, RDF.iri("https://twitter.com/bgmarx")}
     t2 = {s, DC.creator, RDF.iri("https://twitter.com/josevalim")}
     t3 = {s, DC.creator, RDF.iri("https://twitter.com/redrapids")}
-    t4 = {s, DC.title, RDF.literal("Adopting Elixir", language: "en")}
-    t5 = {s, DC.date, RDF.literal("2018-03-14")}
+    t4 = {s, DC.date, RDF.literal("2018-03-14", datatype: XSD.date)}
+    t5 = {s, DC.format, RDF.literal("Paper")}
     t6 = {s, DC.publisher, RDF.iri("https://pragprog.com/")}
+    t7 = {s, DC.title, RDF.literal("Adopting Elixir", language: "en")}
 
-    RDF.Description.new [t0, t1, t2, t3, t4, t5, t6]
+    RDF.Description.new [t0, t1, t2, t3, t4, t5, t6, t7]
 
   end
 
@@ -74,9 +80,10 @@ defmodule TestVocab do
     |> RDF.type(BIBO.Book)
     |> DC.creator(~I<https://twitter.com/bgmarx>,
          ~I<https://twitter.com/josevalim>, ~I<https://twitter.com/redrapids>)
-    |> DC.title(~L"Adopting Elixir"en)
-    |> DC.date(~L"2018-03-14")
+    |> DC.date(RDF.date("2018-03-14"))
+    |> DC.format(~L"Paper")
     |> DC.publisher(~I<https://pragprog.com/>)
+    |> DC.title(~L"Adopting Elixir"en)
 
   end
 
