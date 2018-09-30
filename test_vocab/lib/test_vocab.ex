@@ -5,6 +5,8 @@ defmodule TestVocab do
 
   use RDF.Vocabulary.Namespace
 
+  ## vocabulary defintions
+
   # DC namespaces
   defvocab DC,
     base_iri: "http://purl.org/dc/elements/1.1/",
@@ -42,18 +44,9 @@ defmodule TestVocab do
     file: "bibo.ttl",
     case_violations: :ignore
 
-
-  def use_case(), do: use_case(:short)
-
-  def use_case(keyword) do
-    case keyword do
-      :long  -> use_case_long()
-      :short -> use_case_short()
-      _      -> raise "! Error: usage is use_case( :long | :short )"
-    end
-  end
-
-  def use_case_long() do
+  ## book function defintions
+  
+  def book(:with_triples) do
 
     alias RDF.NS.{XSD}
 
@@ -72,7 +65,7 @@ defmodule TestVocab do
 
   end
 
-  def use_case_short() do
+  def book(:with_pipes) do
 
     import RDF.Sigils
 
@@ -86,5 +79,11 @@ defmodule TestVocab do
     |> DC.title(~L"Adopting Elixir"en)
 
   end
+
+  def book(arg) do
+    raise "! Error: Usage is book( :with_triples | :with_pipes )"
+  end
+
+  def book(), do: book(:with_pipes)
 
 end
