@@ -1,0 +1,6 @@
+select *
+where {
+  bind (<http://dbpedia.org/resource/Hurricane_Chris> as ?s)
+  ?s ?p ?o
+}
+
