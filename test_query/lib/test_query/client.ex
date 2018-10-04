@@ -3,13 +3,12 @@ defmodule TestQuery.Client do
   TestQuery.Client module
   """
 
-  @endpoint "http://dbpedia.org/sparql"
-  @entity_uri "http://dbpedia.org/resource/Hello_World"
+  @hello_world "http://dbpedia.org/resource/Hello_World"
 
   @query """
 select *
 where {
-  bind (<#{@entity_uri}> as ?s)
+  bind (<#{@hello_world}> as ?s)
   ?s ?p ?o .
   filter (isLiteral(?o) && langMatches(lang(?o), "en"))
 }
@@ -17,16 +16,131 @@ where {
 
   @query_dir "#{:code.priv_dir(:test_query)}/queries/"
 
+  @service "http://dbpedia.org/sparql"
+  @subject @hello_world
+
+  ## Accessors for module attributes
+
+  def get_query, do: @query
+  def get_service, do: @service
+  def get_subject, do: @subject
+
+  ## Hello query to test access to remote RDF datastore
+
   @doc """
-  hello/0 - Queries remote RDF datastore with default SPARQL query
-            and prints out result set
+  Queries remote RDF datastore with default SPARQL query
+  and prints out result set
   """
   def hello() do
+    case SPARQL.Client.query(@query, @service) do
+      {:ok, result} ->
+        result.results
+        |> Enum.each(&(IO.puts &1["o"].value))
+      {:error, reason} ->
+        raise "! Error: #{reason}"
+    end
+  end
 
-    {:ok, results} = SPARQL.Client.query(@query, @endpoint)
-    IO.inspect results.results
-    results.results
-    |> Enum.each(fn t -> IO.puts t["o"].value end)
+  ## Simple remote query functions
+
+  @doc """
+  Queries default RDF service with default SPARQL query
+  """
+  def rquery() do
+    SPARQL.Client.query(@query, @service)
+  end
+
+
+  @doc """
+  Queries default RDF service with user SPARQL query
+  """
+  def rquery(query) do
+    SPARQL.Client.query(query, @service)
+  end
+
+  @doc """
+  Queries a user RDF service with a user SPARQL query
+  """
+  def rquery(query, service) do
+    SPARQL.Client.query(query, service)
+  end
+
+  ## Demo of multiple SPARQL queries: from RQ files to ETS tables
+
+  @doc """
+  Queries default RDF service with saved SPARQL queries
+
+  This function also stores results in per-query ETS tables
+  """
+  def rquery_all() do
+    # get list of query files
+    query_files =
+      Path.wildcard(@query_dir <> "*.rq") |> Enum.map(&Path.basename/1)
+    # iterate over query files and process
+    for query_file <- query_files,
+      do: _read_query(query_file) |> _get_data
+  end
+
+  defp _read_query(query_file) do
+    # output a progress update
+    IO.puts "Reading #{query_file}"
+
+    # read query from query_file
+    query =
+      case File.open(@query_dir <> query_file, [:read]) do
+        {:ok, file}      -> IO.read(file, :all)
+        {:error, reason} -> raise "! Error: #{reason}"
+      end
+    {query, Module.concat(__MODULE__, Path.basename(query_file, ".rq"))}
+  end
+
+  defp _get_data({query, table_name}),
+    do: _get_data(query, table_name)
+
+  defp _get_data(query, table_name) do
+    # output a progress update
+    IO.puts "Writing #{table_name}"
+
+    # create ETS table
+    :ets.new(table_name, [:named_table])
+
+    # now call SPARQL endpoint and populate ETS table
+    case SPARQL.Client.query(query, @service) do
+      {:ok, result} ->
+        result.results
+        |>
+        Enum.each(fn t -> :ets.insert(table_name, _build_spo_tuple(t)) end)
+      {:error, reason} ->
+        raise "! Error: #{reason}"
+    end
+  end
+
+  defp _build_spo_tuple(t) do
+    s = t["s"].value
+    p = t["p"].value
+    # need to test type of object term
+    o =
+      case t["o"] do
+        %RDF.IRI{} -> t["o"].value
+        %RDF.Literal{} -> t["o"].value
+        %RDF.BlankNode{} -> t["o"].id
+        _ -> raise "! Error: getting type of object term"
+      end
+    {System.os_time(), s, p, o, t}
+  end
+
+  ##
+
+  @doc """
+  Reads RDF data from ETS table and prints it
+  """
+  def read_table(table_name) do
+    :ets.tab2list(table_name) |> Enum.each(&_read_tuple/1)
+  end
+
+  defp _read_tuple(tuple) do
+    {_, _, _, o, _} = tuple
+    IO.puts o
   end
 
 end
