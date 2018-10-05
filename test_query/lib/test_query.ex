@@ -1,6 +1,8 @@
 defmodule TestQuery do
   @moduledoc """
-  Test module used in "Querying RDF with Elixir" post
+  Top-level module used in "Querying RDF with Elixir" post.
+
+  This module provides test functions for the SPARQL module.
   """
 
   @data_dir "#{:code.priv_dir(:test_query)}/data/"
@@ -20,7 +22,7 @@ defmodule TestQuery do
   """
   def data() do
     RDF.Turtle.read_file!(@data_dir <> @data_file)
-    |> RDF.Turtle.write_string!
+    # |> RDF.Turtle.write_string!
   end
 
   ## Simple remote query functions

@@ -1,6 +1,6 @@
 defmodule TestQuery.Client do
   @moduledoc """
-  TestQuery.Client module
+  This module provides test functions for the SPARQL.Client module.
   """
 
   @hello_world "http://dbpedia.org/resource/Hello_World"
@@ -9,7 +9,7 @@ defmodule TestQuery.Client do
 select *
 where {
   bind (<#{@hello_world}> as ?s)
-  ?s ?p ?o .
+  ?s ?p ?o
   filter (isLiteral(?o) && langMatches(lang(?o), "en"))
 }
 """
@@ -17,13 +17,11 @@ where {
   @query_dir "#{:code.priv_dir(:test_query)}/queries/"
 
   @service "http://dbpedia.org/sparql"
-  @subject @hello_world
 
   ## Accessors for module attributes
 
   def get_query, do: @query
   def get_service, do: @service
-  def get_subject, do: @subject
 
   ## Hello query to test access to remote RDF datastore
 
@@ -34,8 +32,7 @@ where {
   def hello() do
     case SPARQL.Client.query(@query, @service) do
       {:ok, result} ->
-        result.results
-        |> Enum.each(&(IO.puts &1["o"].value))
+        result.results |> Enum.each(&(IO.puts &1["o"]))
       {:error, reason} ->
         raise "! Error: #{reason}"
     end
@@ -88,8 +85,10 @@ where {
     # read query from query_file
     query =
       case File.open(@query_dir <> query_file, [:read]) do
-        {:ok, file}      -> IO.read(file, :all)
-        {:error, reason} -> raise "! Error: #{reason}"
+        {:ok, file} ->
+          IO.read(file, :all)
+        {:error, reason} ->
+          raise "! Error: #{reason}"
       end
     {query, Module.concat(__MODULE__, Path.basename(query_file, ".rq"))}
   end
@@ -107,9 +106,9 @@ where {
     # now call SPARQL endpoint and populate ETS table
     case SPARQL.Client.query(query, @service) do
       {:ok, result} ->
-        result.results
-        |>
-        Enum.each(fn t -> :ets.insert(table_name, _build_spo_tuple(t)) end)
+        result.results |> Enum.each(
+          fn t -> :ets.insert(table_name, _build_spo_tuple(t)) end
+        )
       {:error, reason} ->
         raise "! Error: #{reason}"
     end
@@ -124,7 +123,7 @@ where {
         %RDF.IRI{} -> t["o"].value
         %RDF.Literal{} -> t["o"].value
         %RDF.BlankNode{} -> t["o"].id
-        _ -> raise "! Error: getting type of object term"
+        _ -> raise "! Error: Could not get type of object term"
       end
     {System.os_time(), s, p, o, t}
   end
