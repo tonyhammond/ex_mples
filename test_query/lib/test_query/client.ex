@@ -26,8 +26,7 @@ where {
   ## Hello query to test access to remote RDF datastore
 
   @doc """
-  Queries remote RDF datastore with default SPARQL query
-  and prints out result set
+  Queries default RDF service and prints out "Hello World".
   """
   def hello() do
     case SPARQL.Client.query(@query, @service) do
@@ -41,7 +40,7 @@ where {
   ## Simple remote query functions
 
   @doc """
-  Queries default RDF service with default SPARQL query
+  Queries default RDF service with default SPARQL query.
   """
   def rquery() do
     SPARQL.Client.query(@query, @service)
@@ -49,14 +48,14 @@ where {
 
 
   @doc """
-  Queries default RDF service with user SPARQL query
+  Queries default RDF service with user SPARQL query.
   """
   def rquery(query) do
     SPARQL.Client.query(query, @service)
   end
 
   @doc """
-  Queries a user RDF service with a user SPARQL query
+  Queries a user RDF service with a user SPARQL query.
   """
   def rquery(query, service) do
     SPARQL.Client.query(query, service)
@@ -65,9 +64,9 @@ where {
   ## Demo of multiple SPARQL queries: from RQ files to ETS tables
 
   @doc """
-  Queries default RDF service with saved SPARQL queries
+  Queries default RDF service with saved SPARQL queries.
 
-  This function also stores results in per-query ETS tables
+  This function also stores results in per-query ETS tables.
   """
   def rquery_all() do
     # get list of query files
@@ -131,7 +130,7 @@ where {
   ##
 
   @doc """
-  Reads RDF data from ETS table and prints it
+  Reads RDF data from ETS table and prints it.
   """
   def read_table(table_name) do
     :ets.tab2list(table_name) |> Enum.each(&_read_tuple/1)
