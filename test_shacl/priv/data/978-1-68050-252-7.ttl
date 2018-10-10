@@ -1,0 +1,13 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:isbn:978-1-68050-252-7> a bibo:Book ;
+    dc:creator <https://twitter.com/bgmarx> ;
+    dc:creator <https://twitter.com/josevalim> ;
+    dc:creator <https://twitter.com/redrapids> ;
+    dc:date "2018-03-14"^^xsd:date ;
+    dc:format "Paper" ;
+    dc:publisher <https://pragprog.com/> ;
+    dc:title "Adopting Elixir"@en .
+
