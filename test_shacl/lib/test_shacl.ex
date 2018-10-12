@@ -3,13 +3,15 @@ defmodule TestSHACL do
   Top-level module used in "Working with SHACL and Elixir" post.
   """
 
-  @data_dir "#{:code.priv_dir(:test_shacl)}/data/"
+  @priv_dir "#{:code.priv_dir(:test_shacl)}"
+
+  @data_dir @priv_dir <> "/data/"
   @data_file "978-1-68050-252-7.ttl"
 
-  @shapes_dir "#{:code.priv_dir(:test_shacl)}/shapes/"
+  @shapes_dir @priv_dir <> "/shapes/"
   @shape_file "book_shape.ttl"
 
-  @shapes_queries_dir "#{:code.priv_dir(:test_shacl)}/shapes/queries/"
+  @shapes_queries_dir @priv_dir <> "/shapes/queries/"
   @shape_query_file "book_shape_query.rq"
   @shape_query_helper_file "book_shape_query_helper.rq"
 
@@ -23,14 +25,14 @@ defmodule TestSHACL do
   ## Data access functions for graphs
 
   @doc """
-  Reads RDF model in Turtle format.
+  Reads default RDF model in Turtle format.
   """
   def data() do
     RDF.Turtle.read_file!(@data_dir <> @data_file)
   end
 
   @doc """
-  Reads RDF shape in Turtle format.
+  Reads default RDF shape in Turtle format.
   """
   def shape() do
     RDF.Turtle.read_file!(@shapes_dir <> @shape_file)
@@ -39,12 +41,15 @@ defmodule TestSHACL do
   ## Data access functions for queries
 
   @doc """
-  Reads SPARQL query for RDF shape.
+  Reads default SPARQL query for default RDF shape.
   """
   def shape_query() do
     File.read!(@shapes_queries_dir <> @shape_query_file)
   end
 
+  @doc """
+  Reads simple SPARQL query for default RDF shape.
+  """
   def shape_query_helper() do
     File.read!(@shapes_queries_dir <> @shape_query_helper_file)
   end
@@ -76,7 +81,7 @@ defmodule TestSHACL do
   ## Query builder
 
   @doc """
-  Makes a SPARQL query by querying shape - for demo purposes only
+  Makes a SPARQL query by querying default RDF shape - demo only.
   """
   def query_from_shape(shape, shape_query) do
 
@@ -100,15 +105,14 @@ defmodule TestSHACL do
   end
 
   @doc """
-  Makes a list of SPARQL queries by querying shape
+  Makes a list of SPARQL queries by querying default RDF shape.
 
   ## Examples
-  
+
   iex> queries_from_shape(shape, shape_query)
   ...> |> Enum.map(&query/1)
-  ...> Enum.map(&(to_graph(&1, :s, :p, :o))
-  ...> List.foldl(RDF.Graph.new, fn g1, g2 -> RDF.Graph.add(g1, g2) end)
-
+  ...> |> Enum.map(&(to_graph(&1, :s, :p, :o))
+  ...> |> List.foldl(RDF.Graph.new, fn g1, g2 -> RDF.Graph.add(g1, g2) end)
   """
   def queries_from_shape(shape, shape_query) do
 
@@ -123,7 +127,13 @@ defmodule TestSHACL do
     # get the properties
     (result |> SPARQL.Query.Result.get(:p))
     |> Enum.map(
-      &(qh <> "  ?s a <#{s}> .\n  ?s <#{&1}> ?o .\n  ?s ?p ?o .\n" <> qt)
+      &(qh
+        <> "  # bind (<#{&1}> as ?p)\n"
+        <> "  ?s a <#{s}> .\n"
+        <> "  ?s <#{&1}> ?o .\n"
+        <> " ?s ?p ?o .\n"
+        <> qt
+       )
      )
 
   end
@@ -131,7 +141,7 @@ defmodule TestSHACL do
   ## Transform function from results table to graph
 
   @doc """
-  Helper function to convert atom args to strings.
+  Helper function clause for converting atom args to strings.
   """
   def to_graph(result, variable1, variable2, variable3)
       when is_atom(variable1) and is_atom(variable2) and is_atom(variable3),

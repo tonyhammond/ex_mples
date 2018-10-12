@@ -1,2 +1,2 @@
 import TestSHACL
-# import TestSHACL.Client
+import TestSHACL.Client
