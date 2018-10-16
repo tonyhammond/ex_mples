@@ -1,0 +1,12 @@
+prefix dbo: <http://dbpedia.org/ontology/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select *
+where {
+  bind (12345 as ?id)
+  ?s dbo:wikiPageID ?id .
+  optional { ?s foaf:isPrimaryTopicOf ?topic }
+  optional { ?s rdfs:label ?label }
+  filter (langMatches(lang(?label), "en"))
+} limit 10
