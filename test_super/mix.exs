@@ -15,7 +15,7 @@ defmodule TestSuper.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {TestSuper.Application, []}
+      # mod: {TestSuper.Application, []}
     ]
   end
 

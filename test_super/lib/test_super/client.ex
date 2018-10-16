@@ -12,8 +12,13 @@ defmodule TestSuper.Client do
 
   ## Calls
 
-  def new() do
-    { :ok, pid } = DynamicSupervisor.start_child(
+  def new_server() do
+    {:ok, pid} = TestSuper.Server.start_link(nil)
+    pid
+  end
+
+  def new_dsuper() do
+    {:ok, pid} = DynamicSupervisor.start_child(
         TestSuper.Supervisor, TestSuper.Server
       )
     pid
@@ -32,15 +37,11 @@ defmodule TestSuper.Client do
   end
 
   def put(pid, key, value) do
-    IO.inspect key
-    IO.inspect value
     GenServer.cast(pid, {:put, key, value})
   end
 
   def putq(pid) do
     {key, value} = _do_query()
-    IO.inspect key
-    IO.inspect value
     GenServer.cast(pid, {:put, key, value})
   end
 
