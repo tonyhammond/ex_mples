@@ -6,7 +6,7 @@ defmodule TestSuper do
   ## 1. GenServers
 
   @doc """
-  Contructor for new GenServer (with no supervision).
+  Constructor for new GenServer (with no supervision).
   """
   def new_server() do
     {:ok, pid} = TestSuper.Server.start_link(nil)
@@ -14,9 +14,9 @@ defmodule TestSuper do
   end
 
   @doc """
-  Contructor for new GenServer (with DynamicSupervisor).
+  Constructor for new GenServer (with DynamicSupervisor).
   """
-  def new_dyn_server() do
+  def new_serverd() do
     {:ok, pid} = DynamicSupervisor.start_child(
         TestSuper.DynamicSupervisor, TestSuper.Server
       )
@@ -26,7 +26,7 @@ defmodule TestSuper do
   ## 2. Supervisors
 
   @doc """
-  Contructor for new Supervisor/GenServer.
+  Constructor for new Supervisor/GenServer.
   """
   def new_super() do
     opts = [
@@ -38,9 +38,9 @@ defmodule TestSuper do
   end
 
   @doc """
-  Contructor for new DynamicSupervisor.
+  Constructor for new DynamicSupervisor.
   """
-  def new_dyn_super() do
+  def new_superd() do
     opts = [
       name: TestSuper.DynamicSupervisor,
       strategy: :one_for_one
