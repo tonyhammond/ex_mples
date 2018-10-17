@@ -1,6 +1,6 @@
 defmodule TestSuper.Client do
   @moduledoc """
-  Documentation for TestSuper.Client.
+  Module providing client-side functions for GenServer.
   """
 
   @priv_dir "#{:code.priv_dir(:test_super)}"
@@ -12,34 +12,37 @@ defmodule TestSuper.Client do
 
   ## Calls
 
-  def new_server() do
-    {:ok, pid} = TestSuper.Server.start_link(nil)
-    pid
-  end
-
-  def new_dsuper() do
-    {:ok, pid} = DynamicSupervisor.start_child(
-        TestSuper.Supervisor, TestSuper.Server
-      )
-    pid
-  end
-
+  @doc """
+  Return map stored by GenServer with `pid`.
+  """
   def get(pid) do
     GenServer.call(pid, {:get})
   end
 
+  @doc """
+  Return value for `key` stored by GenServer with `pid`.
+  """
   def get(pid, key) do
     GenServer.call(pid, {:get, key})
   end
 
+  @doc """
+  Return list of keys for GenServer with `pid`.
+  """
   def list(pid) do
     GenServer.call(pid, {:list})
   end
 
+  @doc """
+  Store `value` by `key` for GenServer with `pid`.
+  """
   def put(pid, key, value) do
     GenServer.cast(pid, {:put, key, value})
   end
 
+  @doc """
+  Store SPARQL query results for GenServer with `pid`.
+  """
   def putq(pid) do
     {key, value} = _do_query()
     GenServer.cast(pid, {:put, key, value})
@@ -47,10 +50,19 @@ defmodule TestSuper.Client do
 
   ## Queries
 
+  @doc """
+  Return default SPARQL query used for demo.
+  """
   def query() do
     File.read!(@queries_dir <> @query_file)
   end
 
+  @doc """
+  Return default SPARQL endpoint used for demo.
+  """
+  def service(), do: @service
+
+  @doc false
   defp _do_query() do
     # rewrite query with new random wikiPageID
     rand = Integer.to_string(Enum.random(1..50000))

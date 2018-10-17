@@ -9,4 +9,4 @@ where {
   optional { ?s foaf:isPrimaryTopicOf ?topic }
   optional { ?s rdfs:label ?label }
   filter (langMatches(lang(?label), "en"))
-} limit 10
+} limit 1
