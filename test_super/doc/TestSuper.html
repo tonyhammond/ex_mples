@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.1">
     <title>TestSuper – test_super v0.1.0</title>
     <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-f0bbc2ba70.js"></script>
+    <script src="dist/sidebar_items-eb29da3cc5.js"></script>
     
   </head>
   <body data-type="modules">
@@ -85,13 +85,6 @@ agents, servers, supervisors, and tasks.</p>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#dsupervisor/0">dsupervisor()</a>
-  </div>
-    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a></p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="#genserver/0">genserver()</a>
   </div>
     <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with no supervision)</p>
@@ -115,7 +108,14 @@ agents, servers, supervisors, and tasks.</p>
   <div class="summary-signature">
     <a href="#supervisor/0">supervisor()</a>
   </div>
-    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a></p>
+    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> (with <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>)</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#supervisor_d/0">supervisor_d()</a>
+  </div>
+    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a></p>
 </div>
 </div>
   </div>
@@ -132,26 +132,6 @@ agents, servers, supervisors, and tasks.</p>
             </a>
             Functions
           </h1>
-<div class="detail" id="dsupervisor/0">
-    <div class="detail-header">
-    <a href="#dsupervisor/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <span class="signature">dsupervisor()</span>
-          </div>
-  <section class="docstring">
-<p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>.</p>
-<h2 id="dsupervisor/0-examples" class="section-heading">
-  <a href="#dsupervisor/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Examples
-</h2>
-
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">dsupervisor</span><span class="w">
-</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9423836496-1">#</span><span class="nc" data-group-id="9423836496-1">PID</span><span class="p" data-group-id="9423836496-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9423836496-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="9423836496-2">#</span><span class="nc" data-group-id="9423836496-2">PID</span><span class="p" data-group-id="9423836496-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9423836496-2">&gt;</span></code></pre>
-  </section>
-</div>
 <div class="detail" id="genserver/0">
     <div class="detail-header">
     <a href="#genserver/0" class="detail-link" title="Link to this function">
@@ -168,8 +148,8 @@ agents, servers, supervisors, and tasks.</p>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7595459774-1">#</span><span class="nc" data-group-id="7595459774-1">PID</span><span class="p" data-group-id="7595459774-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7595459774-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="7595459774-2">#</span><span class="nc" data-group-id="7595459774-2">PID</span><span class="p" data-group-id="7595459774-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7595459774-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3120407440-1">#</span><span class="nc" data-group-id="3120407440-1">PID</span><span class="p" data-group-id="3120407440-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3120407440-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="3120407440-2">#</span><span class="nc" data-group-id="3120407440-2">PID</span><span class="p" data-group-id="3120407440-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3120407440-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="genserver_d/0">
@@ -188,8 +168,8 @@ agents, servers, supervisors, and tasks.</p>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_d</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9170685724-1">#</span><span class="nc" data-group-id="9170685724-1">PID</span><span class="p" data-group-id="9170685724-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9170685724-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="9170685724-2">#</span><span class="nc" data-group-id="9170685724-2">PID</span><span class="p" data-group-id="9170685724-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9170685724-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="1265346646-1">#</span><span class="nc" data-group-id="1265346646-1">PID</span><span class="p" data-group-id="1265346646-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="1265346646-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="1265346646-2">#</span><span class="nc" data-group-id="1265346646-2">PID</span><span class="p" data-group-id="1265346646-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="1265346646-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="genserver_s/0">
@@ -208,9 +188,9 @@ agents, servers, supervisors, and tasks.</p>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_s</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="8011644256-1">#</span><span class="nc" data-group-id="8011644256-1">PID</span><span class="p" data-group-id="8011644256-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="8011644256-2">#</span><span class="nc" data-group-id="8011644256-2">PID</span><span class="p" data-group-id="8011644256-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="8011644256-3">#</span><span class="nc" data-group-id="8011644256-3">PID</span><span class="p" data-group-id="8011644256-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-3">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="0574153116-1">#</span><span class="nc" data-group-id="0574153116-1">PID</span><span class="p" data-group-id="0574153116-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="0574153116-2">#</span><span class="nc" data-group-id="0574153116-2">PID</span><span class="p" data-group-id="0574153116-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="0574153116-3">#</span><span class="nc" data-group-id="0574153116-3">PID</span><span class="p" data-group-id="0574153116-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-3">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="supervisor/0">
@@ -222,16 +202,36 @@ agents, servers, supervisors, and tasks.</p>
     <span class="signature">supervisor()</span>
           </div>
   <section class="docstring">
-<p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> (with <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>).</p>
 <h2 id="supervisor/0-examples" class="section-heading">
   <a href="#supervisor/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">supervisor</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7444651735-1">#</span><span class="nc" data-group-id="7444651735-1">PID</span><span class="p" data-group-id="7444651735-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7444651735-2">#</span><span class="nc" data-group-id="7444651735-2">PID</span><span class="p" data-group-id="7444651735-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="7444651735-3">#</span><span class="nc" data-group-id="7444651735-3">PID</span><span class="p" data-group-id="7444651735-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-3">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5554550055-1">#</span><span class="nc" data-group-id="5554550055-1">PID</span><span class="p" data-group-id="5554550055-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5554550055-2">#</span><span class="nc" data-group-id="5554550055-2">PID</span><span class="p" data-group-id="5554550055-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="5554550055-3">#</span><span class="nc" data-group-id="5554550055-3">PID</span><span class="p" data-group-id="5554550055-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-3">&gt;</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="supervisor_d/0">
+    <div class="detail-header">
+    <a href="#supervisor_d/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">supervisor_d()</span>
+          </div>
+  <section class="docstring">
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>.</p>
+<h2 id="supervisor_d/0-examples" class="section-heading">
+  <a href="#supervisor_d/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">supervisor_d</span><span class="w">
+</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5976850741-1">#</span><span class="nc" data-group-id="5976850741-1">PID</span><span class="p" data-group-id="5976850741-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5976850741-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="5976850741-2">#</span><span class="nc" data-group-id="5976850741-2">PID</span><span class="p" data-group-id="5976850741-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5976850741-2">&gt;</span></code></pre>
   </section>
 </div>
         </section>
