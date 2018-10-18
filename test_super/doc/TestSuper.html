@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.1">
     <title>TestSuper – test_super v0.1.0</title>
     <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-3086827bd1.js"></script>
+    <script src="dist/sidebar_items-f0bbc2ba70.js"></script>
     
   </head>
   <body data-type="modules">
@@ -85,30 +85,37 @@ agents, servers, supervisors, and tasks.</p>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#new_server/0">new_server()</a>
+    <a href="#dsupervisor/0">dsupervisor()</a>
+  </div>
+    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a></p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#genserver/0">genserver()</a>
   </div>
     <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with no supervision)</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#new_serverd/0">new_serverd()</a>
+    <a href="#genserver_d/0">genserver_d()</a>
   </div>
     <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>)</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#new_super/0">new_super()</a>
+    <a href="#genserver_s/0">genserver_s()</a>
   </div>
-    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a></p>
+    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>)</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#new_superd/0">new_superd()</a>
+    <a href="#supervisor/0">supervisor()</a>
   </div>
-    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a></p>
+    <div class="summary-synopsis"><p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a></p>
 </div>
 </div>
   </div>
@@ -125,85 +132,106 @@ agents, servers, supervisors, and tasks.</p>
             </a>
             Functions
           </h1>
-<div class="detail" id="new_server/0">
+<div class="detail" id="dsupervisor/0">
     <div class="detail-header">
-    <a href="#new_server/0" class="detail-link" title="Link to this function">
+    <a href="#dsupervisor/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">new_server()</span>
-          </div>
-  <section class="docstring">
-<p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with no supervision).</p>
-<h2 id="new_server/0-examples" class="section-heading">
-  <a href="#new_server/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Examples
-</h2>
-
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_server</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="4353407071-1">#</span><span class="nc" data-group-id="4353407071-1">PID</span><span class="p" data-group-id="4353407071-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4353407071-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="4353407071-2">#</span><span class="nc" data-group-id="4353407071-2">PID</span><span class="p" data-group-id="4353407071-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4353407071-2">&gt;</span></code></pre>
-  </section>
-</div>
-<div class="detail" id="new_serverd/0">
-    <div class="detail-header">
-    <a href="#new_serverd/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <span class="signature">new_serverd()</span>
-          </div>
-  <section class="docstring">
-<p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>).</p>
-<h2 id="new_serverd/0-examples" class="section-heading">
-  <a href="#new_serverd/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Examples
-</h2>
-
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_serverd</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9065382831-1">#</span><span class="nc" data-group-id="9065382831-1">PID</span><span class="p" data-group-id="9065382831-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9065382831-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="9065382831-2">#</span><span class="nc" data-group-id="9065382831-2">PID</span><span class="p" data-group-id="9065382831-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9065382831-2">&gt;</span></code></pre>
-  </section>
-</div>
-<div class="detail" id="new_super/0">
-    <div class="detail-header">
-    <a href="#new_super/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <span class="signature">new_super()</span>
-          </div>
-  <section class="docstring">
-<p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
-<h2 id="new_super/0-examples" class="section-heading">
-  <a href="#new_super/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Examples
-</h2>
-
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_super</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5162188498-1">#</span><span class="nc" data-group-id="5162188498-1">PID</span><span class="p" data-group-id="5162188498-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5162188498-2">#</span><span class="nc" data-group-id="5162188498-2">PID</span><span class="p" data-group-id="5162188498-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="5162188498-3">#</span><span class="nc" data-group-id="5162188498-3">PID</span><span class="p" data-group-id="5162188498-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-3">&gt;</span></code></pre>
-  </section>
-</div>
-<div class="detail" id="new_superd/0">
-    <div class="detail-header">
-    <a href="#new_superd/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <span class="signature">new_superd()</span>
+    <span class="signature">dsupervisor()</span>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>.</p>
-<h2 id="new_superd/0-examples" class="section-heading">
-  <a href="#new_superd/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+<h2 id="dsupervisor/0-examples" class="section-heading">
+  <a href="#dsupervisor/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_superd</span><span class="w">
-</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3719124680-1">#</span><span class="nc" data-group-id="3719124680-1">PID</span><span class="p" data-group-id="3719124680-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3719124680-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="3719124680-2">#</span><span class="nc" data-group-id="3719124680-2">PID</span><span class="p" data-group-id="3719124680-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3719124680-2">&gt;</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">dsupervisor</span><span class="w">
+</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9423836496-1">#</span><span class="nc" data-group-id="9423836496-1">PID</span><span class="p" data-group-id="9423836496-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9423836496-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="9423836496-2">#</span><span class="nc" data-group-id="9423836496-2">PID</span><span class="p" data-group-id="9423836496-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9423836496-2">&gt;</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="genserver/0">
+    <div class="detail-header">
+    <a href="#genserver/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">genserver()</span>
+          </div>
+  <section class="docstring">
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with no supervision).</p>
+<h2 id="genserver/0-examples" class="section-heading">
+  <a href="#genserver/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver</span><span class="w">
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7595459774-1">#</span><span class="nc" data-group-id="7595459774-1">PID</span><span class="p" data-group-id="7595459774-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7595459774-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="7595459774-2">#</span><span class="nc" data-group-id="7595459774-2">PID</span><span class="p" data-group-id="7595459774-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7595459774-2">&gt;</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="genserver_d/0">
+    <div class="detail-header">
+    <a href="#genserver_d/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">genserver_d()</span>
+          </div>
+  <section class="docstring">
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>).</p>
+<h2 id="genserver_d/0-examples" class="section-heading">
+  <a href="#genserver_d/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_d</span><span class="w">
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9170685724-1">#</span><span class="nc" data-group-id="9170685724-1">PID</span><span class="p" data-group-id="9170685724-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9170685724-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="9170685724-2">#</span><span class="nc" data-group-id="9170685724-2">PID</span><span class="p" data-group-id="9170685724-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9170685724-2">&gt;</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="genserver_s/0">
+    <div class="detail-header">
+    <a href="#genserver_s/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">genserver_s()</span>
+          </div>
+  <section class="docstring">
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>).</p>
+<h2 id="genserver_s/0-examples" class="section-heading">
+  <a href="#genserver_s/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_s</span><span class="w">
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="8011644256-1">#</span><span class="nc" data-group-id="8011644256-1">PID</span><span class="p" data-group-id="8011644256-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="8011644256-2">#</span><span class="nc" data-group-id="8011644256-2">PID</span><span class="p" data-group-id="8011644256-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="8011644256-3">#</span><span class="nc" data-group-id="8011644256-3">PID</span><span class="p" data-group-id="8011644256-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8011644256-3">&gt;</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="supervisor/0">
+    <div class="detail-header">
+    <a href="#supervisor/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">supervisor()</span>
+          </div>
+  <section class="docstring">
+<p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> / <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
+<h2 id="supervisor/0-examples" class="section-heading">
+  <a href="#supervisor/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">supervisor</span><span class="w">
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7444651735-1">#</span><span class="nc" data-group-id="7444651735-1">PID</span><span class="p" data-group-id="7444651735-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7444651735-2">#</span><span class="nc" data-group-id="7444651735-2">PID</span><span class="p" data-group-id="7444651735-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="7444651735-3">#</span><span class="nc" data-group-id="7444651735-3">PID</span><span class="p" data-group-id="7444651735-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7444651735-3">&gt;</span></code></pre>
   </section>
 </div>
         </section>
