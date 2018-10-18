@@ -1,7 +1,7 @@
 Examples
 ========
 
-![image info](./imx/medium-posts-banner.png)
+![image info](./imx/medium-posts-banner-next.png)
 
 Code examples used in publications on Medium.com:
 
