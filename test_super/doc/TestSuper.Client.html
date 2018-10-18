@@ -156,8 +156,14 @@ TestSuper.Client              </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="4207935985-1">(</span><span class="n">pid</span><span class="p" data-group-id="4207935985-1">)</span><span class="w">
-</span><span class="p" data-group-id="4207935985-2">%{</span><span class="ss">baz</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="4207935985-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="9757095291-1">(</span><span class="n">pid</span><span class="p" data-group-id="9757095291-1">)</span><span class="w">
+</span><span class="p" data-group-id="9757095291-2">%{</span><span class="ss">baz</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="9757095291-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="9757095291-3">(</span><span class="n">pid</span><span class="p" data-group-id="9757095291-3">)</span><span class="w">
+</span><span class="p" data-group-id="9757095291-4">%{</span><span class="w">
+</span><span class="mi">38211</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9757095291-5">{</span><span class="s">&quot;http://dbpedia.org/resource/Codex_Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Codex Manesse&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;http://en.wikipedia.org/wiki/Codex_Manesse&quot;</span><span class="p" data-group-id="9757095291-5">}</span><span class="w">
+</span><span class="p" data-group-id="9757095291-4">}</span></code></pre>
   </section>
 </div>
 <div class="detail" id="get/2">
@@ -175,8 +181,11 @@ TestSuper.Client              </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="3462791035-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:foo</span><span class="p" data-group-id="3462791035-1">)</span><span class="w">
-</span><span class="s">&quot;bar&quot;</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="6857170836-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:foo</span><span class="p" data-group-id="6857170836-1">)</span><span class="w">
+</span><span class="s">&quot;bar&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="6857170836-2">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="mi">38211</span><span class="p" data-group-id="6857170836-2">)</span><span class="w">
+</span><span class="p" data-group-id="6857170836-3">{</span><span class="s">&quot;http://dbpedia.org/resource/Codex_Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Codex Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://en.wikipedia.org/wiki/Codex_Manesse&quot;</span><span class="p" data-group-id="6857170836-3">}</span></code></pre>
   </section>
 </div>
 <div class="detail" id="list/1">
@@ -190,8 +199,8 @@ TestSuper.Client              </h1>
   <section class="docstring">
 <p>  Return list of keys for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
 <p>  ## Examples</p>
-<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="gp unselectable">iex&gt; </span><span class="n">list</span><span class="p" data-group-id="9447581375-1">(</span><span class="n">pid</span><span class="p" data-group-id="9447581375-1">)</span><span class="w">
-  </span><span class="p" data-group-id="9447581375-2">[</span><span class="p" data-group-id="9447581375-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="gp unselectable">iex&gt; </span><span class="n">list</span><span class="p" data-group-id="8957243425-1">(</span><span class="n">pid</span><span class="p" data-group-id="8957243425-1">)</span><span class="w">
+  </span><span class="p" data-group-id="8957243425-2">[</span><span class="p" data-group-id="8957243425-2">]</span></code></pre>
   </section>
 </div>
 <div class="detail" id="put/3">
@@ -209,7 +218,7 @@ TestSuper.Client              </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">put</span><span class="p" data-group-id="5764285432-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:baz</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p" data-group-id="5764285432-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">put</span><span class="p" data-group-id="1256684008-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:baz</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p" data-group-id="1256684008-1">)</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </div>
@@ -228,7 +237,7 @@ TestSuper.Client              </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">putq</span><span class="p" data-group-id="9635031623-1">(</span><span class="n">pid</span><span class="p" data-group-id="9635031623-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">putq</span><span class="p" data-group-id="4442768602-1">(</span><span class="n">pid</span><span class="p" data-group-id="4442768602-1">)</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </div>

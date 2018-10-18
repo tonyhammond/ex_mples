@@ -62,7 +62,12 @@ TestSuper              </h1>
 
 
         <section id="moduledoc">
-<p>Top-level module used in “<a href="https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12">Robust compute for RDF queries</a>” post.</p>
+<p>Top-level module used in “Robust compute for RDF queries” post.</p>
+<p>The post aims to demo how to manage fault tolerance in Elixir with
+supervision trees. It first review the process model for Erlang (Elixir)
+and then discusses the abstraction patterns that OTP provides for processes:
+agents, servers, supervisors, and tasks.</p>
+<p>The post demos the <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>, <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>, and <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a> patterns.</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -136,8 +141,8 @@ TestSuper              </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_server</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3288822803-1">#</span><span class="nc" data-group-id="3288822803-1">PID</span><span class="p" data-group-id="3288822803-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3288822803-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="3288822803-2">#</span><span class="nc" data-group-id="3288822803-2">PID</span><span class="p" data-group-id="3288822803-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3288822803-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="4353407071-1">#</span><span class="nc" data-group-id="4353407071-1">PID</span><span class="p" data-group-id="4353407071-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4353407071-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="4353407071-2">#</span><span class="nc" data-group-id="4353407071-2">PID</span><span class="p" data-group-id="4353407071-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4353407071-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="new_serverd/0">
@@ -156,8 +161,8 @@ TestSuper              </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_serverd</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9072375360-1">#</span><span class="nc" data-group-id="9072375360-1">PID</span><span class="p" data-group-id="9072375360-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9072375360-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="9072375360-2">#</span><span class="nc" data-group-id="9072375360-2">PID</span><span class="p" data-group-id="9072375360-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9072375360-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="9065382831-1">#</span><span class="nc" data-group-id="9065382831-1">PID</span><span class="p" data-group-id="9065382831-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9065382831-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="9065382831-2">#</span><span class="nc" data-group-id="9065382831-2">PID</span><span class="p" data-group-id="9065382831-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="9065382831-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="new_super/0">
@@ -176,9 +181,9 @@ TestSuper              </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_super</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="6428111894-1">#</span><span class="nc" data-group-id="6428111894-1">PID</span><span class="p" data-group-id="6428111894-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6428111894-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="6428111894-2">#</span><span class="nc" data-group-id="6428111894-2">PID</span><span class="p" data-group-id="6428111894-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6428111894-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="6428111894-3">#</span><span class="nc" data-group-id="6428111894-3">PID</span><span class="p" data-group-id="6428111894-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6428111894-3">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5162188498-1">#</span><span class="nc" data-group-id="5162188498-1">PID</span><span class="p" data-group-id="5162188498-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5162188498-2">#</span><span class="nc" data-group-id="5162188498-2">PID</span><span class="p" data-group-id="5162188498-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="5162188498-3">#</span><span class="nc" data-group-id="5162188498-3">PID</span><span class="p" data-group-id="5162188498-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5162188498-3">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="new_superd/0">
@@ -197,8 +202,8 @@ TestSuper              </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">new_superd</span><span class="w">
-</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="4655344234-1">#</span><span class="nc" data-group-id="4655344234-1">PID</span><span class="p" data-group-id="4655344234-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4655344234-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="4655344234-2">#</span><span class="nc" data-group-id="4655344234-2">PID</span><span class="p" data-group-id="4655344234-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4655344234-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3719124680-1">#</span><span class="nc" data-group-id="3719124680-1">PID</span><span class="p" data-group-id="3719124680-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3719124680-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="3719124680-2">#</span><span class="nc" data-group-id="3719124680-2">PID</span><span class="p" data-group-id="3719124680-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3719124680-2">&gt;</span></code></pre>
   </section>
 </div>
         </section>
