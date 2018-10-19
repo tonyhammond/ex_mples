@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.1">
     <title>TestSuper.Client – test_super v0.1.0</title>
     <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-eb29da3cc5.js"></script>
+    <script src="dist/sidebar_items-321e65b668.js"></script>
     
   </head>
   <body data-type="modules">
@@ -82,35 +82,35 @@ TestSuper.Client              </h1>
   <div class="summary-signature">
     <a href="#get/1">get(pid)</a>
   </div>
-    <div class="summary-synopsis"><p>Return map stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code></p>
+    <div class="summary-synopsis"><p>Return map stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#get/2">get(pid, key)</a>
   </div>
-    <div class="summary-synopsis"><p>Return value for <code class="inline">key</code> stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code></p>
+    <div class="summary-synopsis"><p>Return value for <code class="inline">key</code> stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list/1">list(pid)</a>
+    <a href="#keys/1">keys(pid)</a>
   </div>
-    <div class="summary-synopsis"><p>Return list of keys for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code></p>
+    <div class="summary-synopsis"><p>Return list of keys for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#put/3">put(pid, key, value)</a>
   </div>
-    <div class="summary-synopsis"><p>Store <code class="inline">value</code> by <code class="inline">key</code> for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code></p>
+    <div class="summary-synopsis"><p>Store <code class="inline">value</code> by <code class="inline">key</code> for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#putq/1">putq(pid)</a>
   </div>
-    <div class="summary-synopsis"><p>Store SPARQL query results for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code></p>
+    <div class="summary-synopsis"><p>Store SPARQL query results for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code></p>
 </div>
 </div>
 <div class="summary-row">
@@ -150,20 +150,21 @@ TestSuper.Client              </h1>
     <span class="signature">get(pid)</span>
           </div>
   <section class="docstring">
-<p>Return map stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
+<p>Return map stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code>.</p>
 <h2 id="get/1-examples" class="section-heading">
   <a href="#get/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="0198721489-1">(</span><span class="n">pid</span><span class="p" data-group-id="0198721489-1">)</span><span class="w">
-</span><span class="p" data-group-id="0198721489-2">%{</span><span class="ss">baz</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="0198721489-2">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="8694702779-1">(</span><span class="n">pid</span><span class="p" data-group-id="8694702779-1">)</span><span class="w">
+</span><span class="p" data-group-id="8694702779-2">%{</span><span class="ss">baz</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="8694702779-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="0198721489-3">(</span><span class="n">pid</span><span class="p" data-group-id="0198721489-3">)</span><span class="w">
-</span><span class="p" data-group-id="0198721489-4">%{</span><span class="w">
-</span><span class="mi">38211</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="0198721489-5">{</span><span class="s">&quot;http://dbpedia.org/resource/Codex_Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Codex Manesse&quot;</span><span class="p">,</span><span class="w">
-</span><span class="s">&quot;http://en.wikipedia.org/wiki/Codex_Manesse&quot;</span><span class="p" data-group-id="0198721489-5">}</span><span class="w">
-</span><span class="p" data-group-id="0198721489-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="8694702779-3">(</span><span class="n">pid</span><span class="p" data-group-id="8694702779-3">)</span><span class="w">
+</span><span class="p" data-group-id="8694702779-4">%{</span><span class="w">
+</span><span class="mi">49631</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8694702779-5">{</span><span class="s">&quot;http://dbpedia.org/resource/Turner&#39;s_syndrome&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Turner&#39;s syndrome&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;http://en.wikipedia.org/wiki/Turner&#39;s_syndrome&quot;</span><span class="p" data-group-id="8694702779-5">}</span><span class="w">
+</span><span class="p" data-group-id="8694702779-4">}</span></code></pre>
   </section>
 </div>
 <div class="detail" id="get/2">
@@ -175,32 +176,37 @@ TestSuper.Client              </h1>
     <span class="signature">get(pid, key)</span>
           </div>
   <section class="docstring">
-<p>Return value for <code class="inline">key</code> stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
+<p>Return value for <code class="inline">key</code> stored by <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code>.</p>
 <h2 id="get/2-examples" class="section-heading">
   <a href="#get/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="0307162625-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:foo</span><span class="p" data-group-id="0307162625-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="4428291287-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:foo</span><span class="p" data-group-id="4428291287-1">)</span><span class="w">
 </span><span class="s">&quot;bar&quot;</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="0307162625-2">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="mi">38211</span><span class="p" data-group-id="0307162625-2">)</span><span class="w">
-</span><span class="p" data-group-id="0307162625-3">{</span><span class="s">&quot;http://dbpedia.org/resource/Codex_Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Codex Manesse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://en.wikipedia.org/wiki/Codex_Manesse&quot;</span><span class="p" data-group-id="0307162625-3">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get</span><span class="p" data-group-id="4428291287-2">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="mi">49631</span><span class="p" data-group-id="4428291287-2">)</span><span class="w">
+</span><span class="p" data-group-id="4428291287-3">{</span><span class="s">&quot;http://dbpedia.org/resource/Turner&#39;s_syndrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turner&#39;s
+syndrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://en.wikipedia.org/wiki/Turner&#39;s_syndrome&quot;</span><span class="p" data-group-id="4428291287-3">}</span></code></pre>
   </section>
 </div>
-<div class="detail" id="list/1">
+<div class="detail" id="keys/1">
     <div class="detail-header">
-    <a href="#list/1" class="detail-link" title="Link to this function">
+    <a href="#keys/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">list(pid)</span>
+    <span class="signature">keys(pid)</span>
           </div>
   <section class="docstring">
-<p>  Return list of keys for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
-<p>  ## Examples</p>
-<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="gp unselectable">iex&gt; </span><span class="n">list</span><span class="p" data-group-id="0833321334-1">(</span><span class="n">pid</span><span class="p" data-group-id="0833321334-1">)</span><span class="w">
-  </span><span class="p" data-group-id="0833321334-2">[</span><span class="p" data-group-id="0833321334-2">]</span></code></pre>
+<p>Return list of keys for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code>.</p>
+<h2 id="keys/1-examples" class="section-heading">
+  <a href="#keys/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">keys</span><span class="p" data-group-id="2748393628-1">(</span><span class="n">pid</span><span class="p" data-group-id="2748393628-1">)</span><span class="w">
+</span><span class="p" data-group-id="2748393628-2">[</span><span class="mi">1788</span><span class="p">,</span><span class="w"> </span><span class="mi">4417</span><span class="p">,</span><span class="w"> </span><span class="mi">9442</span><span class="p">,</span><span class="w"> </span><span class="mi">23921</span><span class="p" data-group-id="2748393628-2">]</span></code></pre>
   </section>
 </div>
 <div class="detail" id="put/3">
@@ -212,13 +218,13 @@ TestSuper.Client              </h1>
     <span class="signature">put(pid, key, value)</span>
           </div>
   <section class="docstring">
-<p>Store <code class="inline">value</code> by <code class="inline">key</code> for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
+<p>Store <code class="inline">value</code> by <code class="inline">key</code> for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code>.</p>
 <h2 id="put/3-examples" class="section-heading">
   <a href="#put/3-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">put</span><span class="p" data-group-id="2743017414-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:baz</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p" data-group-id="2743017414-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">put</span><span class="p" data-group-id="1715169901-1">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="ss">:baz</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p" data-group-id="1715169901-1">)</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </div>
@@ -231,13 +237,15 @@ TestSuper.Client              </h1>
     <span class="signature">putq(pid)</span>
           </div>
   <section class="docstring">
-<p>Store SPARQL query results for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with <code class="inline">pid</code>.</p>
+<p>Store SPARQL query results for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> with process ID <code class="inline">pid</code>.</p>
 <h2 id="putq/1-examples" class="section-heading">
   <a href="#putq/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">putq</span><span class="p" data-group-id="8168667270-1">(</span><span class="n">pid</span><span class="p" data-group-id="8168667270-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">putq</span><span class="p" data-group-id="6635961430-1">(</span><span class="n">pid</span><span class="p" data-group-id="6635961430-1">)</span><span class="w">
+</span><span class="mi">49631</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="6635961430-2">{</span><span class="s">&quot;http://dbpedia.org/resource/Turner&#39;s_syndrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turner&#39;s
+syndrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://en.wikipedia.org/wiki/Turner&#39;s_syndrome&quot;</span><span class="p" data-group-id="6635961430-2">}</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </div>

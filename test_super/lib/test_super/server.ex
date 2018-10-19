@@ -1,26 +1,23 @@
 defmodule TestSuper.Server do
   @moduledoc """
-  Module providing server-side functions for GenServer.
+  Module providing server-side functions for `GenServer`.
   """
   use GenServer
 
   ## Constructor
 
   @doc """
-  Constructor for GenServer.
+  Constructor for `GenServer`.
   """
-  def start_link(_) do
-    # start the process
-    {:ok, pid} = GenServer.start_link(__MODULE__, [])
-
-    # register process name
-    num = String.replace("#{inspect pid}", "#PID", "")
-    Process.register(pid, Module.concat(__MODULE__, num))
-
-    # write status message to stdout
-    IO.puts "TestSuper.Server is starting ... #{inspect pid}"
-
-    {:ok, pid}
+  def start_link(opts \\ []) do
+    case GenServer.start_link(__MODULE__, opts) do
+      {:ok, pid} ->
+        # register process name
+        num = String.replace("#{inspect pid}", "#PID", "")
+        Process.register(pid, Module.concat(__MODULE__, num))
+        {:ok, pid}
+      {:error, reason} -> {:error, reason}
+    end
   end
 
   ## Callbacks
@@ -47,9 +44,9 @@ defmodule TestSuper.Server do
   end
 
   @doc """
-  Server callback `handle_call/3` for client `list/0`.
+  Server callback `handle_call/3` for client `keys/0`.
   """
-  def handle_call({:list}, _from, state) do
+  def handle_call({:keys}, _from, state) do
     {:reply, Map.keys(state), state}
   end
 

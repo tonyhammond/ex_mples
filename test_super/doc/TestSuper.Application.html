@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.1">
     <title>TestSuper.Application – test_super v0.1.0</title>
     <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-eb29da3cc5.js"></script>
+    <script src="dist/sidebar_items-321e65b668.js"></script>
     
   </head>
   <body data-type="modules">
@@ -65,9 +65,56 @@ TestSuper.Application              </h1>
 <p>Module providing the <a href="https://hexdocs.pm/elixir/Application.html"><code class="inline">Application</code></a> start function.</p>
         </section>
 
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start/2">start(type, args)</a>
+  </div>
+    <div class="summary-synopsis"><p>Application <a href="#start/2"><code class="inline">start/2</code></a> function calls<code class="inline">_start/3</code> with boolean <code class="inline">flag</code></p>
+</div>
+</div>
+  </div>
+          
+        </section>
 
 
 
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+<div class="detail" id="start/2">
+    <div class="detail-header">
+    <a href="#start/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">start(type, args)</span>
+          </div>
+  <section class="docstring">
+<p>Application <a href="#start/2"><code class="inline">start/2</code></a> function calls<code class="inline">_start/3</code> with boolean <code class="inline">flag</code>.</p>
+<p>The boolean <code class="inline">flag</code> arg on the <code class="inline">_start/3</code> call selects a dynamic supervision
+tree on <code class="inline">true</code>, and a static supervision tree on <code class="inline">false</code>. Initial setting
+is <code class="inline">false</code>, i.e. selects for a static supervision tree.</p>
+  </section>
+</div>
+        </section>
 
           <footer class="footer">
         <p>

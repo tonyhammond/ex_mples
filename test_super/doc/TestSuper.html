@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.1">
     <title>TestSuper – test_super v0.1.0</title>
     <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-eb29da3cc5.js"></script>
+    <script src="dist/sidebar_items-321e65b668.js"></script>
     
   </head>
   <body data-type="modules">
@@ -62,9 +62,11 @@ TestSuper              </h1>
 
 
         <section id="moduledoc">
-<p>Top-level module used in “Robust compute for RDF queries” post.</p>
+<p>Top-level module used in
+“<a href="https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12">Robust compute for RDF queries</a>”
+post.</p>
 <p>The post aims to demo how to manage fault tolerance in Elixir with
-supervision trees. It first review the process model for Erlang (Elixir)
+supervision trees. It first reviews the process model for Erlang (Elixir)
 and then discusses the abstraction patterns that OTP provides for processes:
 agents, servers, supervisors, and tasks.</p>
 <p>The post demos the <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>, <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>, and <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a> patterns.</p>
@@ -142,14 +144,15 @@ agents, servers, supervisors, and tasks.</p>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with no supervision).</p>
+<p>Returns process ID for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
 <h2 id="genserver/0-examples" class="section-heading">
   <a href="#genserver/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3120407440-1">#</span><span class="nc" data-group-id="3120407440-1">PID</span><span class="p" data-group-id="3120407440-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3120407440-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="3120407440-2">#</span><span class="nc" data-group-id="3120407440-2">PID</span><span class="p" data-group-id="3120407440-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3120407440-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="7676995432-1">#</span><span class="nc" data-group-id="7676995432-1">PID</span><span class="p" data-group-id="7676995432-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7676995432-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="7676995432-2">#</span><span class="nc" data-group-id="7676995432-2">PID</span><span class="p" data-group-id="7676995432-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">224</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="7676995432-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="genserver_d/0">
@@ -162,14 +165,15 @@ agents, servers, supervisors, and tasks.</p>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>).</p>
+<p>Returns process ID for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
 <h2 id="genserver_d/0-examples" class="section-heading">
   <a href="#genserver_d/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_d</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="1265346646-1">#</span><span class="nc" data-group-id="1265346646-1">PID</span><span class="p" data-group-id="1265346646-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="1265346646-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="1265346646-2">#</span><span class="nc" data-group-id="1265346646-2">PID</span><span class="p" data-group-id="1265346646-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="1265346646-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="4261855746-1">#</span><span class="nc" data-group-id="4261855746-1">PID</span><span class="p" data-group-id="4261855746-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4261855746-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="4261855746-2">#</span><span class="nc" data-group-id="4261855746-2">PID</span><span class="p" data-group-id="4261855746-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">233</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="4261855746-2">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="genserver_s/0">
@@ -182,15 +186,16 @@ agents, servers, supervisors, and tasks.</p>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a> (with <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>).</p>
+<p>Returns process ID for <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>.</p>
 <h2 id="genserver_s/0-examples" class="section-heading">
   <a href="#genserver_s/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">genserver_s</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="0574153116-1">#</span><span class="nc" data-group-id="0574153116-1">PID</span><span class="p" data-group-id="0574153116-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="0574153116-2">#</span><span class="nc" data-group-id="0574153116-2">PID</span><span class="p" data-group-id="0574153116-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="0574153116-3">#</span><span class="nc" data-group-id="0574153116-3">PID</span><span class="p" data-group-id="0574153116-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="0574153116-3">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="6812759242-1">#</span><span class="nc" data-group-id="6812759242-1">PID</span><span class="p" data-group-id="6812759242-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6812759242-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="6812759242-2">#</span><span class="nc" data-group-id="6812759242-2">PID</span><span class="p" data-group-id="6812759242-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6812759242-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="6812759242-3">#</span><span class="nc" data-group-id="6812759242-3">PID</span><span class="p" data-group-id="6812759242-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="6812759242-3">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="supervisor/0">
@@ -203,15 +208,16 @@ agents, servers, supervisors, and tasks.</p>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a> (with <a href="https://hexdocs.pm/elixir/GenServer.html"><code class="inline">GenServer</code></a>).</p>
+<p>Returns process ID for <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
 <h2 id="supervisor/0-examples" class="section-heading">
   <a href="#supervisor/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">supervisor</span><span class="w">
-</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5554550055-1">#</span><span class="nc" data-group-id="5554550055-1">PID</span><span class="p" data-group-id="5554550055-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-1">&gt;</span><span class="w">
-</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5554550055-2">#</span><span class="nc" data-group-id="5554550055-2">PID</span><span class="p" data-group-id="5554550055-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-2">&gt;</span><span class="w">
-</span><span class="p" data-group-id="5554550055-3">#</span><span class="nc" data-group-id="5554550055-3">PID</span><span class="p" data-group-id="5554550055-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5554550055-3">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.Server</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3375957938-1">#</span><span class="nc" data-group-id="3375957938-1">PID</span><span class="p" data-group-id="3375957938-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">229</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3375957938-1">&gt;</span><span class="w">
+</span><span class="nc">TestSuper.Supervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="3375957938-2">#</span><span class="nc" data-group-id="3375957938-2">PID</span><span class="p" data-group-id="3375957938-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3375957938-2">&gt;</span><span class="w">
+</span><span class="p" data-group-id="3375957938-3">#</span><span class="nc" data-group-id="3375957938-3">PID</span><span class="p" data-group-id="3375957938-3">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">228</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="3375957938-3">&gt;</span></code></pre>
   </section>
 </div>
 <div class="detail" id="supervisor_d/0">
@@ -224,14 +230,15 @@ agents, servers, supervisors, and tasks.</p>
           </div>
   <section class="docstring">
 <p>Constructor for new <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>.</p>
+<p>Returns process ID for <a href="https://hexdocs.pm/elixir/DynamicSupervisor.html"><code class="inline">DynamicSupervisor</code></a>.</p>
 <h2 id="supervisor_d/0-examples" class="section-heading">
   <a href="#supervisor_d/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">supervisor_d</span><span class="w">
-</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="5976850741-1">#</span><span class="nc" data-group-id="5976850741-1">PID</span><span class="p" data-group-id="5976850741-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5976850741-1">&gt;</span><span class="w">
-</span><span class="p" data-group-id="5976850741-2">#</span><span class="nc" data-group-id="5976850741-2">PID</span><span class="p" data-group-id="5976850741-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="5976850741-2">&gt;</span></code></pre>
+</span><span class="nc">TestSuper.DynamicSupervisor</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="p" data-group-id="8438386173-1">#</span><span class="nc" data-group-id="8438386173-1">PID</span><span class="p" data-group-id="8438386173-1">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8438386173-1">&gt;</span><span class="w">
+</span><span class="p" data-group-id="8438386173-2">#</span><span class="nc" data-group-id="8438386173-2">PID</span><span class="p" data-group-id="8438386173-2">&lt;</span><span class="mi">0</span><span class="o">.</span><span class="mi">231</span><span class="o">.</span><span class="mi">0</span><span class="p" data-group-id="8438386173-2">&gt;</span></code></pre>
   </section>
 </div>
         </section>

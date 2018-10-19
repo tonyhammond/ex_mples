@@ -15,13 +15,14 @@ defmodule TestSuper.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      # mod: {TestSuper.Application, []}
+      mod: {TestSuper.Application, []}
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ex_doc, "~> 0.18", only: :dev, runtime: false},
       {:sparql_client, "~> 0.2.1"},
       {:hackney, "~> 1.6"}
     ]

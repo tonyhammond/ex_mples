@@ -1,21 +1,22 @@
 defmodule TestSuper.Supervisor do
+  @moduledoc """
+  Module providing server-side functions for `Supervisor`.
+  """
   use Supervisor
 
   ## Constructor
 
   @doc """
-  Constructor for Supervisor.
+  Constructor for `Supervisor`.
   """
   def start_link(opts \\ []) do
-    {:ok, pid} = Supervisor.start_link(__MODULE__, [], opts)
-    IO.puts "TestSuper.Supervisor is starting ... #{inspect pid}"
-    {:ok, pid}
+    Supervisor.start_link(__MODULE__, [], opts)
   end
 
   ## Callbacks
 
   @doc """
-  Supervisor callback `init/1`.
+  `Supervisor` callback `init/1`.
   """
   def init([]) do
     children = [

@@ -1,6 +1,6 @@
 defmodule TestSuper.Client do
   @moduledoc """
-  Module providing client-side functions for GenServer.
+  Module providing client-side functions for `GenServer`.
   """
 
   @priv_dir "#{:code.priv_dir(:test_super)}"
@@ -13,38 +13,77 @@ defmodule TestSuper.Client do
   ## Calls
 
   @doc """
-  Return map stored by GenServer with `pid`.
+  Return map stored by `GenServer` with process ID `pid`.
+
+  ## Examples
+
+      iex> get(pid)
+      %{baz: 123, foo: "bar"}
+
+      iex> get(pid)
+      %{
+      49631 => {"http://dbpedia.org/resource/Turner's_syndrome",
+      "Turner's syndrome",
+      "http://en.wikipedia.org/wiki/Turner's_syndrome"}
+      }
   """
   def get(pid) do
     GenServer.call(pid, {:get})
   end
 
   @doc """
-  Return value for `key` stored by GenServer with `pid`.
+  Return value for `key` stored by `GenServer` with process ID `pid`.
+
+  ## Examples
+
+      iex> get(pid, :foo)
+      "bar"
+
+      iex> get(pid, 49631)
+      {"http://dbpedia.org/resource/Turner's_syndrome", "Turner's
+      syndrome", "http://en.wikipedia.org/wiki/Turner's_syndrome"}
   """
   def get(pid, key) do
     GenServer.call(pid, {:get, key})
   end
 
   @doc """
-  Return list of keys for GenServer with `pid`.
+  Return list of keys for `GenServer` with process ID `pid`.
+
+  ## Examples
+
+      iex> keys(pid)
+      [1788, 4417, 9442, 23921]
   """
-  def list(pid) do
-    GenServer.call(pid, {:list})
+  def keys(pid) do
+    GenServer.call(pid, {:keys})
   end
 
   @doc """
-  Store `value` by `key` for GenServer with `pid`.
+  Store `value` by `key` for `GenServer` with process ID `pid`.
+
+  ## Examples
+
+      iex> put(pid, :baz, 123)
+      :ok
   """
   def put(pid, key, value) do
     GenServer.cast(pid, {:put, key, value})
   end
 
   @doc """
-  Store SPARQL query results for GenServer with `pid`.
+  Store SPARQL query results for `GenServer` with process ID `pid`.
+
+  ## Examples
+
+      iex> putq(pid)
+      49631 => {"http://dbpedia.org/resource/Turner's_syndrome", "Turner's
+      syndrome", "http://en.wikipedia.org/wiki/Turner's_syndrome"}
+      :ok
   """
   def putq(pid) do
     {key, value} = _do_query()
+    IO.puts "#{inspect key} => #{inspect value}"
     GenServer.cast(pid, {:put, key, value})
   end
 
@@ -52,6 +91,12 @@ defmodule TestSuper.Client do
 
   @doc """
   Return default SPARQL query used for demo.
+
+  ## Examples
+
+      iex> query
+      "prefix dbo: <http://dbpedia.org/ontology/>\\nprefix foaf: ..."
+
   """
   def query() do
     File.read!(@queries_dir <> @query_file)
@@ -59,6 +104,11 @@ defmodule TestSuper.Client do
 
   @doc """
   Return default SPARQL endpoint used for demo.
+
+  ## Examples
+
+      iex> service
+      "http://dbpedia.org/sparql"
   """
   def service(), do: @service
 
