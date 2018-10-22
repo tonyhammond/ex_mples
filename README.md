@@ -1,5 +1,4 @@
-Examples
-========
+# Examples
 Code examples used in posts on Medium.com.
 
 ![image info](./imx/medium-posts-banner-next.png)
