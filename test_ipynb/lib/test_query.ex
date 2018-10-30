@@ -6,7 +6,7 @@ defmodule TestQuery do
   """
 
   # @data_dir "#{:code.priv_dir(:test_query)}/data/"
-  @data_dir "/Users/tony/Projects/local/elixir/examples/test_query.notebook/priv/data/"
+  @data_dir "/Users/tony/Projects/github/tonyhammond/examples/test_ipynb/priv/data/"
   # @data_dir System.cwd <> "/../tonyhammond/examples/test_query.notebook/priv/data/"
   @data_file "978-1-68050-252-7.ttl"
 

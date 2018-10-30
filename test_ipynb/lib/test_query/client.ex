@@ -15,7 +15,7 @@ where {
 """
 
   # @query_dir "#{:code.priv_dir(:test_query)}/queries/"
-  @query_dir "/Users/tony/Projects/local/elixir/examples/test_query.notebook/priv/queries/"
+  @query_dir "/Users/tony/Projects/github/tonyhammond/examples/test_ipynb/priv/queries/"
 
   @query_opts request_method: :get, protocol_version: "1.1"
 
@@ -36,7 +36,7 @@ where {
     case SPARQL.Client.query(@query, @service, @query_opts) do
       {:ok, result} ->
         # result.results |> Enum.each(&(IO.puts &1["o"]))
-        result.results |> SPARQL.Query.Result.get(:o)
+        result |> SPARQL.Query.Result.get(:o)
       {:error, reason} ->
         raise "! Error: #{reason}"
     end
