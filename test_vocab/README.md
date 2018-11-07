@@ -5,6 +5,4 @@ Test module used in
 post.
 
 ![medium-post-1.png](../images/medium-post-1.png)
-<br/>
-[https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f](https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f)
 
