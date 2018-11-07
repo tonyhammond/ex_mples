@@ -10,11 +10,11 @@ Code examples used in posts on Medium.com.
 * "[Jupyter Notebooks with Elixir and RDF](https://medium.com/@tonyhammond/jupyter-notebooks-with-elixir-and-rdf-598689c2dad3)" [(test_ipynb](./test_ipynb/))
 
 
-## Build
+## Installation
 
 To include any of these projects into your own project you can add a `git:` dependency such as the following, e.g. for `test_query`:
 
-```
+```elixir
   defp deps do
     [
       {:test_query, git: "https://github.com/tonyhammond/examples.git", sparse: "test_query"}
@@ -24,7 +24,7 @@ To include any of these projects into your own project you can add a `git:` depe
 
 Or alternately you can add the slightly shorter `github:` dependency form:
 
-```
+```elixir
   defp deps do
     [
       {:test_query, github: "tonyhammond/examples", sparse: "test_query"}
