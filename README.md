@@ -8,3 +8,23 @@ Code examples used in posts on Medium.com.
 * "[Working with SHACL and Elixir](https://medium.com/@tonyhammond/working-with-shacl-and-elixir-4719473d43c1)" ([test_shacl](./test_shacl/))
 * "[Robust compute for RDF queries](https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12)" [(test_super](./test_super/))
 * "[Jupyter Notebooks with Elixir and RDF](https://medium.com/@tonyhammond/jupyter-notebooks-with-elixir-and-rdf-598689c2dad3)" [(test_ipynb](./test_ipynb/))
+
+To include any of these projects into your own project you can add a dependency such as the following, e.g. for `test_query`:
+
+```
+  defp deps do
+    [
+      {:test_query, git: "https://github.com/tonyhammond/examples.git", sparse: "test_query"}
+    ]
+  end
+```
+
+Or alternately you can add the slightly shorter form:
+
+```
+  defp deps do
+    [
+      {:test_query, github: "tonyhammond/examples", sparse: "test_query"}
+    ]
+  end
+```
