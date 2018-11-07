@@ -9,7 +9,10 @@ Code examples used in posts on Medium.com.
 * "[Robust compute for RDF queries](https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12)" [(test_super](./test_super/))
 * "[Jupyter Notebooks with Elixir and RDF](https://medium.com/@tonyhammond/jupyter-notebooks-with-elixir-and-rdf-598689c2dad3)" [(test_ipynb](./test_ipynb/))
 
-To include any of these projects into your own project you can add a dependency such as the following, e.g. for `test_query`:
+
+## Build
+
+To include any of these projects into your own project you can add a `git:` dependency such as the following, e.g. for `test_query`:
 
 ```
   defp deps do
@@ -19,7 +22,7 @@ To include any of these projects into your own project you can add a dependency 
   end
 ```
 
-Or alternately you can add the slightly shorter form:
+Or alternately you can add the slightly shorter `github:` dependency form:
 
 ```
   defp deps do
