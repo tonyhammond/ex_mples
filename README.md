@@ -3,7 +3,7 @@ Code examples used in posts on Medium.com.
 
 ![medium-posts-no-tags.jpg](./images/medium-posts-no-tags.jpg)
 <br/>
-[https://medium.com/@tonyhammond/latest)](https://medium.com/@tonyhammond/latest)
+[https://medium.com/@tonyhammond/latest](https://medium.com/@tonyhammond/latest)
 
 * "[Early steps in Elixir and RDF](https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f)" ([test_vocab](./test_vocab/))
 * "[Querying RDF with Elixir](https://medium.com/@tonyhammond/querying-rdf-with-elixir-2378b39d65cc)" ([test_query](./test_query/))
