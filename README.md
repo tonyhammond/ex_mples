@@ -1,5 +1,5 @@
 # Examples
-Elixir code examples used in [posts on Medium.com](https://medium.com/@tonyhammond/latest).
+Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/latest).
 
 ![medium-posts-no-tags.jpg](./images/medium-posts-no-tags.jpg)
 
