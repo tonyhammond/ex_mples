@@ -1,4 +1,4 @@
-# Examples
+# Elixir Examples
 Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/latest).
 
 ![medium-posts-no-tags.jpg](./images/medium-posts-no-tags.jpg)
