@@ -15,7 +15,7 @@ where {
 """
 
   # @query_dir "#{:code.priv_dir(:test_query)}/queries/"
-  @query_dir System.cwd <> "/../../tonyhammond/examples/test_ipynb/priv/queries/"
+  @query_dir System.cwd <> "/../../tonyhammond/ex_examples/test_ipynb/priv/queries/"
 
   @query_opts request_method: :get, protocol_version: "1.1"
 
