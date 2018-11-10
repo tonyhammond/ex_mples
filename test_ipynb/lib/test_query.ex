@@ -6,7 +6,7 @@ defmodule TestQuery do
   """
 
   # @data_dir "#{:code.priv_dir(:test_query)}/data/"
-  @data_dir "../tonyhammond/ex_examples/test_ipynb/priv/data/"
+  @data_dir "../tonyhammond/ex_mples/test_ipynb/priv/data/"
   @data_file "978-1-68050-252-7.ttl"
 
   @query """
