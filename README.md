@@ -1,6 +1,8 @@
 # Elixir Examples
 Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/latest).
 
+(Project name `ex_mples` can be read as Elixir – Medium post listing examples.)
+
 ![medium-posts-no-tags.jpg](./images/medium-posts-no-tags.jpg)
 
 * "[Early steps in Elixir and RDF](https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f)" ([test_vocab](./test_vocab/))
