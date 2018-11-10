@@ -17,7 +17,7 @@ To include any of these projects into your own project you can add a `git:` depe
 ```elixir
   defp deps do
     [
-      {:test_query, git: "https://github.com/tonyhammond/ex_examples.git", sparse: "test_query"}
+      {:test_query, git: "https://github.com/tonyhammond/ex_mples.git", sparse: "test_query"}
     ]
   end
 ```
@@ -27,7 +27,7 @@ Or alternately you can add the slightly shorter `github:` dependency form:
 ```elixir
   defp deps do
     [
-      {:test_query, github: "tonyhammond/ex_examples", sparse: "test_query"}
+      {:test_query, github: "tonyhammond/ex_mples", sparse: "test_query"}
     ]
   end
 ```
