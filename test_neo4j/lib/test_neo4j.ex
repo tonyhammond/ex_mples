@@ -13,14 +13,28 @@ defmodule TestNeo4j do
 
   """
   def hello do
-    :world
+    init() |> test()
   end
 
   @graphs_dir "#{:code.priv_dir(:test_neo4j)}/graphs/"
   @graphgists_dir "#{:code.priv_dir(:test_neo4j)}/graphgists/"
+  @queries_dir "#{:code.priv_dir(:test_neo4j)}/queries/"
+
   @books_graph_file "books.cypher"
   @movies_graph_file "movies.cypher"
+
+  @test_graph_file "books.cypher"
   @test_graphgist_file "graph_gist_template.adoc"
+  @test_query_file "test.cypher"
+
+  ## graphs
+  def read_graph() do
+    File.read!(@graphgists_dir <> @test_graph_file)
+  end
+
+  def read_graph(graph_file) do
+    File.read!(@graphs_dir <> graph_file)
+  end
 
   def books() do
     File.read!(@graphs_dir <> @books_graph_file)
@@ -28,6 +42,15 @@ defmodule TestNeo4j do
 
   def movies() do
     File.read!(@graphs_dir <> @movies_graph_file)
+  end
+
+  ## graphgists
+  def read_graphgist() do
+    File.read!(@graphgists_dir <> @test_graphgist_file)
+  end
+
+  def read_graphgist(graphgist_file) do
+    File.read!(@graphgists_dir <> graphgist_file)
   end
 
   def parse(graphgist) do
@@ -40,14 +63,16 @@ defmodule TestNeo4j do
     end
   end
 
-  def graphgist() do
-    File.read!(@graphgists_dir <> @test_graphgist_file)
+  ## queries
+  def read_query() do
+    File.read!(@queries_dir <> @test_query_file)
   end
 
-  def graphgist(graphgist_file) do
-    File.read!(@graphgists_dir <> graphgist_file)
+  def read_query(query_file) do
+    File.read!(@queries_dir <> query_file)
   end
 
+  ## database
   def init() do
     Bolt.Sips.conn
   end

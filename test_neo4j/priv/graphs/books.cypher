@@ -1,7 +1,7 @@
 //
 // create nodes
 //
-create
+CREATE
 (book:Book {
     iri: "urn:isbn:978-1-68050-252-7",
     date: "2018-03-14",
@@ -16,7 +16,7 @@ create
 //
 // create relationships
 //
-create
+CREATE
 (book)-[:AUTHORED_BY { role: "first author" }]->(author1),
 (book)-[:AUTHORED_BY { role: "second author" }]->(author2),
 (book)-[:AUTHORED_BY { role: "third author" }]->(author3),

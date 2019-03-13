@@ -2,14 +2,14 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-# config :bolt_sips, Bolt,
-#   basic_auth: [username: "neo4j", password: "neo4jtest"],
-#   url: "http://localhost:7687",
-#   pool_size: 5,
-#   max_overflow: 1
+config :bolt_sips, Bolt,
+  basic_auth: [username: "neo4j", password: "neo4jtest"],
+  url: "http://localhost:7687",
+  pool_size: 5,
+  max_overflow: 1
 
-db_conf = System.get_env("NEO4J_DB_CONF")
-import_config db_conf <> ".exs"
+# db_conf = System.get_env("NEO4J_DB_CONF")
+# import_config db_conf <> ".exs"
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
