@@ -24,8 +24,8 @@ defmodule TestNeo4j do
   @movies_graph_file "movies.cypher"
 
   @test_graph_file "books.cypher"
-  @test_graphgist_file "graph_gist_template.adoc"
-  @test_query_file "test.cypher"
+  @test_graphgist_file "graphgist_template.adoc"
+  @test_query_file "get_one_node.cypher"
 
   ## graphs
   def read_graph() do
