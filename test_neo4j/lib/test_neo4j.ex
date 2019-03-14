@@ -24,7 +24,7 @@ defmodule TestNeo4j do
   @movies_graph_file "movies.cypher"
 
   @test_graph_file "books.cypher"
-  @test_graphgist_file "graphgist_template.adoc"
+  @test_graphgist_file "template.adoc"
   @test_query_file "get_one_node.cypher"
 
   ## graphs
@@ -53,13 +53,42 @@ defmodule TestNeo4j do
     File.read!(@graphgists_dir <> graphgist_file)
   end
 
+  # % ls
+  # Aardvark.adoc				neo4j_icij.adoc
+  # bank-fraud-detection.adoc
+  # Competence_Management.adoc		books.adoc				network-routing.adoc
+  # Credit_Card_Fraud_Detection.adoc	central_hospital_of_asturias.adoc		pharma_drugs_targets.adoc
+  # GeoptimaAllocation.adoc			finding_influencers.adoc
+  # Menus_in_NYPL.adoc			graphgist_water.adoc
+  # NetworkDataCenterManagement1.adoc		template.adoc
+  # Offshore_Leaks_and_Azerbaijan.adoc
+  # Organizational_learning.adoc			yellowstone-gist.adoc
+  # SupplyChainManagement.adoc			zombie.adoc
+  # aws-infrastructure.adoc
+
+  # DoctorFinder.adoc - 7 dash, not 4
+
+  # syntax.adoc - //output
+  # index.adoc - //output
+  # treatment_planners.adoc - //output
+  # hierarchy_graphgist.adoc - no //setup
+  # citation_patterns.adoc- no //setup
+  # project_management.adoc - extra \n after //setup
+  # neo4j-contact-networks.adoc - //hidden
+
+  # northwind-graph.adoc - csv, no //setup
+  # marchMadnessBracketBuilder.adoc - csv, no //setup
+
   def parse(graphgist) do
     result =
-      Regex.run(~r/\/\/setup\n(\/\/hide\n)*\[source,cypher\]\n\-\-\-\-\n((.|\n)*)\-\-\-\-\n/Um, graphgist)
+      Regex.run(~r/\/setup\n(\/\/hide\n)*(\/\/output\n)*\[source,\s*cypher\]\n\-\-\-\-.*\n((.|\n)*)\-\-\-\-.*\n/Um, graphgist)
+      # IO.inspect result
     result |>
     case do
       [_,cypher,_] -> cypher
-      [_,_,cypher,_] -> cypher
+      [_,_,cypher,_] -> cypher    # //hide\n
+      [_,_,_,cypher,_] -> cypher  # //hide\n//output]\n
+      _ -> ""
     end
   end
 
@@ -70,6 +99,38 @@ defmodule TestNeo4j do
 
   def read_query(query_file) do
     File.read!(@queries_dir <> query_file)
+  end
+
+  def node1(conn) do
+    Bolt.Sips.query!(conn, read_query("node1.cypher"))
+  end
+
+  def nodes(conn) do
+    Bolt.Sips.query!(conn, read_query("nodes.cypher"))
+  end
+
+  def relationship1(conn) do
+    Bolt.Sips.query!(conn, read_query("relationship1.cypher"))
+  end
+
+  def relationships(conn) do
+    Bolt.Sips.query!(conn, read_query("relationships.cypher"))
+  end
+
+  def node1_and_relationships(conn) do
+    Bolt.Sips.query!(conn, read_query("node1_and_relationships.cypher"))
+  end
+
+  def nodes_and_relationships(conn) do
+    Bolt.Sips.query!(conn, read_query("nodes_and_relationships.cypher"))
+  end
+
+  def path1(conn) do
+    Bolt.Sips.query!(conn, read_query("path1.cypher"))
+  end
+
+  def paths(conn) do
+    Bolt.Sips.query!(conn, read_query("paths.cypher"))
   end
 
   ## database
@@ -94,8 +155,11 @@ defmodule TestNeo4j do
   def test(conn) do
     Bolt.Sips.query!(conn,
     """
-    match (n) optional match (n)-[r]-()
-    return count(distinct n) as nodes, count(distinct r) as relationships
+    match (n) optional match p = (n)-[r]-()
+    return
+    count(distinct n) as nodes,
+    count(distinct r) as relationships,
+    count(distinct p) as paths
     """)
   end
 
