@@ -1,20 +1,7 @@
 defmodule TestNeo4j do
   @moduledoc """
-  Documentation for TestNeo4j.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> TestNeo4j.hello()
-      :world
-
-  """
-  def hello do
-    init() |> test()
-  end
+    Top-level module used in "Property graphs in Elixir" post.
+    """
 
   @graphs_dir "#{:code.priv_dir(:test_neo4j)}/graphs/"
   @graphgists_dir "#{:code.priv_dir(:test_neo4j)}/graphgists/"
@@ -67,10 +54,10 @@ defmodule TestNeo4j do
   # aws-infrastructure.adoc
 
   # DoctorFinder.adoc - 7 dash, not 4
-
   # syntax.adoc - //output
   # index.adoc - //output
   # treatment_planners.adoc - //output
+
   # hierarchy_graphgist.adoc - no //setup
   # citation_patterns.adoc- no //setup
   # project_management.adoc - extra \n after //setup
@@ -163,4 +150,9 @@ defmodule TestNeo4j do
     """)
   end
 
+  def apps() do
+    # Application.started_applications()
+    Process.info(Process.whereis(Bolt.Sips))
+    # Process.info(Process.whereis(Bolt.Sips.ConfigAgent))
+  end
 end

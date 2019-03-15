@@ -14,16 +14,7 @@ defmodule TestNeo4j.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-
-      # NOT WORKING
-      # mod: { Bolt.Sips.Application, [] }
-
-      # WORKING
-      mod: { Bolt.Sips.Application, [
-        basic_auth: [username: "neo4j", password: "neo4jtest"],
-        url: "bolt://localhost:7687"
-       ] }
+      mod: { TestNeo4j.Application, [] }
     ]
   end
 

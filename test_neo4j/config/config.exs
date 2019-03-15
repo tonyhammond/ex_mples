@@ -3,27 +3,25 @@
 use Mix.Config
 
 config :bolt_sips, Bolt,
-  basic_auth: [username: "neo4j", password: "neo4jtest"],
-  url: "bolt://localhost:7687"
-  
-# db_conf = System.get_env("NEO4J_DB_CONF")
-# import_config db_conf <> ".exs"
+  url: "bolt://localhost:7687",
+  basic_auth: [username: "neo4j", password: "neo4jtest"]
+
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
 # if you want to provide default values for your application for
-# third-party users, it should be done in your "mix.exs" file.
+# 3rd-party users, it should be done in your "mix.exs" file.
 
-# You can configure your application as:
+# You can configure for your application as:
 #
-#     config :test_neo4j, key: :value
+#     config :bolt_sips, key: :value
 #
-# and access this configuration in your application as:
+# And access this configuration in your application as:
 #
-#     Application.get_env(:test_neo4j, :key)
+#     Application.get_env(:bolt_sips, :key)
 #
-# You can also configure a third-party app:
+# Or configure a 3rd-party app:
 #
 #     config :logger, level: :info
 #
@@ -34,4 +32,4 @@ config :bolt_sips, Bolt,
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
 #
-#     import_config "#{Mix.env()}.exs"
+# import_config "#{Mix.env}.exs"
