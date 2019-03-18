@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>TestNeo4j — test_neo4j v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-6930fd937e.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+test_neo4j      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">test_neo4j v0.1.0</small>
+TestNeo4j              </h1>
+
+
+        <section id="moduledoc">
+<p>Top-level module used in &quot;Property graphs and Elixir&quot; post.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#books/0">books()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a Books graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#clear/1">clear(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes all nodes and relationships in database</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#init/0">init()</a>
+  </div>
+    <div class="summary-synopsis"><p>Opens up a Bolt database connection with the app config</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#movies/0">movies()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a Movies graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node1/1">node1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one node</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node1_and_relationships/1">node1_and_relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one node and relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nodes/1">nodes(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all nodes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nodes_and_relationships/1">nodes_and_relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all nodes and relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#parse/1">parse(graphgist)</a>
+  </div>
+    <div class="summary-synopsis"><p>Parses a graphgist to return a Cypher graph</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#path1/1">path1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one path</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#paths/1">paths(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all paths</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graph/0">read_graph()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default Cypher graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graph/1">read_graph(graph_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a user Cypher graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graphgist/0">read_graphgist()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default graphgist from the graphgists library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graphgist/1">read_graphgist(graphgist_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a user graphgist from the graphgists library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_query/0">read_query()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default Cypher query from the queries library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_query/1">read_query(query_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a named Cypher query from the queries library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#relationship1/1">relationship1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one relationship</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#relationships/1">relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset/1">reset(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes all nodes and relationships in database</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test/1">test(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Counts nodes, relationships and paths in database</p>
+</div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="books/0">
+    <div class="detail-header">
+    <a href="#books/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">books()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a Books graph from the graphs library.</p>
+  </section>
+</section>
+<section class="detail" id="clear/1">
+    <div class="detail-header">
+    <a href="#clear/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">clear(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes all nodes and relationships in database.</p>
+  </section>
+</section>
+<section class="detail" id="init/0">
+    <div class="detail-header">
+    <a href="#init/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">init()</span>
+          </div>
+  <section class="docstring">
+<p>Opens up a Bolt database connection with the app config.</p>
+  </section>
+</section>
+<section class="detail" id="movies/0">
+    <div class="detail-header">
+    <a href="#movies/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">movies()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a Movies graph from the graphs library.</p>
+  </section>
+</section>
+<section class="detail" id="node1/1">
+    <div class="detail-header">
+    <a href="#node1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one node.</p>
+  </section>
+</section>
+<section class="detail" id="node1_and_relationships/1">
+    <div class="detail-header">
+    <a href="#node1_and_relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node1_and_relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one node and relationships.</p>
+  </section>
+</section>
+<section class="detail" id="nodes/1">
+    <div class="detail-header">
+    <a href="#nodes/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nodes(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all nodes.</p>
+  </section>
+</section>
+<section class="detail" id="nodes_and_relationships/1">
+    <div class="detail-header">
+    <a href="#nodes_and_relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nodes_and_relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all nodes and relationships.</p>
+  </section>
+</section>
+<section class="detail" id="parse/1">
+    <div class="detail-header">
+    <a href="#parse/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">parse(graphgist)</span>
+          </div>
+  <section class="docstring">
+<p>Parses a graphgist to return a Cypher graph.</p>
+  </section>
+</section>
+<section class="detail" id="path1/1">
+    <div class="detail-header">
+    <a href="#path1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">path1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one path.</p>
+  </section>
+</section>
+<section class="detail" id="paths/1">
+    <div class="detail-header">
+    <a href="#paths/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">paths(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all paths.</p>
+  </section>
+</section>
+<section class="detail" id="read_graph/0">
+    <div class="detail-header">
+    <a href="#read_graph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graph()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default Cypher graph from the graphs library.</p>
+  </section>
+</section>
+<section class="detail" id="read_graph/1">
+    <div class="detail-header">
+    <a href="#read_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graph(graph_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a user Cypher graph from the graphs library.</p>
+  </section>
+</section>
+<section class="detail" id="read_graphgist/0">
+    <div class="detail-header">
+    <a href="#read_graphgist/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graphgist()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default graphgist from the graphgists library.</p>
+  </section>
+</section>
+<section class="detail" id="read_graphgist/1">
+    <div class="detail-header">
+    <a href="#read_graphgist/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graphgist(graphgist_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a user graphgist from the graphgists library.</p>
+  </section>
+</section>
+<section class="detail" id="read_query/0">
+    <div class="detail-header">
+    <a href="#read_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_query()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default Cypher query from the queries library.</p>
+  </section>
+</section>
+<section class="detail" id="read_query/1">
+    <div class="detail-header">
+    <a href="#read_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_query(query_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a named Cypher query from the queries library.</p>
+  </section>
+</section>
+<section class="detail" id="relationship1/1">
+    <div class="detail-header">
+    <a href="#relationship1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">relationship1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one relationship.</p>
+  </section>
+</section>
+<section class="detail" id="relationships/1">
+    <div class="detail-header">
+    <a href="#relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all relationships.</p>
+  </section>
+</section>
+<section class="detail" id="reset/1">
+    <div class="detail-header">
+    <a href="#reset/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes all nodes and relationships in database.</p>
+  </section>
+</section>
+<section class="detail" id="test/1">
+    <div class="detail-header">
+    <a href="#test/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Counts nodes, relationships and paths in database.</p>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+
