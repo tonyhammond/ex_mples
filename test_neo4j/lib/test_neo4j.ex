@@ -1,6 +1,9 @@
 defmodule TestNeo4j do
   @moduledoc """
-  Top-level module used in "Property graphs and Elixir" post.
+  Top-level module used in "[Property graphs and Elixir]()" post.
+
+  The post shows how to access Neo4j graph databases with Elixir using the
+  [bolt_sips](https://hex.pm/packages/bolt_sips) package. 
   """
 
   @priv_dir "#{:code.priv_dir(:test_neo4j)}"
@@ -45,7 +48,7 @@ defmodule TestNeo4j do
   end
 
   @doc """
-  Reads a Books graph from the graphs library.
+  Reads a `Books` graph from the graphs library.
 
   ## Examples
 
@@ -58,7 +61,7 @@ defmodule TestNeo4j do
   end
 
   @doc """
-  Reads a Movies graph from the graphs library.
+  Reads a `Movies` graph from the graphs library.
 
   ## Examples
 
