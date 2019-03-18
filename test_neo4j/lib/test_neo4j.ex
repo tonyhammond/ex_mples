@@ -1,6 +1,6 @@
 defmodule TestNeo4j do
   @moduledoc """
-  Top-level module used in "Property graphs in Elixir" post.
+  Top-level module used in "Property graphs and Elixir" post.
   """
 
   @priv_dir "#{:code.priv_dir(:test_neo4j)}"
