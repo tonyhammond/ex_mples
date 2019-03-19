@@ -1,6 +1,6 @@
 defmodule TestNeo4j do
   @moduledoc """
-  Top-level module used in "[Property graphs and Elixir]()" post.
+  Top-level module used in "[Property graphs and Elixir](https://medium.com/@tonyhammond/property-graphs-and-elixir-13672940804b)" post.
 
   The post shows how to access Neo4j graph databases with Elixir using the
   [bolt_sips](https://hex.pm/packages/bolt_sips) package. 
