@@ -1,21 +1,9 @@
 # TestGraph
 
-**TODO: Add description**
+Test module used in
+"[Graph to graph with Elixir]()"
+post.
 
-## Installation
+See docs for [test_graph](https://tonyhammond.github.io/ex_mples/test_graph/doc/) package.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `test_graph` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:test_graph, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/test_graph](https://hexdocs.pm/test_graph).
-
+![medium-post-7.png](../images/medium-post-7.png)
