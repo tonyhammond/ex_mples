@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>TestGraph.LPG — test_graph v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-528df087ae.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+test_graph      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">test_graph v0.1.0</small>
+TestGraph.LPG              </h1>
+
+
+        <section id="moduledoc">
+<p>Module providing a simple library for querying LPG models in a Neo4j instance via Cypher.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#books/0">books()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a <code class="inline">Books</code> graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#clear/1">clear(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes all nodes and relationships in database</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#init/0">init()</a>
+  </div>
+    <div class="summary-synopsis"><p>Opens up a Bolt database connection with the app config</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#movies/0">movies()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a <code class="inline">Movies</code> graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node1/1">node1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one node</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node1_and_relationships/1">node1_and_relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one node and relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nodes/1">nodes(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all nodes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#nodes_and_relationships/1">nodes_and_relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all nodes and relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#parse/1">parse(graphgist)</a>
+  </div>
+    <div class="summary-synopsis"><p>Parses a graphgist to return a Cypher graph</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#path1/1">path1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one path</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#paths/1">paths(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all paths</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graph/0">read_graph()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default Cypher graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graph/1">read_graph(graph_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a user Cypher graph from the graphs library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graphgist/0">read_graphgist()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default graphgist from the graphgists library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graphgist/1">read_graphgist(graphgist_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a user graphgist from the graphgists library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_query/0">read_query()</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a default Cypher query from the queries library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_query/1">read_query(query_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a named Cypher query from the queries library</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#relationship1/1">relationship1(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for one relationship</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#relationships/1">relationships(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries database for all relationships</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset/1">reset(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes all nodes and relationships in database</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test/1">test(conn)</a>
+  </div>
+    <div class="summary-synopsis"><p>Counts nodes, relationships and paths in database</p>
+</div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="books/0">
+    <div class="detail-header">
+    <a href="#books/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">books()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a <code class="inline">Books</code> graph from the graphs library.</p>
+<h2 id="books/0-examples" class="section-heading">
+  <a href="#books/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">books</span><span class="p" data-group-id="7417743711-1">(</span><span class="p" data-group-id="7417743711-1">)</span><span class="w">
+</span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">    iri: &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="clear/1">
+    <div class="detail-header">
+    <a href="#clear/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">clear(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes all nodes and relationships in database.</p>
+<h2 id="clear/1-examples" class="section-heading">
+  <a href="#clear/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="7666475824-1">(</span><span class="p" data-group-id="7666475824-1">)</span><span class="w">
+</span><span class="p" data-group-id="7666475824-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7666475824-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="7666475824-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="7666475824-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="init/0">
+    <div class="detail-header">
+    <a href="#init/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">init()</span>
+          </div>
+  <section class="docstring">
+<p>Opens up a Bolt database connection with the app config.</p>
+<h2 id="init/0-examples" class="section-heading">
+  <a href="#init/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">init</span><span class="p" data-group-id="4084268096-1">(</span><span class="p" data-group-id="4084268096-1">)</span><span class="w">
+</span><span class="p" data-group-id="4084268096-2">[</span><span class="w">
+  </span><span class="ss">socket</span><span class="p">:</span><span class="w"> </span><span class="nc">Bolt.Sips.Socket</span><span class="p">,</span><span class="w">
+  </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">7687</span><span class="p">,</span><span class="w">
+  </span><span class="ss">hostname</span><span class="p">:</span><span class="w"> </span><span class="sc">&#39;localhost&#39;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">retry_linear_backoff</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4084268096-3">[</span><span class="ss">delay</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="ss">factor</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">tries</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4084268096-3">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">with_etls</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
+  </span><span class="ss">ssl</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
+  </span><span class="ss">timeout</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="ss">max_overflow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">pool_size</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">basic_auth</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4084268096-4">[</span><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4jtest&quot;</span><span class="p" data-group-id="4084268096-4">]</span><span class="w">
+</span><span class="p" data-group-id="4084268096-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="movies/0">
+    <div class="detail-header">
+    <a href="#movies/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">movies()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a <code class="inline">Movies</code> graph from the graphs library.</p>
+<h2 id="movies/0-examples" class="section-heading">
+  <a href="#movies/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">movies</span><span class="p" data-group-id="1272311307-1">(</span><span class="p" data-group-id="1272311307-1">)</span><span class="w">
+</span><span class="s">&quot;CREATE (TheMatrix:Movie {title:&#39;The Matrix&#39;, released:1999,&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="node1/1">
+    <div class="detail-header">
+    <a href="#node1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one node.</p>
+<h2 id="node1/1-examples" class="section-heading">
+  <a href="#node1/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1</span><span class="p" data-group-id="4236389592-1">(</span><span class="p" data-group-id="4236389592-1">)</span><span class="w">
+</span><span class="p" data-group-id="4236389592-2">[</span><span class="w">
+  </span><span class="p" data-group-id="4236389592-3">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="4236389592-4">%</span><span class="nc" data-group-id="4236389592-4">Bolt.Sips.Types.Node</span><span class="p" data-group-id="4236389592-4">{</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4236389592-5">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="4236389592-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4236389592-6">%{</span><span class="w">
+        </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
+      </span><span class="p" data-group-id="4236389592-6">}</span><span class="w">
+    </span><span class="p" data-group-id="4236389592-4">}</span><span class="w">
+  </span><span class="p" data-group-id="4236389592-3">}</span><span class="w">
+</span><span class="p" data-group-id="4236389592-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="node1_and_relationships/1">
+    <div class="detail-header">
+    <a href="#node1_and_relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node1_and_relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one node and relationships.</p>
+<h2 id="node1_and_relationships/1-examples" class="section-heading">
+  <a href="#node1_and_relationships/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1_and_relationships</span><span class="p" data-group-id="3747492953-1">(</span><span class="p" data-group-id="3747492953-1">)</span><span class="w">
+</span><span class="p" data-group-id="3747492953-2">[</span><span class="w">
+  </span><span class="p" data-group-id="3747492953-3">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3747492953-4">%</span><span class="nc" data-group-id="3747492953-4">Bolt.Sips.Types.Node</span><span class="p" data-group-id="3747492953-4">{</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3747492953-5">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="3747492953-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3747492953-6">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="3747492953-6">}</span><span class="w">
+    </span><span class="p" data-group-id="3747492953-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3747492953-7">%</span><span class="nc" data-group-id="3747492953-7">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="3747492953-7">{</span><span class="w">
+      </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3747492953-8">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="3747492953-8">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+    </span><span class="p" data-group-id="3747492953-7">}</span><span class="w">
+  </span><span class="p" data-group-id="3747492953-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">...</span><span class="w">
+</span><span class="p" data-group-id="3747492953-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="nodes/1">
+    <div class="detail-header">
+    <a href="#nodes/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nodes(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all nodes.</p>
+<h2 id="nodes/1-examples" class="section-heading">
+  <a href="#nodes/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="p" data-group-id="6555189296-1">(</span><span class="p" data-group-id="6555189296-1">)</span><span class="w">
+</span><span class="p" data-group-id="6555189296-2">[</span><span class="w">
+  </span><span class="p" data-group-id="6555189296-3">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="6555189296-4">%</span><span class="nc" data-group-id="6555189296-4">Bolt.Sips.Types.Node</span><span class="p" data-group-id="6555189296-4">{</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6555189296-5">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="6555189296-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6555189296-6">%{</span><span class="w">
+        </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
+      </span><span class="p" data-group-id="6555189296-6">}</span><span class="w">
+    </span><span class="p" data-group-id="6555189296-4">}</span><span class="w">
+  </span><span class="p" data-group-id="6555189296-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">...</span><span class="w">
+</span><span class="p" data-group-id="6555189296-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="nodes_and_relationships/1">
+    <div class="detail-header">
+    <a href="#nodes_and_relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">nodes_and_relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all nodes and relationships.</p>
+<h2 id="nodes_and_relationships/1-examples" class="section-heading">
+  <a href="#nodes_and_relationships/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes_and_relationships</span><span class="p" data-group-id="2388959792-1">(</span><span class="p" data-group-id="2388959792-1">)</span><span class="w">
+</span><span class="p" data-group-id="2388959792-2">[</span><span class="w">
+  </span><span class="p" data-group-id="2388959792-3">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2388959792-4">%</span><span class="nc" data-group-id="2388959792-4">Bolt.Sips.Types.Node</span><span class="p" data-group-id="2388959792-4">{</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2388959792-5">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="2388959792-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2388959792-6">%{</span><span class="w">
+        </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
+      </span><span class="p" data-group-id="2388959792-6">}</span><span class="w">
+    </span><span class="p" data-group-id="2388959792-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2388959792-7">%</span><span class="nc" data-group-id="2388959792-7">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="2388959792-7">{</span><span class="w">
+      </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2388959792-8">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="2388959792-8">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+    </span><span class="p" data-group-id="2388959792-7">}</span><span class="w">
+  </span><span class="p" data-group-id="2388959792-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">...</span><span class="w">
+</span><span class="p" data-group-id="2388959792-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="parse/1">
+    <div class="detail-header">
+    <a href="#parse/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">parse(graphgist)</span>
+          </div>
+  <section class="docstring">
+<p>Parses a graphgist to return a Cypher graph.</p>
+<h2 id="parse/1-examples" class="section-heading">
+  <a href="#parse/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="8049181301-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="8049181301-2">(</span><span class="p" data-group-id="8049181301-2">)</span><span class="p" data-group-id="8049181301-1">)</span><span class="w">
+</span><span class="s">&quot;CREATE</span><span class="se">\n</span><span class="s">  (a:Person {name: &#39;Alice&#39;}),</span><span class="se">\n</span><span class="s">  (b:Person {name: &#39;Bob&#39;}),</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="path1/1">
+    <div class="detail-header">
+    <a href="#path1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">path1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one path.</p>
+<h2 id="path1/1-examples" class="section-heading">
+  <a href="#path1/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">path1</span><span class="p" data-group-id="6840233000-1">(</span><span class="p" data-group-id="6840233000-1">)</span><span class="w">
+</span><span class="p" data-group-id="6840233000-2">[</span><span class="w">
+  </span><span class="p" data-group-id="6840233000-3">%{</span><span class="w">
+    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="6840233000-4">%</span><span class="nc" data-group-id="6840233000-4">Bolt.Sips.Types.Path</span><span class="p" data-group-id="6840233000-4">{</span><span class="w">
+      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-5">[</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-6">%</span><span class="nc" data-group-id="6840233000-6">Bolt.Sips.Types.Node</span><span class="p" data-group-id="6840233000-6">{</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-7">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="6840233000-7">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-8">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="6840233000-8">}</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-6">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-9">%</span><span class="nc" data-group-id="6840233000-9">Bolt.Sips.Types.Node</span><span class="p" data-group-id="6840233000-9">{</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-10">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="6840233000-10">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-11">%{</span><span class="w">
+            </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
+          </span><span class="p" data-group-id="6840233000-11">}</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-9">}</span><span class="w">
+      </span><span class="p" data-group-id="6840233000-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-12">[</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-13">%</span><span class="nc" data-group-id="6840233000-13">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="6840233000-13">{</span><span class="w">
+          </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-14">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="6840233000-14">}</span><span class="p">,</span><span class="w">
+          </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+          </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+        </span><span class="p" data-group-id="6840233000-13">}</span><span class="w">
+      </span><span class="p" data-group-id="6840233000-12">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6840233000-15">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6840233000-15">]</span><span class="w">
+    </span><span class="p" data-group-id="6840233000-4">}</span><span class="w">
+  </span><span class="p" data-group-id="6840233000-3">}</span><span class="w">
+</span><span class="p" data-group-id="6840233000-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="paths/1">
+    <div class="detail-header">
+    <a href="#paths/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">paths(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all paths.</p>
+<h2 id="paths/1-examples" class="section-heading">
+  <a href="#paths/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">paths</span><span class="p" data-group-id="9985190149-1">(</span><span class="p" data-group-id="9985190149-1">)</span><span class="w">
+</span><span class="p" data-group-id="9985190149-2">[</span><span class="w">
+  </span><span class="p" data-group-id="9985190149-3">%{</span><span class="w">
+    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9985190149-4">%</span><span class="nc" data-group-id="9985190149-4">Bolt.Sips.Types.Path</span><span class="p" data-group-id="9985190149-4">{</span><span class="w">
+      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-5">[</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-6">%</span><span class="nc" data-group-id="9985190149-6">Bolt.Sips.Types.Node</span><span class="p" data-group-id="9985190149-6">{</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-7">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="9985190149-7">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-8">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="9985190149-8">}</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-6">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-9">%</span><span class="nc" data-group-id="9985190149-9">Bolt.Sips.Types.Node</span><span class="p" data-group-id="9985190149-9">{</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-10">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="9985190149-10">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-11">%{</span><span class="w">
+            </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
+          </span><span class="p" data-group-id="9985190149-11">}</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-9">}</span><span class="w">
+      </span><span class="p" data-group-id="9985190149-5">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-12">[</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-13">%</span><span class="nc" data-group-id="9985190149-13">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="9985190149-13">{</span><span class="w">
+          </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+          </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-14">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="9985190149-14">}</span><span class="p">,</span><span class="w">
+          </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+          </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+        </span><span class="p" data-group-id="9985190149-13">}</span><span class="w">
+      </span><span class="p" data-group-id="9985190149-12">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9985190149-15">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9985190149-15">]</span><span class="w">
+    </span><span class="p" data-group-id="9985190149-4">}</span><span class="w">
+  </span><span class="p" data-group-id="9985190149-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">...</span><span class="w">
+
+</span><span class="p" data-group-id="9985190149-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graph/0">
+    <div class="detail-header">
+    <a href="#read_graph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graph()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default Cypher graph from the graphs library.</p>
+<h2 id="read_graph/0-examples" class="section-heading">
+  <a href="#read_graph/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="5649174613-1">(</span><span class="p" data-group-id="5649174613-1">)</span><span class="w">
+</span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">    iri: &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graph/1">
+    <div class="detail-header">
+    <a href="#read_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graph(graph_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a user Cypher graph from the graphs library.</p>
+<h2 id="read_graph/1-examples" class="section-heading">
+  <a href="#read_graph/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="6991795063-1">(</span><span class="s">&quot;books.cypher&quot;</span><span class="p" data-group-id="6991795063-1">)</span><span class="w">
+</span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">    iri: &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graphgist/0">
+    <div class="detail-header">
+    <a href="#read_graphgist/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graphgist()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default graphgist from the graphgists library.</p>
+<h2 id="read_graphgist/0-examples" class="section-heading">
+  <a href="#read_graphgist/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="0602489243-1">(</span><span class="p" data-group-id="0602489243-1">)</span><span class="w">
+</span><span class="s">&quot;= REPLACEME: TITLE OF YOUR GRAPHGIST</span><span class="se">\n</span><span class="s">:neo4j-version: 2.3.0</span><span class="se">\n</span><span class="s">:author:&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graphgist/1">
+    <div class="detail-header">
+    <a href="#read_graphgist/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graphgist(graphgist_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a user graphgist from the graphgists library.</p>
+<h2 id="read_graphgist/1-examples" class="section-heading">
+  <a href="#read_graphgist/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="5691827609-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="5691827609-1">)</span><span class="w">
+</span><span class="s">&quot;= REPLACEME: TITLE OF YOUR GRAPHGIST</span><span class="se">\n</span><span class="s">:neo4j-version: 2.3.0</span><span class="se">\n</span><span class="s">:author:&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_query/0">
+    <div class="detail-header">
+    <a href="#read_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_query()</span>
+          </div>
+  <section class="docstring">
+<p>Reads a default Cypher query from the queries library.</p>
+<h2 id="read_query/0-examples" class="section-heading">
+  <a href="#read_query/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="2663766371-1">(</span><span class="p" data-group-id="2663766371-1">)</span><span class="w">
+</span><span class="s">&quot;match (n) return n limit 1</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_query/1">
+    <div class="detail-header">
+    <a href="#read_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_query(query_file)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a named Cypher query from the queries library.</p>
+<h2 id="read_query/1-examples" class="section-heading">
+  <a href="#read_query/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="0678171936-1">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="0678171936-1">)</span><span class="w">
+</span><span class="s">&quot;match (n) return n</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="relationship1/1">
+    <div class="detail-header">
+    <a href="#relationship1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">relationship1(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for one relationship.</p>
+<h2 id="relationship1/1-examples" class="section-heading">
+  <a href="#relationship1/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationship1</span><span class="p" data-group-id="8036948693-1">(</span><span class="p" data-group-id="8036948693-1">)</span><span class="w">
+</span><span class="p" data-group-id="8036948693-2">[</span><span class="w">
+  </span><span class="p" data-group-id="8036948693-3">%{</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8036948693-4">%</span><span class="nc" data-group-id="8036948693-4">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="8036948693-4">{</span><span class="w">
+      </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8036948693-5">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="8036948693-5">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+    </span><span class="p" data-group-id="8036948693-4">}</span><span class="w">
+  </span><span class="p" data-group-id="8036948693-3">}</span><span class="w">
+</span><span class="p" data-group-id="8036948693-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="relationships/1">
+    <div class="detail-header">
+    <a href="#relationships/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">relationships(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Queries database for all relationships.</p>
+<h2 id="relationships/1-examples" class="section-heading">
+  <a href="#relationships/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationships</span><span class="p" data-group-id="5655570016-1">(</span><span class="p" data-group-id="5655570016-1">)</span><span class="w">
+</span><span class="p" data-group-id="5655570016-2">[</span><span class="w">
+  </span><span class="p" data-group-id="5655570016-3">%{</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="5655570016-4">%</span><span class="nc" data-group-id="5655570016-4">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="5655570016-4">{</span><span class="w">
+      </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
+      </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5655570016-5">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="5655570016-5">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
+      </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
+    </span><span class="p" data-group-id="5655570016-4">}</span><span class="w">
+  </span><span class="p" data-group-id="5655570016-3">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">...</span><span class="w">
+</span><span class="p" data-group-id="5655570016-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="reset/1">
+    <div class="detail-header">
+    <a href="#reset/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes all nodes and relationships in database.</p>
+<h2 id="reset/1-examples" class="section-heading">
+  <a href="#reset/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="3550180277-1">(</span><span class="p" data-group-id="3550180277-1">)</span><span class="w">
+</span><span class="p" data-group-id="3550180277-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3550180277-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="3550180277-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="3550180277-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="test/1">
+    <div class="detail-header">
+    <a href="#test/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test(conn)</span>
+          </div>
+  <section class="docstring">
+<p>Counts nodes, relationships and paths in database.</p>
+<h2 id="test/1-examples" class="section-heading">
+  <a href="#test/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">test</span><span class="p" data-group-id="9336398299-1">(</span><span class="p" data-group-id="9336398299-1">)</span><span class="w">
+</span><span class="p" data-group-id="9336398299-2">[</span><span class="p" data-group-id="9336398299-3">%{</span><span class="s">&quot;nodes&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paths&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">506</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="9336398299-3">}</span><span class="p" data-group-id="9336398299-2">]</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

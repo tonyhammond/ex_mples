@@ -1,0 +1,103 @@
+= REPLACEME: TITLE OF YOUR GRAPHGIST
+:neo4j-version: 2.3.0
+:author: YOUR NAME
+:twitter: @your_twitter_username
+:style: red:Person(name)
+
+// Please use the style & syntax-help outlined here: https://github.com/neo4j-contrib/graphgist/blob/master/gists/syntax.adoc
+// This is also a good example for a GraphGist: https://gist.github.com/jexp/2014efa6448b307c65e9
+
+== Introduction
+
+REPLACEME: Introductory text and domain model image.
+
+////
+Provide an introduction to your domain and what you are trying to accomplish, link to http://a.source.com[sources] as needed.
+
+Provide a domain model image - using something like http://www.apcjones.com/arrows/# or https://www.gliffy.com/ or a readable screenshot from Neo4j-Browser.
+
+You can run this query to get an overview of entities and how they are related:
+MATCH (a)-[r]->(b) WHERE labels(a) <> [] AND labels(b) <> []
+RETURN DISTINCT head(labels(a)) AS This, type(r) as To, head(labels(b)) AS That LIMIT 10
+////
+
+image::http://i.imgur.com/5giAsjq.png[width=600]
+
+== Setup
+
+////
+A Cypher query to setup the database
+Please use a small sample of your domain, at most 150 nodes and 200 relationships are enough for the pedagocial example.
+You can link to the setup of a larger dataset or LOAD CSV queries in a second file of your GitHub Gist at the end.
+In your setup query you can also use LOAD CSV loading CSV files from your GitHub Gist, like here: https://gist.github.com/jexp/f78df7b232d0faa171ff
+////
+
+//setup
+//hide
+[source,cypher]
+----
+CREATE
+  (a:Person {name: 'Alice'}),
+  (b:Person {name: 'Bob'}),
+  (c:Person {name: 'Carrie'}),
+  (d:Person {name: 'David'}),
+  (e:Person {name: 'Emily'}),
+  (a)-[:FRIENDS_WITH]->(b),
+  (a)-[:FRIENDS_WITH]->(e),
+  (b)-[:FRIENDS_WITH]->(c),
+  (b)-[:FRIENDS_WITH]->(d)
+----
+
+//graph
+
+== REPLACEME: FIRST USECASE TITLE
+
+// REMOVEME: Describe what this use-case is solving and how the query represents that
+
+// REMOVEME: A Cypher query with tabular output, returning scalar values
+
+[source,cypher]
+----
+MATCH (a:Person {name: 'Alice'})-[:FRIENDS_WITH]-(:Person)-[:FRIENDS_WITH]-(fof:Person)
+RETURN fof.name as fof, count(*) as frequency
+----
+
+//table
+
+== REPLACEME: SECOND USE-CASE TITLE
+
+// REMOVEME: Describe what this use-case is solving and how the query represents that
+
+// REMOVEME: A Cypher query to with graph output
+
+[source,cypher]
+----
+MATCH path=(a:Person {name: 'Alice'})-[:FRIENDS_WITH]-(:Person)-[:FRIENDS_WITH]-(fof:Person)
+RETURN path, a, fof
+----
+
+//graph_result
+
+////
+// You can also use both graph_result and then table if you return full nodes, relationships or paths
+////
+
+== REPLACEME: THIRD USE-CASE TITLE
+// REMOVEME: add as many use-cases as make sense
+
+// optional section
+== Conclusions
+
+REPLACEME: Offer a conclusion
+
+// optional section
+== Resources
+
+REPLACEME: Link to resorces like data sources, further discussions, 
+
+// optional Footer
+---
+
+Created by {author} - https://twitter.com/{twitter}[Twitter] | http://your.blog.com/[Blog] | https://in.linkedin.com/in/linked-in-handle/[LinkedIn]
+
+
