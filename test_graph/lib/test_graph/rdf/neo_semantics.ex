@@ -17,6 +17,8 @@ defmodule TestGraph.RDF.NeoSemantics do
   whereas the marked form returns a plain value or raises an exception. When a positive
   outcome is expected the marked form may be easier to use. (See Elixir [naming conventions](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/pages/Naming%20Conventions.md#trailing-bang-foo) for more info.)
 
+  TODO - Valid formats: Turtle, N-Triples, JSON-LD, TriG, RDF/XML.
+
   TODO - Add parameter maps for function calls which give some fine control. For now, defaults are fine.
 
   ## Examples
