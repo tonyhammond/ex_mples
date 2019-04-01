@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.3">
-    <title>TestGraph.RDF.NeoSemantics.Mapping — test_graph v0.1.0</title>
+    <title>TestGraph.RDF.SPARQL.Client — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
     <script src="dist/sidebar_items-6b10913e66.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
@@ -59,12 +59,11 @@ test_graph      </h1>
 
       <h1>
         <small class="visible-xs">test_graph v0.1.0</small>
-TestGraph.RDF.NeoSemantics.Mapping              </h1>
+TestGraph.RDF.SPARQL.Client              </h1>
 
 
         <section id="moduledoc">
-<p>Module providing simple wrapper functions for the <code class="inline">neosemantics</code> library
-mapping functions.</p>
+<p>This module provides test functions for the SPARQL.Client module.</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -81,65 +80,61 @@ mapping functions.</p>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#add_common_schemas/1">add_common_schemas(conn)</a>
+    <a href="#get_query/0">get_query()</a>
   </div>
-    <div class="summary-synopsis"><p>Creates a references to a number of popular vocabularies including schema.org, Dublin Core, SKOS, OWL, etc</p>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_service/0">get_service()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#hello/0">hello()</a>
+  </div>
+    <div class="summary-synopsis"><p>Queries default RDF service and prints out &quot;Hello World&quot;</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#add_mapping_to_schema/4">add_mapping_to_schema(conn, node, element, element)</a>
+    <a href="#rquery/0">rquery()</a>
   </div>
-    <div class="summary-synopsis"><p>Creates a mapping for an element in the Neo4j DB schema to a vocabulary element</p>
+    <div class="summary-synopsis"><p>Queries default RDF service with default SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#add_schema/3">add_schema(conn, uri, prefix)</a>
+    <a href="#rquery/1">rquery(query)</a>
   </div>
-    <div class="summary-synopsis"><p>Creates a reference to a vocabulary. Needed to define mappings</p>
+    <div class="summary-synopsis"><p>Queries default RDF service with user SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#drop_mapping/2">drop_mapping(conn, element)</a>
+    <a href="#rquery/2">rquery(query, service)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns an output text message indicating success/failure of the deletion</p>
+    <div class="summary-synopsis"><p>Queries a user RDF service with a user SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#drop_schema/2">drop_schema(conn, uri)</a>
+    <a href="#rquery!/0">rquery!()</a>
   </div>
-    <div class="summary-synopsis"><p>Deletes a vocabulary reference and all associated mappings</p>
+    <div class="summary-synopsis"><p>The same as <a href="#rquery/0"><code class="inline">rquery/0</code></a> but raises a runtime error if it fails</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list_mappings/1">list_mappings(conn)</a>
+    <a href="#rquery!/1">rquery!(query)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns a list with all the mappings</p>
+    <div class="summary-synopsis"><p>The same as <a href="#rquery/1"><code class="inline">rquery/1</code></a> but raises a runtime error if it fails</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list_mappings/2">list_mappings(conn, search_string)</a>
+    <a href="#rquery!/2">rquery!(query, service)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns a list with all the mappings</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#list_schemas/1">list_schemas(conn)</a>
-  </div>
-    <div class="summary-synopsis"><p>Returns all vocabulary references</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#list_schemas/2">list_schemas(conn, search_string)</a>
-  </div>
-    <div class="summary-synopsis"><p>Returns all vocabulary references</p>
+    <div class="summary-synopsis"><p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails</p>
 </div>
 </div>
   </div>
@@ -153,112 +148,110 @@ mapping functions.</p>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="add_common_schemas/1">
+<section class="detail" id="get_query/0">
     <div class="detail-header">
-    <a href="#add_common_schemas/1" class="detail-link" title="Link to this function">
+    <a href="#get_query/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">add_common_schemas(conn)</span>
+    <h1 class="signature">get_query()</span>
           </div>
   <section class="docstring">
-<p>Creates a references to a number of popular vocabularies including schema.org, Dublin Core, SKOS, OWL, etc.</p>
   </section>
 </section>
-<section class="detail" id="add_mapping_to_schema/4">
+<section class="detail" id="get_service/0">
     <div class="detail-header">
-    <a href="#add_mapping_to_schema/4" class="detail-link" title="Link to this function">
+    <a href="#get_service/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">add_mapping_to_schema(conn, node, element, element)</span>
+    <h1 class="signature">get_service()</span>
           </div>
   <section class="docstring">
-<p>Creates a mapping for an element in the Neo4j DB schema to a vocabulary element.</p>
   </section>
 </section>
-<section class="detail" id="add_schema/3">
+<section class="detail" id="hello/0">
     <div class="detail-header">
-    <a href="#add_schema/3" class="detail-link" title="Link to this function">
+    <a href="#hello/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">add_schema(conn, uri, prefix)</span>
+    <h1 class="signature">hello()</span>
           </div>
   <section class="docstring">
-<p>Creates a reference to a vocabulary. Needed to define mappings.</p>
+<p>Queries default RDF service and prints out &quot;Hello World&quot;.</p>
   </section>
 </section>
-<section class="detail" id="drop_mapping/2">
+<section class="detail" id="rquery/0">
     <div class="detail-header">
-    <a href="#drop_mapping/2" class="detail-link" title="Link to this function">
+    <a href="#rquery/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">drop_mapping(conn, element)</span>
+    <h1 class="signature">rquery()</span>
           </div>
   <section class="docstring">
-<p>Returns an output text message indicating success/failure of the deletion.</p>
+<p>Queries default RDF service with default SPARQL query.</p>
   </section>
 </section>
-<section class="detail" id="drop_schema/2">
+<section class="detail" id="rquery/1">
     <div class="detail-header">
-    <a href="#drop_schema/2" class="detail-link" title="Link to this function">
+    <a href="#rquery/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">drop_schema(conn, uri)</span>
+    <h1 class="signature">rquery(query)</span>
           </div>
   <section class="docstring">
-<p>Deletes a vocabulary reference and all associated mappings.</p>
+<p>Queries default RDF service with user SPARQL query.</p>
   </section>
 </section>
-<section class="detail" id="list_mappings/1">
+<section class="detail" id="rquery/2">
     <div class="detail-header">
-    <a href="#list_mappings/1" class="detail-link" title="Link to this function">
+    <a href="#rquery/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_mappings(conn)</span>
+    <h1 class="signature">rquery(query, service)</span>
           </div>
   <section class="docstring">
-<p>Returns a list with all the mappings.</p>
+<p>Queries a user RDF service with a user SPARQL query.</p>
   </section>
 </section>
-<section class="detail" id="list_mappings/2">
+<section class="detail" id="rquery!/0">
     <div class="detail-header">
-    <a href="#list_mappings/2" class="detail-link" title="Link to this function">
+    <a href="#rquery!/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_mappings(conn, search_string)</span>
+    <h1 class="signature">rquery!()</span>
           </div>
   <section class="docstring">
-<p>Returns a list with all the mappings.</p>
+<p>The same as <a href="#rquery/0"><code class="inline">rquery/0</code></a> but raises a runtime error if it fails.</p>
   </section>
 </section>
-<section class="detail" id="list_schemas/1">
+<section class="detail" id="rquery!/1">
     <div class="detail-header">
-    <a href="#list_schemas/1" class="detail-link" title="Link to this function">
+    <a href="#rquery!/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_schemas(conn)</span>
+    <h1 class="signature">rquery!(query)</span>
           </div>
   <section class="docstring">
-<p>Returns all vocabulary references.</p>
+<p>The same as <a href="#rquery/1"><code class="inline">rquery/1</code></a> but raises a runtime error if it fails.</p>
   </section>
 </section>
-<section class="detail" id="list_schemas/2">
+<section class="detail" id="rquery!/2">
     <div class="detail-header">
-    <a href="#list_schemas/2" class="detail-link" title="Link to this function">
+    <a href="#rquery!/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_schemas(conn, search_string)</span>
+    <h1 class="signature">rquery!(query, service)</span>
           </div>
   <section class="docstring">
-<p>Returns all vocabulary references.</p>
+<p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails.</p>
   </section>
 </section>
           </div>
