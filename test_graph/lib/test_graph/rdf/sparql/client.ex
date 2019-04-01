@@ -1,6 +1,6 @@
 defmodule TestGraph.RDF.SPARQL.Client do
   @moduledoc """
-  This module provides test functions for the SPARQL.Client module.
+  Module providing simple wrapper functions for the `SPARQL.Client` module.
   """
 
   @priv_dir "#{:code.priv_dir(:test_graph)}"
