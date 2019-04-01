@@ -8,13 +8,14 @@ defmodule TestGraph.RDF do
   @rdf_dir @priv_dir <> "/rdf"
 
   @graphs_dir @rdf_dir <> "/graphs/"
-  # @queries_dir @rdf_dir <> "/queries/"
+  @queries_dir @rdf_dir <> "/queries/"
 
   @books_graph_file "books.ttl"
 
   @temp_graph_file "temp.ttl"
 
   @test_graph_file "default.ttl"
+  @test_query_file "default.rq"
 
   ##
 
@@ -119,9 +120,38 @@ defmodule TestGraph.RDF do
     %TestGraph.Graph{
       data: data,
       file: graph_file,
-      type: :lpg,
+      type: :rdf,
       uri:  "file://" <> graphs_dir <> graph_file,
     }
   end
+
+  ##
+
+  @doc """
+  Reads a default Cypher query from the queries library.
+
+  ## Examples
+
+      iex> read_query()
+      "match (n) return n limit 1\\n"
+
+  """
+  def read_query() do
+    File.read!(@queries_dir <> @test_query_file)
+  end
+
+  @doc """
+  Reads a named Cypher query from the queries library.
+
+  ## Examples
+
+      iex> read_query("nodes.cypher")
+      "match (n) return n\\n"
+
+  """
+  def read_query(query_file) do
+    File.read!(@queries_dir <> query_file)
+  end
+
 
 end

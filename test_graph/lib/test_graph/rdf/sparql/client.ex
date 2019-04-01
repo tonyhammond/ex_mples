@@ -15,6 +15,28 @@ defmodule TestGraph.RDF.SPARQL.Client do
   @hello_world "http://dbpedia.org/resource/Hello_World"
 
   @construct_query """
+  PREFIX : <http://example.org/>
+  PREFIX dbo: <http://dbpedia.org/ontology/>
+  PREFIX dbp: <http://dbpedia.org/property/>
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+  CONSTRUCT {
+      :Elixir
+          :name     ?name ;
+          :homepage ?homepage ;
+          :license  ?license ;
+          :creator  ?creator .
+  }
+  WHERE  {
+      <http://dbpedia.org/resource/Elixir_(programming_language)>
+          foaf:name     ?name ;
+          foaf:homepage ?homepage ;
+          dbp:creator   ?creator ;
+          dbo:license   ?license .
+  }
+"""
+
+  @zconstruct_query """
   construct
   { ?s ?p ?o }
   where {

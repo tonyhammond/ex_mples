@@ -17,12 +17,21 @@ defmodule TestGraph do
   ## Examples
 
       iex> conn = Bolt.Sips.conn()
+
       iex> hello = (
       ...>   SPARQL.Client.rquery!
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph(file: "hello.ttl")
       ...> )
       iex> conn |> NeoSemantics.import_rdf!(hello.uri, "Turtle")
+
+      iex> elixir = (
+      ...>   TestGraph.RDF.read_query("elixir.rq")
+      ...>   |> SPARQL.Client.rquery!
+      ...>   |> RDF.Turtle.write_string!
+      ...>   |> TestGraph.RDF.write_graph(file: "elixir.ttl")
+      ...>   )
+      iex> connn |> NeoSemantics.import_rdf!(elixir.uri, "Turtle")
 
   """
 
