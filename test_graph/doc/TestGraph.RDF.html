@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.RDF — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-528df087ae.js"></script>
+    <script src="dist/sidebar_items-aa5abcd4e1.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -80,28 +80,31 @@ TestGraph.RDF              </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#graph/0">graph()</a>
+    <a href="#read_graph/0">read_graph()</a>
   </div>
+    <div class="summary-synopsis"><p>Reads a default Turtle graph from the graphs library</p>
+</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#graph/1">graph(graph_file)</a>
+    <a href="#read_graph/1">read_graph(list)</a>
   </div>
+    <div class="summary-synopsis"><p>Reads a user Turtle graph from the graphs library</p>
+</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#graph_file/0">graph_file()</a>
+    <a href="#write_graph/1">write_graph(data)</a>
   </div>
+    <div class="summary-synopsis"><p>Writes a Turtle graph to a default file in the graphs library</p>
+</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#graph_file_uri/0">graph_file_uri()</a>
+    <a href="#write_graph/2">write_graph(data, list)</a>
   </div>
+    <div class="summary-synopsis"><p>Writes a Turtle graph to a user file in the graphs library</p>
 </div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#graph_file_uri/1">graph_file_uri(graph_file)</a>
-  </div>
 </div>
   </div>
         </section>
@@ -114,59 +117,104 @@ TestGraph.RDF              </h1>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="graph/0">
+<section class="detail" id="read_graph/0">
     <div class="detail-header">
-    <a href="#graph/0" class="detail-link" title="Link to this function">
+    <a href="#read_graph/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">graph()</span>
+    <h1 class="signature">read_graph()</span>
           </div>
   <section class="docstring">
+<p>Reads a default Turtle graph from the graphs library.</p>
+<h2 id="read_graph/0-examples" class="section-heading">
+  <a href="#read_graph/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="7152952817-1">(</span><span class="p" data-group-id="7152952817-1">)</span><span class="w">
+</span><span class="p">%</span><span class="nc">TestGraph.Graph</span><span class="err">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">bibo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">ontology</span><span class="o">/</span><span class="n">bibo</span><span class="o">/</span><span class="o">&gt;</span><span class="w"> </span><span class="o">.</span></code></pre>
+<p>&quot; ...</p>
+<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/default.ttl&quot;</span><span class="w">
+</span><span class="err">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="graph/1">
+<section class="detail" id="read_graph/1">
     <div class="detail-header">
-    <a href="#graph/1" class="detail-link" title="Link to this function">
+    <a href="#read_graph/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">graph(graph_file)</span>
+    <h1 class="signature">read_graph(list)</span>
           </div>
   <section class="docstring">
+<p>Reads a user Turtle graph from the graphs library.</p>
+<h2 id="read_graph/1-examples" class="section-heading">
+  <a href="#read_graph/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="4222712478-1">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="4222712478-1">)</span><span class="w">
+</span><span class="p">%</span><span class="nc">TestGraph.Graph</span><span class="err">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">bibo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">ontology</span><span class="o">/</span><span class="n">bibo</span><span class="o">/</span><span class="o">&gt;</span><span class="w"> </span><span class="o">.</span></code></pre>
+<p>&quot; ...</p>
+<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/books.ttl&quot;</span><span class="w">
+</span><span class="err">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="graph_file/0">
+<section class="detail" id="write_graph/1">
     <div class="detail-header">
-    <a href="#graph_file/0" class="detail-link" title="Link to this function">
+    <a href="#write_graph/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">graph_file()</span>
+    <h1 class="signature">write_graph(data)</span>
           </div>
   <section class="docstring">
+<p>Writes a Turtle graph to a default file in the graphs library.</p>
+<h2 id="write_graph/1-examples" class="section-heading">
+  <a href="#write_graph/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">write_graph</span><span class="p" data-group-id="9004846744-1">(</span><span class="n">data</span><span class="p" data-group-id="9004846744-1">)</span><span class="w">
+</span><span class="p">%</span><span class="nc">TestGraph.Graph</span><span class="err">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">bibo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">ontology</span><span class="o">/</span><span class="n">bibo</span><span class="o">/</span><span class="o">&gt;</span><span class="w"> </span><span class="o">.</span></code></pre>
+<p>&quot; ...</p>
+<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;temp.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/temp.ttl&quot;</span><span class="w">
+</span><span class="err">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="graph_file_uri/0">
+<section class="detail" id="write_graph/2">
     <div class="detail-header">
-    <a href="#graph_file_uri/0" class="detail-link" title="Link to this function">
+    <a href="#write_graph/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">graph_file_uri()</span>
+    <h1 class="signature">write_graph(data, list)</span>
           </div>
   <section class="docstring">
-  </section>
-</section>
-<section class="detail" id="graph_file_uri/1">
-    <div class="detail-header">
-    <a href="#graph_file_uri/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">graph_file_uri(graph_file)</span>
-          </div>
-  <section class="docstring">
+<p>Writes a Turtle graph to a user file in the graphs library.</p>
+<h2 id="write_graph/2-examples" class="section-heading">
+  <a href="#write_graph/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">write_graph</span><span class="p" data-group-id="3419021094-1">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.ttl&quot;</span><span class="p" data-group-id="3419021094-1">)</span><span class="w">
+</span><span class="p">%</span><span class="nc">TestGraph.Graph</span><span class="err">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">bibo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">ontology</span><span class="o">/</span><span class="n">bibo</span><span class="o">/</span><span class="o">&gt;</span><span class="w"> </span><span class="o">.</span></code></pre>
+<p>&quot; ...</p>
+<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/my.ttl&quot;</span><span class="w">
+</span><span class="err">}</span></code></pre>
   </section>
 </section>
           </div>

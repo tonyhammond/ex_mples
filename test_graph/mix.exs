@@ -22,10 +22,14 @@ defmodule TestGraph.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.18", only: :dev, runtime: false},
-      {:bolt_sips, "~> 1.3"},
-      {:sparql_client, "~> 0.2.1"},
-      {:hackney, "~> 1.6"}
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+
+      # property graphs
+      {:bolt_sips, "~> 1.5"},
+
+      # rdf graphs
+      {:sparql_client, "~> 0.2"},
+      {:hackney, "~> 1.15"}
     ]
   end
 end
