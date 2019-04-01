@@ -65,6 +65,26 @@ TestGraph              </h1>
         <section id="moduledoc">
 <p>Top-level module used in
 &quot;<a href="">Graph to graph with Elixir</a>&quot; post.</p>
+<p>This post explores moving data between semantic and property graphs.</p>
+<p>Here&#39;s an example of querying a remote RDF service (DBpedia)
+using the <a href="https://hexdocs.pm/sparql_client/0.2.1/SPARQL.Client.html"><code class="inline">SPARQL.Client</code></a> module via a wrapped function <code class="inline">rquery!/0</code>
+and using the <code class="inline">neosemantics</code> stored procedures for transforming
+the semantic graph to a property graph and importing into a Neo4j
+instance.</p>
+<p>This example saves the RDF graph for staging. Not known yet how to deal
+with in-memory graphs using the <code class="inline">neosemantics</code> library.</p>
+<h2 id="module-examples" class="section-heading">
+  <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Bolt.Sips</span><span class="o">.</span><span class="n">conn</span><span class="p" data-group-id="1096661578-1">(</span><span class="p" data-group-id="1096661578-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1096661578-2">(</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">   </span><span class="nc">SPARQL.Client</span><span class="o">.</span><span class="n">rquery!</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">   </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">RDF.Turtle</span><span class="o">.</span><span class="n">write_string!</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">   </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">write_graph</span><span class="p" data-group-id="1096661578-3">(</span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hello.ttl&quot;</span><span class="p" data-group-id="1096661578-3">)</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w"> </span><span class="p" data-group-id="1096661578-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="1096661578-4">(</span><span class="n">hello</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turtle&quot;</span><span class="p" data-group-id="1096661578-4">)</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
