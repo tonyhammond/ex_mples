@@ -16,7 +16,7 @@ defmodule TestGraph.LPG do
   @books_graph_file "books.cypher"
   @movies_graph_file "movies.cypher"
 
-  @temp_graph_file "temp.cypher"
+  @temp_graph_file "default.cypher"
 
   @test_graph_file "books.cypher"
   @test_graphgist_file "template.adoc"
@@ -25,16 +25,16 @@ defmodule TestGraph.LPG do
   ## graphs
 
   @doc """
-  Reads a default Cypher graph from the graphs library.
+  Reads a default Cypher graph from the LPG graphs library.
 
   ## Examples
 
       iex> read_graph()
       %TestGraph.Graph{
-        data: "//\n// create nodes\n//\nCREATE\n(book:Book {\n" ...
-        file: "books.cypher",
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        file: "default.cypher",
         type: :lpg,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/books.cypher"
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/default.cypher"
       }
 
   """
@@ -51,16 +51,16 @@ defmodule TestGraph.LPG do
   end
 
   @doc """
-  Reads a user Cypher graph from the graphs library.
+  Reads a user Cypher graph from the LPG graphs library.
 
   ## Examples
 
       iex> read_graph("books.cypher")
       %TestGraph.Graph{
-        data: "//\n// create nodes\n//\nCREATE\n(book:Book {\n" ...
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
         file: "books.cypher",
         type: :lpg,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/books.cypher"
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/books.cypher"
       }
 
   """
@@ -76,16 +76,16 @@ defmodule TestGraph.LPG do
   end
 
   @doc """
-  Writes a Turtle graph to a default file in the graphs library.
+  Writes a Turtle graph to a temp file in the LPG graphs library.
 
   ## Examples
 
       iex> write_graph(data)
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
-        file: "temp.ttl",
-        type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/temp.ttl"
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        file: "temp.cypher",
+        type: :lpg,
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/temp.cypher"
       }
 
   """
@@ -103,16 +103,16 @@ defmodule TestGraph.LPG do
   end
 
   @doc """
-  Writes a Cypher graph to a user file in the graphs library.
+  Writes a Cypher graph to a user file in the LPG graphs library.
 
   ## Examples
 
-      iex> write_graph(data, file: "my.ttl")
+      iex> write_graph(data, file: "my.cypher")
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
-        file: "my.ttl",
-        type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/my.ttl"
+      data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        file: "my.cypher",
+        type: :lpg,
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.cypher"
       }
 
   """
@@ -129,7 +129,7 @@ defmodule TestGraph.LPG do
   end
 
   ##
-  
+
   @doc """
   Reads a `Books` graph from the graphs library.
 

@@ -21,16 +21,16 @@ defmodule TestGraph.RDF do
   ## graphs
 
   @doc """
-  Reads a default Turtle graph from the graphs library.
+  Reads a default Turtle graph from the RDF graphs library.
 
   ## Examples
 
       iex> read_graph()
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
         file: "default.ttl",
         type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/default.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/default.ttl"
       }
 
   """
@@ -47,16 +47,16 @@ defmodule TestGraph.RDF do
   end
 
   @doc """
-  Reads a user Turtle graph from the graphs library.
+  Reads a user Turtle graph from the RDF graphs library.
 
   ## Examples
 
       iex> read_graph("books.ttl")
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
         file: "books.ttl",
         type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/books.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/books.ttl"
       }
 
   """
@@ -72,16 +72,16 @@ defmodule TestGraph.RDF do
   end
 
   @doc """
-  Writes a Turtle graph to a default file in the graphs library.
+  Writes a Turtle graph to a temp file in the RDF graphs library.
 
   ## Examples
 
       iex> write_graph(data)
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
         file: "temp.ttl",
         type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/temp.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg/graphs\/temp.ttl"
       }
 
   """
@@ -93,22 +93,22 @@ defmodule TestGraph.RDF do
     %TestGraph.Graph{
       data: data,
       file: graph_file,
-      type: :lpg,
+      type: :rdf,
       uri:  "file://" <> graphs_dir <> graph_file,
     }
   end
 
   @doc """
-  Writes a Turtle graph to a user file in the graphs library.
+  Writes a Turtle graph to a user file in the RDF graphs library.
 
   ## Examples
 
       iex> write_graph(data, file: "my.ttl")
       %TestGraph.Graph{
-        data: "@prefix bibo: <http://purl.org/ontology/bibo/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
         file: "my.ttl",
         type: :rdf,
-        uri: "file:///" <>... <> "/priv/lpg/graphs/my.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.ttl"
       }
 
   """
@@ -123,5 +123,5 @@ defmodule TestGraph.RDF do
       uri:  "file://" <> graphs_dir <> graph_file,
     }
   end
-  
+
 end
