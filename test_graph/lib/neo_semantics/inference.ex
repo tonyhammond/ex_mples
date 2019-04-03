@@ -1,31 +1,31 @@
 defmodule NeoSemantics.Inference do
   @moduledoc """
-  Module providing simple wrapper functions for the `neosemantics` library
+  Module providing simple wrapper functions for the [`neosemantics`](https://github.com/jbarrasa/neosemantics) library
   inference functions.
   """
   ##
 
   @doc """
-  Returns all nodes with label `virt_label` or its sublabels.
+  Returns all nodes with label `label` or its sublabels.
   """
-  def get_nodes_linked_to(conn, virt_label) do
-    cypher = "call semantics.inference.getNodesLinkedTo(virt_label)"
+  def get_nodes_linked_to(conn, label) do
+    cypher = "call semantics.inference.getNodesLinkedTo(\"" <> label <> "\")"
     Bolt.Sips.query!(conn, cypher)
   end
 
   @doc """
-  Returns all nodes connected to node `cat_node` or its subcategories.
+  Returns all nodes connected to node with label `label` or its subcategories.
   """
-  def get_nodes_with_label(conn, cat_node) do
-    cypher = "call semantics.inference.getNodesWithLabel(cat_node)"
+  def get_nodes_with_label(conn, label) do
+    cypher = "call semantics.inference.getNodesWithLabel(\"" <> label <> "\")"
     Bolt.Sips.query!(conn, cypher)
   end
 
   @doc """
-  Returns all outgoing relationships of type `virt_rel`.
+  Returns all outgoing relationships of type `rel`.
   """
-  def get_rels(conn, virt_rel) do
-    cypher = "call semantics.inference.getRels(virt_rel)"
+  def get_rels(conn, rel) do
+    cypher = "call semantics.inference.getRels(\"" <> rel <> "\")"
     Bolt.Sips.query!(conn, cypher)
   end
 

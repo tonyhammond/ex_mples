@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>NeoSemantics.Mapping — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-c288c639b6.js"></script>
+    <script src="dist/sidebar_items-313a6e250a.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -63,7 +63,7 @@ NeoSemantics.Mapping              </h1>
 
 
         <section id="moduledoc">
-<p>Module providing simple wrapper functions for the <code class="inline">neosemantics</code> library
+<p>Module providing simple wrapper functions for the <a href="https://github.com/jbarrasa/neosemantics"><code class="inline">neosemantics</code></a> library
 mapping functions.</p>
         </section>
 
@@ -88,7 +88,7 @@ mapping functions.</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#add_mapping_to_schema/4">add_mapping_to_schema(conn, node, element, element)</a>
+    <a href="#add_mapping_to_schema/4">add_mapping_to_schema(conn, node, element1, element2)</a>
   </div>
     <div class="summary-synopsis"><p>Creates a mapping for an element in the Neo4j DB schema to a vocabulary element</p>
 </div>
@@ -116,28 +116,14 @@ mapping functions.</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list_mappings/1">list_mappings(conn)</a>
+    <a href="#list_mappings/2">list_mappings(conn, search_string \\ nil)</a>
   </div>
     <div class="summary-synopsis"><p>Returns a list with all the mappings</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#list_mappings/2">list_mappings(conn, search_string)</a>
-  </div>
-    <div class="summary-synopsis"><p>Returns a list with all the mappings</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#list_schemas/1">list_schemas(conn)</a>
-  </div>
-    <div class="summary-synopsis"><p>Returns all vocabulary references</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#list_schemas/2">list_schemas(conn, search_string)</a>
+    <a href="#list_schemas/2">list_schemas(conn, search_string \\ nil)</a>
   </div>
     <div class="summary-synopsis"><p>Returns all vocabulary references</p>
 </div>
@@ -171,7 +157,7 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">add_mapping_to_schema(conn, node, element, element)</span>
+    <h1 class="signature">add_mapping_to_schema(conn, node, element1, element2)</span>
           </div>
   <section class="docstring">
 <p>Creates a mapping for an element in the Neo4j DB schema to a vocabulary element.</p>
@@ -213,49 +199,29 @@ Functions          </h1>
 <p>Deletes a vocabulary reference and all associated mappings.</p>
   </section>
 </section>
-<section class="detail" id="list_mappings/1">
-    <div class="detail-header">
-    <a href="#list_mappings/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">list_mappings(conn)</span>
-          </div>
-  <section class="docstring">
-<p>Returns a list with all the mappings.</p>
-  </section>
-</section>
 <section class="detail" id="list_mappings/2">
-    <div class="detail-header">
+  
+    <span id="list_mappings/1"></span>
+  <div class="detail-header">
     <a href="#list_mappings/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_mappings(conn, search_string)</span>
+    <h1 class="signature">list_mappings(conn, search_string \\ nil)</span>
           </div>
   <section class="docstring">
 <p>Returns a list with all the mappings.</p>
   </section>
 </section>
-<section class="detail" id="list_schemas/1">
-    <div class="detail-header">
-    <a href="#list_schemas/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">list_schemas(conn)</span>
-          </div>
-  <section class="docstring">
-<p>Returns all vocabulary references.</p>
-  </section>
-</section>
 <section class="detail" id="list_schemas/2">
-    <div class="detail-header">
+  
+    <span id="list_schemas/1"></span>
+  <div class="detail-header">
     <a href="#list_schemas/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">list_schemas(conn, search_string)</span>
+    <h1 class="signature">list_schemas(conn, search_string \\ nil)</span>
           </div>
   <section class="docstring">
 <p>Returns all vocabulary references.</p>

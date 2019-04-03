@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>NeoSemantics.Inference — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-c288c639b6.js"></script>
+    <script src="dist/sidebar_items-313a6e250a.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -63,7 +63,7 @@ NeoSemantics.Inference              </h1>
 
 
         <section id="moduledoc">
-<p>Module providing simple wrapper functions for the <code class="inline">neosemantics</code> library
+<p>Module providing simple wrapper functions for the <a href="https://github.com/jbarrasa/neosemantics"><code class="inline">neosemantics</code></a> library
 inference functions.</p>
         </section>
 
@@ -81,23 +81,23 @@ inference functions.</p>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_nodes_linked_to/2">get_nodes_linked_to(conn, virt_label)</a>
+    <a href="#get_nodes_linked_to/2">get_nodes_linked_to(conn, label)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all nodes with label <code class="inline">virt_label</code> or its sublabels</p>
+    <div class="summary-synopsis"><p>Returns all nodes with label <code class="inline">label</code> or its sublabels</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_nodes_with_label/2">get_nodes_with_label(conn, cat_node)</a>
+    <a href="#get_nodes_with_label/2">get_nodes_with_label(conn, label)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all nodes connected to node <code class="inline">cat_node</code> or its subcategories</p>
+    <div class="summary-synopsis"><p>Returns all nodes connected to node with label <code class="inline">label</code> or its subcategories</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_rels/2">get_rels(conn, virt_rel)</a>
+    <a href="#get_rels/2">get_rels(conn, rel)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all outgoing relationships of type <code class="inline">virt_rel</code></p>
+    <div class="summary-synopsis"><p>Returns all outgoing relationships of type <code class="inline">rel</code></p>
 </div>
 </div>
   </div>
@@ -117,10 +117,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_nodes_linked_to(conn, virt_label)</span>
+    <h1 class="signature">get_nodes_linked_to(conn, label)</span>
           </div>
   <section class="docstring">
-<p>Returns all nodes with label <code class="inline">virt_label</code> or its sublabels.</p>
+<p>Returns all nodes with label <code class="inline">label</code> or its sublabels.</p>
   </section>
 </section>
 <section class="detail" id="get_nodes_with_label/2">
@@ -129,10 +129,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_nodes_with_label(conn, cat_node)</span>
+    <h1 class="signature">get_nodes_with_label(conn, label)</span>
           </div>
   <section class="docstring">
-<p>Returns all nodes connected to node <code class="inline">cat_node</code> or its subcategories.</p>
+<p>Returns all nodes connected to node with label <code class="inline">label</code> or its subcategories.</p>
   </section>
 </section>
 <section class="detail" id="get_rels/2">
@@ -141,10 +141,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_rels(conn, virt_rel)</span>
+    <h1 class="signature">get_rels(conn, rel)</span>
           </div>
   <section class="docstring">
-<p>Returns all outgoing relationships of type <code class="inline">virt_rel</code>.</p>
+<p>Returns all outgoing relationships of type <code class="inline">rel</code>.</p>
   </section>
 </section>
           </div>

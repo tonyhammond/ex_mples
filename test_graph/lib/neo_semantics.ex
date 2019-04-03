@@ -1,11 +1,10 @@
 defmodule NeoSemantics do
   @moduledoc """
-  Module providing simple wrapper functions for the `neosemantics` library
-  from
-  [Jesús Barrasa](https://twitter.com/barrasadv)
-  (and see [https://jbarrasa.com](https://jbarrasa.com) for posts).
+  Module providing simple wrapper functions for the [`neosemantics`](https://github.com/jbarrasa/neosemantics) library.
 
-  See the project at [https://github.com/jbarrasa/neosemantics](https://github.com/jbarrasa/neosemantics)
+  The `neosemantics` library is authored by
+  [Jesús Barrasa](https://twitter.com/barrasadv)
+  (and see [https://jbarrasa.com](https://jbarrasa.com) for example usage posts).
 
   Note that the wrapper functions use snake case which is more usual in Elixir, e.g.
   `NeoSemantics.import_rdf/3` for `semantics.importRDF`. Also there is an additional
@@ -23,8 +22,8 @@ defmodule NeoSemantics do
 
   ## Examples
 
-      iex> uri = TestGraph.RDF.graph_file_uri()
-      "file:///.../priv/rdf/graphs/978-1-68050-252-7.ttl"
+      iex> uri = TestGraph.RDF.read_graph().uri
+      "file:///.../priv/rdf/graphs/default.ttl"
       iex> fmt = "Turtle"
       "http//purl.org/dc/elements/1.1/" => "dc",
 
@@ -66,7 +65,7 @@ defmodule NeoSemantics do
            "triplesLoaded" => 8
          }
       ]
-      iex> conn |> LPG.test()
+      iex> conn |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
 
@@ -89,7 +88,7 @@ defmodule NeoSemantics do
           "triplesLoaded" => 8
         }
       ]
-      iex> conn |> LPG.test()
+      iex> conn |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
   """
