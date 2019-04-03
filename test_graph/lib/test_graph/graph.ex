@@ -5,7 +5,7 @@ defmodule TestGraph.Graph do
 
   @priv_dir "#{:code.priv_dir(:test_graph)}"
 
-  @lpg_dir @priv_dir <> "/rdf"
+  @lpg_dir @priv_dir <> "/lpg"
   @rdf_dir @priv_dir <> "/rdf"
 
   defstruct data: nil, file: nil, path: nil, type: nil, uri: nil

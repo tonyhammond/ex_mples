@@ -79,19 +79,19 @@ with in-memory graphs using the <a href="https://github.com/jbarrasa/neosemantic
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="c1"># 1. explicit form</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">elixir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4900986911-1">(</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="4900986911-2">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="4900986911-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">elixir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7165740236-1">(</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="7165740236-2">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="7165740236-2">)</span><span class="w">
 </span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">SPARQL.Client</span><span class="o">.</span><span class="n">rquery!</span><span class="w">
 </span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">RDF.Turtle</span><span class="o">.</span><span class="n">write_string!</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">write_graph</span><span class="p" data-group-id="4900986911-3">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="4900986911-3">)</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="p" data-group-id="4900986911-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bolt.Sips</span><span class="o">.</span><span class="n">conn</span><span class="p" data-group-id="4900986911-4">(</span><span class="p" data-group-id="4900986911-4">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="4900986911-5">(</span><span class="n">elixir</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turtle&quot;</span><span class="p" data-group-id="4900986911-5">)</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">write_graph</span><span class="p" data-group-id="7165740236-3">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="7165740236-3">)</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="p" data-group-id="7165740236-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Bolt.Sips</span><span class="o">.</span><span class="n">conn</span><span class="p" data-group-id="7165740236-4">(</span><span class="p" data-group-id="7165740236-4">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="7165740236-5">(</span><span class="n">elixir</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turtle&quot;</span><span class="p" data-group-id="7165740236-5">)</span><span class="w">
 
 </span><span class="c1"># 2. implicit form</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="4900986911-6">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="4900986911-6">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="7165740236-6">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="7165740236-6">)</span><span class="w">
 
 </span><span class="c1"># 3. implicit form (with alias)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="4900986911-7">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="4900986911-7">)</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="7165740236-7">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="7165740236-7">)</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -168,7 +168,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="3597615471-1">(</span><span class="mi">1834</span><span class="p" data-group-id="3597615471-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="1386877535-1">(</span><span class="mi">1834</span><span class="p" data-group-id="1386877535-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="export_rdf_by_uri/2">
@@ -191,7 +191,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="4890762062-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="4890762062-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="4765828319-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="4765828319-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="import_rdf_from_graph/1">
@@ -211,7 +211,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="7030622307-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="7030622307-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="9971797405-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="9971797405-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="import_rdf_from_query/1">
@@ -232,7 +232,7 @@ queried from a remote datastore using a SPARQL endpoint.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="2761865091-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="2761865091-1">)</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="0706994540-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="0706994540-1">)</span></code></pre>
   </section>
 </section>
           </div>

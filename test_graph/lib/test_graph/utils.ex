@@ -5,8 +5,7 @@ defmodule TestGraph.Utils do
 
   @priv_dir "#{:code.priv_dir(:test_graph)}"
 
-  @lpg_dir @priv_dir <> "/lpg"
-  @graphgists_dir @lpg_dir <> "/graphgists/"
+  @graphgists_dir @priv_dir <> "/lpg/graphgists/"
   @test_graphgist_file "template.adoc"
 
   @doc """
@@ -43,7 +42,7 @@ defmodule TestGraph.Utils do
   ## graphgists
 
   @doc """
-  Reads a user graphgist from the graphgists library.
+  Reads a graphgist from the graphgists library.
 
   ## Examples
 
