@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.Utils — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-6251d8209e.js"></script>
+    <script src="dist/sidebar_items-b4d1a7859d.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -92,6 +92,20 @@ TestGraph.Utils              </h1>
     <div class="summary-synopsis"><p>Lists named module&#39;s functions</p>
 </div>
 </div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#parse/1">parse(graphgist)</a>
+  </div>
+    <div class="summary-synopsis"><p>Parses a graphgist to return a Cypher graph</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graphgist/1">read_graphgist(graphgist_file \\ &quot;template.adoc&quot;)</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a user graphgist from the graphgists library</p>
+</div>
+</div>
   </div>
         </section>
 
@@ -145,6 +159,46 @@ Functions          </h1>
 
 </span><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w"> </span><span class="nc">SPARQL.Client</span><span class="w">
 </span><span class="s">&quot;[default_sparql_query: 0, default_sparql_service: 0, hello: 0, rquery: 0, rquery: 1, rquery: 2, rquery!: 0, rquery!: 1, rquery!: 2, sparql_query: 0, sparql_query: 1, sparql_service: 0, sparql_service: 1]&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="parse/1">
+    <div class="detail-header">
+    <a href="#parse/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">parse(graphgist)</span>
+          </div>
+  <section class="docstring">
+<p>Parses a graphgist to return a Cypher graph.</p>
+<h2 id="parse/1-examples" class="section-heading">
+  <a href="#parse/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="7259506063-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="7259506063-2">(</span><span class="p" data-group-id="7259506063-2">)</span><span class="p" data-group-id="7259506063-1">)</span><span class="w">
+</span><span class="s">&quot;CREATE</span><span class="se">\n</span><span class="s">  (a:Person {name: &#39;Alice&#39;}),</span><span class="se">\n</span><span class="s">  (b:Person {name: &#39;Bob&#39;}),</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graphgist/1">
+  
+    <span id="read_graphgist/0"></span>
+  <div class="detail-header">
+    <a href="#read_graphgist/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graphgist(graphgist_file \\ &quot;template.adoc&quot;)</span>
+          </div>
+  <section class="docstring">
+<p>Reads a user graphgist from the graphgists library.</p>
+<h2 id="read_graphgist/1-examples" class="section-heading">
+  <a href="#read_graphgist/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="0696954874-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="0696954874-1">)</span><span class="w">
+</span><span class="s">&quot;= REPLACEME: TITLE OF YOUR GRAPHGIST</span><span class="se">\n</span><span class="s">:neo4j-version: 2.3.0</span><span class="se">\n</span><span class="s">:author:&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>
           </div>

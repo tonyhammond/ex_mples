@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.LPG — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-6251d8209e.js"></script>
+    <script src="dist/sidebar_items-b4d1a7859d.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -146,7 +146,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">books</span><span class="p" data-group-id="2687426508-1">(</span><span class="p" data-group-id="2687426508-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">books</span><span class="p" data-group-id="0853022231-1">(</span><span class="p" data-group-id="0853022231-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">    iri: &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>
@@ -165,7 +165,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">movies</span><span class="p" data-group-id="4363360178-1">(</span><span class="p" data-group-id="4363360178-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">movies</span><span class="p" data-group-id="4081133782-1">(</span><span class="p" data-group-id="4081133782-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;CREATE (TheMatrix:Movie {title:&#39;The Matrix&#39;, released:1999,&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>
@@ -186,23 +186,23 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="6132048409-1">(</span><span class="p" data-group-id="6132048409-1">)</span><span class="w">
-</span><span class="p" data-group-id="6132048409-2">%</span><span class="nc" data-group-id="6132048409-2">TestGraph.Graph</span><span class="p" data-group-id="6132048409-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="6925384082-1">(</span><span class="p" data-group-id="6925384082-1">)</span><span class="w">
+</span><span class="p" data-group-id="6925384082-2">%</span><span class="nc" data-group-id="6925384082-2">TestGraph.Graph</span><span class="p" data-group-id="6925384082-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/default.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/default.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="6132048409-2">}</span><span class="w">
+</span><span class="p" data-group-id="6925384082-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="6132048409-3">(</span><span class="s">&quot;books.cypher&quot;</span><span class="p" data-group-id="6132048409-3">)</span><span class="w">
-</span><span class="p" data-group-id="6132048409-4">%</span><span class="nc" data-group-id="6132048409-4">TestGraph.Graph</span><span class="p" data-group-id="6132048409-4">{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="6925384082-3">(</span><span class="s">&quot;books.cypher&quot;</span><span class="p" data-group-id="6925384082-3">)</span><span class="w">
+</span><span class="p" data-group-id="6925384082-4">%</span><span class="nc" data-group-id="6925384082-4">TestGraph.Graph</span><span class="p" data-group-id="6925384082-4">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/books.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/books.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="6132048409-4">}</span></code></pre>
+</span><span class="p" data-group-id="6925384082-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="read_query/1">
@@ -222,23 +222,23 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="4337382768-1">(</span><span class="p" data-group-id="4337382768-1">)</span><span class="w">
-</span><span class="p" data-group-id="4337382768-2">%</span><span class="nc" data-group-id="4337382768-2">TestGraph.Query</span><span class="p" data-group-id="4337382768-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="7406051256-1">(</span><span class="p" data-group-id="7406051256-1">)</span><span class="w">
+</span><span class="p" data-group-id="7406051256-2">%</span><span class="nc" data-group-id="7406051256-2">TestGraph.Query</span><span class="p" data-group-id="7406051256-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;match (n) return n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nodes.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/nodes.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/nodes.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="4337382768-2">}</span><span class="w">
+</span><span class="p" data-group-id="7406051256-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="4337382768-3">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="4337382768-3">)</span><span class="w">
-</span><span class="p" data-group-id="4337382768-4">%</span><span class="nc" data-group-id="4337382768-4">TestGraph.Query</span><span class="p" data-group-id="4337382768-4">{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_query</span><span class="p" data-group-id="7406051256-3">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="7406051256-3">)</span><span class="w">
+</span><span class="p" data-group-id="7406051256-4">%</span><span class="nc" data-group-id="7406051256-4">TestGraph.Query</span><span class="p" data-group-id="7406051256-4">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;match (n) return n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nodes.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/nodes.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/nodes.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="4337382768-4">}</span></code></pre>
+</span><span class="p" data-group-id="7406051256-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="write_graph/2">
@@ -258,14 +258,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="9999740727-1">(</span><span class="s">&quot;my.cypher&quot;</span><span class="p" data-group-id="9999740727-1">)</span><span class="w">
-</span><span class="p" data-group-id="9999740727-2">%</span><span class="nc" data-group-id="9999740727-2">TestGraph.Graph</span><span class="p" data-group-id="9999740727-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="6647709295-1">(</span><span class="s">&quot;my.cypher&quot;</span><span class="p" data-group-id="6647709295-1">)</span><span class="w">
+</span><span class="p" data-group-id="6647709295-2">%</span><span class="nc" data-group-id="6647709295-2">TestGraph.Graph</span><span class="p" data-group-id="6647709295-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;//</span><span class="se">\n</span><span class="s">// create nodes</span><span class="se">\n</span><span class="s">//</span><span class="se">\n</span><span class="s">CREATE</span><span class="se">\n</span><span class="s">(book:Book {</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/my.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/graphs/my.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="9999740727-2">}</span></code></pre>
+</span><span class="p" data-group-id="6647709295-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="write_query/2">
@@ -285,14 +285,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">write_query</span><span class="p" data-group-id="6855124918-1">(</span><span class="s">&quot;my.cypher&quot;</span><span class="p" data-group-id="6855124918-1">)</span><span class="w">
-</span><span class="p" data-group-id="6855124918-2">%</span><span class="nc" data-group-id="6855124918-2">TestGraph.Query</span><span class="p" data-group-id="6855124918-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">write_query</span><span class="p" data-group-id="4862685749-1">(</span><span class="s">&quot;my.cypher&quot;</span><span class="p" data-group-id="4862685749-1">)</span><span class="w">
+</span><span class="p" data-group-id="4862685749-2">%</span><span class="nc" data-group-id="4862685749-2">TestGraph.Query</span><span class="p" data-group-id="4862685749-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;match (n) return n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/my.cypher&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lpg</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/lpg/queries/my.cypher&quot;</span><span class="w">
-</span><span class="p" data-group-id="6855124918-2">}</span></code></pre>
+</span><span class="p" data-group-id="4862685749-2">}</span></code></pre>
   </section>
 </section>
           </div>

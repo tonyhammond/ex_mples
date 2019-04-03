@@ -89,7 +89,7 @@ defmodule NeoSemantics do
       iex> conn |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
-      # marked form - import_turtle!/3
+      # marked form - import_turtle!/2
       iex> conn |> NeoSemantics.import_turtle!(uri)
       [
         %{

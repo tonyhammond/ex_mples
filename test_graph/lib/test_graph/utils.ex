@@ -3,6 +3,12 @@ defmodule TestGraph.Utils do
   Module providing helper functions.
   """
 
+  @priv_dir "#{:code.priv_dir(:test_graph)}"
+
+  @lpg_dir @priv_dir <> "/lpg"
+  @graphgists_dir @lpg_dir <> "/graphgists/"
+  @test_graphgist_file "template.adoc"
+
   @doc """
   Lists toplevel module's functions.
 
@@ -33,5 +39,43 @@ defmodule TestGraph.Utils do
   def help(module) do
     inspect(module.__info__(:functions), limit: :infinity)
   end
+
+  ## graphgists
+
+  @doc """
+  Reads a user graphgist from the graphgists library.
+
+  ## Examples
+
+      iex> read_graphgist("template.adoc")
+      "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
+
+  """
+  def read_graphgist(graphgist_file \\ @test_graphgist_file) do
+    File.read!(@graphgists_dir <> graphgist_file)
+  end
+
+  @doc """
+  Parses a graphgist to return a Cypher graph.
+
+  ## Examples
+
+      iex> parse(read_graphgist())
+      "CREATE\\n  (a:Person {name: 'Alice'}),\\n  (b:Person {name: 'Bob'}),\\n" <> ...
+
+  """
+  def parse(graphgist) do
+    Regex.run(
+      ~r/\/setup\n(\/\/hide\n)*(\/\/output\n)*\[source,\s*cypher\]\n\-\-\-\-.*\n((.|\n)*)\-\-\-\-.*\n/Um,
+      graphgist
+    )
+    |> case do
+      [_, cypher, _] -> cypher       # //hide\n
+      [_, _, cypher, _] -> cypher    # //hide\n//output]\n
+      [_, _, _, cypher, _] -> cypher
+      _ -> ""
+    end
+  end
+
 
 end

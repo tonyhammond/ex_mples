@@ -21,11 +21,6 @@ defmodule TestGraph.LPG do
   @test_graph_file "default.cypher"
   @test_query_file "default.cypher"
 
-  ##
-
-  # @graphgists_dir @lpg_dir <> "/graphgists/"
-  # @test_graphgist_file "template.adoc"
-
   ## graphs
 
   @doc """
@@ -157,56 +152,5 @@ defmodule TestGraph.LPG do
 
     TestGraph.Query.new(query_data, query_file, :lpg)
   end
-
-  # ## graphgists
-  #
-  # @doc """
-  # Reads a default graphgist from the graphgists library.
-  #
-  # ## Examples
-  #
-  #     iex> read_graphgist()
-  #     "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
-  #
-  # """
-  # def read_graphgist() do
-  #   File.read!(@graphgists_dir <> @test_graphgist_file)
-  # end
-  #
-  # @doc """
-  # Reads a user graphgist from the graphgists library.
-  #
-  # ## Examples
-  #
-  #     iex> read_graphgist("template.adoc")
-  #     "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
-  #
-  # """
-  # def read_graphgist(graphgist_file) do
-  #   File.read!(@graphgists_dir <> graphgist_file)
-  # end
-  #
-  # @doc """
-  # Parses a graphgist to return a Cypher graph.
-  #
-  # ## Examples
-  #
-  #     iex> parse(read_graphgist())
-  #     "CREATE\\n  (a:Person {name: 'Alice'}),\\n  (b:Person {name: 'Bob'}),\\n" <> ...
-  #
-  # """
-  # def parse(graphgist) do
-  #   Regex.run(
-  #     ~r/\/setup\n(\/\/hide\n)*(\/\/output\n)*\[source,\s*cypher\]\n\-\-\-\-.*\n((.|\n)*)\-\-\-\-.*\n/Um,
-  #     graphgist
-  #   )
-  #   |> case do
-  #     [_, cypher, _] -> cypher       # //hide\n
-  #     [_, _, cypher, _] -> cypher    # //hide\n//output]\n
-  #     [_, _, _, cypher, _] -> cypher
-  #     _ -> ""
-  #   end
-  # end
-  #
 
 end
