@@ -6,32 +6,30 @@ defmodule TestGraph do
   This post explores moving data between semantic and property graphs.
 
   Here's an example of querying a remote RDF service (DBpedia)
-  using the `SPARQL.Client` module via a wrapped function `rquery!/0`
-  and using the `neosemantics` stored procedures for transforming
+  using the `SPARQL.Client` module via a wrapped function `rquery!/1`
+  and using the stored procedures in the `NeoSemantics` module for transforming
   the semantic graph to a property graph and importing into a Neo4j
   instance.
 
-  This example saves the RDF graph for staging. Not known yet how to deal
-  with in-memory graphs using the `neosemantics` library.
+  This example saves the RDF graph for staging. (Not known yet how to deal
+  with in-memory graphs using the [`neosemantics`](https://github.com/jbarrasa/neosemantics) library.)
 
   ## Examples
 
-      iex> conn = Bolt.Sips.conn()
-
-      iex> hello = (
-      ...>   SPARQL.Client.rquery!
-      ...>   |> RDF.Turtle.write_string!
-      ...>   |> TestGraph.RDF.write_graph("hello.ttl")
-      ...> )
-      iex> conn |> NeoSemantics.import_rdf!(hello.uri, "Turtle")
-
+      # 1. explicit form
       iex> elixir = (
       ...>   TestGraph.RDF.read_query("elixir.rq")
       ...>   |> SPARQL.Client.rquery!
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph("elixir.ttl")
       ...> )
-      iex> conn |> NeoSemantics.import_rdf!(elixir.uri, "Turtle")
+      iex> Bolt.Sips.conn() |> NeoSemantics.import_rdf!(elixir.uri, "Turtle")
+
+      # 2. implicit form
+      iex> TestGraph.import_rdf_from_query("elixir.rq")
+
+      # 3. implicit form (with alias)
+      iex> import_rdf_from_query("elixir.rq")
 
   """
 

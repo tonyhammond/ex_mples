@@ -16,8 +16,6 @@ defmodule NeoSemantics do
   whereas the marked form returns a plain value or raises an exception. When a positive
   outcome is expected the marked form may be easier to use. (See Elixir [naming conventions](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/pages/Naming%20Conventions.md#trailing-bang-foo) for more info.)
 
-  TODO - Valid formats: Turtle, N-Triples, JSON-LD, TriG, RDF/XML.
-
   TODO - Add parameter maps for function calls which give some fine control. For now, defaults are fine.
 
   ## Examples
@@ -25,7 +23,7 @@ defmodule NeoSemantics do
       iex> uri = TestGraph.RDF.read_graph().uri
       "file:///.../priv/rdf/graphs/default.ttl"
       iex> fmt = "Turtle"
-      "http//purl.org/dc/elements/1.1/" => "dc",
+      "Turtle"
 
       # simple form - import_rdf/3
       iex> {:ok, resp} = (conn |> NeoSemantics.import_rdf(uri, fmt))
@@ -91,7 +89,36 @@ defmodule NeoSemantics do
       iex> conn |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
+      # marked form - import_turtle!/3
+      iex> conn |> NeoSemantics.import_turtle!(uri)
+      [
+        %{
+          "extraInfo" => "",
+          "namespaces" => %{
+            "http://purl.org/dc/elements/1.1/" => "dc",
+            "http://purl.org/dc/terms/" => "dct",
+            "http://purl.org/ontology/bibo/" => "ns0",
+            "http://schema.org/" => "sch",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
+            "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
+            "http://www.w3.org/2002/07/owl#" => "owl",
+            "http://www.w3.org/2004/02/skos/core#" => "skos"
+          },
+          "terminationStatus" => "OK",
+          "triplesLoaded" => 8
+        }
+      ]
+      iex> conn |> Cypher.Client.test()
+      [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
+
   """
+
+  @jsonld "JSON-LD"
+  @ntriples "N-Triples"
+  @rdfxml "RDF/XML"
+  @trig "TriG"
+  @turtle "Turtle"
+
   ##
 
   @doc """
@@ -110,6 +137,76 @@ defmodule NeoSemantics do
   def import_rdf!(conn, uri, format) do
     cypher = "call semantics.importRDF(\"" <> uri <> "\", \"" <> format <> "\", {})"
     Bolt.Sips.query!(conn, cypher)
+  end
+
+  @doc """
+  Wrapper for `import_rdf/3` for an "JSON-LD" RDF format.
+  """
+  def import_jsonld(conn, uri) do
+    import_rdf(conn, uri, @jsonld)
+  end
+
+  @doc """
+  Wrapper for `import_rdf!/3` for an "JSON-LD" RDF format.
+  """
+  def import_jsonld!(conn, uri) do
+    import_rdf!(conn, uri, @jsonld)
+  end
+
+  @doc """
+  Wrapper for `import_rdf/3` for an "N-Triples" RDF format.
+  """
+  def import_ntriples(conn, uri) do
+    import_rdf(conn, uri, @ntriples)
+  end
+
+  @doc """
+  Wrapper for `import_rdf!/3` for an "N-Triples" RDF format.
+  """
+  def import_ntriples!(conn, uri) do
+    import_rdf!(conn, uri, @ntriples)
+  end
+
+  @doc """
+  Wrapper for `import_rdf/3` for an "RDF/XML" RDF format.
+  """
+  def import_rdfxml(conn, uri) do
+    import_rdf(conn, uri, @rdfxml)
+  end
+
+  @doc """
+  Wrapper for `import_rdf!/3` for an "RDF/XML" RDF format.
+  """
+  def import_rdfxml!(conn, uri) do
+    import_rdf!(conn, uri, @rdfxml)
+  end
+
+  @doc """
+  Wrapper for `import_rdf/3` for an "TriG" RDF format.
+  """
+  def import_trig(conn, uri) do
+    import_rdf(conn, uri, @trig)
+  end
+
+  @doc """
+  Wrapper for `import_rdf!/3` for an "TriG" RDF format.
+  """
+  def import_trig!(conn, uri) do
+    import_rdf!(conn, uri, @trig)
+  end
+
+  @doc """
+  Wrapper for `import_rdf/3` for an "Turtle" RDF format.
+  """
+  def import_turtle(conn, uri) do
+    import_rdf(conn, uri, @turtle)
+  end
+
+  @doc """
+  Wrapper for `import_rdf!/3` for an "Turtle" RDF format.
+  """
+  def import_turtle!(conn, uri) do
+    import_rdf!(conn, uri, @turtle)
   end
 
   @doc """

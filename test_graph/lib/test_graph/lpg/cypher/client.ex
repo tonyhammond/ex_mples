@@ -2,26 +2,7 @@ defmodule TestGraph.LPG.Cypher.Client do
   @moduledoc """
   Module providing a simple library for querying LPG models in a Neo4j instance via Cypher.
   """
-
-  # @priv_dir "#{:code.priv_dir(:test_graph)}"
-  #
-  # @lpg_dir @priv_dir <> "/lpg"
-  #
-  # @graphs_dir @lpg_dir <> "/graphs/"
-  # @graphgists_dir @lpg_dir <> "/graphgists/"
-  # @queries_dir @lpg_dir <> "/queries/"
-  #
-  # ##
-  #
-  # @books_graph_file "books.cypher"
-  # @movies_graph_file "movies.cypher"
-  #
-  # @temp_graph_file "default.cypher"
-  #
-  # @test_graph_file "books.cypher"
-  # @test_graphgist_file "template.adoc"
-  # @test_query_file "node1.cypher"
-
+  
   import TestGraph.LPG
 
   @doc """
