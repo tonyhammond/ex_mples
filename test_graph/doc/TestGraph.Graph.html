@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.Graph — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-a5bed636c6.js"></script>
+    <script src="dist/sidebar_items-6251d8209e.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -66,7 +66,63 @@ TestGraph.Graph              </h1>
 <p>Module providing a struct for graphs.</p>
         </section>
 
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#new/3">new(graph_data, graph_file, graph_type)</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a <code class="inline">%TestGraph.Graph{}</code> struct</p>
+</div>
+</div>
+  </div>
+        </section>
 
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="new/3">
+    <div class="detail-header">
+    <a href="#new/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">new(graph_data, graph_file, graph_type)</span>
+          </div>
+  <section class="docstring">
+<p>Creates a <code class="inline">%TestGraph.Graph{}</code> struct.</p>
+<h2 id="new/3-examples" class="section-heading">
+  <a href="#new/3-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8546560259-1">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="8546560259-1">)</span><span class="w">
+</span><span class="p" data-group-id="8546560259-2">%</span><span class="nc" data-group-id="8546560259-2">TestGraph.Graph</span><span class="p" data-group-id="8546560259-2">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w">
+  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/rdf/graphs/books.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/priv/rdf/graphs/books.ttl&quot;</span><span class="w">
+</span><span class="p" data-group-id="8546560259-2">}</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
           <footer class="footer">
         <p>
           <span class="line">

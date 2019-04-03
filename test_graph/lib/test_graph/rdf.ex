@@ -11,6 +11,7 @@ defmodule TestGraph.RDF do
   @queries_dir @rdf_dir <> "/queries/"
 
   @temp_graph_file "temp.ttl"
+  @temp_query_file "temp.rq"
 
   @test_graph_file "default.ttl"
   @test_query_file "default.rq"
@@ -20,85 +21,37 @@ defmodule TestGraph.RDF do
   ## graphs
 
   @doc """
-  Reads a default Turtle graph from the RDF graphs library.
+  Reads a Turtle graph from the RDF graphs library.
 
   ## Examples
 
       iex> read_graph()
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
+        data: "<http:\/\/dbpedia.org\/resource\/Hello_World>\\n" <> ...
         file: "default.ttl",
+        path:  ... <> "\/priv\/rdf\/graphs\/default.ttl",
         type: :rdf,
         uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/default.ttl"
       }
-
-  """
-  def read_graph() do
-    graph_file = @test_graph_file
-    graphs_dir = @graphs_dir
-
-    %TestGraph.Graph{
-      data: File.read!(graphs_dir <> graph_file),
-      file: graph_file,
-      type: :rdf,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
-  end
-
-  @doc """
-  Reads a user Turtle graph from the RDF graphs library.
-
-  ## Examples
 
       iex> read_graph("books.ttl")
       %TestGraph.Graph{
         data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "books.ttl",
+        path:  ... <> "\/priv\/rdf\/graphs\/books.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/books.ttl"
+        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/books.ttl"
       }
-
   """
-  def read_graph(graph_file) do
+  def read_graph(graph_file \\ @test_graph_file) do
     graphs_dir = @graphs_dir
+    graph_data = File.read!(graphs_dir <> graph_file)
 
-    %TestGraph.Graph{
-      data: File.read!(graphs_dir <> graph_file),
-      file: graph_file,
-      type: :rdf,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
+    TestGraph.Graph.new(graph_data, graph_file, :rdf)
   end
 
   @doc """
-  Writes a Turtle graph to a temp file in the RDF graphs library.
-
-  ## Examples
-
-      iex> data |> write_graph()
-      %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
-        file: "temp.ttl",
-        type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/rdf/graphs\/temp.ttl"
-      }
-
-  """
-  def write_graph(data) do
-    graph_file = @temp_graph_file
-    graphs_dir = @graphs_dir
-
-    File.write!(graphs_dir <> graph_file, data)
-    %TestGraph.Graph{
-      data: data,
-      file: graph_file,
-      type: :rdf,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
-  end
-
-  @doc """
-  Writes a Turtle graph to a user file in the RDF graphs library.
+  Writes a Turtle graph to a file in the RDF graphs library.
 
   ## Examples
 
@@ -106,50 +59,71 @@ defmodule TestGraph.RDF do
       %TestGraph.Graph{
         data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "my.ttl",
+        path:  ... <> "\/priv\/rdf\/graphs\/my.ttl",
         type: :rdf,
         uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/my.ttl"
       }
 
   """
-  def write_graph(data, graph_file) do
+  def write_graph(data, graph_file \\ @temp_graph_file) do
     graphs_dir = @graphs_dir
+    graph_data = File.write!(graphs_dir <> graph_file, data)
 
-    File.write!(graphs_dir <> graph_file, data)
-    %TestGraph.Graph{
-      data: data,
-      file: graph_file,
-      type: :rdf,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
+    TestGraph.Graph.new(graph_data, graph_file, :rdf)
   end
 
   ##
 
   @doc """
-  Reads a default SPARQL query from the RDF queries library.
+  Reads a SPARQL query from the RDF queries library.
 
   ## Examples
 
       iex> read_query()
-      "match (n) return n limit 1\\n"
+      %TestGraph.Query{
+        data: "construct { ?s ?p ?o } where { " <> ...
+        file: "books.rq",
+        path:  ... <> "\/priv\/rdf\/queries\/books.rq",
+        type: :rdf,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/books.rq"
+      }
 
+      iex> read_query("books.rq")
+      %TestGraph.Query{
+        data: "construct { ?s ?p ?o } where { " <> ...
+        file: "books.rq",
+        path:  ... <> "\/priv\/rdf\/queries\/books.rq",
+        type: :rdf,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/books.rq"
+      }
   """
-  def read_query() do
-    File.read!(@queries_dir <> @test_query_file)
+  def read_query(query_file \\ @test_query_file) do
+    queries_dir = @queries_dir
+    query_data = File.read!(queries_dir <> query_file)
+
+    TestGraph.Query.new(query_data, query_file, :rdf)
   end
 
   @doc """
-  Reads a named SPARQL query from the RDF queries library.
+  Writes a SPARQL query to a file in the RDF queries library.
 
   ## Examples
 
-      iex> read_query("nodes.cypher")
-      "match (n) return n\\n"
+      iex> write_query("my.rq")
+      %TestGraph.Query{
+        data: "construct { ?s ?p ?o } where { " <> ...
+        file: "my.rq",
+        path:  ... <> "\/priv\/rdf\/queries\/my.rq",
+        type: :rdf,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/my.rq"
+      }
 
   """
-  def read_query(query_file) do
-    File.read!(@queries_dir <> query_file)
-  end
+  def write_query(data, query_file \\ @temp_query_file) do
+    queries_dir = @queries_dir
+    query_data = File.write!(queries_dir <> query_file, data)
 
+    TestGraph.Query.new(query_data, query_file, :rdf)
+  end
 
 end

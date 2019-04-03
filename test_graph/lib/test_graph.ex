@@ -35,6 +35,9 @@ defmodule TestGraph do
 
   alias TestGraph.RDF.SPARQL
 
+  @test_graph_file "default.ttl"
+  @test_query_file "default.rq"
+
   @doc """
   Imports into Neo4j an LPG graph transformed from an RDF graph.
 
@@ -43,14 +46,9 @@ defmodule TestGraph do
       iex> TestGraph.import_rdf_from_graph("elixir.ttl")
 
   """
-  def import_rdf_from_graph(graph_file) do
-    # conn = TestGraph.LPG.init()
-    conn = Bolt.Sips.conn()
-    ttl = graph_file
-    graph = (
-      TestGraph.RDF.read_graph(ttl)
-    )
-    conn |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
+  def import_rdf_from_graph(graph_file \\ @test_graph_file) do
+    graph = TestGraph.RDF.read_graph(graph_file)
+    Bolt.Sips.conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
   end
 
   @doc """
@@ -62,17 +60,15 @@ defmodule TestGraph do
       iex> TestGraph.import_rdf_from_query("elixir.rq")
 
   """
-  def import_rdf_from_query(query_file) do
-    # conn = TestGraph.LPG.init()
-    conn = Bolt.Sips.conn()
-    ttl = Path.basename(query_file, ".rq") <> ".ttl"
+  def import_rdf_from_query(query_file \\ @test_query_file) do
+    graph_file = Path.basename(query_file, ".rq") <> ".ttl"
     graph = (
-      TestGraph.RDF.read_query(query_file)
+      TestGraph.RDF.read_query(query_file).data
       |> SPARQL.Client.rquery!
       |> RDF.Turtle.write_string!
-      |> TestGraph.RDF.write_graph(ttl)
+      |> TestGraph.RDF.write_graph(graph_file)
     )
-    conn |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
+    Bolt.Sips.conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
   end
 
   @doc """

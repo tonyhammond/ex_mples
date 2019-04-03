@@ -8,7 +8,6 @@ defmodule TestGraph.LPG do
   @lpg_dir @priv_dir <> "/lpg"
 
   @graphs_dir @lpg_dir <> "/graphs/"
-  @graphgists_dir @lpg_dir <> "/graphgists/"
   @queries_dir @lpg_dir <> "/queries/"
 
   ##
@@ -17,16 +16,20 @@ defmodule TestGraph.LPG do
   @movies_graph_file "movies.cypher"
 
   @temp_graph_file "temp.cypher"
+  @temp_query_file "temp.cypher"
 
   @test_graph_file "default.cypher"
   @test_query_file "default.cypher"
 
-  @test_graphgist_file "template.adoc"
+  ##
+
+  # @graphgists_dir @lpg_dir <> "/graphgists/"
+  # @test_graphgist_file "template.adoc"
 
   ## graphs
 
   @doc """
-  Reads a default Cypher graph from the LPG graphs library.
+  Reads a user Turtle graph from the RDF graphs library.
 
   ## Examples
 
@@ -34,99 +37,47 @@ defmodule TestGraph.LPG do
       %TestGraph.Graph{
         data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "default.cypher",
+        path:  ... <> "\/priv\/lpg\/graphs\/default.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/default.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/graphs\/default.cypher"
       }
-
-  """
-  def read_graph() do
-    graph_file = @test_graph_file
-    graphs_dir = @graphs_dir
-
-    %TestGraph.Graph{
-      data: File.read!(graphs_dir <> graph_file),
-      file: graph_file,
-      type: :lpg,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
-  end
-
-  @doc """
-  Reads a user Cypher graph from the LPG graphs library.
-
-  ## Examples
 
       iex> read_graph("books.cypher")
       %TestGraph.Graph{
         data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "books.cypher",
+        path:  ... <> "\/priv\/lpg\/graphs\/books.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/books.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/graphs\/books.cypher"
       }
-
   """
-  def read_graph(graph_file) do
+  def read_graph(graph_file \\ @test_graph_file) do
     graphs_dir = @graphs_dir
+    graph_data = File.read!(graphs_dir <> graph_file)
 
-    %TestGraph.Graph{
-      data: File.read!(graphs_dir <> graph_file),
-      file: graph_file,
-      type: :lpg,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
+    TestGraph.Graph.new(graph_data, graph_file, :lpg)
   end
 
   @doc """
-  Writes a Turtle graph to a temp file in the LPG graphs library.
-
-  ## Examples
-
-      iex> data |> write_graph()
-      %TestGraph.Graph{
-        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
-        file: "temp.cypher",
-        type: :lpg,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/temp.cypher"
-      }
-
-  """
-  def write_graph(data) do
-    graph_file = @temp_graph_file
-    graphs_dir = @graphs_dir
-
-    File.write!(graphs_dir <> graph_file, data)
-    %TestGraph.Graph{
-      data: data,
-      file: graph_file,
-      type: :lpg,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
-  end
-
-  @doc """
-  Writes a Cypher graph to a user file in the LPG graphs library.
+  Writes a Turtle graph to a user file in the RDF graphs library.
 
   ## Examples
 
       iex> data |> write_graph("my.cypher")
       %TestGraph.Graph{
-      data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "my.cypher",
+        path:  ... <> "\/priv\/lpg\/graphs\/my.cypher",
         type: :lpg,
         uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.cypher"
       }
 
   """
-  def write_graph(data, graph_file) do
+  def write_graph(data, graph_file \\ @temp_graph_file) do
     graphs_dir = @graphs_dir
+    graph_data = File.write!(graphs_dir <> graph_file, data)
 
-    File.write!(graphs_dir <> graph_file, data)
-    %TestGraph.Graph{
-      data: data,
-      file: graph_file,
-      type: :lpg,
-      uri:  "file://" <> graphs_dir <> graph_file,
-    }
+    TestGraph.Graph.new(graph_data, graph_file, :lpg)
   end
 
   ##
@@ -153,82 +104,109 @@ defmodule TestGraph.LPG do
   """
   def movies(), do: read_graph(@movies_graph_file)
 
-  ## graphgists
-
-  @doc """
-  Reads a default graphgist from the graphgists library.
-
-  ## Examples
-
-      iex> read_graphgist()
-      "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
-
-  """
-  def read_graphgist() do
-    File.read!(@graphgists_dir <> @test_graphgist_file)
-  end
-
-  @doc """
-  Reads a user graphgist from the graphgists library.
-
-  ## Examples
-
-      iex> read_graphgist("template.adoc")
-      "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
-
-  """
-  def read_graphgist(graphgist_file) do
-    File.read!(@graphgists_dir <> graphgist_file)
-  end
-
-  @doc """
-  Parses a graphgist to return a Cypher graph.
-
-  ## Examples
-
-      iex> parse(read_graphgist())
-      "CREATE\\n  (a:Person {name: 'Alice'}),\\n  (b:Person {name: 'Bob'}),\\n" <> ...
-
-  """
-  def parse(graphgist) do
-    Regex.run(
-      ~r/\/setup\n(\/\/hide\n)*(\/\/output\n)*\[source,\s*cypher\]\n\-\-\-\-.*\n((.|\n)*)\-\-\-\-.*\n/Um,
-      graphgist
-    )
-    |> case do
-      [_, cypher, _] -> cypher       # //hide\n
-      [_, _, cypher, _] -> cypher    # //hide\n//output]\n
-      [_, _, _, cypher, _] -> cypher
-      _ -> ""
-    end
-  end
-
   ## queries
 
   @doc """
-  Reads a default Cypher query from the LPG queries library.
+  Reads a Cypher query from the LPG queries library.
 
   ## Examples
 
       iex> read_query()
-      "match (n) return n limit 1\\n"
+      %TestGraph.Query{
+        data: "match (n) return n\\n"
+        file: "nodes.cypher",
+        path:  ... <> "\/priv\/lpg\/queries\/nodes.cypher",
+        type: :lpg,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/nodes.cypher"
+      }
 
+      iex> read_query("nodes.cypher")
+      %TestGraph.Query{
+        data: "match (n) return n\\n"
+        file: "nodes.cypher",
+        path:  ... <> "\/priv\/lpg\/queries\/nodes.cypher",
+        type: :lpg,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/nodes.cypher"
+      }
   """
-  def read_query() do
-    File.read!(@queries_dir <> @test_query_file)
+  def read_query(query_file \\ @test_query_file) do
+    queries_dir = @queries_dir
+    query_data = File.read!(queries_dir <> query_file)
+
+    TestGraph.Query.new(query_data, query_file, :lpg)
   end
 
   @doc """
-  Reads a named Cypher query from the LPG queries library.
+  Writes a Cypher query to a file in the LPG queries library.
 
   ## Examples
 
-      iex> read_query("nodes.cypher")
-      "match (n) return n\\n"
+      iex> write_query("my.cypher")
+      %TestGraph.Query{
+        data: "match (n) return n\\n"
+        file: "my.cypher",
+        path:  ... <> "\/priv\/lpg\/queries\/my.cypher",
+        type: :lpg,
+        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/my.cypher"
+      }
 
   """
-  def read_query(query_file) do
-    File.read!(@queries_dir <> query_file)
+  def write_query(data, query_file \\ @temp_query_file) do
+    queries_dir = @queries_dir
+    query_data = File.write!(queries_dir <> query_file, data)
+
+    TestGraph.Query.new(query_data, query_file, :lpg)
   end
+
+  # ## graphgists
+  #
+  # @doc """
+  # Reads a default graphgist from the graphgists library.
+  #
+  # ## Examples
+  #
+  #     iex> read_graphgist()
+  #     "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
+  #
+  # """
+  # def read_graphgist() do
+  #   File.read!(@graphgists_dir <> @test_graphgist_file)
+  # end
+  #
+  # @doc """
+  # Reads a user graphgist from the graphgists library.
+  #
+  # ## Examples
+  #
+  #     iex> read_graphgist("template.adoc")
+  #     "= REPLACEME: TITLE OF YOUR GRAPHGIST\\n:neo4j-version: 2.3.0\\n:author:" <> ...
+  #
+  # """
+  # def read_graphgist(graphgist_file) do
+  #   File.read!(@graphgists_dir <> graphgist_file)
+  # end
+  #
+  # @doc """
+  # Parses a graphgist to return a Cypher graph.
+  #
+  # ## Examples
+  #
+  #     iex> parse(read_graphgist())
+  #     "CREATE\\n  (a:Person {name: 'Alice'}),\\n  (b:Person {name: 'Bob'}),\\n" <> ...
+  #
+  # """
+  # def parse(graphgist) do
+  #   Regex.run(
+  #     ~r/\/setup\n(\/\/hide\n)*(\/\/output\n)*\[source,\s*cypher\]\n\-\-\-\-.*\n((.|\n)*)\-\-\-\-.*\n/Um,
+  #     graphgist
+  #   )
+  #   |> case do
+  #     [_, cypher, _] -> cypher       # //hide\n
+  #     [_, _, cypher, _] -> cypher    # //hide\n//output]\n
+  #     [_, _, _, cypher, _] -> cypher
+  #     _ -> ""
+  #   end
+  # end
+  #
 
 end
