@@ -1,0 +1,12 @@
+prefix dbr: <http://dbpedia.org/resource/>
+
+construct {
+  ?s ?p ?o .
+  ?o ?p1 ?o1 .
+}
+where {
+  bind (dbr:Neo4j as ?s)
+  ?s ?p ?o .
+  optional {?o ?p1 ?o1 }
+  filter (!isLiteral(?o) && !isLiteral(?o1))
+}

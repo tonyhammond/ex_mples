@@ -10,8 +10,6 @@ defmodule TestGraph.RDF do
   @graphs_dir @rdf_dir <> "/graphs/"
   @queries_dir @rdf_dir <> "/queries/"
 
-  @books_graph_file "books.ttl"
-
   @temp_graph_file "temp.ttl"
 
   @test_graph_file "default.ttl"
@@ -28,10 +26,10 @@ defmodule TestGraph.RDF do
 
       iex> read_graph()
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "default.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/default.ttl"
+        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/default.ttl"
       }
 
   """
@@ -54,14 +52,14 @@ defmodule TestGraph.RDF do
 
       iex> read_graph("books.ttl")
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "books.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/books.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/books.ttl"
       }
 
   """
-  def read_graph(file: graph_file) do
+  def read_graph(graph_file) do
     graphs_dir = @graphs_dir
 
     %TestGraph.Graph{
@@ -77,12 +75,12 @@ defmodule TestGraph.RDF do
 
   ## Examples
 
-      iex> write_graph(data)
+      iex> data |> write_graph()
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "temp.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg/graphs\/temp.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/rdf/graphs\/temp.ttl"
       }
 
   """
@@ -104,16 +102,16 @@ defmodule TestGraph.RDF do
 
   ## Examples
 
-      iex> write_graph(data, file: "my.ttl")
+      iex> data |> write_graph("my.ttl")
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> .\n" ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "my.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.ttl"
+        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/my.ttl"
       }
 
   """
-  def write_graph(data, file: graph_file) do
+  def write_graph(data, graph_file) do
     graphs_dir = @graphs_dir
 
     File.write!(graphs_dir <> graph_file, data)
@@ -128,7 +126,7 @@ defmodule TestGraph.RDF do
   ##
 
   @doc """
-  Reads a default Cypher query from the queries library.
+  Reads a default SPARQL query from the RDF queries library.
 
   ## Examples
 
@@ -141,7 +139,7 @@ defmodule TestGraph.RDF do
   end
 
   @doc """
-  Reads a named Cypher query from the queries library.
+  Reads a named SPARQL query from the RDF queries library.
 
   ## Examples
 

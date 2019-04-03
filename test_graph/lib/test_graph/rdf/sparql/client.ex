@@ -15,28 +15,6 @@ defmodule TestGraph.RDF.SPARQL.Client do
   @hello_world "http://dbpedia.org/resource/Hello_World"
 
   @construct_query """
-  PREFIX : <http://example.org/>
-  PREFIX dbo: <http://dbpedia.org/ontology/>
-  PREFIX dbp: <http://dbpedia.org/property/>
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-
-  CONSTRUCT {
-      :Elixir
-          :name     ?name ;
-          :homepage ?homepage ;
-          :license  ?license ;
-          :creator  ?creator .
-  }
-  WHERE  {
-      <http://dbpedia.org/resource/Elixir_(programming_language)>
-          foaf:name     ?name ;
-          foaf:homepage ?homepage ;
-          dbp:creator   ?creator ;
-          dbo:license   ?license .
-  }
-"""
-
-  @zconstruct_query """
   construct
   { ?s ?p ?o }
   where {
@@ -60,13 +38,46 @@ defmodule TestGraph.RDF.SPARQL.Client do
 
   ## Accessors for module attributes
 
-  def get_query, do: @query
-  def get_service, do: @service
+  @doc """
+  Returns default SPARQL query.
+  """
+  def default_sparql_query, do: @query
+
+  @doc """
+  Returns default SPARQL service.
+  """
+  def default_sparql_service, do: @service
+
+  ## Accessors for env variables
+
+  @doc """
+  Returns current SPARQL query.
+  """
+  def sparql_query, do: Application.get_env(:test_graph, :sparql_query)
+
+  @doc """
+  Sets current SPARQL query.
+  """
+  def sparql_query(query) do
+     Application.put_env(:test_graph, :sparql_query, query)
+  end
+
+  @doc """
+  Returns current SPARQL service.
+  """
+  def sparql_service, do: Application.get_env(:test_graph, :sparql_service)
+
+  @doc """
+  Sets current SPARQL service.
+  """
+  def sparql_service(service) do
+     Application.put_env(:test_graph, :sparql_service, service)
+  end
 
   ## Hello query to test access to remote RDF datastore
 
   @doc """
-  Queries default RDF service and prints out "Hello World".
+  Queries default SPARQL service and prints out "Hello World".
   """
   def hello() do
     case SPARQL.Client.query(@select_query, @service) do
@@ -80,7 +91,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
   ## Simple remote query functions
 
   @doc """
-  Queries default RDF service with default SPARQL query.
+  Queries default SPARQL service with default SPARQL query.
   """
   def rquery() do
     SPARQL.Client.query(@query, @service)
@@ -99,7 +110,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
   end
 
   @doc """
-  Queries default RDF service with user SPARQL query.
+  Queries default SPARQL service with user SPARQL query.
   """
   def rquery(query) do
     SPARQL.Client.query(query, @service)
@@ -118,7 +129,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
   end
 
   @doc """
-  Queries a user RDF service with a user SPARQL query.
+  Queries a user SPARQL service with a user SPARQL query.
   """
   def rquery(query, service) do
     SPARQL.Client.query(query, service)
@@ -135,6 +146,5 @@ defmodule TestGraph.RDF.SPARQL.Client do
       {:error, error} -> raise error
     end
   end
-
 
 end

@@ -1,4 +1,4 @@
-defmodule TestGraph.RDF.NeoSemantics.Mapping do
+defmodule NeoSemantics.Mapping do
   @moduledoc """
   Module providing simple wrapper functions for the `neosemantics` library
   mapping functions.

@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.RDF.SPARQL.Client — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-f70d5a8591.js"></script>
+    <script src="dist/sidebar_items-c288c639b6.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -80,40 +80,44 @@ TestGraph.RDF.SPARQL.Client              </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_query/0">get_query()</a>
+    <a href="#default_sparql_query/0">default_sparql_query()</a>
   </div>
+    <div class="summary-synopsis"><p>Returns default SPARQL query</p>
+</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_service/0">get_service()</a>
+    <a href="#default_sparql_service/0">default_sparql_service()</a>
   </div>
+    <div class="summary-synopsis"><p>Returns default SPARQL service</p>
+</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#hello/0">hello()</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default RDF service and prints out &quot;Hello World&quot;</p>
+    <div class="summary-synopsis"><p>Queries default SPARQL service and prints out &quot;Hello World&quot;</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#rquery/0">rquery()</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default RDF service with default SPARQL query</p>
+    <div class="summary-synopsis"><p>Queries default SPARQL service with default SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#rquery/1">rquery(query)</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default RDF service with user SPARQL query</p>
+    <div class="summary-synopsis"><p>Queries default SPARQL service with user SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#rquery/2">rquery(query, service)</a>
   </div>
-    <div class="summary-synopsis"><p>Queries a user RDF service with a user SPARQL query</p>
+    <div class="summary-synopsis"><p>Queries a user SPARQL service with a user SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
@@ -137,6 +141,34 @@ TestGraph.RDF.SPARQL.Client              </h1>
     <div class="summary-synopsis"><p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails</p>
 </div>
 </div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sparql_query/0">sparql_query()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns current SPARQL query</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sparql_query/1">sparql_query(query)</a>
+  </div>
+    <div class="summary-synopsis"><p>Sets current SPARQL query</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sparql_service/0">sparql_service()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns current SPARQL service</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sparql_service/1">sparql_service(service)</a>
+  </div>
+    <div class="summary-synopsis"><p>Sets current SPARQL service</p>
+</div>
+</div>
   </div>
         </section>
 
@@ -148,26 +180,28 @@ TestGraph.RDF.SPARQL.Client              </h1>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="get_query/0">
+<section class="detail" id="default_sparql_query/0">
     <div class="detail-header">
-    <a href="#get_query/0" class="detail-link" title="Link to this function">
+    <a href="#default_sparql_query/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_query()</span>
+    <h1 class="signature">default_sparql_query()</span>
           </div>
   <section class="docstring">
+<p>Returns default SPARQL query.</p>
   </section>
 </section>
-<section class="detail" id="get_service/0">
+<section class="detail" id="default_sparql_service/0">
     <div class="detail-header">
-    <a href="#get_service/0" class="detail-link" title="Link to this function">
+    <a href="#default_sparql_service/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_service()</span>
+    <h1 class="signature">default_sparql_service()</span>
           </div>
   <section class="docstring">
+<p>Returns default SPARQL service.</p>
   </section>
 </section>
 <section class="detail" id="hello/0">
@@ -179,7 +213,7 @@ Functions          </h1>
     <h1 class="signature">hello()</span>
           </div>
   <section class="docstring">
-<p>Queries default RDF service and prints out &quot;Hello World&quot;.</p>
+<p>Queries default SPARQL service and prints out &quot;Hello World&quot;.</p>
   </section>
 </section>
 <section class="detail" id="rquery/0">
@@ -191,7 +225,7 @@ Functions          </h1>
     <h1 class="signature">rquery()</span>
           </div>
   <section class="docstring">
-<p>Queries default RDF service with default SPARQL query.</p>
+<p>Queries default SPARQL service with default SPARQL query.</p>
   </section>
 </section>
 <section class="detail" id="rquery/1">
@@ -203,7 +237,7 @@ Functions          </h1>
     <h1 class="signature">rquery(query)</span>
           </div>
   <section class="docstring">
-<p>Queries default RDF service with user SPARQL query.</p>
+<p>Queries default SPARQL service with user SPARQL query.</p>
   </section>
 </section>
 <section class="detail" id="rquery/2">
@@ -215,7 +249,7 @@ Functions          </h1>
     <h1 class="signature">rquery(query, service)</span>
           </div>
   <section class="docstring">
-<p>Queries a user RDF service with a user SPARQL query.</p>
+<p>Queries a user SPARQL service with a user SPARQL query.</p>
   </section>
 </section>
 <section class="detail" id="rquery!/0">
@@ -252,6 +286,54 @@ Functions          </h1>
           </div>
   <section class="docstring">
 <p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails.</p>
+  </section>
+</section>
+<section class="detail" id="sparql_query/0">
+    <div class="detail-header">
+    <a href="#sparql_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_query()</span>
+          </div>
+  <section class="docstring">
+<p>Returns current SPARQL query.</p>
+  </section>
+</section>
+<section class="detail" id="sparql_query/1">
+    <div class="detail-header">
+    <a href="#sparql_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_query(query)</span>
+          </div>
+  <section class="docstring">
+<p>Sets current SPARQL query.</p>
+  </section>
+</section>
+<section class="detail" id="sparql_service/0">
+    <div class="detail-header">
+    <a href="#sparql_service/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_service()</span>
+          </div>
+  <section class="docstring">
+<p>Returns current SPARQL service.</p>
+  </section>
+</section>
+<section class="detail" id="sparql_service/1">
+    <div class="detail-header">
+    <a href="#sparql_service/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_service(service)</span>
+          </div>
+  <section class="docstring">
+<p>Sets current SPARQL service.</p>
   </section>
 </section>
           </div>

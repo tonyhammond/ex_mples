@@ -1,4 +1,4 @@
-defmodule TestGraph.RDF.NeoSemantics do
+defmodule NeoSemantics do
   @moduledoc """
   Module providing simple wrapper functions for the `neosemantics` library
   from
@@ -23,13 +23,10 @@ defmodule TestGraph.RDF.NeoSemantics do
 
   ## Examples
 
-      iex> alias TestGraph.LPG
-      iex> alias TestGraph.RDF
-      iex> alias TestGraph.RDF.NeoSemantics
-      iex>
-      iex> uri = RDF.graph_file_uri()
+      iex> uri = TestGraph.RDF.graph_file_uri()
       "file:///.../priv/rdf/graphs/978-1-68050-252-7.ttl"
       iex> fmt = "Turtle"
+      "http//purl.org/dc/elements/1.1/" => "dc",
 
       # simple form - import_rdf/3
       iex> {:ok, resp} = (conn |> NeoSemantics.import_rdf(uri, fmt))

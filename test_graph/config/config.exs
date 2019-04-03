@@ -8,6 +8,11 @@ config :bolt_sips, Bolt,
   url: "bolt://localhost:7687",
   basic_auth: [username: "neo4j", password: "neo4jtest"]
 
+# Application.put_env(:test_graph,
+#   :sparql_query, TestGraph.RDF.SPARQL.Client.default_sparql_query)
+# Application.put_env(:test_graph,
+#   :sparql_service, TestGraph.RDF.SPARQL.Client.default_sparql_service)
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

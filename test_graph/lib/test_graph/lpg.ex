@@ -16,11 +16,12 @@ defmodule TestGraph.LPG do
   @books_graph_file "books.cypher"
   @movies_graph_file "movies.cypher"
 
-  @temp_graph_file "default.cypher"
+  @temp_graph_file "temp.cypher"
 
-  @test_graph_file "books.cypher"
+  @test_graph_file "default.cypher"
+  @test_query_file "default.cypher"
+
   @test_graphgist_file "template.adoc"
-  @test_query_file "node1.cypher"
 
   ## graphs
 
@@ -31,7 +32,7 @@ defmodule TestGraph.LPG do
 
       iex> read_graph()
       %TestGraph.Graph{
-        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "default.cypher",
         type: :lpg,
         uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/default.cypher"
@@ -57,14 +58,14 @@ defmodule TestGraph.LPG do
 
       iex> read_graph("books.cypher")
       %TestGraph.Graph{
-        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "books.cypher",
         type: :lpg,
         uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/books.cypher"
       }
 
   """
-  def read_graph(file: graph_file) do
+  def read_graph(graph_file) do
     graphs_dir = @graphs_dir
 
     %TestGraph.Graph{
@@ -80,9 +81,9 @@ defmodule TestGraph.LPG do
 
   ## Examples
 
-      iex> write_graph(data)
+      iex> data |> write_graph()
       %TestGraph.Graph{
-        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+        data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "temp.cypher",
         type: :lpg,
         uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/temp.cypher"
@@ -107,16 +108,16 @@ defmodule TestGraph.LPG do
 
   ## Examples
 
-      iex> write_graph(data, file: "my.cypher")
+      iex> data |> write_graph("my.cypher")
       %TestGraph.Graph{
-      data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" ...
+      data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "my.cypher",
         type: :lpg,
         uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.cypher"
       }
 
   """
-  def write_graph(data, file: graph_file) do
+  def write_graph(data, graph_file) do
     graphs_dir = @graphs_dir
 
     File.write!(graphs_dir <> graph_file, data)
@@ -139,7 +140,7 @@ defmodule TestGraph.LPG do
       "//\\n// create nodes\\n//\\nCREATE\\n(book:Book {\\n    iri: " <> ...
 
   """
-  def books(), do: read_graph(file: @books_graph_file)
+  def books(), do: read_graph(@books_graph_file)
 
   @doc """
   Reads a `Movies` graph from the graphs library.
@@ -150,7 +151,7 @@ defmodule TestGraph.LPG do
       "CREATE (TheMatrix:Movie {title:'The Matrix', released:1999," <> ...
 
   """
-  def movies(), do: read_graph(file: @movies_graph_file)
+  def movies(), do: read_graph(@movies_graph_file)
 
   ## graphgists
 
@@ -205,7 +206,7 @@ defmodule TestGraph.LPG do
   ## queries
 
   @doc """
-  Reads a default Cypher query from the queries library.
+  Reads a default Cypher query from the LPG queries library.
 
   ## Examples
 
@@ -218,7 +219,7 @@ defmodule TestGraph.LPG do
   end
 
   @doc """
-  Reads a named Cypher query from the queries library.
+  Reads a named Cypher query from the LPG queries library.
 
   ## Examples
 
@@ -228,339 +229,6 @@ defmodule TestGraph.LPG do
   """
   def read_query(query_file) do
     File.read!(@queries_dir <> query_file)
-  end
-
-  @doc """
-  Queries database for one node.
-
-  ## Examples
-
-      iex> conn |> node1()
-      [
-        %{
-          "n" => %Bolt.Sips.Types.Node{
-            id: 1546,
-            labels: ["Book"],
-            properties: %{
-              "date" => "2018-03-14",
-              "format" => "Paper",
-              "iri" => "urn:isbn:978-1-68050-252-7",
-              "title" => "Adopting Elixir"
-            }
-          }
-        }
-      ]
-  """
-  def node1(conn) do
-    Bolt.Sips.query!(conn, read_query("node1.cypher"))
-  end
-
-  @doc """
-  Queries database for all nodes.
-
-  ## Examples
-
-      iex> conn |> nodes()
-      [
-        %{
-          "n" => %Bolt.Sips.Types.Node{
-            id: 1546,
-            labels: ["Book"],
-            properties: %{
-              "date" => "2018-03-14",
-              "format" => "Paper",
-              "iri" => "urn:isbn:978-1-68050-252-7",
-              "title" => "Adopting Elixir"
-            }
-          }
-        },
-        ...
-      ]
-  """
-  def nodes(conn) do
-    Bolt.Sips.query!(conn, read_query("nodes.cypher"))
-  end
-
-  @doc """
-  Queries database for one relationship.
-
-  ## Examples
-
-      iex> conn |> relationship1()
-      [
-        %{
-          "r" => %Bolt.Sips.Types.Relationship{
-            end: 1548,
-            id: 1689,
-            properties: %{"role" => "second author"},
-            start: 1546,
-            type: "AUTHORED_BY"
-          }
-        }
-      ]
-  """
-  def relationship1(conn) do
-    Bolt.Sips.query!(conn, read_query("relationship1.cypher"))
-  end
-
-  @doc """
-  Queries database for all relationships.
-
-  ## Examples
-
-      iex> conn |> relationships()
-      [
-        %{
-          "r" => %Bolt.Sips.Types.Relationship{
-            end: 1548,
-            id: 1689,
-            properties: %{"role" => "second author"},
-            start: 1546,
-            type: "AUTHORED_BY"
-          }
-        },
-        ...
-      ]
-  """
-  def relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("relationships.cypher"))
-  end
-
-  @doc """
-  Queries database for one node and relationships.
-
-  ## Examples
-
-      iex> conn |> node1_and_relationships()
-      [
-        %{
-          "n" => %Bolt.Sips.Types.Node{
-            id: 1548,
-            labels: ["Author"],
-            properties: %{"iri" => "https://twitter.com/josevalim"}
-          },
-          "r" => %Bolt.Sips.Types.Relationship{
-            end: 1548,
-            id: 1689,
-            properties: %{"role" => "second author"},
-            start: 1546,
-            type: "AUTHORED_BY"
-          }
-        },
-        ...
-      ]
-  """
-  def node1_and_relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("node1_and_relationships.cypher"))
-  end
-
-  @doc """
-  Queries database for all nodes and relationships.
-
-  ## Examples
-
-      iex> conn |> nodes_and_relationships()
-      [
-        %{
-          "n" => %Bolt.Sips.Types.Node{
-            id: 1546,
-            labels: ["Book"],
-            properties: %{
-              "date" => "2018-03-14",
-              "format" => "Paper",
-              "iri" => "urn:isbn:978-1-68050-252-7",
-              "title" => "Adopting Elixir"
-            }
-          },
-          "r" => %Bolt.Sips.Types.Relationship{
-            end: 1548,
-            id: 1689,
-            properties: %{"role" => "second author"},
-            start: 1546,
-            type: "AUTHORED_BY"
-          }
-        },
-        ...
-      ]
-  """
-  def nodes_and_relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("nodes_and_relationships.cypher"))
-  end
-
-  @doc """
-  Queries database for one path.
-
-  ## Examples
-
-      iex> conn |> path1()
-      [
-        %{
-          "p" => %Bolt.Sips.Types.Path{
-            nodes: [
-              %Bolt.Sips.Types.Node{
-                id: 1548,
-                labels: ["Author"],
-                properties: %{"iri" => "https://twitter.com/josevalim"}
-              },
-              %Bolt.Sips.Types.Node{
-                id: 1546,
-                labels: ["Book"],
-                properties: %{
-                  "date" => "2018-03-14",
-                  "format" => "Paper",
-                  "iri" => "urn:isbn:978-1-68050-252-7",
-                  "title" => "Adopting Elixir"
-                }
-              }
-            ],
-            relationships: [
-              %Bolt.Sips.Types.UnboundRelationship{
-                end: nil,
-                id: 1689,
-                properties: %{"role" => "second author"},
-                start: nil,
-                type: "AUTHORED_BY"
-              }
-            ],
-            sequence: [-1, 1]
-          }
-        }
-      ]
-  """
-    def path1(conn) do
-    Bolt.Sips.query!(conn, read_query("path1.cypher"))
-  end
-
-  @doc """
-  Queries database for all paths.
-
-  ## Examples
-
-      iex> conn |> paths()
-      [
-        %{
-          "p" => %Bolt.Sips.Types.Path{
-            nodes: [
-              %Bolt.Sips.Types.Node{
-                id: 1548,
-                labels: ["Author"],
-                properties: %{"iri" => "https://twitter.com/josevalim"}
-              },
-              %Bolt.Sips.Types.Node{
-                id: 1546,
-                labels: ["Book"],
-                properties: %{
-                  "date" => "2018-03-14",
-                  "format" => "Paper",
-                  "iri" => "urn:isbn:978-1-68050-252-7",
-                  "title" => "Adopting Elixir"
-                }
-              }
-            ],
-            relationships: [
-              %Bolt.Sips.Types.UnboundRelationship{
-                end: nil,
-                id: 1689,
-                properties: %{"role" => "second author"},
-                start: nil,
-                type: "AUTHORED_BY"
-              }
-            ],
-            sequence: [-1, 1]
-          }
-        },
-        ...
-
-      ]
-  """
-  def paths(conn) do
-    Bolt.Sips.query!(conn, read_query("paths.cypher"))
-  end
-
-  ## database
-  @doc """
-  Opens up a Bolt database connection with the app config.
-
-  ## Examples
-
-      iex> init()
-      [
-        socket: Bolt.Sips.Socket,
-        port: 7687,
-        hostname: 'localhost',
-        retry_linear_backoff: [delay: 150, factor: 2, tries: 3],
-        with_etls: false,
-        ssl: false,
-        timeout: 15000,
-        max_overflow: 2,
-        pool_size: 5,
-        url: "bolt://localhost:7687",
-        basic_auth: [username: "neo4j", password: "neo4jtest"]
-      ]
-  """
-  def init() do
-    Application.get_env(:bolt_sips, Bolt)
-    |> Bolt.Sips.start_link()
-
-    Bolt.Sips.config()
-  end
-
-  @doc """
-  Deletes all nodes and relationships in database.
-
-  ## Examples
-
-      iex> conn |> reset()
-      %{stats: %{"nodes-deleted" => 171, "relationships-deleted" => 253}, type: "w"}
-
-  """
-  def clear(conn) do
-    Bolt.Sips.query!(
-      conn,
-      """
-      match (n) optional match (n)-[r]-() delete n,r
-      """
-    )
-  end
-
-  @doc """
-  Deletes all nodes and relationships in database.
-
-  ## Examples
-
-      iex> conn |> reset()
-      %{stats: %{"nodes-deleted" => 171, "relationships-deleted" => 253}, type: "w"}
-
-  """
-  def reset(conn) do
-    Bolt.Sips.query!(
-      conn,
-      """
-      match (n) optional match (n)-[r]-() delete n,r
-      """
-    )
-  end
-
-  @doc """
-  Counts nodes, relationships and paths in database.
-
-  ## Examples
-
-      iex> conn |> test()
-      [%{"nodes" => 171, "paths" => 506, "relationships" => 253}]
-
-  """
-  def test(conn) do
-    Bolt.Sips.query!(
-      conn,
-      """
-      match (n) optional match p = (n)-[r]-()
-      return
-      count(distinct n) as nodes,
-      count(distinct r) as relationships,
-      count(distinct p) as paths
-      """
-    )
   end
 
 end

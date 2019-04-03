@@ -1,4 +1,4 @@
-defmodule TestGraph.RDF.NeoSemantics.Inference do
+defmodule NeoSemantics.Inference do
   @moduledoc """
   Module providing simple wrapper functions for the `neosemantics` library
   inference functions.
