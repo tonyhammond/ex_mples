@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.LPG.Cypher.Client — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-cabc79395e.js"></script>
+    <script src="dist/sidebar_items-ce7d0a22ac.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -195,8 +195,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="9470175990-1">(</span><span class="p" data-group-id="9470175990-1">)</span><span class="w">
-</span><span class="p" data-group-id="9470175990-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9470175990-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="9470175990-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="9470175990-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="0058021251-1">(</span><span class="p" data-group-id="0058021251-1">)</span><span class="w">
+</span><span class="p" data-group-id="0058021251-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0058021251-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="0058021251-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="0058021251-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="init/0">
@@ -214,20 +214,20 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">init</span><span class="p" data-group-id="8403380009-1">(</span><span class="p" data-group-id="8403380009-1">)</span><span class="w">
-</span><span class="p" data-group-id="8403380009-2">[</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">init</span><span class="p" data-group-id="0345555927-1">(</span><span class="p" data-group-id="0345555927-1">)</span><span class="w">
+</span><span class="p" data-group-id="0345555927-2">[</span><span class="w">
   </span><span class="ss">socket</span><span class="p">:</span><span class="w"> </span><span class="nc">Bolt.Sips.Socket</span><span class="p">,</span><span class="w">
   </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">7687</span><span class="p">,</span><span class="w">
   </span><span class="ss">hostname</span><span class="p">:</span><span class="w"> </span><span class="sc">&#39;localhost&#39;</span><span class="p">,</span><span class="w">
-  </span><span class="ss">retry_linear_backoff</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8403380009-3">[</span><span class="ss">delay</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="ss">factor</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">tries</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8403380009-3">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">retry_linear_backoff</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0345555927-3">[</span><span class="ss">delay</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="ss">factor</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">tries</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="0345555927-3">]</span><span class="p">,</span><span class="w">
   </span><span class="ss">with_etls</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
   </span><span class="ss">ssl</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
   </span><span class="ss">timeout</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
   </span><span class="ss">max_overflow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="ss">pool_size</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="ss">basic_auth</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8403380009-4">[</span><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4jtest&quot;</span><span class="p" data-group-id="8403380009-4">]</span><span class="w">
-</span><span class="p" data-group-id="8403380009-2">]</span></code></pre>
+  </span><span class="ss">basic_auth</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0345555927-4">[</span><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neo4jtest&quot;</span><span class="p" data-group-id="0345555927-4">]</span><span class="w">
+</span><span class="p" data-group-id="0345555927-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="node1/1">
@@ -245,21 +245,21 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="0491616328-1">(</span><span class="p" data-group-id="0491616328-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1</span><span class="p" data-group-id="0491616328-2">(</span><span class="p" data-group-id="0491616328-2">)</span><span class="w">
-</span><span class="p" data-group-id="0491616328-3">[</span><span class="w">
-  </span><span class="p" data-group-id="0491616328-4">%{</span><span class="w">
-    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="0491616328-5">%</span><span class="nc" data-group-id="0491616328-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="0491616328-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="0862886174-1">(</span><span class="p" data-group-id="0862886174-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1</span><span class="p" data-group-id="0862886174-2">(</span><span class="p" data-group-id="0862886174-2">)</span><span class="w">
+</span><span class="p" data-group-id="0862886174-3">[</span><span class="w">
+  </span><span class="p" data-group-id="0862886174-4">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="0862886174-5">%</span><span class="nc" data-group-id="0862886174-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="0862886174-5">{</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
-      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0491616328-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="0491616328-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0491616328-7">%{</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0862886174-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="0862886174-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0862886174-7">%{</span><span class="w">
         </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
-      </span><span class="p" data-group-id="0491616328-7">}</span><span class="w">
-    </span><span class="p" data-group-id="0491616328-5">}</span><span class="w">
-  </span><span class="p" data-group-id="0491616328-4">}</span><span class="w">
-</span><span class="p" data-group-id="0491616328-3">]</span></code></pre>
+      </span><span class="p" data-group-id="0862886174-7">}</span><span class="w">
+    </span><span class="p" data-group-id="0862886174-5">}</span><span class="w">
+  </span><span class="p" data-group-id="0862886174-4">}</span><span class="w">
+</span><span class="p" data-group-id="0862886174-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="node1_and_relationships/1">
@@ -277,24 +277,24 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="3268802686-1">(</span><span class="p" data-group-id="3268802686-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1_and_relationships</span><span class="p" data-group-id="3268802686-2">(</span><span class="p" data-group-id="3268802686-2">)</span><span class="w">
-</span><span class="p" data-group-id="3268802686-3">[</span><span class="w">
-  </span><span class="p" data-group-id="3268802686-4">%{</span><span class="w">
-    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3268802686-5">%</span><span class="nc" data-group-id="3268802686-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="3268802686-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="4041489474-1">(</span><span class="p" data-group-id="4041489474-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node1_and_relationships</span><span class="p" data-group-id="4041489474-2">(</span><span class="p" data-group-id="4041489474-2">)</span><span class="w">
+</span><span class="p" data-group-id="4041489474-3">[</span><span class="w">
+  </span><span class="p" data-group-id="4041489474-4">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="4041489474-5">%</span><span class="nc" data-group-id="4041489474-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="4041489474-5">{</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
-      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3268802686-6">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="3268802686-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3268802686-7">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="3268802686-7">}</span><span class="w">
-    </span><span class="p" data-group-id="3268802686-5">}</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3268802686-8">%</span><span class="nc" data-group-id="3268802686-8">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="3268802686-8">{</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4041489474-6">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="4041489474-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4041489474-7">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="4041489474-7">}</span><span class="w">
+    </span><span class="p" data-group-id="4041489474-5">}</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="4041489474-8">%</span><span class="nc" data-group-id="4041489474-8">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="4041489474-8">{</span><span class="w">
       </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3268802686-9">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="3268802686-9">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4041489474-9">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="4041489474-9">}</span><span class="p">,</span><span class="w">
       </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
       </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-    </span><span class="p" data-group-id="3268802686-8">}</span><span class="w">
-  </span><span class="p" data-group-id="3268802686-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4041489474-8">}</span><span class="w">
+  </span><span class="p" data-group-id="4041489474-4">}</span><span class="p">,</span><span class="w">
   </span><span class="n">...</span><span class="w">
-</span><span class="p" data-group-id="3268802686-3">]</span></code></pre>
+</span><span class="p" data-group-id="4041489474-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="node_ids/1">
@@ -312,14 +312,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="5593816572-1">(</span><span class="p" data-group-id="5593816572-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node_ids</span><span class="p" data-group-id="5593816572-2">(</span><span class="p" data-group-id="5593816572-2">)</span><span class="w">
-</span><span class="p" data-group-id="5593816572-3">[</span><span class="w">
-  </span><span class="p" data-group-id="5593816572-4">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1804</span><span class="p" data-group-id="5593816572-4">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5593816572-5">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1805</span><span class="p" data-group-id="5593816572-5">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5593816572-6">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1806</span><span class="p" data-group-id="5593816572-6">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5593816572-7">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1807</span><span class="p" data-group-id="5593816572-7">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5593816572-8">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6277</span><span class="p" data-group-id="5593816572-8">}</span><span class="w">
-</span><span class="p" data-group-id="5593816572-3">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="2716966476-1">(</span><span class="p" data-group-id="2716966476-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">node_ids</span><span class="p" data-group-id="2716966476-2">(</span><span class="p" data-group-id="2716966476-2">)</span><span class="w">
+</span><span class="p" data-group-id="2716966476-3">[</span><span class="w">
+  </span><span class="p" data-group-id="2716966476-4">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1804</span><span class="p" data-group-id="2716966476-4">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2716966476-5">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1805</span><span class="p" data-group-id="2716966476-5">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2716966476-6">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1806</span><span class="p" data-group-id="2716966476-6">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2716966476-7">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1807</span><span class="p" data-group-id="2716966476-7">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2716966476-8">%{</span><span class="s">&quot;id(n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6277</span><span class="p" data-group-id="2716966476-8">}</span><span class="w">
+</span><span class="p" data-group-id="2716966476-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="nodes/1">
@@ -337,22 +337,22 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="1524934355-1">(</span><span class="p" data-group-id="1524934355-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="p" data-group-id="1524934355-2">(</span><span class="p" data-group-id="1524934355-2">)</span><span class="w">
-</span><span class="p" data-group-id="1524934355-3">[</span><span class="w">
-  </span><span class="p" data-group-id="1524934355-4">%{</span><span class="w">
-    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="1524934355-5">%</span><span class="nc" data-group-id="1524934355-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="1524934355-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="9969347346-1">(</span><span class="p" data-group-id="9969347346-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="p" data-group-id="9969347346-2">(</span><span class="p" data-group-id="9969347346-2">)</span><span class="w">
+</span><span class="p" data-group-id="9969347346-3">[</span><span class="w">
+  </span><span class="p" data-group-id="9969347346-4">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9969347346-5">%</span><span class="nc" data-group-id="9969347346-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="9969347346-5">{</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
-      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1524934355-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="1524934355-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1524934355-7">%{</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9969347346-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="9969347346-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9969347346-7">%{</span><span class="w">
         </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
-      </span><span class="p" data-group-id="1524934355-7">}</span><span class="w">
-    </span><span class="p" data-group-id="1524934355-5">}</span><span class="w">
-  </span><span class="p" data-group-id="1524934355-4">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="9969347346-7">}</span><span class="w">
+    </span><span class="p" data-group-id="9969347346-5">}</span><span class="w">
+  </span><span class="p" data-group-id="9969347346-4">}</span><span class="p">,</span><span class="w">
   </span><span class="n">...</span><span class="w">
-</span><span class="p" data-group-id="1524934355-3">]</span></code></pre>
+</span><span class="p" data-group-id="9969347346-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="nodes_and_relationships/1">
@@ -370,29 +370,29 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="5233617395-1">(</span><span class="p" data-group-id="5233617395-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes_and_relationships</span><span class="p" data-group-id="5233617395-2">(</span><span class="p" data-group-id="5233617395-2">)</span><span class="w">
-</span><span class="p" data-group-id="5233617395-3">[</span><span class="w">
-  </span><span class="p" data-group-id="5233617395-4">%{</span><span class="w">
-    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="5233617395-5">%</span><span class="nc" data-group-id="5233617395-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="5233617395-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="2845756686-1">(</span><span class="p" data-group-id="2845756686-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">nodes_and_relationships</span><span class="p" data-group-id="2845756686-2">(</span><span class="p" data-group-id="2845756686-2">)</span><span class="w">
+</span><span class="p" data-group-id="2845756686-3">[</span><span class="w">
+  </span><span class="p" data-group-id="2845756686-4">%{</span><span class="w">
+    </span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2845756686-5">%</span><span class="nc" data-group-id="2845756686-5">Bolt.Sips.Types.Node</span><span class="p" data-group-id="2845756686-5">{</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
-      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5233617395-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="5233617395-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5233617395-7">%{</span><span class="w">
+      </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2845756686-6">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="2845756686-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2845756686-7">%{</span><span class="w">
         </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
-      </span><span class="p" data-group-id="5233617395-7">}</span><span class="w">
-    </span><span class="p" data-group-id="5233617395-5">}</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="5233617395-8">%</span><span class="nc" data-group-id="5233617395-8">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="5233617395-8">{</span><span class="w">
+      </span><span class="p" data-group-id="2845756686-7">}</span><span class="w">
+    </span><span class="p" data-group-id="2845756686-5">}</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2845756686-8">%</span><span class="nc" data-group-id="2845756686-8">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="2845756686-8">{</span><span class="w">
       </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5233617395-9">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="5233617395-9">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2845756686-9">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="2845756686-9">}</span><span class="p">,</span><span class="w">
       </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
       </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-    </span><span class="p" data-group-id="5233617395-8">}</span><span class="w">
-  </span><span class="p" data-group-id="5233617395-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2845756686-8">}</span><span class="w">
+  </span><span class="p" data-group-id="2845756686-4">}</span><span class="p">,</span><span class="w">
   </span><span class="n">...</span><span class="w">
-</span><span class="p" data-group-id="5233617395-3">]</span></code></pre>
+</span><span class="p" data-group-id="2845756686-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="path1/1">
@@ -410,40 +410,40 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="7460359717-1">(</span><span class="p" data-group-id="7460359717-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">path1</span><span class="p" data-group-id="7460359717-2">(</span><span class="p" data-group-id="7460359717-2">)</span><span class="w">
-</span><span class="p" data-group-id="7460359717-3">[</span><span class="w">
-  </span><span class="p" data-group-id="7460359717-4">%{</span><span class="w">
-    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7460359717-5">%</span><span class="nc" data-group-id="7460359717-5">Bolt.Sips.Types.Path</span><span class="p" data-group-id="7460359717-5">{</span><span class="w">
-      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-6">[</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-7">%</span><span class="nc" data-group-id="7460359717-7">Bolt.Sips.Types.Node</span><span class="p" data-group-id="7460359717-7">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="8207208261-1">(</span><span class="p" data-group-id="8207208261-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">path1</span><span class="p" data-group-id="8207208261-2">(</span><span class="p" data-group-id="8207208261-2">)</span><span class="w">
+</span><span class="p" data-group-id="8207208261-3">[</span><span class="w">
+  </span><span class="p" data-group-id="8207208261-4">%{</span><span class="w">
+    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8207208261-5">%</span><span class="nc" data-group-id="8207208261-5">Bolt.Sips.Types.Path</span><span class="p" data-group-id="8207208261-5">{</span><span class="w">
+      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-6">[</span><span class="w">
+        </span><span class="p" data-group-id="8207208261-7">%</span><span class="nc" data-group-id="8207208261-7">Bolt.Sips.Types.Node</span><span class="p" data-group-id="8207208261-7">{</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
-          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-8">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="7460359717-8">]</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-9">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="7460359717-9">}</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-7">}</span><span class="p">,</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-10">%</span><span class="nc" data-group-id="7460359717-10">Bolt.Sips.Types.Node</span><span class="p" data-group-id="7460359717-10">{</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-8">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="8207208261-8">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-9">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="8207208261-9">}</span><span class="w">
+        </span><span class="p" data-group-id="8207208261-7">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="8207208261-10">%</span><span class="nc" data-group-id="8207208261-10">Bolt.Sips.Types.Node</span><span class="p" data-group-id="8207208261-10">{</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
-          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-11">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="7460359717-11">]</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-12">%{</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-11">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="8207208261-11">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-12">%{</span><span class="w">
             </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
-          </span><span class="p" data-group-id="7460359717-12">}</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-10">}</span><span class="w">
-      </span><span class="p" data-group-id="7460359717-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-13">[</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-14">%</span><span class="nc" data-group-id="7460359717-14">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="7460359717-14">{</span><span class="w">
+          </span><span class="p" data-group-id="8207208261-12">}</span><span class="w">
+        </span><span class="p" data-group-id="8207208261-10">}</span><span class="w">
+      </span><span class="p" data-group-id="8207208261-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-13">[</span><span class="w">
+        </span><span class="p" data-group-id="8207208261-14">%</span><span class="nc" data-group-id="8207208261-14">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="8207208261-14">{</span><span class="w">
           </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-15">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="7460359717-15">}</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-15">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="8207208261-15">}</span><span class="p">,</span><span class="w">
           </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
           </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-        </span><span class="p" data-group-id="7460359717-14">}</span><span class="w">
-      </span><span class="p" data-group-id="7460359717-13">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7460359717-16">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7460359717-16">]</span><span class="w">
-    </span><span class="p" data-group-id="7460359717-5">}</span><span class="w">
-  </span><span class="p" data-group-id="7460359717-4">}</span><span class="w">
-</span><span class="p" data-group-id="7460359717-3">]</span></code></pre>
+        </span><span class="p" data-group-id="8207208261-14">}</span><span class="w">
+      </span><span class="p" data-group-id="8207208261-13">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8207208261-16">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8207208261-16">]</span><span class="w">
+    </span><span class="p" data-group-id="8207208261-5">}</span><span class="w">
+  </span><span class="p" data-group-id="8207208261-4">}</span><span class="w">
+</span><span class="p" data-group-id="8207208261-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="paths/1">
@@ -461,42 +461,42 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="2244679271-1">(</span><span class="p" data-group-id="2244679271-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">paths</span><span class="p" data-group-id="2244679271-2">(</span><span class="p" data-group-id="2244679271-2">)</span><span class="w">
-</span><span class="p" data-group-id="2244679271-3">[</span><span class="w">
-  </span><span class="p" data-group-id="2244679271-4">%{</span><span class="w">
-    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2244679271-5">%</span><span class="nc" data-group-id="2244679271-5">Bolt.Sips.Types.Path</span><span class="p" data-group-id="2244679271-5">{</span><span class="w">
-      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-6">[</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-7">%</span><span class="nc" data-group-id="2244679271-7">Bolt.Sips.Types.Node</span><span class="p" data-group-id="2244679271-7">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="9340498380-1">(</span><span class="p" data-group-id="9340498380-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">paths</span><span class="p" data-group-id="9340498380-2">(</span><span class="p" data-group-id="9340498380-2">)</span><span class="w">
+</span><span class="p" data-group-id="9340498380-3">[</span><span class="w">
+  </span><span class="p" data-group-id="9340498380-4">%{</span><span class="w">
+    </span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9340498380-5">%</span><span class="nc" data-group-id="9340498380-5">Bolt.Sips.Types.Path</span><span class="p" data-group-id="9340498380-5">{</span><span class="w">
+      </span><span class="ss">nodes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-6">[</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-7">%</span><span class="nc" data-group-id="9340498380-7">Bolt.Sips.Types.Node</span><span class="p" data-group-id="9340498380-7">{</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
-          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-8">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="2244679271-8">]</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-9">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="2244679271-9">}</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-7">}</span><span class="p">,</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-10">%</span><span class="nc" data-group-id="2244679271-10">Bolt.Sips.Types.Node</span><span class="p" data-group-id="2244679271-10">{</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-8">[</span><span class="s">&quot;Author&quot;</span><span class="p" data-group-id="9340498380-8">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-9">%{</span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;https://twitter.com/josevalim&quot;</span><span class="p" data-group-id="9340498380-9">}</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-7">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-10">%</span><span class="nc" data-group-id="9340498380-10">Bolt.Sips.Types.Node</span><span class="p" data-group-id="9340498380-10">{</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
-          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-11">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="2244679271-11">]</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-12">%{</span><span class="w">
+          </span><span class="ss">labels</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-11">[</span><span class="s">&quot;Book&quot;</span><span class="p" data-group-id="9340498380-11">]</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-12">%{</span><span class="w">
             </span><span class="s">&quot;date&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;2018-03-14&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;format&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Paper&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;iri&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;urn:isbn:978-1-68050-252-7&quot;</span><span class="p">,</span><span class="w">
             </span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;Adopting Elixir&quot;</span><span class="w">
-          </span><span class="p" data-group-id="2244679271-12">}</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-10">}</span><span class="w">
-      </span><span class="p" data-group-id="2244679271-6">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-13">[</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-14">%</span><span class="nc" data-group-id="2244679271-14">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="2244679271-14">{</span><span class="w">
+          </span><span class="p" data-group-id="9340498380-12">}</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-10">}</span><span class="w">
+      </span><span class="p" data-group-id="9340498380-6">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">relationships</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-13">[</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-14">%</span><span class="nc" data-group-id="9340498380-14">Bolt.Sips.Types.UnboundRelationship</span><span class="p" data-group-id="9340498380-14">{</span><span class="w">
           </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
           </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-15">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="2244679271-15">}</span><span class="p">,</span><span class="w">
+          </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-15">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="9340498380-15">}</span><span class="p">,</span><span class="w">
           </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
           </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-        </span><span class="p" data-group-id="2244679271-14">}</span><span class="w">
-      </span><span class="p" data-group-id="2244679271-13">]</span><span class="p">,</span><span class="w">
-      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2244679271-16">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2244679271-16">]</span><span class="w">
-    </span><span class="p" data-group-id="2244679271-5">}</span><span class="w">
-  </span><span class="p" data-group-id="2244679271-4">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="9340498380-14">}</span><span class="w">
+      </span><span class="p" data-group-id="9340498380-13">]</span><span class="p">,</span><span class="w">
+      </span><span class="ss">sequence</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9340498380-16">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9340498380-16">]</span><span class="w">
+    </span><span class="p" data-group-id="9340498380-5">}</span><span class="w">
+  </span><span class="p" data-group-id="9340498380-4">}</span><span class="p">,</span><span class="w">
   </span><span class="n">...</span><span class="w">
 
-</span><span class="p" data-group-id="2244679271-3">]</span></code></pre>
+</span><span class="p" data-group-id="9340498380-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="relationship1/1">
@@ -514,18 +514,18 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="3781895859-1">(</span><span class="p" data-group-id="3781895859-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationship1</span><span class="p" data-group-id="3781895859-2">(</span><span class="p" data-group-id="3781895859-2">)</span><span class="w">
-</span><span class="p" data-group-id="3781895859-3">[</span><span class="w">
-  </span><span class="p" data-group-id="3781895859-4">%{</span><span class="w">
-    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3781895859-5">%</span><span class="nc" data-group-id="3781895859-5">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="3781895859-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="7602235254-1">(</span><span class="p" data-group-id="7602235254-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationship1</span><span class="p" data-group-id="7602235254-2">(</span><span class="p" data-group-id="7602235254-2">)</span><span class="w">
+</span><span class="p" data-group-id="7602235254-3">[</span><span class="w">
+  </span><span class="p" data-group-id="7602235254-4">%{</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7602235254-5">%</span><span class="nc" data-group-id="7602235254-5">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="7602235254-5">{</span><span class="w">
       </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3781895859-6">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="3781895859-6">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7602235254-6">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="7602235254-6">}</span><span class="p">,</span><span class="w">
       </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
       </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-    </span><span class="p" data-group-id="3781895859-5">}</span><span class="w">
-  </span><span class="p" data-group-id="3781895859-4">}</span><span class="w">
-</span><span class="p" data-group-id="3781895859-3">]</span></code></pre>
+    </span><span class="p" data-group-id="7602235254-5">}</span><span class="w">
+  </span><span class="p" data-group-id="7602235254-4">}</span><span class="w">
+</span><span class="p" data-group-id="7602235254-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="relationships/1">
@@ -543,19 +543,19 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="2789652945-1">(</span><span class="p" data-group-id="2789652945-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationships</span><span class="p" data-group-id="2789652945-2">(</span><span class="p" data-group-id="2789652945-2">)</span><span class="w">
-</span><span class="p" data-group-id="2789652945-3">[</span><span class="w">
-  </span><span class="p" data-group-id="2789652945-4">%{</span><span class="w">
-    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="2789652945-5">%</span><span class="nc" data-group-id="2789652945-5">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="2789652945-5">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="0760877413-1">(</span><span class="p" data-group-id="0760877413-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">relationships</span><span class="p" data-group-id="0760877413-2">(</span><span class="p" data-group-id="0760877413-2">)</span><span class="w">
+</span><span class="p" data-group-id="0760877413-3">[</span><span class="w">
+  </span><span class="p" data-group-id="0760877413-4">%{</span><span class="w">
+    </span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="0760877413-5">%</span><span class="nc" data-group-id="0760877413-5">Bolt.Sips.Types.Relationship</span><span class="p" data-group-id="0760877413-5">{</span><span class="w">
       </span><span class="ss">end</span><span class="p">:</span><span class="w"> </span><span class="mi">1548</span><span class="p">,</span><span class="w">
       </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
-      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2789652945-6">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="2789652945-6">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">properties</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0760877413-6">%{</span><span class="s">&quot;role&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;second author&quot;</span><span class="p" data-group-id="0760877413-6">}</span><span class="p">,</span><span class="w">
       </span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">1546</span><span class="p">,</span><span class="w">
       </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AUTHORED_BY&quot;</span><span class="w">
-    </span><span class="p" data-group-id="2789652945-5">}</span><span class="w">
-  </span><span class="p" data-group-id="2789652945-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="0760877413-5">}</span><span class="w">
+  </span><span class="p" data-group-id="0760877413-4">}</span><span class="p">,</span><span class="w">
   </span><span class="n">...</span><span class="w">
-</span><span class="p" data-group-id="2789652945-3">]</span></code></pre>
+</span><span class="p" data-group-id="0760877413-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="reset/1">
@@ -573,8 +573,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="0845596719-1">(</span><span class="p" data-group-id="0845596719-1">)</span><span class="w">
-</span><span class="p" data-group-id="0845596719-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0845596719-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="0845596719-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="0845596719-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">reset</span><span class="p" data-group-id="4660169603-1">(</span><span class="p" data-group-id="4660169603-1">)</span><span class="w">
+</span><span class="p" data-group-id="4660169603-2">%{</span><span class="ss">stats</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4660169603-3">%{</span><span class="s">&quot;nodes-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships-deleted&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="4660169603-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p" data-group-id="4660169603-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="test/1">
@@ -592,8 +592,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="3011130984-1">(</span><span class="p" data-group-id="3011130984-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">test</span><span class="p" data-group-id="3011130984-2">(</span><span class="p" data-group-id="3011130984-2">)</span><span class="w">
-</span><span class="p" data-group-id="3011130984-3">[</span><span class="p" data-group-id="3011130984-4">%{</span><span class="s">&quot;nodes&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paths&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">506</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="3011130984-4">}</span><span class="p" data-group-id="3011130984-3">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="7172047110-1">(</span><span class="p" data-group-id="7172047110-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">test</span><span class="p" data-group-id="7172047110-2">(</span><span class="p" data-group-id="7172047110-2">)</span><span class="w">
+</span><span class="p" data-group-id="7172047110-3">[</span><span class="p" data-group-id="7172047110-4">%{</span><span class="s">&quot;nodes&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paths&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">506</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;relationships&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">253</span><span class="p" data-group-id="7172047110-4">}</span><span class="p" data-group-id="7172047110-3">]</span></code></pre>
   </section>
 </section>
           </div>

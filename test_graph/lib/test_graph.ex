@@ -18,7 +18,7 @@ defmodule TestGraph do
 
       # 1. explicit form
       iex> elixir = (
-      ...>   TestGraph.RDF.read_query("elixir.rq")
+      ...>   TestGraph.RDF.read_query("elixir.rq").data
       ...>   |> SPARQL.Client.rquery!
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph("elixir.ttl")
@@ -45,6 +45,23 @@ defmodule TestGraph do
   ## Examples
 
       iex> TestGraph.import_rdf_from_graph("elixir.ttl")
+      [
+        %{
+          "extraInfo" => "",
+          "namespaces" => %{
+            "http://example.org/" => "ns0",
+            "http://purl.org/dc/elements/1.1/" => "dc",
+            "http://purl.org/dc/terms/" => "dct",
+            "http://schema.org/" => "sch",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
+            "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
+            "http://www.w3.org/2002/07/owl#" => "owl",
+            "http://www.w3.org/2004/02/skos/core#" => "skos"
+          },
+          "terminationStatus" => "OK",
+          "triplesLoaded" => 4
+        }
+      ]
 
   """
   def import_rdf_from_graph(graph_file \\ @test_graph_file) do
@@ -59,6 +76,23 @@ defmodule TestGraph do
   ## Examples
 
       iex> TestGraph.import_rdf_from_query("elixir.rq")
+      [
+        %{
+          "extraInfo" => "",
+          "namespaces" => %{
+            "http://example.org/" => "ns0",
+            "http://purl.org/dc/elements/1.1/" => "dc",
+            "http://purl.org/dc/terms/" => "dct",
+            "http://schema.org/" => "sch",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
+            "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
+            "http://www.w3.org/2002/07/owl#" => "owl",
+            "http://www.w3.org/2004/02/skos/core#" => "skos"
+          },
+          "terminationStatus" => "OK",
+          "triplesLoaded" => 4
+        }
+      ]
 
   """
   def import_rdf_from_query(query_file \\ @test_query_file) do
@@ -81,13 +115,23 @@ defmodule TestGraph do
 
   ## Examples
 
-      iex> TestGraph.export_rdf_by_id(1834)
+      iex> TestGraph.export_rdf_by_id(1783)
+      %TestGraph.Graph{
+        data: "@prefix neovoc: <neo4j://defaultvocabulary#> .\\n@prefix neoind: <neo4j://indiv#> .\\n\\n\\nneoind:1783 a neovoc:Resource;\\n  neovoc:ns0__creator neoind:1785;\\n  neovoc:ns0__homepage neoind:1784;\\n  neovoc:ns0__license neoind:1786;\\n  neovoc:ns0__name \"Elixir\";\\n  neovoc:uri \"http://example.org/Elixir\" .\\n",
+        file: "1783.ttl",
+        path: "/Users/tony/Projects/github/tonyhammond/ex_mples/test_graph/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl",
+        type: :rdf,
+        uri: "file:///Users/tony/Projects/github/tonyhammond/ex_mples/test_graph/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl"
+      }
+
+      iex> TestGraph.export_rdf_by_id(1783).data
+      "@prefix neovoc: <neo4j://defaultvocabulary#> .\\n@prefix neoind: <neo4j://indiv#> .\\n\\n\\nneoind:1783 a neovoc:Resource;\\n  neovoc:ns0__creator neoind:1785;\\n  neovoc:ns0__homepage neoind:1784;\\n  neovoc:ns0__license neoind:1786;\\n  neovoc:ns0__name \"Elixir\";\\n  neovoc:uri \"http://example.org/Elixir\" .\\n"
 
   """
   def export_rdf_by_id(node_id, exclude_context \\ false) do
     id = Integer.to_string(node_id)
-    {:ok, env} = NeoSemantics.Extension.node_by_id(node_id, exclude_context)
-    TestGraph.RDF.write_graph(env.body, id <> ".ttl")
+    data = NeoSemantics.Extension.node_by_id(node_id, exclude_context)
+    TestGraph.RDF.write_graph(data, id <> ".ttl")
   end
 
   @doc """
@@ -100,13 +144,23 @@ defmodule TestGraph do
   ## Examples
 
       iex> TestGraph.export_rdf_by_uri("http://example.org/Elixir")
+      %TestGraph.Graph{
+        data: "@prefix neovoc: <neo4j://vocabulary#> .\\n\\n\\n<http://example.org/Elixir> <http://example.org/creator> <http://dbpedia.org/resource/José_Valim>;\\n  <http://example.org/homepage> <http://elixir-lang.org>;\\n  <http://example.org/license> <http://dbpedia.org/resource/Apache_License>;\\n  <http://example.org/name> \"Elixir\" .\\n",
+        file: "http___example.org_Elixir.ttl",
+        path: ... <> "/test_graph/priv/rdf/graphs/http___example.org_Elixir.ttl",
+        type: :rdf,
+        uri: "file:\/\/\/" <> ... <> "/test_graph/priv/rdf/graphs/http___example.org_Elixir.ttl"
+      }
+
+      iex> TestGraph.export_rdf_by_uri("http://example.org/Elixir").data
+      "@prefix neovoc: <neo4j://vocabulary#> .\\n\\n\\n<http://example.org/Elixir> <http://example.org/creator> <http://dbpedia.org/resource/José_Valim>;\\n  <http://example.org/homepage> <http://elixir-lang.org>;\\n  <http://example.org/license> <http://dbpedia.org/resource/Apache_License>;\\n  <http://example.org/name> \"Elixir\" .\\n"
 
   """
   def export_rdf_by_uri(node_uri, exclude_context \\ false) do
     uri = URI.encode(node_uri)
     uri_safe  = String.replace(uri, ~r/[\/\?\:\@]/, "_")
-    {:ok, env} = NeoSemantics.Extension.node_by_uri(node_uri, exclude_context)
-    TestGraph.RDF.write_graph(env.body, uri_safe <> ".ttl")
+    data = NeoSemantics.Extension.node_by_uri(node_uri, exclude_context)
+    TestGraph.RDF.write_graph(data, uri_safe <> ".ttl")
   end
 
 

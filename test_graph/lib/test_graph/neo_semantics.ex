@@ -21,12 +21,12 @@ defmodule NeoSemantics do
   ## Examples
 
       iex> uri = TestGraph.RDF.read_graph().uri
-      "file:///.../priv/rdf/graphs/default.ttl"
+      "file:///.../test-graph/priv/rdf/graphs/default.ttl"
       iex> fmt = "Turtle"
       "Turtle"
 
       # simple form - import_rdf/3
-      iex> {:ok, resp} = (conn |> NeoSemantics.import_rdf(uri, fmt))
+      iex> {:ok, resp} = (conn() |> NeoSemantics.import_rdf(uri, fmt))
       {:ok,
        [
          %{
@@ -63,12 +63,12 @@ defmodule NeoSemantics do
            "triplesLoaded" => 8
          }
       ]
-      iex> conn |> Cypher.Client.test()
+      iex> conn() |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
 
       # marked form - import_rdf!/3
-      iex> conn |> NeoSemantics.import_rdf!(uri, fmt)
+      iex> conn() |> NeoSemantics.import_rdf!(uri, fmt)
       [
         %{
           "extraInfo" => "",
@@ -86,11 +86,11 @@ defmodule NeoSemantics do
           "triplesLoaded" => 8
         }
       ]
-      iex> conn |> Cypher.Client.test()
+      iex> conn() |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
       # marked form - import_turtle!/2
-      iex> conn |> NeoSemantics.import_turtle!(uri)
+      iex> conn() |> NeoSemantics.import_turtle!(uri)
       [
         %{
           "extraInfo" => "",
@@ -108,7 +108,7 @@ defmodule NeoSemantics do
           "triplesLoaded" => 8
         }
       ]
-      iex> conn |> Cypher.Client.test()
+      iex> conn() |> Cypher.Client.test()
       [%{"nodes" => 6, "paths" => 8, "relationships" => 4}]
 
   """
