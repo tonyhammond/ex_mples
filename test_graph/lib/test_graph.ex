@@ -163,5 +163,19 @@ defmodule TestGraph do
     TestGraph.RDF.write_graph(data, uri_safe <> ".ttl")
   end
 
+  @doc """
+  Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+  is defined by the `cypher` query.
+
+  ## Examples
+
+      iex> cypher = TestGraph.LPG.read_query("node1.cypher").data
+      "match (n) return n limit 1\\n"
+      iex> cypher |> TestGraph.export_rdf_by_query
+  """
+  def export_rdf_by_query(cypher, graph_file) do
+    data = NeoSemantics.Extension.cypher_on_lpg(cypher)
+    TestGraph.RDF.write_graph(data, graph_file)
+  end
 
 end

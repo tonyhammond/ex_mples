@@ -1,0 +1,7 @@
+@prefix neovoc: <neo4j://defaultvocabulary#> .
+@prefix neoind: <neo4j://indiv#> .
+
+
+neoind:919 a neovoc:Resource;
+  neovoc:rdfs__label "Hello World";
+  neovoc:uri "http://dbpedia.org/resource/Hello_World" .
