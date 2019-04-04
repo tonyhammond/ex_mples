@@ -29,18 +29,18 @@ defmodule TestGraph.RDF do
       %TestGraph.Graph{
         data: "<http:\/\/dbpedia.org\/resource\/Hello_World>\\n" <> ...
         file: "default.ttl",
-        path:  ... <> "\/priv\/rdf\/graphs\/default.ttl",
+        path:  ... <> "\/test_graph\/priv\/rdf\/graphs\/default.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/default.ttl"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/graphs\/default.ttl"
       }
 
       iex> read_graph("books.ttl")
       %TestGraph.Graph{
         data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "books.ttl",
-        path:  ... <> "\/priv\/rdf\/graphs\/books.ttl",
+        path:  ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/books.ttl"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl"
       }
   """
   def read_graph(graph_file \\ @test_graph_file) do
@@ -59,15 +59,15 @@ defmodule TestGraph.RDF do
       %TestGraph.Graph{
         data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "my.ttl",
-        path:  ... <> "\/priv\/rdf\/graphs\/my.ttl",
+        path:  ... <> "\/test_graph\/priv\/rdf\/graphs\/my.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <>... <> "\/priv\/rdf\/graphs\/my.ttl"
+        uri: "file:\/\/\/" <>... <> "\/test_graph\/priv\/rdf\/graphs\/my.ttl"
       }
 
   """
-  def write_graph(data, graph_file \\ @temp_graph_file) do
+  def write_graph(graph_data, graph_file \\ @temp_graph_file) do
     graphs_dir = @graphs_dir
-    graph_data = File.write!(graphs_dir <> graph_file, data)
+    File.write!(graphs_dir <> graph_file, graph_data)
 
     TestGraph.Graph.new(graph_data, graph_file, :rdf)
   end
@@ -83,18 +83,18 @@ defmodule TestGraph.RDF do
       %TestGraph.Query{
         data: "construct { ?s ?p ?o } where { " <> ...
         file: "books.rq",
-        path:  ... <> "\/priv\/rdf\/queries\/books.rq",
+        path:  ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/books.rq"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq"
       }
 
       iex> read_query("books.rq")
       %TestGraph.Query{
         data: "construct { ?s ?p ?o } where { " <> ...
         file: "books.rq",
-        path:  ... <> "\/priv\/rdf\/queries\/books.rq",
+        path:  ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/books.rq"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq"
       }
   """
   def read_query(query_file \\ @test_query_file) do
@@ -113,15 +113,15 @@ defmodule TestGraph.RDF do
       %TestGraph.Query{
         data: "construct { ?s ?p ?o } where { " <> ...
         file: "my.rq",
-        path:  ... <> "\/priv\/rdf\/queries\/my.rq",
+        path:  ... <> "\/test_graph\/priv\/rdf\/queries\/my.rq",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/my.rq"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/queries\/my.rq"
       }
 
   """
-  def write_query(data, query_file \\ @temp_query_file) do
+  def write_query(query_data, query_file \\ @temp_query_file) do
     queries_dir = @queries_dir
-    query_data = File.write!(queries_dir <> query_file, data)
+    File.write!(queries_dir <> query_file, query_data)
 
     TestGraph.Query.new(query_data, query_file, :rdf)
   end

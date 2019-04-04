@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.19.3">
-    <title>NeoSemantics.Inference — test_graph v0.1.0</title>
+    <title>NeoSemantics.Extension — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
     <script src="dist/sidebar_items-cabc79395e.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
@@ -59,12 +59,12 @@ test_graph      </h1>
 
       <h1>
         <small class="visible-xs">test_graph v0.1.0</small>
-NeoSemantics.Inference              </h1>
+NeoSemantics.Extension              </h1>
 
 
         <section id="moduledoc">
 <p>Module providing simple wrapper functions for the <a href="https://github.com/jbarrasa/neosemantics"><code class="inline">neosemantics</code></a> library
-inference functions.</p>
+extension functions.</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -81,23 +81,25 @@ inference functions.</p>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_nodes_linked_to/2">get_nodes_linked_to(conn, label)</a>
+    <a href="#node_by_id/2">node_by_id(node_id, exclude_context \\ false)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all nodes with label <code class="inline">label</code> or its sublabels</p>
+    <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_id</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_nodes_with_label/2">get_nodes_with_label(conn, label)</a>
+    <a href="#node_by_uri/2">node_by_uri(node_uri, exclude_context \\ false)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all nodes connected to node with label <code class="inline">label</code> or its subcategories</p>
+    <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_uri</code></p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_rels/2">get_rels(conn, rel)</a>
+    <a href="#ping/0">ping()</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all outgoing relationships of type <code class="inline">rel</code></p>
+    <div class="summary-synopsis"><p>Pings the Neo4j service</p>
 </div>
 </div>
   </div>
@@ -111,40 +113,71 @@ inference functions.</p>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="get_nodes_linked_to/2">
-    <div class="detail-header">
-    <a href="#get_nodes_linked_to/2" class="detail-link" title="Link to this function">
+<section class="detail" id="node_by_id/2">
+  
+    <span id="node_by_id/1"></span>
+  <div class="detail-header">
+    <a href="#node_by_id/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_nodes_linked_to(conn, label)</span>
+    <h1 class="signature">node_by_id(node_id, exclude_context \\ false)</span>
           </div>
   <section class="docstring">
-<p>Returns all nodes with label <code class="inline">label</code> or its sublabels.</p>
+<p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_id</code>.</p>
+<p>This returns the full context unless an optional boolean arg <code class="inline">exclude_context</code>
+is passed as <code class="inline">true</code> which will exclude context if present.</p>
+<h2 id="node_by_id/2-examples" class="section-heading">
+  <a href="#node_by_id/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_id</span><span class="p" data-group-id="6875188755-1">(</span><span class="mi">1834</span><span class="p" data-group-id="6875188755-1">)</span></code></pre>
   </section>
 </section>
-<section class="detail" id="get_nodes_with_label/2">
-    <div class="detail-header">
-    <a href="#get_nodes_with_label/2" class="detail-link" title="Link to this function">
+<section class="detail" id="node_by_uri/2">
+  
+    <span id="node_by_uri/1"></span>
+  <div class="detail-header">
+    <a href="#node_by_uri/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_nodes_with_label(conn, label)</span>
+    <h1 class="signature">node_by_uri(node_uri, exclude_context \\ false)</span>
           </div>
   <section class="docstring">
-<p>Returns all nodes connected to node with label <code class="inline">label</code> or its subcategories.</p>
+<p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_uri</code>.</p>
+<p>This returns the full context unless an optional boolean arg <code class="inline">exclude_context</code>
+is passed as <code class="inline">true</code> which will exclude context if present.</p>
+<h2 id="node_by_uri/2-examples" class="section-heading">
+  <a href="#node_by_uri/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_uri</span><span class="p" data-group-id="0655207935-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="0655207935-1">)</span></code></pre>
   </section>
 </section>
-<section class="detail" id="get_rels/2">
+<section class="detail" id="ping/0">
     <div class="detail-header">
-    <a href="#get_rels/2" class="detail-link" title="Link to this function">
+    <a href="#ping/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">get_rels(conn, rel)</span>
+    <h1 class="signature">ping()</span>
           </div>
   <section class="docstring">
-<p>Returns all outgoing relationships of type <code class="inline">rel</code>.</p>
+<p>Pings the Neo4j service.</p>
+<p>This returns a JSON confirmation that the service is up.</p>
+<h2 id="ping/0-examples" class="section-heading">
+  <a href="#ping/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">ping</span><span class="w">
+</span><span class="p" data-group-id="7657915849-1">{</span><span class="s">&quot;ping&quot;</span><span class="ss">:&quot;here!&quot;</span><span class="p" data-group-id="7657915849-1">}</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
           </div>

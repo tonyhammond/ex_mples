@@ -1,0 +1,3 @@
+@prefix neovoc: <neo4j://defaultvocabulary#> .
+@prefix neoind: <neo4j://indiv#> .
+

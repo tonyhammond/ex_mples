@@ -2,11 +2,14 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :tesla, :adapter, Tesla.Adapter.Hackney
-
 config :bolt_sips, Bolt,
   url: "bolt://localhost:7687",
   basic_auth: [username: "neo4j", password: "neo4jtest"]
+
+config :tesla, :adapter, Tesla.Adapter.Hackney
+
+config :test_graph,
+  neo4j_service: "http://neo4j:neo4jtest@localhost:7474"
 
 # Application.put_env(:test_graph,
 #   :sparql_query, TestGraph.RDF.SPARQL.Client.default_sparql_query)

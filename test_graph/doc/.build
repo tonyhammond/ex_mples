@@ -4,11 +4,12 @@ dist/html/fonts/icomoon.eot
 dist/html/fonts/icomoon.svg
 dist/html/fonts/icomoon.ttf
 dist/html/fonts/icomoon.woff
-dist/sidebar_items-b4d1a7859d.js
+dist/sidebar_items-cabc79395e.js
 api-reference.html
 search.html
 404.html
 NeoSemantics.html
+NeoSemantics.Extension.html
 NeoSemantics.Inference.html
 NeoSemantics.Mapping.html
 TestGraph.html

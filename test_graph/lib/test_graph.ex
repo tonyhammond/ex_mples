@@ -23,7 +23,7 @@ defmodule TestGraph do
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph("elixir.ttl")
       ...> )
-      iex> Bolt.Sips.conn() |> NeoSemantics.import_rdf!(elixir.uri, "Turtle")
+      iex> conn() |> NeoSemantics.import_rdf!(elixir.uri, "Turtle")
 
       # 2. implicit form
       iex> TestGraph.import_rdf_from_query("elixir.rq")
@@ -32,6 +32,7 @@ defmodule TestGraph do
       iex> import_rdf_from_query("elixir.rq")
 
   """
+  import Bolt.Sips, only: [conn: 0]
 
   alias TestGraph.RDF.SPARQL
 
@@ -48,7 +49,7 @@ defmodule TestGraph do
   """
   def import_rdf_from_graph(graph_file \\ @test_graph_file) do
     graph = TestGraph.RDF.read_graph(graph_file)
-    Bolt.Sips.conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
+    conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
   end
 
   @doc """
@@ -68,7 +69,7 @@ defmodule TestGraph do
       |> RDF.Turtle.write_string!
       |> TestGraph.RDF.write_graph(graph_file)
     )
-    Bolt.Sips.conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
+    conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
   end
 
   @doc """
@@ -85,15 +86,7 @@ defmodule TestGraph do
   """
   def export_rdf_by_id(node_id, exclude_context \\ false) do
     id = Integer.to_string(node_id)
-    # method = :get
-    base = "http://neo4j:neo4jtest@localhost:7474"
-    path = "/rdf/describe/id"
-    query =
-      case exclude_context do
-        true -> "?nodeid=" <> id <> "&excludeContext"
-        false -> "?nodeid=" <> id
-      end
-    {:ok, env} = Tesla.get(base <> path <> query)
+    {:ok, env} = NeoSemantics.Extension.node_by_id(node_id, exclude_context)
     TestGraph.RDF.write_graph(env.body, id <> ".ttl")
   end
 
@@ -112,16 +105,9 @@ defmodule TestGraph do
   def export_rdf_by_uri(node_uri, exclude_context \\ false) do
     uri = URI.encode(node_uri)
     uri_safe  = String.replace(uri, ~r/[\/\?\:\@]/, "_")
-    # method = :get
-    base = "http://neo4j:neo4jtest@localhost:7474"
-    path = "/rdf/describe/uri"
-    query =
-      case exclude_context do
-        true -> "?nodeuri=" <> uri <> "&excludeContext"
-        false -> "?nodeuri=" <> uri
-      end
-    {:ok, env} = Tesla.get(base <> path <> query)
+    {:ok, env} = NeoSemantics.Extension.node_by_uri(node_uri, exclude_context)
     TestGraph.RDF.write_graph(env.body, uri_safe <> ".ttl")
   end
+
 
 end

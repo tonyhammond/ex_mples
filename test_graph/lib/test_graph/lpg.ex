@@ -32,18 +32,18 @@ defmodule TestGraph.LPG do
       %TestGraph.Graph{
         data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "default.cypher",
-        path:  ... <> "\/priv\/lpg\/graphs\/default.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/graphs\/default.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/graphs\/default.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/lpg\/graphs\/default.cypher"
       }
 
       iex> read_graph("books.cypher")
       %TestGraph.Graph{
         data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "books.cypher",
-        path:  ... <> "\/priv\/lpg\/graphs\/books.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/graphs\/books.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/graphs\/books.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/lpg\/graphs\/books.cypher"
       }
   """
   def read_graph(graph_file \\ @test_graph_file) do
@@ -62,15 +62,15 @@ defmodule TestGraph.LPG do
       %TestGraph.Graph{
         data: "\/\/\\n\/\/ create nodes\\n\/\/\\nCREATE\\n(book:Book {\\n" <> ...
         file: "my.cypher",
-        path:  ... <> "\/priv\/lpg\/graphs\/my.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/graphs\/my.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <>... <> "\/priv\/lpg\/graphs\/my.cypher"
+        uri: "file:\/\/\/" <>... <> "\/test_graph\/priv\/lpg\/graphs\/my.cypher"
       }
 
   """
-  def write_graph(data, graph_file \\ @temp_graph_file) do
+  def write_graph(graph_data, graph_file \\ @temp_graph_file) do
     graphs_dir = @graphs_dir
-    graph_data = File.write!(graphs_dir <> graph_file, data)
+    File.write!(graphs_dir <> graph_file, graph_data)
 
     TestGraph.Graph.new(graph_data, graph_file, :lpg)
   end
@@ -110,18 +110,18 @@ defmodule TestGraph.LPG do
       %TestGraph.Query{
         data: "match (n) return n\\n"
         file: "nodes.cypher",
-        path:  ... <> "\/priv\/lpg\/queries\/nodes.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/queries\/nodes.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/nodes.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/lpg\/queries\/nodes.cypher"
       }
 
       iex> read_query("nodes.cypher")
       %TestGraph.Query{
         data: "match (n) return n\\n"
         file: "nodes.cypher",
-        path:  ... <> "\/priv\/lpg\/queries\/nodes.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/queries\/nodes.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/nodes.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/lpg\/queries\/nodes.cypher"
       }
   """
   def read_query(query_file \\ @test_query_file) do
@@ -140,15 +140,15 @@ defmodule TestGraph.LPG do
       %TestGraph.Query{
         data: "match (n) return n\\n"
         file: "my.cypher",
-        path:  ... <> "\/priv\/lpg\/queries\/my.cypher",
+        path:  ... <> "\/test_graph\/priv\/lpg\/queries\/my.cypher",
         type: :lpg,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/lpg\/queries\/my.cypher"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/lpg\/queries\/my.cypher"
       }
 
   """
-  def write_query(data, query_file \\ @temp_query_file) do
+  def write_query(query_data, query_file \\ @temp_query_file) do
     queries_dir = @queries_dir
-    query_data = File.write!(queries_dir <> query_file, data)
+    File.write!(queries_dir <> query_file, query_data)
 
     TestGraph.Query.new(query_data, query_file, :lpg)
   end

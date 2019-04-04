@@ -40,6 +40,7 @@ defmodule TestGraph.Graph do
       type: graph_type,
       uri:  "file://" <> graphs_dir <> graph_file,
     }
+
   end
 
 end

@@ -3,15 +3,6 @@ defmodule TestGraph.RDF.SPARQL.Client do
   Module providing simple wrapper functions for the `SPARQL.Client` module.
   """
 
-  @priv_dir "#{:code.priv_dir(:test_graph)}"
-
-  @rdf_dir @priv_dir <> "/rdf"
-
-  @graphs_dir @rdf_dir <> "/graphs/"
-  @queries_dir @rdf_dir <> "/queries/"
-
-  #
-
   @hello_world "http://dbpedia.org/resource/Hello_World"
 
   @construct_query """

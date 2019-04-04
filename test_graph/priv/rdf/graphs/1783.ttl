@@ -1,0 +1,10 @@
+@prefix neovoc: <neo4j://defaultvocabulary#> .
+@prefix neoind: <neo4j://indiv#> .
+
+
+neoind:1783 a neovoc:Resource;
+  neovoc:ns0__creator neoind:1785;
+  neovoc:ns0__homepage neoind:1784;
+  neovoc:ns0__license neoind:1786;
+  neovoc:ns0__name "Elixir";
+  neovoc:uri "http://example.org/Elixir" .

@@ -25,7 +25,7 @@ defmodule TestGraph.Query do
       }
   """
   def new(query_data, query_file, query_type) do
-
+    
     queries_dir =
       case query_type do
         :lpg -> @lpg_dir <> "/queries/"
@@ -40,6 +40,7 @@ defmodule TestGraph.Query do
       type: query_type,
       uri:  "file://" <> queries_dir <> query_file,
     }
+
   end
 
 end

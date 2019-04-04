@@ -2,7 +2,7 @@ defmodule TestGraph.LPG.Cypher.Client do
   @moduledoc """
   Module providing a simple library for querying LPG models in a Neo4j instance via Cypher.
   """
-  
+
   import TestGraph.LPG
 
   @doc """
@@ -10,7 +10,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> node1()
+      iex> conn() |> node1()
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -27,7 +27,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def node1(conn) do
-    Bolt.Sips.query!(conn, read_query("node1.cypher"))
+    Bolt.Sips.query!(conn, read_query("node1.cypher").data)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> nodes()
+      iex> conn() |> nodes()
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -53,7 +53,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def nodes(conn) do
-    Bolt.Sips.query!(conn, read_query("nodes.cypher"))
+    Bolt.Sips.query!(conn, read_query("nodes.cypher").data)
   end
 
   @doc """
@@ -61,7 +61,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> node_ids()
+      iex> conn() |> node_ids()
       [
         %{"id(n)" => 1804},
         %{"id(n)" => 1805},
@@ -71,7 +71,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def node_ids(conn) do
-    Bolt.Sips.query!(conn, read_query("node_ids.cypher"))
+    Bolt.Sips.query!(conn, read_query("node_ids.cypher").data)
   end
 
   @doc """
@@ -79,7 +79,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> relationship1()
+      iex> conn() |> relationship1()
       [
         %{
           "r" => %Bolt.Sips.Types.Relationship{
@@ -93,7 +93,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def relationship1(conn) do
-    Bolt.Sips.query!(conn, read_query("relationship1.cypher"))
+    Bolt.Sips.query!(conn, read_query("relationship1.cypher").data)
   end
 
   @doc """
@@ -101,7 +101,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> relationships()
+      iex> conn() |> relationships()
       [
         %{
           "r" => %Bolt.Sips.Types.Relationship{
@@ -116,7 +116,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("relationships.cypher"))
+    Bolt.Sips.query!(conn, read_query("relationships.cypher").data)
   end
 
   @doc """
@@ -124,7 +124,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> node1_and_relationships()
+      iex> conn() |> node1_and_relationships()
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -144,7 +144,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def node1_and_relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("node1_and_relationships.cypher"))
+    Bolt.Sips.query!(conn, read_query("node1_and_relationships.cypher").data)
   end
 
   @doc """
@@ -152,7 +152,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> nodes_and_relationships()
+      iex> conn() |> nodes_and_relationships()
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -177,7 +177,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def nodes_and_relationships(conn) do
-    Bolt.Sips.query!(conn, read_query("nodes_and_relationships.cypher"))
+    Bolt.Sips.query!(conn, read_query("nodes_and_relationships.cypher").data)
   end
 
   @doc """
@@ -185,7 +185,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> path1()
+      iex> conn() |> path1()
       [
         %{
           "p" => %Bolt.Sips.Types.Path{
@@ -221,7 +221,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
     def path1(conn) do
-    Bolt.Sips.query!(conn, read_query("path1.cypher"))
+    Bolt.Sips.query!(conn, read_query("path1.cypher").data)
   end
 
   @doc """
@@ -229,7 +229,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> paths()
+      iex> conn() |> paths()
       [
         %{
           "p" => %Bolt.Sips.Types.Path{
@@ -267,7 +267,7 @@ defmodule TestGraph.LPG.Cypher.Client do
       ]
   """
   def paths(conn) do
-    Bolt.Sips.query!(conn, read_query("paths.cypher"))
+    Bolt.Sips.query!(conn, read_query("paths.cypher").data)
   end
 
   ## database
@@ -339,7 +339,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> conn |> test()
+      iex> conn() |> test()
       [%{"nodes" => 171, "paths" => 506, "relationships" => 253}]
 
   """
