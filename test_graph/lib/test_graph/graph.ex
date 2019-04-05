@@ -19,9 +19,9 @@ defmodule TestGraph.Graph do
       %TestGraph.Graph{
         data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
         file: "books.ttl",
-        path:  ... <> "\/priv\/rdf\/graphs\/books.ttl",
+        path:  ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/graphs\/books.ttl"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl"
       }
   """
   def new(graph_data, graph_file, graph_type) do

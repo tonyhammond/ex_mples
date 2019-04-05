@@ -133,7 +133,18 @@ Functions          </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w">
-</span><span class="s">&quot;[export_rdf_by_id: 1, export_rdf_by_id: 2, export_rdf_by_uri: 1, export_rdf_by_uri: 2, import_rdf_from_graph: 1, import_rdf_from_query: 1]&quot;</span></code></pre>
+</span><span class="p" data-group-id="8161944661-1">[</span><span class="w">
+  </span><span class="ss">export_rdf_by_id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="ss">export_rdf_by_id</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">export_rdf_by_query</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">export_rdf_by_uri</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="ss">export_rdf_by_uri</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdf_from_graph</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdf_from_graph</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdf_from_query</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdf_from_query</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p" data-group-id="8161944661-1">]</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
 <section class="detail" id="help/1">
@@ -152,13 +163,29 @@ Functions          </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="w">
-</span><span class="s">&quot;[import_rdf: 3, import_rdf!: 3, lite_onto_import: 3, lite_onto_import!: 3, preview_rdf: 3, preview_rdf!: 3, preview_rdf_snippet: 3, preview_rdf_snippet!: 3, stream_rdf: 3, stream_rdf!: 3]&quot;</span><span class="w">
-
-</span><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w"> </span><span class="nc">NeoSemantics.Mapping</span><span class="w">
-</span><span class="s">&quot;[add_common_schemas: 1, add_mapping_to_schema: 4, add_schema: 3, drop_mapping: 2, drop_schema: 2, list_mappings: 1, list_mappings: 2, list_schemas: 1, list_schemas: 2]&quot;</span><span class="w">
-
-</span><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w"> </span><span class="nc">SPARQL.Client</span><span class="w">
-</span><span class="s">&quot;[default_sparql_query: 0, default_sparql_service: 0, hello: 0, rquery: 0, rquery: 1, rquery: 2, rquery!: 0, rquery!: 1, rquery!: 2, sparql_query: 0, sparql_query: 1, sparql_service: 0, sparql_service: 1]&quot;</span></code></pre>
+</span><span class="p" data-group-id="0573729919-1">[</span><span class="w">
+  </span><span class="ss">import_jsonld</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_jsonld!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_ntriples</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_ntriples!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdf</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_rdf!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_rdfxml</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_rdfxml!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_trig</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_trig!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">import_turtle</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="n">import_turtle!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="ss">lite_onto_import</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">lite_onto_import!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="ss">preview_rdf</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">preview_rdf!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="ss">preview_rdf_snippet</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">preview_rdf_snippet!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="ss">stream_rdf</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">stream_rdf!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p" data-group-id="0573729919-1">]</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
 <section class="detail" id="parse/1">
@@ -176,7 +203,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="8442786388-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="8442786388-2">(</span><span class="p" data-group-id="8442786388-2">)</span><span class="p" data-group-id="8442786388-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="8405124253-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="8405124253-2">(</span><span class="p" data-group-id="8405124253-2">)</span><span class="p" data-group-id="8405124253-1">)</span><span class="w">
 </span><span class="s">&quot;CREATE</span><span class="se">\n</span><span class="s">  (a:Person {name: &#39;Alice&#39;}),</span><span class="se">\n</span><span class="s">  (b:Person {name: &#39;Bob&#39;}),</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>
@@ -197,7 +224,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="1041026677-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="1041026677-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="6602828463-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="6602828463-1">)</span><span class="w">
 </span><span class="s">&quot;= REPLACEME: TITLE OF YOUR GRAPHGIST</span><span class="se">\n</span><span class="s">:neo4j-version: 2.3.0</span><span class="se">\n</span><span class="s">:author:&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>

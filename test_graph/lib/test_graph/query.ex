@@ -19,13 +19,13 @@ defmodule TestGraph.Query do
       %TestGraph.Query{
         data: "construct { ?s ?p ?o } where { " <> ...
         file: "books.rq",
-        path:  ... <> "\/priv\/rdf\/queries\/books.rq",
+        path:  ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/priv\/rdf\/queries\/books.rq"
+        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/queries\/books.rq"
       }
   """
   def new(query_data, query_file, query_type) do
-    
+
     queries_dir =
       case query_type do
         :lpg -> @lpg_dir <> "/queries/"
