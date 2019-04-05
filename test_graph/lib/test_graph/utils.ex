@@ -17,7 +17,8 @@ defmodule TestGraph.Utils do
       "[export_rdf_by_id: 1, export_rdf_by_id: 2, export_rdf_by_uri: 1, export_rdf_by_uri: 2, import_rdf_from_graph: 1, import_rdf_from_query: 1]"
   """
   def help() do
-    inspect(TestGraph.__info__(:functions), limit: :infinity)
+    # inspect(TestGraph.__info__(:functions), limit: :infinity)
+    IO.puts inspect(TestGraph.__info__(:functions), limit: :infinity, pretty: true)
   end
 
   @doc """
@@ -36,7 +37,8 @@ defmodule TestGraph.Utils do
 
   """
   def help(module) do
-    inspect(module.__info__(:functions), limit: :infinity)
+    # inspect(module.__info__(:functions), limit: :infinity)
+    IO.puts inspect(module.__info__(:functions), limit: :infinity, pretty: true)
   end
 
   ## graphgists

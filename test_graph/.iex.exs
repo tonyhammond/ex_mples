@@ -5,6 +5,8 @@ import TestGraph.Utils
 alias TestGraph.Graph
 alias TestGraph.LPG.Cypher
 alias TestGraph.RDF.SPARQL
+# import Cypher.Client
+ import SPARQL.Client
 
 Application.put_env(:test_graph,
   :sparql_query, TestGraph.RDF.SPARQL.Client.default_sparql_query)

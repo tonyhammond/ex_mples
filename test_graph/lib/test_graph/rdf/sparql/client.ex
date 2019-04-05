@@ -2,6 +2,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
   @moduledoc """
   Module providing simple wrapper functions for the `SPARQL.Client` module.
   """
+  import TestGraph.RDF
 
   @hello_world "http://dbpedia.org/resource/Hello_World"
 
@@ -23,6 +24,9 @@ defmodule TestGraph.RDF.SPARQL.Client do
   filter (isLiteral(?o) && langMatches(lang(?o), "en"))
   }
   """
+
+  @query_file_triples "triples.rq"
+  @query_file_triples_by_uri "triples_by_uri.rq"
 
   @query @construct_query
   @service "http://dbpedia.org/sparql"
@@ -135,6 +139,26 @@ defmodule TestGraph.RDF.SPARQL.Client do
     case do
       {:ok, resp} -> resp
       {:error, error} -> raise error
+    end
+  end
+
+  def triples(limit \\ nil) do
+    case limit do
+      nil -> rquery!(read_query(@query_file_triples).data)
+      _ ->
+        limit = Integer.to_string(limit)
+        rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
+    end
+  end
+
+  def triples_by_uri(uri, limit \\ nil) do
+    q = read_query(@query_file_triples_by_uri).data
+    query = String.replace(q, "_uri", uri)
+    case limit do
+      nil -> rquery!(query)
+      _ ->
+        limit = Integer.to_string(limit)
+        rquery!(query <> " limit " <> limit)
     end
   end
 
