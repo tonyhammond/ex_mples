@@ -18,9 +18,11 @@ resource = "http://dbpedia.org/resource/London"
 conn = Bolt.Sips.conn()
 
 # return TestGraph.Graph struct for 100 triples (saved to "london100.ttl")
-graph = (triples_by_uri(resource, 100)
-|> RDF.Turtle.write_string!
-|> TestGraph.RDF.write_graph("london100.ttl"))
+graph = (
+  triples_by_uri(resource, 100)
+  |> RDF.Turtle.write_string!
+  |> TestGraph.RDF.write_graph("london100.ttl")
+)
 
 # use NeoSemantics.import_turtle/2 to import turtle to Neo4j
 [ map ] = NeoSemantics.import_turtle!(conn, graph.uri)
