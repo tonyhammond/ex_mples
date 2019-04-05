@@ -1,5 +1,5 @@
 # This example queries DBpedia for resource dbr:London (first 100 triples)
-# and loads these to a Neo4j instance
+# and loads these to a Neo4j instance using a neosemantics stored procedure
 #
 # Usage:
 #
