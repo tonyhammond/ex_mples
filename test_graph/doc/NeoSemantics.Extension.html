@@ -146,9 +146,9 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="7202039643-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="7202039643-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="2064684579-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="2064684579-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;match (n) return n limit 1</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="p" data-group-id="7202039643-2">(</span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">cypher_on_lpg</span><span class="p" data-group-id="7202039643-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="p" data-group-id="2064684579-2">(</span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">cypher_on_lpg</span><span class="p" data-group-id="2064684579-2">)</span><span class="w">
 </span><span class="na">@prefix</span><span class="w"> </span><span class="ss">neovoc</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">neo4j</span><span class="ss">:/</span><span class="o">/</span><span class="n">defaultvocabulary</span><span class="c1">#&gt; .</span><span class="w">
 </span><span class="na">@prefix</span><span class="w"> </span><span class="ss">neoind</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">neo4j</span><span class="ss">:/</span><span class="o">/</span><span class="n">indiv</span><span class="c1">#&gt; .</span><span class="w">
 
@@ -176,7 +176,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="9430382549-1">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="9430382549-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="4363009889-1">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="4363009889-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;match (n) return distinct n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
 </span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">cypher_on_rdf</span></code></pre>
   </section>
@@ -201,7 +201,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_id</span><span class="p" data-group-id="7582585110-1">(</span><span class="mi">1783</span><span class="p" data-group-id="7582585110-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_id</span><span class="p" data-group-id="6102446207-1">(</span><span class="mi">1783</span><span class="p" data-group-id="6102446207-1">)</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="err">&quot;</span><span class="p">;</span></code></pre>
 <p>  neovoc:uri &quot;http://example.org/Elixir&quot; .\n&quot;</p>
   </section>
@@ -226,7 +226,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_uri</span><span class="p" data-group-id="4512497823-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="4512497823-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_uri</span><span class="p" data-group-id="7888221687-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="7888221687-1">)</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -247,7 +247,7 @@ is passed as <code class="inline">true</code> which will exclude context if pres
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">ping</span><span class="w">
-</span><span class="p" data-group-id="4287989334-1">{</span><span class="s">&quot;ping&quot;</span><span class="ss">:&quot;here!&quot;</span><span class="p" data-group-id="4287989334-1">}</span><span class="w">
+</span><span class="p" data-group-id="4187953236-1">{</span><span class="s">&quot;ping&quot;</span><span class="ss">:&quot;here!&quot;</span><span class="p" data-group-id="4187953236-1">}</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </section>

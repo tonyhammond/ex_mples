@@ -5,6 +5,8 @@ defmodule TestGraph do
 
   This post explores moving data between semantic and property graphs.
 
+  See the [examples](https://github.com/tonyhammond/ex_mples/tree/master/test_graph/examples) directory for some example scripts.
+
   Here's an example of querying a remote RDF service (DBpedia)
   using the `SPARQL.Client` module via a wrapped function `rquery!/1`
   and using the stored procedures in the `NeoSemantics` module for transforming

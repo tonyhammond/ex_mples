@@ -1,0 +1,9 @@
+prefix yago: <http://dbpedia.org/class/yago/>
+construct
+{ 
+  ?s ?p ?o
+}
+where {
+  ?s a yago:WikicatCapitalsInEurope .
+  ?s ?p ?o .
+}
