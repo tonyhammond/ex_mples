@@ -18,6 +18,29 @@ defmodule TestGraph.RDF do
 
   ##
 
+  use RDF.Vocabulary.Namespace
+
+  defvocab DC,
+     base_iri: "http://purl.org/dc/elements/1.1/",
+     terms: ~w[ creator date format publisher title ]
+
+  defvocab BIBO,
+     base_iri: "http://purl.org/ontology/bibo/",
+     terms: ~w[ Book ]
+
+  def book() do
+    import RDF.Sigils
+    ~I<urn:isbn:978-1-68050-252-7>
+    |> RDF.type(BIBO.Book)
+    |> DC.creator(~I<https://twitter.com/bgmarx>,
+         ~I<https://twitter.com/josevalim>,
+         ~I<https://twitter.com/redrapids>)
+    |> DC.date(RDF.date("2018-03-14"))
+    |> DC.format(~L"Paper")
+    |> DC.publisher(~I<https://pragprog.com/>)
+    |> DC.title(~L"Adopting Elixir"en)
+  end
+
   ## graphs
 
   @doc """

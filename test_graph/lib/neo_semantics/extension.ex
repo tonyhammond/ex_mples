@@ -95,7 +95,7 @@ defmodule NeoSemantics.Extension do
 
       iex> cypher = TestGraph.LPG.read_query("node1.cypher").data
       "match (n) return n limit 1\\n"
-      iex> IO.puts (cypher |> NeoSemantics.Extension.cypher_on_lpg)
+      iex> IO.puts (cypher |> NeoSemantics.Extension.cypher)
       @prefix neovoc: <neo4j://defaultvocabulary#> .
       @prefix neoind: <neo4j://indiv#> .
 
@@ -106,12 +106,14 @@ defmodule NeoSemantics.Extension do
 
       :ok
   """
-  def cypher_on_lpg(cypher, showOnlyMapped \\ false) do
+  def cypher(cypher, show_only_mapped \\ false) do
     base = Application.get_env(:test_graph, :neo4j_service)
     path = "/rdf/cypher"
-    # data = Jason.encode!(%{"cypher" => cypher, "showOnlyMapped" => showOnlyMapped})
-    data = Jason.encode!(%{"cypher" => cypher})
-
+    data =
+      case show_only_mapped do
+        true -> Jason.encode!(%{"cypher" => cypher, "showOnlyMapped" => true})
+        false -> Jason.encode!(%{"cypher" => cypher})
+      end
     {:ok, env} = Tesla.post(base <> path, data, headers: [{"accept", "text/turtle"}])
     env.body
   end

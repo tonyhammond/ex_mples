@@ -176,7 +176,22 @@ defmodule TestGraph do
       iex> cypher |> TestGraph.export_rdf_by_query
   """
   def export_rdf_by_query(cypher, graph_file) do
-    data = NeoSemantics.Extension.cypher_on_lpg(cypher)
+    data = NeoSemantics.Extension.cypher(cypher)
+    TestGraph.RDF.write_graph(data, graph_file)
+  end
+
+  @doc """
+  Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+  is defined by the `cypher` query.
+
+  ## Examples
+
+      iex> cypher =
+      "match (n:Resource {uri:'http://dataset/indiv#153'}) return n\\n"
+      iex> cypher |> TestGraph.export_rdf_by_query_on_rdf
+  """
+  def export_rdf_by_query_on_rdf(cypher, graph_file) do
+    data = NeoSemantics.Extension.cypher_on_rdf(cypher)
     TestGraph.RDF.write_graph(data, graph_file)
   end
 

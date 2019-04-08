@@ -1,0 +1,10 @@
+@prefix neovoc: <neo4j://vocabulary#> .
+
+
+<urn:isbn:978-1-68050-252-7> a <http://purl.org/ontology/bibo/Book>;
+  <http://purl.org/dc/elements/1.1/creator> <https://twitter.com/bgmarx>, <https://twitter.com/josevalim>,
+    <https://twitter.com/redrapids>;
+  <http://purl.org/dc/elements/1.1/date> "2018-03-14";
+  <http://purl.org/dc/elements/1.1/format> "Paper";
+  <http://purl.org/dc/elements/1.1/publisher> <https://pragprog.com/>;
+  <http://purl.org/dc/elements/1.1/title> "Adopting Elixir" .

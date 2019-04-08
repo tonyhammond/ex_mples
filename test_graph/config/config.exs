@@ -3,8 +3,9 @@
 use Mix.Config
 
 config :bolt_sips, Bolt,
-  url: "bolt://localhost:7687",
-  basic_auth: [username: "neo4j", password: "neo4jtest"]
+  # url: "bolt://localhost:7687",
+  # basic_auth: [username: "neo4j", password: "neo4jtest"]
+  url: "bolt://neo4j:neo4jtest@localhost:7687"
 
 config :tesla, :adapter, Tesla.Adapter.Hackney
 
