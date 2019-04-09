@@ -195,4 +195,32 @@ defmodule TestGraph do
     TestGraph.RDF.write_graph(data, graph_file)
   end
 
+  # TestGraph.LPG delegates
+  defdelegate list_lpg_graphs(), to: TestGraph.LPG, as: :list_graphs
+  defdelegate list_lpg_queries(), to: TestGraph.LPG, as: :list_queries
+
+  defdelegate read_lpg_graph(), to: TestGraph.LPG, as: :read_graph
+  defdelegate read_lpg_graph(arg), to: TestGraph.LPG, as: :read_graph
+  defdelegate read_lpg_query(), to: TestGraph.LPG, as: :read_query
+  defdelegate read_lpg_query(arg), to: TestGraph.LPG, as: :read_query
+
+  defdelegate write_lpg_graph(arg), to: TestGraph.LPG, as: :write_graph
+  defdelegate write_lpg_graph(arg, arg), to: TestGraph.LPG, as: :write_graph
+  defdelegate write_lpg_query(arg), to: TestGraph.LPG, as: :write_query
+  defdelegate write_lpg_query(arg, arg), to: TestGraph.LPG, as: :write_query
+
+  # TestGraph.RDF delegates
+  defdelegate list_rdf_graphs(), to: TestGraph.RDF, as: :list_graphs
+  defdelegate list_rdf_queries(), to: TestGraph.RDF, as: :list_queries
+
+  defdelegate read_rdf_graph(), to: TestGraph.RDF, as: :read_graph
+  defdelegate read_rdf_graph(arg), to: TestGraph.RDF, as: :read_graph
+  defdelegate read_rdf_query(), to: TestGraph.RDF, as: :read_query
+  defdelegate read_rdf_query(arg), to: TestGraph.RDF, as: :read_query
+
+  defdelegate write_rdf_graph(arg), to: TestGraph.RDF, as: :write_graph
+  defdelegate write_rdf_graph(arg, arg), to: TestGraph.RDF, as: :write_graph
+  defdelegate write_rdf_query(arg), to: TestGraph.RDF, as: :write_query
+  defdelegate write_rdf_query(arg, arg), to: TestGraph.RDF, as: :write_query
+
 end

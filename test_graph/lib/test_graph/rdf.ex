@@ -44,6 +44,34 @@ defmodule TestGraph.RDF do
   ## graphs
 
   @doc """
+  Lists Turtle graphs in the RDF graphs library.
+
+  ## Examples
+
+      iex> list_graphs()
+      ["books.ttl", "urn_isbn_978-1-68050-252-7.ttl",
+       "http___dbpedia.org_resource_London.ttl", "london100.ttl", "london.ttl",
+       "nobelprizes.ttl", "bibo.ttl", "tony.ttl", "temp.ttl",
+       "http___example.org_Elixir.ttl", "elixir.ttl", "default.ttl", "cypher.ttl",
+       "neo4j.ttl", "hello.ttl"]
+  """
+  def list_graphs() do
+    File.ls!(@graphs_dir)
+  end
+
+  @doc """
+  Lists SPARQL queries in the RDF queries library.
+
+  ## Examples
+
+  ["cypher.rq", "london.rq", "elixir.rq", "default.rq", "neo4j.rq",
+   "triples_by_uri.rq", "triples.rq", "hello.rq"]
+  """
+  def list_queries() do
+    File.ls!(@queries_dir)
+  end
+
+  @doc """
   Reads a Turtle graph from the RDF graphs library.
 
   ## Examples

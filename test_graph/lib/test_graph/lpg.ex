@@ -24,6 +24,33 @@ defmodule TestGraph.LPG do
   ## graphs
 
   @doc """
+  Lists Cypher graphs in the LPG graphs library.
+
+  ## Examples
+
+      iex> list_graphs()
+      ["movies.cypher", "books.cypher", "default.cypher"]
+  """
+  def list_graphs() do
+    File.ls!(@graphs_dir)
+  end
+
+  @doc """
+  Lists Cypher queries in the LPG queries library.
+
+  ## Examples
+
+  ["relationship1.cypher", "node1_and_relationships.cypher", "path1.cypher",
+   "paths.cypher", "relationship_ids.cypher", "relationships.cypher",
+   "node_by_id.cypher", "default.cypher", "nodes.cypher", "node_id1.cypher",
+   "node_ids.cypher", "nodes_and_relationships.cypher", "node1.cypher",
+   "relationship_by_id.cypher"]
+  """
+  def list_queries() do
+    File.ls!(@queries_dir)
+  end
+
+  @doc """
   Reads a user Turtle graph from the RDF graphs library.
 
   ## Examples
