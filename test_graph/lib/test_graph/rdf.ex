@@ -64,8 +64,9 @@ defmodule TestGraph.RDF do
 
   ## Examples
 
-  ["cypher.rq", "london.rq", "elixir.rq", "default.rq", "neo4j.rq",
-   "triples_by_uri.rq", "triples.rq", "hello.rq"]
+      iex> list_queries()
+      ["cypher.rq", "london.rq", "elixir.rq", "default.rq", "neo4j.rq",
+       "triples_by_uri.rq", "triples.rq", "hello.rq"]
   """
   def list_queries() do
     File.ls!(@queries_dir)

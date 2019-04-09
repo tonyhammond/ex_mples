@@ -40,11 +40,12 @@ defmodule TestGraph.LPG do
 
   ## Examples
 
-  ["relationship1.cypher", "node1_and_relationships.cypher", "path1.cypher",
-   "paths.cypher", "relationship_ids.cypher", "relationships.cypher",
-   "node_by_id.cypher", "default.cypher", "nodes.cypher", "node_id1.cypher",
-   "node_ids.cypher", "nodes_and_relationships.cypher", "node1.cypher",
-   "relationship_by_id.cypher"]
+      iex> list_queries()
+      ["relationship1.cypher", "node1_and_relationships.cypher", "path1.cypher",
+       "paths.cypher", "relationship_ids.cypher", "relationships.cypher",
+       "node_by_id.cypher", "default.cypher", "nodes.cypher", "node_id1.cypher",
+       "node_ids.cypher", "nodes_and_relationships.cypher", "node1.cypher",
+       "relationship_by_id.cypher"]
   """
   def list_queries() do
     File.ls!(@queries_dir)

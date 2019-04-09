@@ -196,31 +196,51 @@ defmodule TestGraph do
   end
 
   # TestGraph.LPG delegates
+  @doc "Delegates to TestGraph.LPG.list_graphs/0"
   defdelegate list_lpg_graphs(), to: TestGraph.LPG, as: :list_graphs
+  @doc "Delegates to TestGraph.LPG.list_queries/0"
   defdelegate list_lpg_queries(), to: TestGraph.LPG, as: :list_queries
 
+  @doc "Delegates to TestGraph.LPG.read_graph/0"
   defdelegate read_lpg_graph(), to: TestGraph.LPG, as: :read_graph
+  @doc "Delegates to TestGraph.LPG.read_graph/1"
   defdelegate read_lpg_graph(arg), to: TestGraph.LPG, as: :read_graph
+  @doc "Delegates to TestGraph.LPG.read_query/0"
   defdelegate read_lpg_query(), to: TestGraph.LPG, as: :read_query
+  @doc "Delegates to TestGraph.LPG.read_query/1"
   defdelegate read_lpg_query(arg), to: TestGraph.LPG, as: :read_query
 
+  @doc "Delegates to TestGraph.LPG.write_graph/1"
   defdelegate write_lpg_graph(arg), to: TestGraph.LPG, as: :write_graph
+  @doc "Delegates to TestGraph.LPG.write_graph/2"
   defdelegate write_lpg_graph(arg, arg), to: TestGraph.LPG, as: :write_graph
+  @doc "Delegates to TestGraph.LPG.write_query/1"
   defdelegate write_lpg_query(arg), to: TestGraph.LPG, as: :write_query
+  @doc "Delegates to TestGraph.LPG.write_query/2"
   defdelegate write_lpg_query(arg, arg), to: TestGraph.LPG, as: :write_query
 
   # TestGraph.RDF delegates
+  @doc "Delegates to TestGraph.RDF.list_graphs/0"
   defdelegate list_rdf_graphs(), to: TestGraph.RDF, as: :list_graphs
+  @doc "Delegates to TestGraph.RDF.list_queries/0"
   defdelegate list_rdf_queries(), to: TestGraph.RDF, as: :list_queries
 
+  @doc "Delegates to TestGraph.RDF.read_graph/0"
   defdelegate read_rdf_graph(), to: TestGraph.RDF, as: :read_graph
+  @doc "Delegates to TestGraph.RDF.read_graph/1"
   defdelegate read_rdf_graph(arg), to: TestGraph.RDF, as: :read_graph
+  @doc "Delegates to TestGraph.RDF.read_query/0"
   defdelegate read_rdf_query(), to: TestGraph.RDF, as: :read_query
+  @doc "Delegates to TestGraph.RDF.read_query/1"
   defdelegate read_rdf_query(arg), to: TestGraph.RDF, as: :read_query
 
+  @doc "Delegates to TestGraph.RDF.write_graph/1"
   defdelegate write_rdf_graph(arg), to: TestGraph.RDF, as: :write_graph
+  @doc "Delegates to TestGraph.RDF.write_graph/2"
   defdelegate write_rdf_graph(arg, arg), to: TestGraph.RDF, as: :write_graph
+  @doc "Delegates to TestGraph.RDF.write_query/1"
   defdelegate write_rdf_query(arg), to: TestGraph.RDF, as: :write_query
+  @doc "Delegates to TestGraph.RDF.write_query/2"
   defdelegate write_rdf_query(arg, arg), to: TestGraph.RDF, as: :write_query
 
 end
