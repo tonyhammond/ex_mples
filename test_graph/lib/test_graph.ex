@@ -213,11 +213,11 @@ defmodule TestGraph do
   @doc "Delegates to TestGraph.LPG.write_graph/1"
   defdelegate write_lpg_graph(arg), to: TestGraph.LPG, as: :write_graph
   @doc "Delegates to TestGraph.LPG.write_graph/2"
-  defdelegate write_lpg_graph(arg, arg), to: TestGraph.LPG, as: :write_graph
+  defdelegate write_lpg_graph(arg1, arg2), to: TestGraph.LPG, as: :write_graph
   @doc "Delegates to TestGraph.LPG.write_query/1"
   defdelegate write_lpg_query(arg), to: TestGraph.LPG, as: :write_query
   @doc "Delegates to TestGraph.LPG.write_query/2"
-  defdelegate write_lpg_query(arg, arg), to: TestGraph.LPG, as: :write_query
+  defdelegate write_lpg_query(arg1, arg2), to: TestGraph.LPG, as: :write_query
 
   # TestGraph.RDF delegates
   @doc "Delegates to TestGraph.RDF.list_graphs/0"
