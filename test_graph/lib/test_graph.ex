@@ -237,10 +237,10 @@ defmodule TestGraph do
   @doc "Delegates to TestGraph.RDF.write_graph/1"
   defdelegate write_rdf_graph(arg), to: TestGraph.RDF, as: :write_graph
   @doc "Delegates to TestGraph.RDF.write_graph/2"
-  defdelegate write_rdf_graph(arg, arg), to: TestGraph.RDF, as: :write_graph
+  defdelegate write_rdf_graph(arg1, arg2), to: TestGraph.RDF, as: :write_graph
   @doc "Delegates to TestGraph.RDF.write_query/1"
   defdelegate write_rdf_query(arg), to: TestGraph.RDF, as: :write_query
   @doc "Delegates to TestGraph.RDF.write_query/2"
-  defdelegate write_rdf_query(arg, arg), to: TestGraph.RDF, as: :write_query
+  defdelegate write_rdf_query(arg1, arg2), to: TestGraph.RDF, as: :write_query
 
 end
