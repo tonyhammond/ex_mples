@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-55e0b1d4c2.js"></script>
+    <script src="dist/sidebar_items-2817e1713e.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -80,19 +80,19 @@ with in-memory graphs using the <a href="https://github.com/jbarrasa/neosemantic
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="c1"># 1. explicit form</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">elixir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2092040541-1">(</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="2092040541-2">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="2092040541-2">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">elixir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0210057548-1">(</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="0210057548-2">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="0210057548-2">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">SPARQL.Client</span><span class="o">.</span><span class="n">rquery!</span><span class="w">
 </span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">RDF.Turtle</span><span class="o">.</span><span class="n">write_string!</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">write_graph</span><span class="p" data-group-id="2092040541-3">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="2092040541-3">)</span><span class="w">
-</span><span class="gp unselectable">...&gt; </span><span class="p" data-group-id="2092040541-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="2092040541-4">(</span><span class="p" data-group-id="2092040541-4">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="2092040541-5">(</span><span class="n">elixir</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turtle&quot;</span><span class="p" data-group-id="2092040541-5">)</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.RDF</span><span class="o">.</span><span class="n">write_graph</span><span class="p" data-group-id="0210057548-3">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="0210057548-3">)</span><span class="w">
+</span><span class="gp unselectable">...&gt; </span><span class="p" data-group-id="0210057548-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="0210057548-4">(</span><span class="p" data-group-id="0210057548-4">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="0210057548-5">(</span><span class="n">elixir</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turtle&quot;</span><span class="p" data-group-id="0210057548-5">)</span><span class="w">
 
 </span><span class="c1"># 2. implicit form</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="2092040541-6">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="2092040541-6">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="0210057548-6">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="0210057548-6">)</span><span class="w">
 
 </span><span class="c1"># 3. implicit form (with alias)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="2092040541-7">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="2092040541-7">)</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="0210057548-7">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="0210057548-7">)</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -125,6 +125,14 @@ is defined by the <code class="inline">cypher</code> query</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#export_rdf_by_query_on_rdf/2">export_rdf_by_query_on_rdf(cypher, graph_file)</a>
+  </div>
+    <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is defined by the <code class="inline">cypher</code> query</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#export_rdf_by_uri/2">export_rdf_by_uri(node_uri, exclude_context \\ false)</a>
   </div>
     <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
@@ -145,6 +153,106 @@ is centered on a node identified by <code class="inline">node_uri</code></p>
     <div class="summary-synopsis"><p>Imports into Neo4j an LPG graph transformed from an RDF graph which was
 queried from a remote datastore using a SPARQL endpoint</p>
 </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_lpg_graphs/0">list_lpg_graphs()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_lpg_queries/0">list_lpg_queries()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_rdf_graphs/0">list_rdf_graphs()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_rdf_queries/0">list_rdf_queries()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_lpg_graph/0">read_lpg_graph()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_lpg_graph/1">read_lpg_graph(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_lpg_query/0">read_lpg_query()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_lpg_query/1">read_lpg_query(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_rdf_graph/0">read_rdf_graph()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_rdf_graph/1">read_rdf_graph(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_rdf_query/0">read_rdf_query()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_rdf_query/1">read_rdf_query(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lpg_graph/1">write_lpg_graph(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lpg_graph/2">write_lpg_graph(arg, arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lpg_query/1">write_lpg_query(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lpg_query/2">write_lpg_query(arg, arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_rdf_graph/1">write_rdf_graph(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_rdf_graph/2">write_rdf_graph(arg, arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_rdf_query/1">write_rdf_query(arg)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_rdf_query/2">write_rdf_query(arg, arg)</a>
+  </div>
 </div>
   </div>
         </section>
@@ -177,16 +285,16 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9237793626-1">(</span><span class="mi">1783</span><span class="p" data-group-id="9237793626-1">)</span><span class="w">
-</span><span class="p" data-group-id="9237793626-2">%</span><span class="nc" data-group-id="9237793626-2">TestGraph.Graph</span><span class="p" data-group-id="9237793626-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="2456046895-1">(</span><span class="mi">1783</span><span class="p" data-group-id="2456046895-1">)</span><span class="w">
+</span><span class="p" data-group-id="2456046895-2">%</span><span class="nc" data-group-id="2456046895-2">TestGraph.Graph</span><span class="p" data-group-id="2456046895-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">  neovoc:uri &quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1783.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/Users/tony/Projects/github/tonyhammond/ex_mples/test_graph/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///Users/tony/Projects/github/tonyhammond/ex_mples/test_graph/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="9237793626-2">}</span><span class="w">
+</span><span class="p" data-group-id="2456046895-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9237793626-3">(</span><span class="mi">1783</span><span class="p" data-group-id="9237793626-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="2456046895-3">(</span><span class="mi">1783</span><span class="p" data-group-id="2456046895-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">  neovoc:uri &quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -206,9 +314,30 @@ is defined by the <code class="inline">cypher</code> query.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="1716206997-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="1716206997-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="5383280504-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="5383280504-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;match (n) return n limit 1</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
 </span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_query</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="export_rdf_by_query_on_rdf/2">
+    <div class="detail-header">
+    <a href="#export_rdf_by_query_on_rdf/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_rdf_by_query_on_rdf(cypher, graph_file)</span>
+          </div>
+  <section class="docstring">
+<p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is defined by the <code class="inline">cypher</code> query.</p>
+<h2 id="export_rdf_by_query_on_rdf/2-examples" class="section-heading">
+  <a href="#export_rdf_by_query_on_rdf/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w">
+</span><span class="s">&quot;match (n:Resource {uri:&#39;http://dataset/indiv#153&#39;}) return n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_query_on_rdf</span></code></pre>
   </section>
 </section>
 <section class="detail" id="export_rdf_by_uri/2">
@@ -231,16 +360,16 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="8788794595-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="8788794595-1">)</span><span class="w">
-</span><span class="p" data-group-id="8788794595-2">%</span><span class="nc" data-group-id="8788794595-2">TestGraph.Graph</span><span class="p" data-group-id="8788794595-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="1448759326-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="1448759326-1">)</span><span class="w">
+</span><span class="p" data-group-id="1448759326-2">%</span><span class="nc" data-group-id="1448759326-2">TestGraph.Graph</span><span class="p" data-group-id="1448759326-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http___example.org_Elixir.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/rdf/graphs/http___example.org_Elixir.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/rdf/graphs/http___example.org_Elixir.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="8788794595-2">}</span><span class="w">
+</span><span class="p" data-group-id="1448759326-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="8788794595-3">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="8788794595-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="1448759326-3">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="1448759326-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -261,11 +390,11 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="4097583018-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="4097583018-1">)</span><span class="w">
-</span><span class="p" data-group-id="4097583018-2">[</span><span class="w">
-  </span><span class="p" data-group-id="4097583018-3">%{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="6876034277-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="6876034277-1">)</span><span class="w">
+</span><span class="p" data-group-id="6876034277-2">[</span><span class="w">
+  </span><span class="p" data-group-id="6876034277-3">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="4097583018-4">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="6876034277-4">%{</span><span class="w">
       </span><span class="s">&quot;http://example.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
@@ -274,11 +403,11 @@ is passed as <code class="inline">true</code> which will exclude context if pres
       </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="4097583018-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="6876034277-4">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w">
-  </span><span class="p" data-group-id="4097583018-3">}</span><span class="w">
-</span><span class="p" data-group-id="4097583018-2">]</span></code></pre>
+  </span><span class="p" data-group-id="6876034277-3">}</span><span class="w">
+</span><span class="p" data-group-id="6876034277-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="import_rdf_from_query/1">
@@ -299,11 +428,11 @@ queried from a remote datastore using a SPARQL endpoint.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="9958017576-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="9958017576-1">)</span><span class="w">
-</span><span class="p" data-group-id="9958017576-2">[</span><span class="w">
-  </span><span class="p" data-group-id="9958017576-3">%{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestGraph</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="1336455367-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="1336455367-1">)</span><span class="w">
+</span><span class="p" data-group-id="1336455367-2">[</span><span class="w">
+  </span><span class="p" data-group-id="1336455367-3">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9958017576-4">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="1336455367-4">%{</span><span class="w">
       </span><span class="s">&quot;http://example.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
@@ -312,11 +441,231 @@ queried from a remote datastore using a SPARQL endpoint.</p>
       </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="9958017576-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="1336455367-4">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w">
-  </span><span class="p" data-group-id="9958017576-3">}</span><span class="w">
-</span><span class="p" data-group-id="9958017576-2">]</span></code></pre>
+  </span><span class="p" data-group-id="1336455367-3">}</span><span class="w">
+</span><span class="p" data-group-id="1336455367-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="list_lpg_graphs/0">
+    <div class="detail-header">
+    <a href="#list_lpg_graphs/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_lpg_graphs()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="list_lpg_queries/0">
+    <div class="detail-header">
+    <a href="#list_lpg_queries/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_lpg_queries()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="list_rdf_graphs/0">
+    <div class="detail-header">
+    <a href="#list_rdf_graphs/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_rdf_graphs()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="list_rdf_queries/0">
+    <div class="detail-header">
+    <a href="#list_rdf_queries/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_rdf_queries()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_lpg_graph/0">
+    <div class="detail-header">
+    <a href="#read_lpg_graph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_lpg_graph()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_lpg_graph/1">
+    <div class="detail-header">
+    <a href="#read_lpg_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_lpg_graph(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_lpg_query/0">
+    <div class="detail-header">
+    <a href="#read_lpg_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_lpg_query()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_lpg_query/1">
+    <div class="detail-header">
+    <a href="#read_lpg_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_lpg_query(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_rdf_graph/0">
+    <div class="detail-header">
+    <a href="#read_rdf_graph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_rdf_graph()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_rdf_graph/1">
+    <div class="detail-header">
+    <a href="#read_rdf_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_rdf_graph(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_rdf_query/0">
+    <div class="detail-header">
+    <a href="#read_rdf_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_rdf_query()</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="read_rdf_query/1">
+    <div class="detail-header">
+    <a href="#read_rdf_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_rdf_query(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_lpg_graph/1">
+    <div class="detail-header">
+    <a href="#write_lpg_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lpg_graph(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_lpg_graph/2">
+    <div class="detail-header">
+    <a href="#write_lpg_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lpg_graph(arg, arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_lpg_query/1">
+    <div class="detail-header">
+    <a href="#write_lpg_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lpg_query(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_lpg_query/2">
+    <div class="detail-header">
+    <a href="#write_lpg_query/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lpg_query(arg, arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_rdf_graph/1">
+    <div class="detail-header">
+    <a href="#write_rdf_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_rdf_graph(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_rdf_graph/2">
+    <div class="detail-header">
+    <a href="#write_rdf_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_rdf_graph(arg, arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_rdf_query/1">
+    <div class="detail-header">
+    <a href="#write_rdf_query/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_rdf_query(arg)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="write_rdf_query/2">
+    <div class="detail-header">
+    <a href="#write_rdf_query/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_rdf_query(arg, arg)</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
           </div>
