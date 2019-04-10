@@ -168,7 +168,8 @@ defmodule TestGraph.LPG.Cypher.Client do
   def node_by_id(id) do
     q = read_query(@query_file_node_by_id).data
     query = String.replace(q, "_id", Integer.to_string(id))
-    rquery!(query)
+    [ node ] = rquery!(query)
+    node
   end
 
   @doc """
@@ -426,6 +427,76 @@ defmodule TestGraph.LPG.Cypher.Client do
       """
       match (n) optional match (n)-[r]-() delete n,r
       """
+    )
+  end
+
+  @doc """
+  Dumps all nodes and relationships in database.
+
+  ## Examples
+
+      iex(3)> Cypher.Client.dump("nobelprizes.cypher")
+      [
+        %{
+          "batchSize" => 20000,
+          "batches" => 4,
+          "cleanupStatements" => nil,
+          "cypherStatements" => nil,
+          "file" => ".../test_graph/priv/lpg/graphs/nobelprizes.cypher",
+          "format" => "cypher",
+          "nodeStatements" => nil,
+          "nodes" => 21027,
+          "properties" => 49184,
+          "relationshipStatements" => nil,
+          "relationships" => 43267,
+          "rows" => 64294,
+          "schemaStatements" => nil,
+          "source" => "database: nodes(21027), rels(43267)",
+          "time" => 949
+        }
+      ]
+  """
+  def dump(graph_file) do
+    graphs_dir = graphs_dir()
+    query = "call apoc.export.cypher.all('" <> graphs_dir <> graph_file <> "',{format:'plain'})"
+    Bolt.Sips.query!(
+      Bolt.Sips.conn(),
+      query
+    )
+  end
+
+  @doc """
+  Dumps all nodes and relationships in database.
+
+  ## Examples
+
+      iex(3)> cypher_dump("match (n) return n limit 3", "limit3.cypher")
+      [
+        %{
+          "batchSize" => 20000,
+          "batches" => 1,
+          "cleanupStatements" => nil,
+          "cypherStatements" => nil,
+          "file" => ".../test_graph/priv/lpg/graphs/limit3.cypher",
+          "format" => "cypher",
+          "nodeStatements" => nil,
+          "nodes" => 3,
+          "properties" => 3,
+          "relationshipStatements" => nil,
+          "relationships" => 0,
+          "rows" => 3,
+          "schemaStatements" => nil,
+          "source" => "statement: nodes(3), rels(0)",
+          "time" => 1
+        }
+      ]
+  """
+  def dump(query_file, graph_file) do
+    graphs_dir = graphs_dir()
+    query = "call apoc.export.cypher.query('" <> query_file <> "','" <> graphs_dir <> graph_file <> "',{format:'plain'})"
+    Bolt.Sips.query!(
+      Bolt.Sips.conn(),
+      query
     )
   end
 

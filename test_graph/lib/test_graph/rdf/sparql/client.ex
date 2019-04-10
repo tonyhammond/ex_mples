@@ -29,7 +29,9 @@ defmodule TestGraph.RDF.SPARQL.Client do
   @query_file_triples_by_uri "triples_by_uri.rq"
 
   @query @construct_query
-  @service "http://dbpedia.org/sparql"
+  # @service "http://dbpedia.org/sparql"
+  @service "http://localhost:7200/repositories/nobelprizes"
+
 
   ## Accessors for module attributes
 

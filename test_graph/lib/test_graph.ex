@@ -36,7 +36,7 @@ defmodule TestGraph do
   """
   import Bolt.Sips, only: [conn: 0]
 
-  alias TestGraph.RDF.SPARQL
+  # alias TestGraph.RDF.SPARQL
 
   @test_graph_file "default.ttl"
   @test_query_file "default.rq"
@@ -101,7 +101,7 @@ defmodule TestGraph do
     graph_file = Path.basename(query_file, ".rq") <> ".ttl"
     graph = (
       TestGraph.RDF.read_query(query_file).data
-      |> SPARQL.Client.rquery!
+      |> TestGraph.RDF.SPARQL.Client.rquery!
       |> RDF.Turtle.write_string!
       |> TestGraph.RDF.write_graph(graph_file)
     )
@@ -242,5 +242,42 @@ defmodule TestGraph do
   defdelegate write_rdf_query(arg), to: TestGraph.RDF, as: :write_query
   @doc "Delegates to TestGraph.RDF.write_query/2"
   defdelegate write_rdf_query(arg1, arg2), to: TestGraph.RDF, as: :write_query
+
+  # TestGraph.LPG.Cypher.Client delegates
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.rquery/0"
+  defdelegate cypher(), to: TestGraph.LPG.Cypher.Client, as: :rquery
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.rquery/1"
+  defdelegate cypher(arg), to: TestGraph.LPG.Cypher.Client, as: :rquery
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.rquery/0"
+  defdelegate cypher!(), to: TestGraph.LPG.Cypher.Client, as: :rquery!
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.rquery/1"
+  defdelegate cypher!(arg), to: TestGraph.LPG.Cypher.Client, as: :rquery!
+
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.clear/0"
+  defdelegate cypher_clear(), to: TestGraph.LPG.Cypher.Client, as: :clear
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.dump/1"
+  defdelegate cypher_dump(arg), to: TestGraph.LPG.Cypher.Client, as: :dump
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.dump/2"
+  defdelegate cypher_dump(arg1, arg2), to: TestGraph.LPG.Cypher.Client, as: :dump
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.init/0"
+  defdelegate cypher_init(), to: TestGraph.LPG.Cypher.Client, as: :init
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.reset/0"
+  defdelegate cypher_reset(), to: TestGraph.LPG.Cypher.Client, as: :reset
+  @doc "Delegates to TestGraph.LPG.Cypher.Client.test/0"
+  defdelegate cypher_test(), to: TestGraph.LPG.Cypher.Client, as: :test
+
+  # TestGraph.RDF.SPARQL  .Client delegates
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/0"
+  defdelegate sparql(), to: TestGraph.RDF.SPARQL.Client, as: :rquery
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/1"
+  defdelegate sparql(arg), to: TestGraph.RDF.SPARQL.Client, as: :rquery
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/2"
+  defdelegate sparql(arg1, arg2), to: TestGraph.RDF.SPARQL.Client, as: :rquery
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/0"
+  defdelegate sparql!(), to: TestGraph.RDF.SPARQL.Client, as: :rquery!
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/1"
+  defdelegate sparql!(arg), to: TestGraph.RDF.SPARQL.Client, as: :rquery!
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/2"
+  defdelegate sparql!(arg1, arg2), to: TestGraph.RDF.SPARQL.Client, as: :rquery!
 
 end

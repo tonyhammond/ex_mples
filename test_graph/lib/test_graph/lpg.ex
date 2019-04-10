@@ -10,6 +10,9 @@ defmodule TestGraph.LPG do
   @graphs_dir @lpg_dir <> "/graphs/"
   @queries_dir @lpg_dir <> "/queries/"
 
+  def graphs_dir, do: @graphs_dir
+  def queries_dir, do: @queries_dir
+
   ##
 
   @books_graph_file "books.cypher"

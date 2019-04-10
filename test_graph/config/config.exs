@@ -3,13 +3,12 @@
 use Mix.Config
 
 config :bolt_sips, Bolt,
-  # url: "bolt://localhost:7687",
-  # basic_auth: [username: "neo4j", password: "neo4jtest"]
   url: "bolt://neo4j:neo4jtest@localhost:7687"
 
 config :tesla, :adapter, Tesla.Adapter.Hackney
 
 config :test_graph,
+  graphdb_service: "http://localhost:7200",
   neo4j_service: "http://neo4j:neo4jtest@localhost:7474"
 
 # Application.put_env(:test_graph,
