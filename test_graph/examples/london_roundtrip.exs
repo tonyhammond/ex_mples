@@ -22,10 +22,10 @@ import TestGraph
 resource = "http://dbpedia.org/resource/London"
 
 # # read (and save) graph from DBpedia by querying
-# import_rdf_from_query("london.rq")
+import_rdf_from_query("london.rq")
 
 # read from saved graph
-import_rdf_from_graph("london.ttl")
+# import_rdf_from_graph("london.ttl")
 
 # print out exported graph
 IO.puts export_rdf_by_uri(resource).data

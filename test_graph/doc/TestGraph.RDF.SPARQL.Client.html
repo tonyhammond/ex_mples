@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.RDF.SPARQL.Client — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-b54f0d91f5.js"></script>
+    <script src="dist/sidebar_items-d1af0b0184.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -80,104 +80,73 @@ TestGraph.RDF.SPARQL.Client              </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#default_sparql_query/0">default_sparql_query()</a>
+    <a href="#dbpedia_sparql_endpoint/0">dbpedia_sparql_endpoint()</a>
   </div>
-    <div class="summary-synopsis"><p>Returns default SPARQL query</p>
+    <div class="summary-synopsis"><p>Sets DBpedia SPARQL endpoint</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#default_sparql_service/0">default_sparql_service()</a>
+    <a href="#local_sparql_endpoint/0">local_sparql_endpoint()</a>
   </div>
-    <div class="summary-synopsis"><p>Returns default SPARQL service</p>
+    <div class="summary-synopsis"><p>Sets local SPARQL endpoint</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#hello/0">hello()</a>
+    <a href="#rquery/2">rquery(query \\ sparql_query(), endpoint \\ sparql_endpoint())</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default SPARQL service and prints out &quot;Hello World&quot;</p>
+    <div class="summary-synopsis"><p>Queries a SPARQL endpoint with a SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#rquery/0">rquery()</a>
+    <a href="#rquery!/2">rquery!(query \\ sparql_query(), endpoint \\ sparql_endpoint())</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default SPARQL service with default SPARQL query</p>
+    <div class="summary-synopsis"><p>The same as <code class="inline">rquery</code> but raises a runtime error if it fails</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#rquery/1">rquery(query)</a>
+    <a href="#sparql_endpoint/0">sparql_endpoint()</a>
   </div>
-    <div class="summary-synopsis"><p>Queries default SPARQL service with user SPARQL query</p>
+    <div class="summary-synopsis"><p>Returns default SPARQL endpoint</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#rquery/2">rquery(query, service)</a>
+    <a href="#sparql_endpoint/1">sparql_endpoint(sparql_service)</a>
   </div>
-    <div class="summary-synopsis"><p>Queries a user SPARQL service with a user SPARQL query</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#rquery!/0">rquery!()</a>
-  </div>
-    <div class="summary-synopsis"><p>The same as <a href="#rquery/0"><code class="inline">rquery/0</code></a> but raises a runtime error if it fails</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#rquery!/1">rquery!(query)</a>
-  </div>
-    <div class="summary-synopsis"><p>The same as <a href="#rquery/1"><code class="inline">rquery/1</code></a> but raises a runtime error if it fails</p>
-</div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#rquery!/2">rquery!(query, service)</a>
-  </div>
-    <div class="summary-synopsis"><p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails</p>
+    <div class="summary-synopsis"><p>Sets default SPARQL endpoint</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#sparql_query/0">sparql_query()</a>
   </div>
-    <div class="summary-synopsis"><p>Returns current SPARQL query</p>
+    <div class="summary-synopsis"><p>Returns default SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#sparql_query/1">sparql_query(query)</a>
+    <a href="#sparql_query/1">sparql_query(query_file)</a>
   </div>
-    <div class="summary-synopsis"><p>Sets current SPARQL query</p>
+    <div class="summary-synopsis"><p>Returns saved SPARQL query</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#sparql_service/0">sparql_service()</a>
+    <a href="#sparql_services/0">sparql_services()</a>
   </div>
-    <div class="summary-synopsis"><p>Returns current SPARQL service</p>
+    <div class="summary-synopsis"><p>Returns SPARQL services</p>
 </div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#sparql_service/1">sparql_service(service)</a>
+    <a href="#wikidata_sparql_endpoint/0">wikidata_sparql_endpoint()</a>
   </div>
-    <div class="summary-synopsis"><p>Sets current SPARQL service</p>
+    <div class="summary-synopsis"><p>Sets Wikidata SPARQL endpoint</p>
 </div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#triples/1">triples(limit \\ nil)</a>
-  </div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#triples_by_uri/2">triples_by_uri(uri, limit \\ nil)</a>
-  </div>
 </div>
   </div>
         </section>
@@ -190,112 +159,141 @@ TestGraph.RDF.SPARQL.Client              </h1>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="default_sparql_query/0">
+<section class="detail" id="dbpedia_sparql_endpoint/0">
     <div class="detail-header">
-    <a href="#default_sparql_query/0" class="detail-link" title="Link to this function">
+    <a href="#dbpedia_sparql_endpoint/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">default_sparql_query()</span>
+    <h1 class="signature">dbpedia_sparql_endpoint()</span>
           </div>
   <section class="docstring">
-<p>Returns default SPARQL query.</p>
+<p>Sets DBpedia SPARQL endpoint.</p>
+<h2 id="dbpedia_sparql_endpoint/0-examples" class="section-heading">
+  <a href="#dbpedia_sparql_endpoint/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">dbpedia_sparql_endpoint</span><span class="p" data-group-id="3914905944-1">(</span><span class="p" data-group-id="3914905944-1">)</span><span class="w">
+</span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span></code></pre>
   </section>
 </section>
-<section class="detail" id="default_sparql_service/0">
+<section class="detail" id="local_sparql_endpoint/0">
     <div class="detail-header">
-    <a href="#default_sparql_service/0" class="detail-link" title="Link to this function">
+    <a href="#local_sparql_endpoint/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">default_sparql_service()</span>
+    <h1 class="signature">local_sparql_endpoint()</span>
           </div>
   <section class="docstring">
-<p>Returns default SPARQL service.</p>
-  </section>
-</section>
-<section class="detail" id="hello/0">
-    <div class="detail-header">
-    <a href="#hello/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">hello()</span>
-          </div>
-  <section class="docstring">
-<p>Queries default SPARQL service and prints out &quot;Hello World&quot;.</p>
-  </section>
-</section>
-<section class="detail" id="rquery/0">
-    <div class="detail-header">
-    <a href="#rquery/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">rquery()</span>
-          </div>
-  <section class="docstring">
-<p>Queries default SPARQL service with default SPARQL query.</p>
-  </section>
-</section>
-<section class="detail" id="rquery/1">
-    <div class="detail-header">
-    <a href="#rquery/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">rquery(query)</span>
-          </div>
-  <section class="docstring">
-<p>Queries default SPARQL service with user SPARQL query.</p>
+<p>Sets local SPARQL endpoint.</p>
+<h2 id="local_sparql_endpoint/0-examples" class="section-heading">
+  <a href="#local_sparql_endpoint/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">local_sparql_endpoint</span><span class="p" data-group-id="8244912052-1">(</span><span class="p" data-group-id="8244912052-1">)</span><span class="w">
+</span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="rquery/2">
-    <div class="detail-header">
+  
+    <span id="rquery/0"></span>
+
+    <span id="rquery/1"></span>
+  <div class="detail-header">
     <a href="#rquery/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">rquery(query, service)</span>
+    <h1 class="signature">rquery(query \\ sparql_query(), endpoint \\ sparql_endpoint())</span>
           </div>
   <section class="docstring">
-<p>Queries a user SPARQL service with a user SPARQL query.</p>
-  </section>
-</section>
-<section class="detail" id="rquery!/0">
-    <div class="detail-header">
-    <a href="#rquery!/0" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">rquery!()</span>
-          </div>
-  <section class="docstring">
-<p>The same as <a href="#rquery/0"><code class="inline">rquery/0</code></a> but raises a runtime error if it fails.</p>
-  </section>
-</section>
-<section class="detail" id="rquery!/1">
-    <div class="detail-header">
-    <a href="#rquery!/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">rquery!(query)</span>
-          </div>
-  <section class="docstring">
-<p>The same as <a href="#rquery/1"><code class="inline">rquery/1</code></a> but raises a runtime error if it fails.</p>
+<p>Queries a SPARQL endpoint with a SPARQL query.</p>
+<h2 id="rquery/2-examples" class="section-heading">
+  <a href="#rquery/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="w">
+</span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="8814902816-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="8814902816-1">)</span><span class="w">
+</span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="8814902816-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="8814902816-2">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL.Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="8814902816-3">(</span><span class="p" data-group-id="8814902816-3">)</span><span class="w">
+</span><span class="p" data-group-id="8814902816-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="c1">#RDF.Graph{name: nil</span><span class="w">
+      </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">dbpedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">resource</span><span class="o">/</span><span class="nc">Hello_World</span><span class="o">&gt;</span><span class="w">
+          </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">rdf</span><span class="o">-</span><span class="n">schema</span><span class="c1">#label&gt;</span><span class="w">
+              </span><span class="sx">~L&quot;Hello World&quot;en</span><span class="p" data-group-id="8814902816-4">}</span><span class="err">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="rquery!/2">
-    <div class="detail-header">
+  
+    <span id="rquery!/0"></span>
+
+    <span id="rquery!/1"></span>
+  <div class="detail-header">
     <a href="#rquery!/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">rquery!(query, service)</span>
+    <h1 class="signature">rquery!(query \\ sparql_query(), endpoint \\ sparql_endpoint())</span>
           </div>
   <section class="docstring">
-<p>The same as <a href="#rquery/2"><code class="inline">rquery/2</code></a> but raises a runtime error if it fails.</p>
+<p>The same as <code class="inline">rquery</code> but raises a runtime error if it fails.</p>
+<h2 id="rquery!/2-examples" class="section-heading">
+  <a href="#rquery!/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="w">
+</span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="3846997465-1">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="3846997465-1">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL.Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="3846997465-2">(</span><span class="p" data-group-id="3846997465-2">)</span><span class="w">
+</span><span class="c1">#RDF.Graph{name: nil</span><span class="w">
+     </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">dbpedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">resource</span><span class="o">/</span><span class="nc">Hello_World</span><span class="o">&gt;</span><span class="w">
+         </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">rdf</span><span class="o">-</span><span class="n">schema</span><span class="c1">#label&gt;</span><span class="w">
+             </span><span class="sx">~L&quot;Hello World&quot;en</span><span class="err">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="sparql_endpoint/0">
+    <div class="detail-header">
+    <a href="#sparql_endpoint/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_endpoint()</span>
+          </div>
+  <section class="docstring">
+<p>Returns default SPARQL endpoint.</p>
+<h2 id="sparql_endpoint/0-examples" class="section-heading">
+  <a href="#sparql_endpoint/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="1204162257-1">(</span><span class="p" data-group-id="1204162257-1">)</span><span class="w">
+</span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="sparql_endpoint/1">
+    <div class="detail-header">
+    <a href="#sparql_endpoint/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_endpoint(sparql_service)</span>
+          </div>
+  <section class="docstring">
+<p>Sets default SPARQL endpoint.</p>
+<h2 id="sparql_endpoint/1-examples" class="section-heading">
+  <a href="#sparql_endpoint/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="8318195578-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="8318195578-1">)</span><span class="w">
+</span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="sparql_query/0">
@@ -307,7 +305,14 @@ Functions          </h1>
     <h1 class="signature">sparql_query()</span>
           </div>
   <section class="docstring">
-<p>Returns current SPARQL query.</p>
+<p>Returns default SPARQL query.</p>
+<h2 id="sparql_query/0-examples" class="section-heading">
+  <a href="#sparql_query/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="0658456823-1">(</span><span class="p" data-group-id="0658456823-1">)</span><span class="w">
+</span><span class="s">&quot;construct</span><span class="se">\n</span><span class="s">{ ?s ?p ?o }</span><span class="se">\n</span><span class="s">where {</span><span class="se">\n</span><span class="s">  ?s ?p ?o</span><span class="se">\n</span><span class="s">} limit 1</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="sparql_query/1">
@@ -316,60 +321,59 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">sparql_query(query)</span>
+    <h1 class="signature">sparql_query(query_file)</span>
           </div>
   <section class="docstring">
-<p>Sets current SPARQL query.</p>
+<p>Returns saved SPARQL query.</p>
+<h2 id="sparql_query/1-examples" class="section-heading">
+  <a href="#sparql_query/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_rdf_queries</span><span class="w">
+</span><span class="p" data-group-id="8936430382-1">[</span><span class="s">&quot;cypher.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;london.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;elixir.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;default.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;neo4j.rq&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;triples_by_uri.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;triples.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="8936430382-1">]</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="8936430382-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="8936430382-2">)</span><span class="w">
+</span><span class="s">&quot;construct</span><span class="se">\n</span><span class="s">{ ?s ?p ?o }</span><span class="se">\n</span><span class="s">where {</span><span class="se">\n</span><span class="s">  bind (&lt;http://dbpedia.org/resource/Hello_World&gt; as ?s)</span><span class="se">\n</span><span class="s">  ?s ?p ?o</span><span class="se">\n</span><span class="s">  filter (isLiteral(?o) &amp;&amp; langMatches(lang(?o), </span><span class="se">\&quot;</span><span class="s">en</span><span class="se">\&quot;</span><span class="s">))</span><span class="se">\n</span><span class="s">}</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
-<section class="detail" id="sparql_service/0">
+<section class="detail" id="sparql_services/0">
     <div class="detail-header">
-    <a href="#sparql_service/0" class="detail-link" title="Link to this function">
+    <a href="#sparql_services/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">sparql_service()</span>
+    <h1 class="signature">sparql_services()</span>
           </div>
   <section class="docstring">
-<p>Returns current SPARQL service.</p>
+<p>Returns SPARQL services.</p>
+<h2 id="sparql_services/0-examples" class="section-heading">
+  <a href="#sparql_services/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_sparql_services</span><span class="p" data-group-id="2465587938-1">(</span><span class="p" data-group-id="2465587938-1">)</span><span class="w">
+</span><span class="p" data-group-id="2465587938-2">[</span><span class="ss">:sparql_dbpedia</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_local</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_wikidata</span><span class="p" data-group-id="2465587938-2">]</span></code></pre>
   </section>
 </section>
-<section class="detail" id="sparql_service/1">
+<section class="detail" id="wikidata_sparql_endpoint/0">
     <div class="detail-header">
-    <a href="#sparql_service/1" class="detail-link" title="Link to this function">
+    <a href="#wikidata_sparql_endpoint/0" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">sparql_service(service)</span>
+    <h1 class="signature">wikidata_sparql_endpoint()</span>
           </div>
   <section class="docstring">
-<p>Sets current SPARQL service.</p>
-  </section>
-</section>
-<section class="detail" id="triples/1">
-  
-    <span id="triples/0"></span>
-  <div class="detail-header">
-    <a href="#triples/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">triples(limit \\ nil)</span>
-          </div>
-  <section class="docstring">
-  </section>
-</section>
-<section class="detail" id="triples_by_uri/2">
-  
-    <span id="triples_by_uri/1"></span>
-  <div class="detail-header">
-    <a href="#triples_by_uri/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">triples_by_uri(uri, limit \\ nil)</span>
-          </div>
-  <section class="docstring">
+<p>Sets Wikidata SPARQL endpoint.</p>
+<h2 id="wikidata_sparql_endpoint/0-examples" class="section-heading">
+  <a href="#wikidata_sparql_endpoint/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">wikidata_sparql_endpoint</span><span class="p" data-group-id="9590332647-1">(</span><span class="p" data-group-id="9590332647-1">)</span><span class="w">
+</span><span class="s">&quot;https://query.wikidata.org/bigdata/namespace/wdq/sparql&quot;</span></code></pre>
   </section>
 </section>
           </div>

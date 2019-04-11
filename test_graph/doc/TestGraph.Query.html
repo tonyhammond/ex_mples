@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.Query — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-b54f0d91f5.js"></script>
+    <script src="dist/sidebar_items-d1af0b0184.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -64,6 +64,33 @@ TestGraph.Query              </h1>
 
         <section id="moduledoc">
 <p>Module providing a struct for queries.</p>
+<p>The <code class="inline">%TestGraph.Query{}</code> struct is used to keep some related data fields
+together. One of the fields <code class="inline">:type</code> tracks whether this is a property
+graph query (<code class="inline">:lpg</code>) or a semantic graph query (<code class="inline">:rdf</code>).
+The other fields are straightforward data access fields:</p>
+<ul>
+<li><code class="inline">:data</code> – <code class="inline">query_data</code>
+</li>
+<li><code class="inline">:file</code> – name of <code class="inline">query_file</code> (within the <code class="inline">queries_dir</code>)
+</li>
+<li><code class="inline">:path</code> – absolute path of <code class="inline">query_file</code>
+</li>
+<li><code class="inline">:uri</code> – absolute URI of <code class="inline">query_file</code>
+</li>
+</ul>
+<h2 id="module-examples" class="section-heading">
+  <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0145374944-1">(</span><span class="s">&quot;temp.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="0145374944-1">)</span><span class="w">
+</span><span class="p" data-group-id="0145374944-2">%</span><span class="nc" data-group-id="0145374944-2">TestGraph.Query</span><span class="p" data-group-id="0145374944-2">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;QUERY_DATA&gt;&quot;</span><span class="w">
+  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;temp.rq&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_graph/priv/rdf/queries/temp.rq&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/queries/temp.rq&quot;</span><span class="w">
+</span><span class="p" data-group-id="0145374944-2">}</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -111,14 +138,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="9670155921-1">(</span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="9670155921-1">)</span><span class="w">
-</span><span class="p" data-group-id="9670155921-2">%</span><span class="nc" data-group-id="9670155921-2">TestGraph.Query</span><span class="p" data-group-id="9670155921-2">{</span><span class="w">
-  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;construct { ?s ?p ?o } where { &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="1901947896-1">(</span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="1901947896-1">)</span><span class="w">
+</span><span class="p" data-group-id="1901947896-2">%</span><span class="nc" data-group-id="1901947896-2">TestGraph.Query</span><span class="p" data-group-id="1901947896-2">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/rdf/queries/books.rq&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_graph/priv/rdf/queries/books.rq&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
-  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/rdf/queries/books.rq&quot;</span><span class="w">
-</span><span class="p" data-group-id="9670155921-2">}</span></code></pre>
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/queries/books.rq&quot;</span><span class="w">
+</span><span class="p" data-group-id="1901947896-2">}</span></code></pre>
   </section>
 </section>
           </div>

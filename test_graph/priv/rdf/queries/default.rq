@@ -1,7 +1,5 @@
 construct
 { ?s ?p ?o }
 where {
-  bind (<http://dbpedia.org/resource/Hello_World> as ?s)
   ?s ?p ?o
-  filter (isLiteral(?o) && langMatches(lang(?o), "en"))
-}
+} limit 1

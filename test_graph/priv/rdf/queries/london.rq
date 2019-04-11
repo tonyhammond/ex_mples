@@ -1,5 +1,4 @@
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 construct
 {
   ?s ?p ?o
@@ -7,5 +6,5 @@ construct
 where {
   bind (<http://dbpedia.org/resource/London> as ?s)
   ?s ?p ?o .
-  filter ( !(datatype(?o) = rdf:langString && langMatches( lang(?o), "" )) )
+  filter ( !(!isiri(?o) && datatype(?o) = rdf:langString && langMatches( lang(?o), "" )) )
 }

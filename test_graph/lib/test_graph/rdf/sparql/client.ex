@@ -3,102 +3,143 @@ defmodule TestGraph.RDF.SPARQL.Client do
   Module providing simple wrapper functions for the `SPARQL.Client` module.
   """
   import TestGraph.RDF
+  # import SPARQL.Client
 
-  @hello_world "http://dbpedia.org/resource/Hello_World"
-
-  @construct_query """
-  construct
-  { ?s ?p ?o }
-  where {
-  bind (<#{@hello_world}> as ?s)
-  ?s ?p ?o
-  filter (isLiteral(?o) && langMatches(lang(?o), "en"))
-  }
-  """
-
-  @select_query """
-  select *
-  where {
-  bind (<#{@hello_world}> as ?s)
-  ?s ?p ?o
-  filter (isLiteral(?o) && langMatches(lang(?o), "en"))
-  }
-  """
-
-  @query_file_triples "triples.rq"
-  @query_file_triples_by_uri "triples_by_uri.rq"
-
-  @query @construct_query
-  # @service "http://dbpedia.org/sparql"
-  @service "http://localhost:7200/repositories/nobelprizes"
-
-
-  ## Accessors for module attributes
-
-  @doc """
-  Returns default SPARQL query.
-  """
-  def default_sparql_query, do: @query
-
-  @doc """
-  Returns default SPARQL service.
-  """
-  def default_sparql_service, do: @service
+  # @query_file_triples "triples.rq"
+  # @query_file_triples_by_uri "triples_by_uri.rq"
 
   ## Accessors for env variables
 
   @doc """
-  Returns current SPARQL query.
+  Returns default SPARQL endpoint.
+
+  ## Examples
+
+      iex> sparql_endpoint()
+      "http://localhost:7200/repositories/test-graph"
   """
-  def sparql_query, do: Application.get_env(:test_graph, :sparql_query)
+  def sparql_endpoint, do: Application.get_env(:test_graph, :sparql_endpoint)
 
   @doc """
-  Sets current SPARQL query.
+  Sets default SPARQL endpoint.
+
+  ## Examples
+
+      iex> sparql_endpoint(:sparql_dbpedia)
+      "http://dbpedia.org/sparql"
   """
-  def sparql_query(query) do
-     Application.put_env(:test_graph, :sparql_query, query)
+  def sparql_endpoint(sparql_service) do
+     Application.put_env(:test_graph,
+       :sparql_endpoint, _sparql_endpoint_url(sparql_service))
+     Application.get_env(:test_graph, :sparql_endpoint)
+  end
+
+  defp _sparql_endpoint_url(sparql_service) do
+    [url: url] = Application.get_env(:test_graph, sparql_service, :url)
+    url
   end
 
   @doc """
-  Returns current SPARQL service.
+  Returns SPARQL services.
+
+  ## Examples
+
+      iex> list_sparql_services()
+      [:sparql_dbpedia, :sparql_local, :sparql_wikidata]
   """
-  def sparql_service, do: Application.get_env(:test_graph, :sparql_service)
+  def sparql_services, do: Application.get_env(:test_graph, :sparql)
 
   @doc """
-  Sets current SPARQL service.
+  Sets local SPARQL endpoint.
+
+  ## Examples
+
+      iex> local_sparql_endpoint()
+      "http://localhost:7200/repositories/test-graph"
   """
-  def sparql_service(service) do
-     Application.put_env(:test_graph, :sparql_service, service)
+  def local_sparql_endpoint, do: sparql_endpoint(:sparql_local)
+
+  @doc """
+  Sets DBpedia SPARQL endpoint.
+
+  ## Examples
+
+      iex> dbpedia_sparql_endpoint()
+      "http://dbpedia.org/sparql"
+  """
+  def dbpedia_sparql_endpoint, do: sparql_endpoint(:sparql_dbpedia)
+
+  @doc """
+  Sets Wikidata SPARQL endpoint.
+
+  ## Examples
+
+      iex> wikidata_sparql_endpoint()
+      "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+  """
+  def wikidata_sparql_endpoint, do: sparql_endpoint(:sparql_wikidata)
+
+  @doc """
+  Returns default SPARQL query.
+
+  ## Examples
+
+      iex> sparql_query()
+      "construct\\n{ ?s ?p ?o }\\nwhere {\\n  ?s ?p ?o\\n} limit 1\\n"
+  """
+  def sparql_query(), do: read_query().data
+
+  @doc """
+  Returns saved SPARQL query.
+
+  ## Examples
+
+      iex> list_rdf_queries
+      ["cypher.rq", "london.rq", "elixir.rq", "default.rq", "neo4j.rq",
+       "triples_by_uri.rq", "triples.rq", "hello.rq"]
+
+      iex> sparql_query("hello.rq")
+      "construct\\n{ ?s ?p ?o }\\nwhere {\\n  bind (<http://dbpedia.org/resource/Hello_World> as ?s)\\n  ?s ?p ?o\\n  filter (isLiteral(?o) && langMatches(lang(?o), \\"en\\"))\\n}\\n"
+  """
+  def sparql_query(query_file), do: read_query(query_file).data
+
+  @doc """
+  Queries a SPARQL endpoint with a SPARQL query.
+
+  ## Examples
+
+      iex> sparql_endpoint
+      "http://localhost:7200/repositories/test-graph"
+
+      iex> sparql_endpoint(:sparql_dbpedia)
+      "http://dbpedia.org/sparql"
+
+      iex> read_rdf_query("hello.rq").data |>  SPARQL.Client.rquery()
+      {:ok, #RDF.Graph{name: nil
+            ~I<http://dbpedia.org/resource/Hello_World>
+                ~I<http://www.w3.org/2000/01/rdf-schema#label>
+                    ~L"Hello World"en}}
+  """
+  def rquery(query \\ sparql_query(), endpoint \\ sparql_endpoint()) do
+    SPARQL.Client.query(query, endpoint)
   end
 
-  ## Hello query to test access to remote RDF datastore
-
   @doc """
-  Queries default SPARQL service and prints out "Hello World".
-  """
-  def hello() do
-    case SPARQL.Client.query(@select_query, @service) do
-      {:ok, result} ->
-        result.results |> Enum.each(&(IO.puts &1["o"]))
-      {:error, reason} ->
-        raise "! Error: #{reason}"
-    end
-  end
+  The same as `rquery` but raises a runtime error if it fails.
 
-  ## Simple remote query functions
+  ## Examples
 
-  @doc """
-  Queries default SPARQL service with default SPARQL query.
-  """
-  def rquery() do
-    SPARQL.Client.query(@query, @service)
-  end
+      iex> sparql_endpoint
+      "http://dbpedia.org/sparql"
 
-  @doc """
-  The same as `rquery/0` but raises a runtime error if it fails.
+      iex> read_rdf_query("hello.rq").data |>  SPARQL.Client.rquery()
+      #RDF.Graph{name: nil
+           ~I<http://dbpedia.org/resource/Hello_World>
+               ~I<http://www.w3.org/2000/01/rdf-schema#label>
+                   ~L"Hello World"en}
   """
-  def rquery!() do
-    SPARQL.Client.query(@query, @service)
+  def rquery!(query \\ sparql_query(), endpoint \\ sparql_endpoint()) do
+    SPARQL.Client.query(query, endpoint)
     |>
     case do
       {:ok, resp} -> resp
@@ -106,62 +147,26 @@ defmodule TestGraph.RDF.SPARQL.Client do
     end
   end
 
-  @doc """
-  Queries default SPARQL service with user SPARQL query.
-  """
-  def rquery(query) do
-    SPARQL.Client.query(query, @service)
-  end
+  ##
 
-  @doc """
-  The same as `rquery/1` but raises a runtime error if it fails.
-  """
-  def rquery!(query) do
-    SPARQL.Client.query(query, @service)
-    |>
-    case do
-      {:ok, resp} -> resp
-      {:error, error} -> raise error
-    end
-  end
-
-  @doc """
-  Queries a user SPARQL service with a user SPARQL query.
-  """
-  def rquery(query, service) do
-    SPARQL.Client.query(query, service)
-  end
-
-  @doc """
-  The same as `rquery/2` but raises a runtime error if it fails.
-  """
-  def rquery!(query, service) do
-    SPARQL.Client.query(query, service)
-    |>
-    case do
-      {:ok, resp} -> resp
-      {:error, error} -> raise error
-    end
-  end
-
-  def triples(limit \\ nil) do
-    case limit do
-      nil -> rquery!(read_query(@query_file_triples).data)
-      _ ->
-        limit = Integer.to_string(limit)
-        rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
-    end
-  end
-
-  def triples_by_uri(uri, limit \\ nil) do
-    q = read_query(@query_file_triples_by_uri).data
-    query = String.replace(q, "_uri", uri)
-    case limit do
-      nil -> rquery!(query)
-      _ ->
-        limit = Integer.to_string(limit)
-        rquery!(query <> " limit " <> limit)
-    end
-  end
+  # def triples(limit \\ nil) do
+  #   case limit do
+  #     nil -> rquery!(read_query(@query_file_triples).data)
+  #     _ ->
+  #       limit = Integer.to_string(limit)
+  #       rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
+  #   end
+  # end
+  #
+  # def triples_by_uri(uri, limit \\ nil) do
+  #   q = read_query(@query_file_triples_by_uri).data
+  #   query = String.replace(q, "_uri", uri)
+  #   case limit do
+  #     nil -> rquery!(query)
+  #     _ ->
+  #       limit = Integer.to_string(limit)
+  #       rquery!(query <> " limit " <> limit)
+  #   end
+  # end
 
 end

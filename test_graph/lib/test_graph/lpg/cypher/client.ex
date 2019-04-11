@@ -14,59 +14,11 @@ defmodule TestGraph.LPG.Cypher.Client do
   @query_file_nodes_and_relationships "nodes_and_relationships.cypher"
   @query_file_paths "paths.cypher"
 
-  @query_file_node1 "node1.cypher"
-  @query read_query(@query_file_node1).data
-  # @service Bolt.Sips.conn()
+  def cypher_query(), do: read_query().data
+  def cypher_query(query_file), do: read_query(query_file).data
 
   @doc """
-  Queries default Bolt connection with default Cypher query.
-
-  ## Examples
-
-      iex> Cypher.Client.rquery()
-      {:ok,
-       [
-         %{
-           "n" => %Bolt.Sips.Types.Node{
-             id: 919,
-             labels: ["Resource"],
-             properties: %{
-               "rdfs__label" => "Hello World",
-               "uri" => "http://dbpedia.org/resource/Hello_World"
-             }
-           }
-         }
-       ]}
-  """
-  def rquery() do
-    Bolt.Sips.query(Bolt.Sips.conn(), @query)
-  end
-
-  @doc """
-  The same as `rquery/0` but raises a runtime error if it fails.
-
-  ## Examples
-
-      iex> Cypher.Client.rquery!()
-      [
-        %{
-          "n" => %Bolt.Sips.Types.Node{
-            id: 919,
-            labels: ["Resource"],
-            properties: %{
-              "rdfs__label" => "Hello World",
-              "uri" => "http://dbpedia.org/resource/Hello_World"
-            }
-          }
-        }
-      ]
-  """
-  def rquery!() do
-    Bolt.Sips.query!(Bolt.Sips.conn(), @query)
-  end
-
-  @doc """
-  Queries default Bolt connection with user Cypher query.
+  Queries Bolt connection with  Cypher query.
 
   ## Examples
 
@@ -85,7 +37,7 @@ defmodule TestGraph.LPG.Cypher.Client do
          }
        ]}
   """
-  def rquery(query) do
+  def rquery(query \\ cypher_query()) do
     Bolt.Sips.query(Bolt.Sips.conn(), query)
   end
 
@@ -108,9 +60,11 @@ defmodule TestGraph.LPG.Cypher.Client do
         }
       ]
   """
-  def rquery!(query) do
+  def rquery!(query \\ cypher_query()) do
     Bolt.Sips.query!(Bolt.Sips.conn(), query)
   end
+
+  ##
 
   @doc """
   Queries database for one node.

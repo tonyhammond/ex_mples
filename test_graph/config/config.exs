@@ -2,19 +2,30 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+# HTTP client
+config :tesla,
+  adapter: Tesla.Adapter.Hackney
+
+# Neo4j database access
 config :bolt_sips, Bolt,
   url: "bolt://neo4j:neo4jtest@localhost:7687"
 
-config :tesla, :adapter, Tesla.Adapter.Hackney
-
 config :test_graph,
-  graphdb_service: "http://localhost:7200",
   neo4j_service: "http://neo4j:neo4jtest@localhost:7474"
 
-# Application.put_env(:test_graph,
-#   :sparql_query, TestGraph.RDF.SPARQL.Client.default_sparql_query)
-# Application.put_env(:test_graph,
-#   :sparql_service, TestGraph.RDF.SPARQL.Client.default_sparql_service)
+# RDF database access
+config :test_graph,
+  :sparql, [ :sparql_dbpedia, :sparql_local, :sparql_wikidata ]
+
+config :test_graph, :sparql_dbpedia,
+  url: "http://dbpedia.org/sparql"
+
+config :test_graph, :sparql_local,
+  url: "http://localhost:7200/repositories/test-graph"
+
+config :test_graph, :sparql_wikidata,
+  url: "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this

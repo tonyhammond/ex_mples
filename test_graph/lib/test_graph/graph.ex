@@ -1,6 +1,28 @@
 defmodule TestGraph.Graph do
   @moduledoc """
   Module providing a struct for graphs.
+
+  The `%TestGraph.Graph{}` struct is used to keep some related data fields
+  together. One of the fields `:type` tracks whether this is a property
+  graph (`:lpg`) or a semantic graph (`:rdf`).
+  The other fields are straightforward data access fields:
+
+  * `:data` – `graph_data`
+  * `:file` – name of `graph_file` (within the `graphs_dir`)
+  * `:path` – absolute path of `graph_file`
+  * `:uri` – absolute URI of `graph_file`
+
+  ## Examples
+
+      iex> data |> TestGraph.Graph.new("temp.ttl", :rdf)
+      %TestGraph.Graph{
+        data: "<GRAPH_DATA>"
+        file: "temp.ttl",
+        path:  "...\/test_graph\/priv\/rdf\/graphs\/temp.ttl",
+        type: :rdf,
+        uri: "file:\/\/\/...\/test_graph\/priv\/rdf\/graphs\/temp.ttl"
+      }
+
   """
 
   @priv_dir "#{:code.priv_dir(:test_graph)}"
@@ -17,11 +39,11 @@ defmodule TestGraph.Graph do
 
       iex> data |> TestGraph.Graph.new("books.ttl", :rdf)
       %TestGraph.Graph{
-        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n" <> ...
+        data: "@prefix bibo: <http:\/\/purl.org\/ontology\/bibo\/> \\n..."
         file: "books.ttl",
-        path:  ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl",
+        path:  "...\/test_graph\/priv\/rdf\/graphs\/books.ttl",
         type: :rdf,
-        uri: "file:\/\/\/" <> ... <> "\/test_graph\/priv\/rdf\/graphs\/books.ttl"
+        uri: "file:\/\/\/...\/test_graph\/priv\/rdf\/graphs\/books.ttl"
       }
   """
   def new(graph_data, graph_file, graph_type) do

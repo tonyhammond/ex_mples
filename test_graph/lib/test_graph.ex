@@ -196,6 +196,11 @@ defmodule TestGraph do
   end
 
   # TestGraph.LPG delegates
+  @doc "Delegates to TestGraph.LPG.books/0"
+  defdelegate lpg_books(), to: TestGraph.LPG, as: :books
+  @doc "Delegates to TestGraph.LPG.movies/0"
+  defdelegate lpg_movies(), to: TestGraph.LPG, as: :movies
+
   @doc "Delegates to TestGraph.LPG.list_graphs/0"
   defdelegate list_lpg_graphs(), to: TestGraph.LPG, as: :list_graphs
   @doc "Delegates to TestGraph.LPG.list_queries/0"
@@ -279,5 +284,24 @@ defmodule TestGraph do
   defdelegate sparql!(arg), to: TestGraph.RDF.SPARQL.Client, as: :rquery!
   @doc "Delegates to TestGraph.RDF.SPARQL.Client.rquery/2"
   defdelegate sparql!(arg1, arg2), to: TestGraph.RDF.SPARQL.Client, as: :rquery!
+
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.sparql_endpoint/0"
+  defdelegate sparql_endpoint(), to: TestGraph.RDF.SPARQL.Client, as: :sparql_endpoint
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.sparql_endpoint/1"
+  defdelegate sparql_endpoint(arg), to: TestGraph.RDF.SPARQL.Client, as: :sparql_endpoint
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.sparql_query/0"
+  defdelegate sparql_query(), to: TestGraph.RDF.SPARQL.Client, as: :sparql_query
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.sparql_query/1"
+  defdelegate sparql_query(arg), to: TestGraph.RDF.SPARQL.Client, as: :sparql_query
+
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.sparql_services/0"
+  defdelegate list_sparql_services(), to: TestGraph.RDF.SPARQL.Client, as: :sparql_services
+
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.dbpedia_sparql_endpoint/0"
+  defdelegate dbpedia_sparql_endpoint(), to: TestGraph.RDF.SPARQL.Client, as: :dbpedia_sparql_endpoint
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.local_sparql_endpoint/0"
+  defdelegate local_sparql_endpoint(), to: TestGraph.RDF.SPARQL.Client, as: :local_sparql_endpoint
+  @doc "Delegates to TestGraph.RDF.SPARQL.Client.wikidata_sparql_endpoint/0"
+  defdelegate wikidata_sparql_endpoint(), to: TestGraph.RDF.SPARQL.Client, as: :wikidata_sparql_endpoint
 
 end
