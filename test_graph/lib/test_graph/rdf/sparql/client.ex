@@ -114,7 +114,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
       iex> sparql_endpoint(:sparql_dbpedia)
       "http://dbpedia.org/sparql"
 
-      iex> read_rdf_query("hello.rq").data |>  SPARQL.Client.rquery()
+      iex> read_rdf_query("hello.rq").data |>  SPARQL_Client.rquery()
       {:ok, #RDF.Graph{name: nil
             ~I<http://dbpedia.org/resource/Hello_World>
                 ~I<http://www.w3.org/2000/01/rdf-schema#label>
@@ -132,7 +132,7 @@ defmodule TestGraph.RDF.SPARQL.Client do
       iex> sparql_endpoint
       "http://dbpedia.org/sparql"
 
-      iex> read_rdf_query("hello.rq").data |>  SPARQL.Client.rquery()
+      iex> read_rdf_query("hello.rq").data |>  SPARQL_Client.rquery()
       #RDF.Graph{name: nil
            ~I<http://dbpedia.org/resource/Hello_World>
                ~I<http://www.w3.org/2000/01/rdf-schema#label>

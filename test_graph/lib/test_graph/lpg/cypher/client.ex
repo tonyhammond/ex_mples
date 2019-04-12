@@ -22,7 +22,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.rquery("match (n) return n limit 1")
+      iex> Cypher_Client.rquery("match (n) return n limit 1")
       {:ok,
        [
          %{
@@ -46,7 +46,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.rquery!("match (n) return n limit 1")
+      iex> Cypher_Client.rquery!("match (n) return n limit 1")
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -76,7 +76,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.nodes(2)
+      iex> Cypher_Client.nodes(2)
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -108,7 +108,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.node_by_id(311)
+      iex> Cypher_Client.node_by_id(311)
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -136,7 +136,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.node_ids()
+      iex> Cypher_Client.node_ids()
       [
         %{"id(n)" => 1804},
         %{"id(n)" => 1805},
@@ -164,7 +164,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.relationship_by_id(9265)
+      iex> Cypher_Client.relationship_by_id(9265)
       [
         %{
           "r" => %Bolt.Sips.Types.Relationship{
@@ -193,7 +193,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.relationship_ids()
+      iex> Cypher_Client.relationship_ids()
       [
         %{"id(n)" => 1804},
         %{"id(n)" => 1805},
@@ -216,7 +216,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.relationships()
+      iex> Cypher_Client.relationships()
       [
         %{
           "r" => %Bolt.Sips.Types.Relationship{
@@ -249,7 +249,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.nodes_and_relationships()
+      iex> Cypher_Client.nodes_and_relationships()
       [
         %{
           "n" => %Bolt.Sips.Types.Node{
@@ -292,7 +292,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.paths()
+      iex> Cypher_Client.paths()
       [
         %{
           "p" => %Bolt.Sips.Types.Path{
@@ -344,7 +344,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.init()
+      iex> Cypher_Client.init()
       [
         socket: Bolt.Sips.Socket,
         port: 7687,
@@ -371,7 +371,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.clear()
+      iex> Cypher_Client.clear()
       %{stats: %{"nodes-deleted" => 171, "relationships-deleted" => 253}, type: "w"}
 
   """
@@ -389,7 +389,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex(3)> Cypher.Client.dump("nobelprizes.cypher")
+      iex(3)> Cypher_Client.dump("nobelprizes.cypher")
       [
         %{
           "batchSize" => 20000,
@@ -459,7 +459,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.reset()
+      iex> Cypher_Client.reset()
       %{stats: %{"nodes-deleted" => 171, "relationships-deleted" => 253}, type: "w"}
 
   """
@@ -477,7 +477,7 @@ defmodule TestGraph.LPG.Cypher.Client do
 
   ## Examples
 
-      iex> Cypher.Client.test()
+      iex> Cypher_Client.test()
       [%{"nodes" => 171, "paths" => 506, "relationships" => 253}]
 
   """
