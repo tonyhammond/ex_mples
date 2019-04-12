@@ -1,7 +1,7 @@
 defmodule TestGraph do
   @moduledoc """
   Top-level module used in
-  "[Graph to graph with Elixir]()" post.
+  "[Graph to graph with Elixir](https://medium.com/@tonyhammond/graph-to-graph-with-elixir-9cd7fd6f2128)" post.
 
   This post explores moving data between semantic and property graphs.
 
