@@ -1,6 +1,3 @@
-//
-// create nodes
-//
 CREATE
 (book:Book {
     iri: "urn:isbn:978-1-68050-252-7",
@@ -13,9 +10,6 @@ CREATE
 (author3:Author { iri: "https://twitter.com/redrapids" }),
 (publisher:Publisher { iri: "https://pragprog.com/" })
 
-//
-// create relationships
-//
 CREATE
 (book)-[:AUTHORED_BY { role: "first author" }]->(author1),
 (book)-[:AUTHORED_BY { role: "second author" }]->(author2),

@@ -21,7 +21,6 @@ defmodule NeoSemantics.Extension do
 
   """
   def ping() do
-    # method = :get
     base = Application.get_env(:test_graph, :neo4j_service)
     path = "/rdf/ping"
     {:ok, env} = Tesla.get(base <> path)

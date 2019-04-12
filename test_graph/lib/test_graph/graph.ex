@@ -30,7 +30,7 @@ defmodule TestGraph.Graph do
   @lpg_dir @priv_dir <> "/lpg"
   @rdf_dir @priv_dir <> "/rdf"
 
-  defstruct data: nil, file: nil, path: nil, type: nil, uri: nil
+  defstruct ~w[data file path type uri]a
 
   @doc """
   Creates a `%TestGraph.Graph{}` struct.

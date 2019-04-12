@@ -8,7 +8,7 @@ defmodule TestGraph do
   See the [examples](https://github.com/tonyhammond/ex_mples/tree/master/test_graph/examples) directory for some example scripts.
 
   Here's an example of querying a remote RDF service (DBpedia)
-  using the `SPARQL.Client` module via a wrapped function `rquery!/1`
+  using the `SPARQL.Client` module via a wrapped function `SPARQL_Clientrquery!/1`
   and using the stored procedures in the `NeoSemantics` module for transforming
   the semantic graph to a property graph and importing into a Neo4j
   instance.
@@ -21,7 +21,7 @@ defmodule TestGraph do
       # 1. explicit form
       iex> elixir = (
       ...>   TestGraph.RDF.read_query("elixir.rq").data
-      ...>   |> SPARQL.Client.rquery!
+      ...>   |> SPARQL_Client.rquery!
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph("elixir.ttl")
       ...> )
@@ -225,6 +225,9 @@ defmodule TestGraph do
   defdelegate write_lpg_query(arg1, arg2), to: TestGraph.LPG, as: :write_query
 
   # TestGraph.RDF delegates
+  @doc "Delegates to TestGraph.RDF.books/0"
+  defdelegate rdf_books(), to: TestGraph.RDF, as: :books
+
   @doc "Delegates to TestGraph.RDF.list_graphs/0"
   defdelegate list_rdf_graphs(), to: TestGraph.RDF, as: :list_graphs
   @doc "Delegates to TestGraph.RDF.list_queries/0"

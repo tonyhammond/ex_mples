@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.19.3">
     <title>TestGraph.Graph — test_graph v0.1.0</title>
     <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
-    <script src="dist/sidebar_items-d1af0b0184.js"></script>
+    <script src="dist/sidebar_items-2efa07e0db.js"></script>
     <script async src="dist/html-399e30b9b028e3059575.js"></script>
     
   </head>
@@ -83,14 +83,14 @@ The other fields are straightforward data access fields:</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="5964504746-1">(</span><span class="s">&quot;temp.ttl&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="5964504746-1">)</span><span class="w">
-</span><span class="p" data-group-id="5964504746-2">%</span><span class="nc" data-group-id="5964504746-2">TestGraph.Graph</span><span class="p" data-group-id="5964504746-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="1325398503-1">(</span><span class="s">&quot;temp.ttl&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="1325398503-1">)</span><span class="w">
+</span><span class="p" data-group-id="1325398503-2">%</span><span class="nc" data-group-id="1325398503-2">TestGraph.Graph</span><span class="p" data-group-id="1325398503-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;GRAPH_DATA&gt;&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;temp.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/temp.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/temp.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="5964504746-2">}</span></code></pre>
+</span><span class="p" data-group-id="1325398503-2">}</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -138,14 +138,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="3254808804-1">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="3254808804-1">)</span><span class="w">
-</span><span class="p" data-group-id="3254808804-2">%</span><span class="nc" data-group-id="3254808804-2">TestGraph.Graph</span><span class="p" data-group-id="3254808804-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestGraph.Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6408568658-1">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="6408568658-1">)</span><span class="w">
+</span><span class="p" data-group-id="6408568658-2">%</span><span class="nc" data-group-id="6408568658-2">TestGraph.Graph</span><span class="p" data-group-id="6408568658-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="3254808804-2">}</span></code></pre>
+</span><span class="p" data-group-id="6408568658-2">}</span></code></pre>
   </section>
 </section>
           </div>

@@ -26,11 +26,25 @@ defmodule TestGraph.RDF do
   @graphs_dir @rdf_dir <> "/graphs/"
   @queries_dir @rdf_dir <> "/queries/"
 
+  @books_graph_file "books.ttl"
+
   @temp_graph_file "temp.ttl"
   @temp_query_file "temp.rq"
 
   @test_graph_file "default.ttl"
   @test_query_file "default.rq"
+
+  @doc """
+  Returns the LPG graphs directory.
+  """
+  def graphs_dir, do: @graphs_dir
+
+  @doc """
+  Returns the LPG queries directory.
+  """
+  def queries_dir, do: @queries_dir
+
+  ##
 
   @doc """
   Returns a default RDF graph file.
@@ -84,6 +98,31 @@ defmodule TestGraph.RDF do
      base_iri: "http://purl.org/ontology/bibo/",
      terms: ~w[ Book ]
 
+   ## graphs
+
+   @doc """
+   Creates a `Book` graph.
+
+   ## Examples
+
+       iex> TestGraph.RDF.book()
+       #RDF.Description{subject: ~I<urn:isbn:978-1-68050-252-7>
+            ~I<http://purl.org/dc/elements/1.1/creator>
+                ~I<https://twitter.com/bgmarx>
+                ~I<https://twitter.com/josevalim>
+                ~I<https://twitter.com/redrapids>
+            ~I<http://purl.org/dc/elements/1.1/date>
+                %RDF.Literal{value: ~D[2018-03-14], datatype: ~I<http://www.w3.org/2001/XMLSchema#date>}
+            ~I<http://purl.org/dc/elements/1.1/format>
+                ~L"Paper"
+            ~I<http://purl.org/dc/elements/1.1/publisher>
+                ~I<https://pragprog.com/>
+            ~I<http://purl.org/dc/elements/1.1/title>
+                ~L"Adopting Elixir"en
+            ~I<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                ~I<http://purl.org/ontology/bibo/Book>}
+
+   """
   def book() do
     import RDF.Sigils
 
@@ -98,7 +137,16 @@ defmodule TestGraph.RDF do
     |> DC.title(~L"Adopting Elixir"en)
   end
 
-  ## graphs
+  @doc """
+  Reads a `Books` graph from the graphs library.
+
+  ## Examples
+
+      iex> books().data
+      ""<urn:isbn:978-1-68050-252-7>\\n    a <http://purl.org/ontology/bibo/Book> ;\\n ..."
+
+  """
+  def books(), do: read_graph(@books_graph_file)
 
   @doc """
   Lists RDF graphs in the RDF graphs library.
@@ -108,7 +156,7 @@ defmodule TestGraph.RDF do
       iex> list_graphs()
       ["books.ttl", "urn_isbn_978-1-68050-252-7.ttl",
        "http___dbpedia.org_resource_London.ttl", "london100.ttl", "london.ttl",
-       "nobelprizes.ttl", "bibo.ttl", "tony.ttl", "temp.ttl",
+       "nobelprizes.ttl", "bibo.ttl", "temp.ttl",
        "http___example.org_Elixir.ttl", "elixir.ttl", "default.ttl", "cypher.ttl",
        "neo4j.ttl", "hello.ttl"]
   """

@@ -181,7 +181,7 @@ defmodule TestGraph.LPG do
   ## Examples
 
       iex> books().data
-      "//\\n// create nodes\\n//\\nCREATE\\n(book:Book {\\n    iri: ..."
+      "CREATE\\n(book:Book {\\n    iri: \\"urn:isbn:978-1-68050-252-7\\",\\n"
 
   """
   def books(), do: read_graph(@books_graph_file)
