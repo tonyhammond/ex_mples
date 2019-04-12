@@ -21,7 +21,7 @@ defmodule TestGraph do
       # 1. explicit form
       iex> elixir = (
       ...>   TestGraph.RDF.read_query("elixir.rq").data
-      ...>   |> SPARQL_Client.rquery!
+      ...>   |> TestGraph.RDF.SPARQL.Client.rquery!
       ...>   |> RDF.Turtle.write_string!
       ...>   |> TestGraph.RDF.write_graph("elixir.ttl")
       ...> )
@@ -35,8 +35,6 @@ defmodule TestGraph do
 
   """
   import Bolt.Sips, only: [conn: 0]
-
-  # alias TestGraph.RDF.SPARQL
 
   @test_graph_file "default.ttl"
   @test_query_file "default.rq"
