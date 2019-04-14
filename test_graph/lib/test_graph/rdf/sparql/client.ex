@@ -5,8 +5,8 @@ defmodule TestGraph.RDF.SPARQL.Client do
   import TestGraph.RDF
   # import SPARQL.Client
 
-  # @query_file_triples "triples.rq"
-  # @query_file_triples_by_uri "triples_by_uri.rq"
+  @query_file_triples "triples.rq"
+  @query_file_triples_by_uri "triples_by_uri.rq"
 
   ## Accessors for env variables
 
@@ -149,24 +149,24 @@ defmodule TestGraph.RDF.SPARQL.Client do
 
   ##
 
-  # def triples(limit \\ nil) do
-  #   case limit do
-  #     nil -> rquery!(read_query(@query_file_triples).data)
-  #     _ ->
-  #       limit = Integer.to_string(limit)
-  #       rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
-  #   end
-  # end
-  #
-  # def triples_by_uri(uri, limit \\ nil) do
-  #   q = read_query(@query_file_triples_by_uri).data
-  #   query = String.replace(q, "_uri", uri)
-  #   case limit do
-  #     nil -> rquery!(query)
-  #     _ ->
-  #       limit = Integer.to_string(limit)
-  #       rquery!(query <> " limit " <> limit)
-  #   end
-  # end
+  def triples(limit \\ nil) do
+    case limit do
+      nil -> rquery!(read_query(@query_file_triples).data)
+      _ ->
+        limit = Integer.to_string(limit)
+        rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
+    end
+  end
+
+  def triples_by_uri(uri, limit \\ nil) do
+    q = read_query(@query_file_triples_by_uri).data
+    query = String.replace(q, "_uri", uri)
+    case limit do
+      nil -> rquery!(query)
+      _ ->
+        limit = Integer.to_string(limit)
+        rquery!(query <> " limit " <> limit)
+    end
+  end
 
 end
