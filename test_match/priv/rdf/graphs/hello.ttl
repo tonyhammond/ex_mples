@@ -1,0 +1,2 @@
+<http://dbpedia.org/resource/Hello_World>
+    <http://www.w3.org/2000/01/rdf-schema#label> "Hello World"@en .

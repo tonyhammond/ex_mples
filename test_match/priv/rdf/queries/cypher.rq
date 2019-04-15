@@ -1,0 +1,17 @@
+PREFIX : <http://example.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+CONSTRUCT {
+  ?s ?p ?o .
+  ?o ?p1 ?o1 .
+  # ?o1 ?p2 ?o2 .
+}
+WHERE  {
+  bind (dbr:Cypher_Query_Language as ?s)
+  ?s ?p ?o .
+  optional { ?o ?p1 ?o1 }
+  # optional { ?o1 ?p2 ?o2 }
+}

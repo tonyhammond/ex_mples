@@ -1,0 +1,7 @@
+@prefix neovoc: <neo4j://vocabulary#> .
+
+
+<http://example.org/Elixir> <http://example.org/creator> <http://dbpedia.org/resource/José_Valim>;
+  <http://example.org/homepage> <http://elixir-lang.org>;
+  <http://example.org/license> <http://dbpedia.org/resource/Apache_License>;
+  <http://example.org/name> "Elixir" .

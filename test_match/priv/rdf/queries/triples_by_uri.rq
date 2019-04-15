@@ -1,0 +1,6 @@
+construct
+{ ?s ?p ?o }
+where {
+  bind (<_uri> as ?s)  
+  ?s ?p ?o
+}
