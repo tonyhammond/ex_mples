@@ -137,7 +137,7 @@ Functions          </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w">
-</span><span class="p" data-group-id="0381478765-1">[</span><span class="w">
+</span><span class="p" data-group-id="0593240547-1">[</span><span class="w">
   </span><span class="ss">export_rdf_by_id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="ss">export_rdf_by_id</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="ss">export_rdf_by_query</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -147,7 +147,7 @@ Functions          </h1>
   </span><span class="ss">import_rdf_from_graph</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="ss">import_rdf_from_query</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="ss">import_rdf_from_query</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p" data-group-id="0381478765-1">]</span><span class="w">
+</span><span class="p" data-group-id="0593240547-1">]</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
@@ -167,7 +167,7 @@ Functions          </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">help</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="w">
-</span><span class="p" data-group-id="0605450813-1">[</span><span class="w">
+</span><span class="p" data-group-id="6038772348-1">[</span><span class="w">
   </span><span class="ss">import_jsonld</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="n">import_jsonld!</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="ss">import_ntriples</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -188,7 +188,7 @@ Functions          </h1>
   </span><span class="n">preview_rdf_snippet!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="ss">stream_rdf</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="n">stream_rdf!</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-</span><span class="p" data-group-id="0605450813-1">]</span><span class="w">
+</span><span class="p" data-group-id="6038772348-1">]</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
@@ -207,7 +207,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="3255481446-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="3255481446-2">(</span><span class="p" data-group-id="3255481446-2">)</span><span class="p" data-group-id="3255481446-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">parse</span><span class="p" data-group-id="0504816333-1">(</span><span class="n">read_graphgist</span><span class="p" data-group-id="0504816333-2">(</span><span class="p" data-group-id="0504816333-2">)</span><span class="p" data-group-id="0504816333-1">)</span><span class="w">
 </span><span class="s">&quot;CREATE</span><span class="se">\n</span><span class="s">  (a:Person {name: &#39;Alice&#39;}),</span><span class="se">\n</span><span class="s">  (b:Person {name: &#39;Bob&#39;}),</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>
@@ -228,7 +228,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="7548526488-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="7548526488-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graphgist</span><span class="p" data-group-id="5246211164-1">(</span><span class="s">&quot;template.adoc&quot;</span><span class="p" data-group-id="5246211164-1">)</span><span class="w">
 </span><span class="s">&quot;= REPLACEME: TITLE OF YOUR GRAPHGIST</span><span class="se">\n</span><span class="s">:neo4j-version: 2.3.0</span><span class="se">\n</span><span class="s">:author:&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span></code></pre>
   </section>
 </section>

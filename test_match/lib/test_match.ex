@@ -1,5 +1,10 @@
 defmodule TestMatch do
   @moduledoc """
+  Top-level module used in "" post.
+
+  This module is now standalone and finds the `NeoSemantics` modules from the github [neo_semantics](https://github.com/tonyhammond/neo_semantics) project.
+
+  See the [examples](https://github.com/tonyhammond/ex_mples/tree/master/test_match/examples) directory for some example scripts.
   """
   import Bolt.Sips, only: [conn: 0]
 
