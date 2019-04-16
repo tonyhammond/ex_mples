@@ -64,12 +64,13 @@ defmodule TestMatch do
   """
   def import_rdf_from_query(query_file \\ @test_query_file) do
     graph_file = Path.basename(query_file, ".rq") <> ".ttl"
-    graph = (
+
+    graph =
       TestMatch.RDF.read_query(query_file).data
-      |> TestMatch.RDF.SPARQL.Client.rquery!
-      |> RDF.Turtle.write_string!
+      |> TestMatch.RDF.SPARQL.Client.rquery!()
+      |> RDF.Turtle.write_string!()
       |> TestMatch.RDF.write_graph(graph_file)
-    )
+
     conn() |> NeoSemantics.import_rdf!(graph.uri, "Turtle")
   end
 
@@ -125,7 +126,7 @@ defmodule TestMatch do
   """
   def export_rdf_by_uri(node_uri, exclude_context \\ false) do
     uri = URI.encode(node_uri)
-    uri_safe  = String.replace(uri, ~r/[\/\?\:\@]/, "_")
+    uri_safe = String.replace(uri, ~r/[\/\?\:\@]/, "_")
     data = NeoSemantics.Extension.node_by_uri(node_uri, exclude_context)
     TestMatch.RDF.write_graph(data, uri_safe <> ".ttl")
   end
@@ -139,6 +140,7 @@ defmodule TestMatch do
       iex> cypher = TestMatch.LPG.read_query("node1.cypher").data
       "match (n) return n limit 1\\n"
       iex> cypher |> TestMatch.export_rdf_by_query
+      "..."
   """
   def export_rdf_by_query(cypher, graph_file) do
     data = NeoSemantics.Extension.cypher(cypher)
@@ -151,9 +153,10 @@ defmodule TestMatch do
 
   ## Examples
 
-      iex> cypher =
+      iex> cypher = TestMatch.LPG.read_query("temp.cypher").data
       "match (n:Resource {uri:'http://dataset/indiv#153'}) return n\\n"
       iex> cypher |> TestMatch.export_rdf_by_query_on_rdf
+      "..."
   """
   def export_rdf_by_query_on_rdf(cypher, graph_file) do
     data = NeoSemantics.Extension.cypher_on_rdf(cypher)
@@ -266,10 +269,14 @@ defmodule TestMatch do
   defdelegate list_sparql_services(), to: TestMatch.RDF.SPARQL.Client, as: :sparql_services
 
   @doc "Delegates to TestMatch.RDF.SPARQL.Client.dbpedia_sparql_endpoint/0"
-  defdelegate dbpedia_sparql_endpoint(), to: TestMatch.RDF.SPARQL.Client, as: :dbpedia_sparql_endpoint
+  defdelegate dbpedia_sparql_endpoint(),
+    to: TestMatch.RDF.SPARQL.Client,
+    as: :dbpedia_sparql_endpoint
+
   @doc "Delegates to TestMatch.RDF.SPARQL.Client.local_sparql_endpoint/0"
   defdelegate local_sparql_endpoint(), to: TestMatch.RDF.SPARQL.Client, as: :local_sparql_endpoint
   @doc "Delegates to TestMatch.RDF.SPARQL.Client.wikidata_sparql_endpoint/0"
-  defdelegate wikidata_sparql_endpoint(), to: TestMatch.RDF.SPARQL.Client, as: :wikidata_sparql_endpoint
-
+  defdelegate wikidata_sparql_endpoint(),
+    to: TestMatch.RDF.SPARQL.Client,
+    as: :wikidata_sparql_endpoint
 end

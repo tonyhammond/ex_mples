@@ -29,9 +29,8 @@ defmodule TestMatch.RDF.SPARQL.Client do
       "http://dbpedia.org/sparql"
   """
   def sparql_endpoint(sparql_service) do
-     Application.put_env(:test_match,
-       :sparql_endpoint, _sparql_endpoint_url(sparql_service))
-     Application.get_env(:test_match, :sparql_endpoint)
+    Application.put_env(:test_match, :sparql_endpoint, _sparql_endpoint_url(sparql_service))
+    Application.get_env(:test_match, :sparql_endpoint)
   end
 
   defp _sparql_endpoint_url(sparql_service) do
@@ -140,8 +139,7 @@ defmodule TestMatch.RDF.SPARQL.Client do
   """
   def rquery!(query \\ sparql_query(), endpoint \\ sparql_endpoint()) do
     SPARQL.Client.query(query, endpoint)
-    |>
-    case do
+    |> case do
       {:ok, resp} -> resp
       {:error, error} -> raise error
     end
@@ -151,7 +149,9 @@ defmodule TestMatch.RDF.SPARQL.Client do
 
   def triples(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_triples).data)
+      nil ->
+        rquery!(read_query(@query_file_triples).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_triples).data <> " limit " <> limit)
@@ -161,12 +161,14 @@ defmodule TestMatch.RDF.SPARQL.Client do
   def triples_by_uri(uri, limit \\ nil) do
     q = read_query(@query_file_triples_by_uri).data
     query = String.replace(q, "_uri", uri)
+
     case limit do
-      nil -> rquery!(query)
+      nil ->
+        rquery!(query)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(query <> " limit " <> limit)
     end
   end
-
 end

@@ -29,7 +29,7 @@ defmodule TestMatch.Utils do
   """
   def help() do
     # inspect(TestMatch.__info__(:functions), limit: :infinity)
-    IO.puts inspect(TestMatch.__info__(:functions), limit: :infinity, pretty: true)
+    IO.puts(inspect(TestMatch.__info__(:functions), limit: :infinity, pretty: true))
   end
 
   @doc """
@@ -64,7 +64,7 @@ defmodule TestMatch.Utils do
   """
   def help(module) do
     # inspect(module.__info__(:functions), limit: :infinity)
-    IO.puts inspect(module.__info__(:functions), limit: :infinity, pretty: true)
+    IO.puts(inspect(module.__info__(:functions), limit: :infinity, pretty: true))
   end
 
   ## graphgists
@@ -97,12 +97,12 @@ defmodule TestMatch.Utils do
       graphgist
     )
     |> case do
-      [_, cypher, _] -> cypher       # //hide\n
-      [_, _, cypher, _] -> cypher    # //hide\n//output]\n
+      # //hide\n
+      [_, cypher, _] -> cypher
+      # //hide\n//output]\n
+      [_, _, cypher, _] -> cypher
       [_, _, _, cypher, _] -> cypher
       _ -> ""
     end
   end
-
-
 end

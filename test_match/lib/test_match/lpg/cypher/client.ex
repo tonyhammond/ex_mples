@@ -96,7 +96,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def nodes(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_nodes).data)
+      nil ->
+        rquery!(read_query(@query_file_nodes).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_nodes).data <> " limit " <> limit)
@@ -122,7 +124,7 @@ defmodule TestMatch.LPG.Cypher.Client do
   def node_by_id(id) do
     q = read_query(@query_file_node_by_id).data
     query = String.replace(q, "_id", Integer.to_string(id))
-    [ node ] = rquery!(query)
+    [node] = rquery!(query)
     node
   end
 
@@ -147,7 +149,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def node_ids(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_node_ids).data)
+      nil ->
+        rquery!(read_query(@query_file_node_ids).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_node_ids).data <> " limit " <> limit)
@@ -204,7 +208,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def relationship_ids(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_relationship_ids).data)
+      nil ->
+        rquery!(read_query(@query_file_relationship_ids).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_relationship_ids).data <> " limit " <> limit)
@@ -232,7 +238,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def relationships(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_relationships).data)
+      nil ->
+        rquery!(read_query(@query_file_relationships).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_relationships).data <> " limit " <> limit)
@@ -275,7 +283,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def nodes_and_relationships(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_nodes_and_relationships).data)
+      nil ->
+        rquery!(read_query(@query_file_nodes_and_relationships).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_nodes_and_relationships).data <> " limit " <> limit)
@@ -331,7 +341,9 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def paths(limit \\ nil) do
     case limit do
-      nil -> rquery!(read_query(@query_file_paths).data)
+      nil ->
+        rquery!(read_query(@query_file_paths).data)
+
       _ ->
         limit = Integer.to_string(limit)
         rquery!(read_query(@query_file_paths).data <> " limit " <> limit)
@@ -413,6 +425,7 @@ defmodule TestMatch.LPG.Cypher.Client do
   def dump(graph_file) do
     graphs_dir = graphs_dir()
     query = "call apoc.export.cypher.all('" <> graphs_dir <> graph_file <> "',{format:'plain'})"
+
     Bolt.Sips.query!(
       Bolt.Sips.conn(),
       query
@@ -447,7 +460,11 @@ defmodule TestMatch.LPG.Cypher.Client do
   """
   def dump(query_file, graph_file) do
     graphs_dir = graphs_dir()
-    query = "call apoc.export.cypher.query('" <> query_file <> "','" <> graphs_dir <> graph_file <> "',{format:'plain'})"
+
+    query =
+      "call apoc.export.cypher.query('" <>
+        query_file <> "','" <> graphs_dir <> graph_file <> "',{format:'plain'})"
+
     Bolt.Sips.query!(
       Bolt.Sips.conn(),
       query
@@ -493,5 +510,4 @@ defmodule TestMatch.LPG.Cypher.Client do
       """
     )
   end
-
 end

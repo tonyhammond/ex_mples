@@ -47,7 +47,6 @@ defmodule TestMatch.Graph do
       }
   """
   def new(graph_data, graph_file, graph_type) do
-
     graphs_dir =
       case graph_type do
         :lpg -> @lpg_dir <> "/graphs/"
@@ -60,9 +59,7 @@ defmodule TestMatch.Graph do
       file: graph_file,
       path: graphs_dir <> graph_file,
       type: graph_type,
-      uri:  "file://" <> graphs_dir <> graph_file,
+      uri: "file://" <> graphs_dir <> graph_file
     }
-
   end
-
 end

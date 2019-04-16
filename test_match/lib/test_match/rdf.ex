@@ -90,47 +90,51 @@ defmodule TestMatch.RDF do
 
   use RDF.Vocabulary.Namespace
 
-  defvocab DC,
-     base_iri: "http://purl.org/dc/elements/1.1/",
-     terms: ~w[ creator date format publisher title ]
+  defvocab(DC,
+    base_iri: "http://purl.org/dc/elements/1.1/",
+    terms: ~w[ creator date format publisher title ]
+  )
 
-  defvocab BIBO,
-     base_iri: "http://purl.org/ontology/bibo/",
-     terms: ~w[ Book ]
+  defvocab(BIBO,
+    base_iri: "http://purl.org/ontology/bibo/",
+    terms: ~w[ Book ]
+  )
 
-   ## graphs
+  ## graphs
 
-   @doc """
-   Creates a `Book` graph.
+  @doc """
+  Creates a `Book` graph.
 
-   ## Examples
+  ## Examples
 
-       iex> TestMatch.RDF.book()
-       #RDF.Description{subject: ~I<urn:isbn:978-1-68050-252-7>
-            ~I<http://purl.org/dc/elements/1.1/creator>
-                ~I<https://twitter.com/bgmarx>
-                ~I<https://twitter.com/josevalim>
-                ~I<https://twitter.com/redrapids>
-            ~I<http://purl.org/dc/elements/1.1/date>
-                %RDF.Literal{value: ~D[2018-03-14], datatype: ~I<http://www.w3.org/2001/XMLSchema#date>}
-            ~I<http://purl.org/dc/elements/1.1/format>
-                ~L"Paper"
-            ~I<http://purl.org/dc/elements/1.1/publisher>
-                ~I<https://pragprog.com/>
-            ~I<http://purl.org/dc/elements/1.1/title>
-                ~L"Adopting Elixir"en
-            ~I<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-                ~I<http://purl.org/ontology/bibo/Book>}
+      iex> TestMatch.RDF.book()
+      #RDF.Description{subject: ~I<urn:isbn:978-1-68050-252-7>
+           ~I<http://purl.org/dc/elements/1.1/creator>
+               ~I<https://twitter.com/bgmarx>
+               ~I<https://twitter.com/josevalim>
+               ~I<https://twitter.com/redrapids>
+           ~I<http://purl.org/dc/elements/1.1/date>
+               %RDF.Literal{value: ~D[2018-03-14], datatype: ~I<http://www.w3.org/2001/XMLSchema#date>}
+           ~I<http://purl.org/dc/elements/1.1/format>
+               ~L"Paper"
+           ~I<http://purl.org/dc/elements/1.1/publisher>
+               ~I<https://pragprog.com/>
+           ~I<http://purl.org/dc/elements/1.1/title>
+               ~L"Adopting Elixir"en
+           ~I<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+               ~I<http://purl.org/ontology/bibo/Book>}
 
-   """
+  """
   def book() do
     import RDF.Sigils
 
     ~I<urn:isbn:978-1-68050-252-7>
     |> RDF.type(BIBO.Book)
-    |> DC.creator(~I<https://twitter.com/bgmarx>,
-         ~I<https://twitter.com/josevalim>,
-           ~I<https://twitter.com/redrapids>)
+    |> DC.creator(
+      ~I<https://twitter.com/bgmarx>,
+      ~I<https://twitter.com/josevalim>,
+      ~I<https://twitter.com/redrapids>
+    )
     |> DC.date(RDF.date("2018-03-14"))
     |> DC.format(~L"Paper")
     |> DC.publisher(~I<https://pragprog.com/>)
@@ -282,5 +286,4 @@ defmodule TestMatch.RDF do
 
     TestMatch.Query.new(query_data, query_file, :rdf)
   end
-
 end

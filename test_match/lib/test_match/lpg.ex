@@ -250,5 +250,4 @@ defmodule TestMatch.LPG do
 
     TestMatch.Query.new(query_data, query_file, :lpg)
   end
-
 end

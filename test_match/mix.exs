@@ -26,7 +26,8 @@ defmodule TestMatch.MixProject do
 
       # property graphs
       {:bolt_sips, "~> 1.5"},
-      {:dep_from_git, git: "https://github.com/tonyhammond/neo_semantics.git", tag: "0.1.2", app: false},
+      {:dep_from_git,
+       git: "https://github.com/tonyhammond/neo_semantics.git", tag: "0.1.2", app: false},
 
       # rdf graphs
       {:sparql_client, "~> 0.2"},

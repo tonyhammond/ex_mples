@@ -47,7 +47,6 @@ defmodule TestMatch.Query do
       }
   """
   def new(query_data, query_file, query_type) do
-
     queries_dir =
       case query_type do
         :lpg -> @lpg_dir <> "/queries/"
@@ -60,9 +59,7 @@ defmodule TestMatch.Query do
       file: query_file,
       path: queries_dir <> query_file,
       type: query_type,
-      uri:  "file://" <> queries_dir <> query_file,
+      uri: "file://" <> queries_dir <> query_file
     }
-
   end
-
 end

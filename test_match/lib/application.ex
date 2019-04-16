@@ -3,7 +3,6 @@ defmodule TestMatch.Application do
 
   use Application
 
-
   def start(_type, _args) do
     import Supervisor.Spec
 
@@ -15,6 +14,5 @@ defmodule TestMatch.Application do
 
     opts = [strategy: :one_for_one, name: TestMatch.Supervisor]
     Supervisor.start_link(children, opts)
-
   end
 end
