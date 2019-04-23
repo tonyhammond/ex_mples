@@ -27,6 +27,7 @@ defmodule TestMatch.Graph do
 
   @priv_dir "#{:code.priv_dir(:test_match)}"
 
+  @lib_dir @priv_dir <> "/lib"
   @lpg_dir @priv_dir <> "/lpg"
   @rdf_dir @priv_dir <> "/rdf"
 
@@ -49,6 +50,7 @@ defmodule TestMatch.Graph do
   def new(graph_data, graph_file, graph_type) do
     graphs_dir =
       case graph_type do
+        :lib -> @lib_dir <> "/graphs/"
         :lpg -> @lpg_dir <> "/graphs/"
         :rdf -> @rdf_dir <> "/graphs/"
         _ -> raise "! Unknown graph_type: " <> graph_type

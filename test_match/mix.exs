@@ -24,6 +24,13 @@ defmodule TestMatch.MixProject do
     [
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
 
+      # data import
+      {:csv, "~> 2.1"},
+      # {:nimble_csv, "~> 0.3"},
+
+      # native graphs
+      {:libgraph, "~> 0.7"},
+
       # property graphs
       {:bolt_sips, "~> 1.5"},
       {:dep_from_git,

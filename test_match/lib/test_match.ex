@@ -11,6 +11,8 @@ defmodule TestMatch do
   @test_graph_file "default.ttl"
   @test_query_file "default.rq"
 
+  ##
+
   @doc """
   Imports into Neo4j an LPG graph transformed from an RDF graph.
 
@@ -284,4 +286,46 @@ defmodule TestMatch do
   defdelegate wikidata_sparql_endpoint(),
     to: TestMatch.RDF.SPARQL.Client,
     as: :wikidata_sparql_endpoint
+
+  # TestMatch.Lib delegates
+  @doc "Delegates to TestMatch.Lib.list_graphs/0"
+  defdelegate list_lib_graphs(), to: TestMatch.Lib, as: :list_graphs
+  @doc "Delegates to TestMatch.Lib.list_graph_images/0"
+  defdelegate list_lib_graph_images(), to: TestMatch.Lib, as: :list_graph_images
+
+  @doc "Delegates to TestMatch.Lib.read_graph/0"
+  defdelegate read_dot_graph(), to: TestMatch.Lib, as: :read_graph
+  @doc "Delegates to TestMatch.Lib.read_graph/1"
+  defdelegate read_dot_graph(arg), to: TestMatch.Lib, as: :read_graph
+
+  @doc "Delegates to TestMatch.Lib.write_graph/1"
+  defdelegate write_dot_graph(arg), to: TestMatch.Lib, as: :write_graph
+  @doc "Delegates to TestMatch.Lib.write_graph/2"
+  defdelegate write_dot_graph(arg1, arg2), to: TestMatch.Lib, as: :write_graph
+
+  # @doc "Delegates to TestMatch.Lib.read_lib_graph/0"
+  # defdelegate read_lib_graph(), to: TestMatch.Lib, as: :read_lib_graph
+  # @doc "Delegates to TestMatch.Lib.read_lib_graph/1"
+  # defdelegate read_lib_graph(arg), to: TestMatch.Lib, as: :read_lib_graph
+
+  @doc "Delegates to TestMatch.Lib.write_lib_graph/1"
+  defdelegate write_lib_graph(arg), to: TestMatch.Lib, as: :write_lib_graph
+  @doc "Delegates to TestMatch.Lib.write_lib_graph/2"
+  defdelegate write_lib_graph(arg1, arg2), to: TestMatch.Lib, as: :write_lib_graph
+
+  @doc "Delegates to TestMatch.Lib.to_png/1"
+  defdelegate write_to_png(arg), to: TestMatch.Lib, as: :to_png
+  @doc "Delegates to TestMatch.Lib.to_png/2"
+  defdelegate  write_to_png(arg1, arg2), to: TestMatch.Lib, as: :to_png
+
+  @doc "Delegates to TestMatch.Lib.from_cypher/0"
+  defdelegate lib_graph_from_cypherl(), to: TestMatch.Lib, as: :from_cypher
+  @doc "Delegates to TestMatch.Lib.from_cypher/1"
+  defdelegate lib_graph_from_cypher(arg), to: TestMatch.Lib, as: :from_cypher
+
+  @doc "Delegates to TestMatch.Lib.from_sparql/0"
+  defdelegate lib_graph_from_sparql(), to: TestMatch.Lib, as: :from_sparql
+  @doc "Delegates to TestMatch.Lib.from_sparql/1"
+  defdelegate lib_graph_from_sparql(arg), to: TestMatch.Lib, as: :from_sparql
+
 end

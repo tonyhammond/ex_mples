@@ -19,7 +19,7 @@ config :test_match,
 
 config :test_match, :sparql_dbpedia, url: "http://dbpedia.org/sparql"
 
-config :test_match, :sparql_local, url: "http://localhost:7200/repositories/test-graph"
+config :test_match, :sparql_local, url: "http://localhost:7200/repositories/test-match"
 
 config :test_match, :sparql_wikidata,
   url: "https://query.wikidata.org/bigdata/namespace/wdq/sparql"

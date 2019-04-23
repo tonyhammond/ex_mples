@@ -1,0 +1,35 @@
+strict digraph {
+    "py4j"
+    "jpy-client"
+    "matplotlib"
+    "nbconvert"
+    "python-dateutil"
+    "six"
+    "jpy-console"
+    "pyspark"
+    "pytz"
+    "spacy"
+    "jupyter"
+    "pandas"
+    "ipykernel"
+    "jpy-core"
+    "numpy"
+    "jpy-client" -> "jpy-core" [label="DEPENDS_ON", weight=1]
+    "matplotlib" -> "python-dateutil" [label="DEPENDS_ON", weight=1]
+    "matplotlib" -> "six" [label="DEPENDS_ON", weight=1]
+    "matplotlib" -> "pytz" [label="DEPENDS_ON", weight=1]
+    "matplotlib" -> "numpy" [label="DEPENDS_ON", weight=1]
+    "nbconvert" -> "jpy-core" [label="DEPENDS_ON", weight=1]
+    "python-dateutil" -> "six" [label="DEPENDS_ON", weight=1]
+    "jpy-console" -> "jpy-client" [label="DEPENDS_ON", weight=1]
+    "jpy-console" -> "ipykernel" [label="DEPENDS_ON", weight=1]
+    "pyspark" -> "py4j" [label="DEPENDS_ON", weight=1]
+    "spacy" -> "six" [label="DEPENDS_ON", weight=1]
+    "spacy" -> "numpy" [label="DEPENDS_ON", weight=1]
+    "jupyter" -> "nbconvert" [label="DEPENDS_ON", weight=1]
+    "jupyter" -> "jpy-console" [label="DEPENDS_ON", weight=1]
+    "jupyter" -> "ipykernel" [label="DEPENDS_ON", weight=1]
+    "pandas" -> "python-dateutil" [label="DEPENDS_ON", weight=1]
+    "pandas" -> "pytz" [label="DEPENDS_ON", weight=1]
+    "pandas" -> "numpy" [label="DEPENDS_ON", weight=1]
+}

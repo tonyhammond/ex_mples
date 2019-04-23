@@ -7,6 +7,7 @@ defmodule TestMatch.Application do
     import Supervisor.Spec
 
     TestMatch.RDF.SPARQL.Client.sparql_endpoint(:sparql_local)
+    # TestMatch.Lib.create_ets_tables()
 
     children = [
       worker(Bolt.Sips, [Application.get_env(:bolt_sips, Bolt)])
