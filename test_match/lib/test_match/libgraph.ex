@@ -170,14 +170,16 @@ defmodule TestMatch.Lib do
   @doc """
   Writes a graph to a `.png` file in the Lib graph images library.
 
-  :dot − filter for drawing directed graphs
-  :neato − filter for drawing undirected graphs
-  :twopi − filter for radial layouts of graphs
-  :circo − filter for circular layout of graphs
-  :fdp − filter for drawing undirected graphs
-  :sfdp − filter for drawing large undirected graphs
-  :patchwork − filter for squarified tree maps
-  :osage − filter for array-based layouts
+  The layout tool used is selected by the `binary` argument and is one of the following atoms:
+
+  * `:dot` − filter for drawing directed graphs
+  * `:neato` − filter for drawing undirected graphs
+  * `:twopi` − filter for radial layouts of graphs
+  * `:circo` − filter for circular layout of graphs
+  * `:fdp` − filter for drawing undirected graphs
+  * `:sfdp` − filter for drawing large undirected graphs
+  * `:patchwork` − filter for squarified tree maps
+  * `:osage` − filter for array-based layouts
   """
   def to_png(graph, binary \\ :dot) do
     binary =
@@ -245,11 +247,26 @@ defmodule TestMatch.Lib do
       g,
       fn result, g ->
         # match nodes
-        %Node{id: n, labels: _nl, properties: _np} = result["n"]
-        %Node{id: o, labels: _ol, properties: _op} = result["o"]
+        %Node{
+          id: n,
+          labels: _nl,
+          properties: _np
+        } = result["n"]
+
+        %Node{
+          id: o,
+          labels: _ol,
+          properties: _op
+        } = result["o"]
 
         # match relationship
-        %Relationship{end: re, id: _r, properties: _ro, start: rs, type: rl} = result["r"]
+        %Relationship{
+          end: re,
+          id: _r,
+          properties: _ro,
+          start: rs,
+          type: rl
+        } = result["r"]
 
         # build graph
         g
@@ -285,11 +302,26 @@ defmodule TestMatch.Lib do
       g,
       fn result, g ->
         # match nodes
-        %Node{id: n, labels: _nl, properties: np} = result["n"]
-        %Node{id: o, labels: _ol, properties: op} = result["o"]
+        %Node{
+          id: n,
+          labels: _nl,
+          properties: np
+        } = result["n"]
+
+        %Node{
+          id: o,
+          labels: _ol,
+          properties: op
+        } = result["o"]
 
         # match relationship
-        %Relationship{end: re, id: r, properties: rp, start: rs, type: rl} = result["r"]
+        %Relationship{
+          end: re,
+          id: r,
+          properties: rp,
+          start: rs,
+          type: rl
+        } = result["r"]
 
         # store properties in ETS
         :ets.insert(@node_table, {n, np})
@@ -351,12 +383,6 @@ defmodule TestMatch.Lib do
     |> Enum.reduce(
       g,
       fn result, g ->
-        # uri = URI.parse(result["o"].value)
-        # object =
-        # case is_nil(uri.scheme) && is_nil(uri.authority) do
-        #   false -> "<" <> result["o"].value <> ">"
-        #   true -> "\"" <> result["o"].value <> "\""
-        # end
         Graph.add_edge(
           g,
           String.to_atom(result["s"].value),
@@ -370,17 +396,11 @@ defmodule TestMatch.Lib do
   ##
 
   @doc """
-  Create ETS tables
+  Create ETS tables.
   """
   def create_ets_tables do
     :ets.new(@node_table, [:named_table])
     :ets.new(@edge_table, [:named_table])
   end
 
-  # def read_table(table_name) do
-  #   :ets.tab2list(table_name) |> Enum.each(&_read_tuple/1)
-  # end
-  # result.results |> Enum.each(
-  #   fn t -> :ets.insert(table_name, _build_spo_tuple(t)) end
-  # )
 end
