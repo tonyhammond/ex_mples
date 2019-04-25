@@ -316,10 +316,10 @@ defmodule TestMatch do
   @doc "Delegates to TestMatch.Lib.to_png/1"
   defdelegate write_to_png(arg), to: TestMatch.Lib, as: :to_png
   @doc "Delegates to TestMatch.Lib.to_png/2"
-  defdelegate  write_to_png(arg1, arg2), to: TestMatch.Lib, as: :to_png
+  defdelegate write_to_png(arg1, arg2), to: TestMatch.Lib, as: :to_png
 
   @doc "Delegates to TestMatch.Lib.from_cypher/0"
-  defdelegate lib_graph_from_cypherl(), to: TestMatch.Lib, as: :from_cypher
+  defdelegate lib_graph_from_cypher(), to: TestMatch.Lib, as: :from_cypher
   @doc "Delegates to TestMatch.Lib.from_cypher/1"
   defdelegate lib_graph_from_cypher(arg), to: TestMatch.Lib, as: :from_cypher
 
@@ -327,5 +327,4 @@ defmodule TestMatch do
   defdelegate lib_graph_from_sparql(), to: TestMatch.Lib, as: :from_sparql
   @doc "Delegates to TestMatch.Lib.from_sparql/1"
   defdelegate lib_graph_from_sparql(arg), to: TestMatch.Lib, as: :from_sparql
-
 end

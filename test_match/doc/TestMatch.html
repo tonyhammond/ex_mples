@@ -8,7 +8,7 @@
     <meta name="project" content="test_match v0.1.0">
     <title>TestMatch — test_match v0.1.0</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-1ee589df6d.js"></script>
+    <script src="dist/sidebar_items-5b0dbc388f.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -197,6 +197,42 @@ queried from a remote datastore using a SPARQL endpoint.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#lib_graph_from_cypher/0">lib_graph_from_cypher()</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.from_cypher/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#lib_graph_from_cypher/1">lib_graph_from_cypher(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.from_cypher/1</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#lib_graph_from_sparql/0">lib_graph_from_sparql()</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.from_sparql/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#lib_graph_from_sparql/1">lib_graph_from_sparql(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.from_sparql/1</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_lib_graph_images/0">list_lib_graph_images()</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.list_graph_images/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_lib_graphs/0">list_lib_graphs()</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.list_graphs/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#list_lpg_graphs/0">list_lpg_graphs()</a>
   </div>
     <div class="summary-synopsis"><p>Delegates to TestMatch.LPG.list_graphs/0</p></div>
@@ -248,6 +284,18 @@ queried from a remote datastore using a SPARQL endpoint.</p></div>
     <a href="#rdf_books/0">rdf_books()</a>
   </div>
     <div class="summary-synopsis"><p>Delegates to TestMatch.RDF.books/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_dot_graph/0">read_dot_graph()</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.read_graph/0</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_dot_graph/1">read_dot_graph(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.read_graph/1</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -365,6 +413,30 @@ queried from a remote datastore using a SPARQL endpoint.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="#write_dot_graph/1">write_dot_graph(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.write_graph/1</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_dot_graph/2">write_dot_graph(arg1, arg2)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.write_graph/2</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lib_graph/1">write_lib_graph(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.write_lib_graph/1</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lib_graph/2">write_lib_graph(arg1, arg2)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.write_lib_graph/2</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="#write_lpg_graph/1">write_lpg_graph(arg)</a>
   </div>
     <div class="summary-synopsis"><p>Delegates to TestMatch.LPG.write_graph/1</p></div>
@@ -410,6 +482,18 @@ queried from a remote datastore using a SPARQL endpoint.</p></div>
     <a href="#write_rdf_query/2">write_rdf_query(arg1, arg2)</a>
   </div>
     <div class="summary-synopsis"><p>Delegates to TestMatch.RDF.write_query/2</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_to_png/1">write_to_png(arg)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.to_png/1</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_to_png/2">write_to_png(arg1, arg2)</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates to TestMatch.Lib.to_png/2</p></div>
 </div>
   </div>
         </section>
@@ -574,16 +658,16 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9387829894-1">(</span><span class="mi">1783</span><span class="p" data-group-id="9387829894-1">)</span><span class="w">
-</span><span class="p" data-group-id="9387829894-2">%</span><span class="nc" data-group-id="9387829894-2">TestMatch.Graph</span><span class="p" data-group-id="9387829894-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9020563903-1">(</span><span class="mi">1783</span><span class="p" data-group-id="9020563903-1">)</span><span class="w">
+</span><span class="p" data-group-id="9020563903-2">%</span><span class="nc" data-group-id="9020563903-2">TestMatch.Graph</span><span class="p" data-group-id="9020563903-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">  neovoc:uri &quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1783.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/Users/tony/Projects/github/tonyhammond/ex_mples/test_match/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///Users/tony/Projects/github/tonyhammond/ex_mples/test_match/_build/dev/lib/test_graph/priv/rdf/graphs/1783.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="9387829894-2">}</span><span class="w">
+</span><span class="p" data-group-id="9020563903-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9387829894-3">(</span><span class="mi">1783</span><span class="p" data-group-id="9387829894-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_id</span><span class="p" data-group-id="9020563903-3">(</span><span class="mi">1783</span><span class="p" data-group-id="9020563903-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">  neovoc:uri &quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -603,7 +687,7 @@ is defined by the <code class="inline">cypher</code> query.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestMatch.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="1329514270-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="1329514270-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestMatch.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="2518408847-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="2518408847-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;match (n) return n limit 1</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
 </span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_query</span><span class="w">
 </span><span class="s">&quot;...&quot;</span></code></pre>
@@ -625,7 +709,7 @@ is defined by the <code class="inline">cypher</code> query.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestMatch.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="7446320071-1">(</span><span class="s">&quot;temp.cypher&quot;</span><span class="p" data-group-id="7446320071-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestMatch.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="7252300872-1">(</span><span class="s">&quot;temp.cypher&quot;</span><span class="p" data-group-id="7252300872-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;match (n:Resource {uri:&#39;http://dataset/indiv#153&#39;}) return n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
 </span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_query_on_rdf</span><span class="w">
 </span><span class="s">&quot;...&quot;</span></code></pre>
@@ -651,16 +735,16 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="5875633644-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="5875633644-1">)</span><span class="w">
-</span><span class="p" data-group-id="5875633644-2">%</span><span class="nc" data-group-id="5875633644-2">TestMatch.Graph</span><span class="p" data-group-id="5875633644-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="5402651574-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="5402651574-1">)</span><span class="w">
+</span><span class="p" data-group-id="5402651574-2">%</span><span class="nc" data-group-id="5402651574-2">TestMatch.Graph</span><span class="p" data-group-id="5402651574-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http___example.org_Elixir.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_match/priv/rdf/graphs/http___example.org_Elixir.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;/test_match/priv/rdf/graphs/http___example.org_Elixir.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="5875633644-2">}</span><span class="w">
+</span><span class="p" data-group-id="5402651574-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="5875633644-3">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="5875633644-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">export_rdf_by_uri</span><span class="p" data-group-id="5402651574-3">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="5402651574-3">)</span><span class="o">.</span><span class="n">data</span><span class="w">
 </span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -681,11 +765,11 @@ is passed as <code class="inline">true</code> which will exclude context if pres
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="5005666281-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="5005666281-1">)</span><span class="w">
-</span><span class="p" data-group-id="5005666281-2">[</span><span class="w">
-  </span><span class="p" data-group-id="5005666281-3">%{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">import_rdf_from_graph</span><span class="p" data-group-id="3877715529-1">(</span><span class="s">&quot;elixir.ttl&quot;</span><span class="p" data-group-id="3877715529-1">)</span><span class="w">
+</span><span class="p" data-group-id="3877715529-2">[</span><span class="w">
+  </span><span class="p" data-group-id="3877715529-3">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="5005666281-4">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="3877715529-4">%{</span><span class="w">
       </span><span class="s">&quot;http://example.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
@@ -694,11 +778,11 @@ is passed as <code class="inline">true</code> which will exclude context if pres
       </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="5005666281-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3877715529-4">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w">
-  </span><span class="p" data-group-id="5005666281-3">}</span><span class="w">
-</span><span class="p" data-group-id="5005666281-2">]</span></code></pre>
+  </span><span class="p" data-group-id="3877715529-3">}</span><span class="w">
+</span><span class="p" data-group-id="3877715529-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="import_rdf_from_query/1">
@@ -719,11 +803,11 @@ queried from a remote datastore using a SPARQL endpoint.</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="8878089108-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="8878089108-1">)</span><span class="w">
-</span><span class="p" data-group-id="8878089108-2">[</span><span class="w">
-  </span><span class="p" data-group-id="8878089108-3">%{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch</span><span class="o">.</span><span class="n">import_rdf_from_query</span><span class="p" data-group-id="7242387857-1">(</span><span class="s">&quot;elixir.rq&quot;</span><span class="p" data-group-id="7242387857-1">)</span><span class="w">
+</span><span class="p" data-group-id="7242387857-2">[</span><span class="w">
+  </span><span class="p" data-group-id="7242387857-3">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8878089108-4">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7242387857-4">%{</span><span class="w">
       </span><span class="s">&quot;http://example.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
@@ -732,11 +816,83 @@ queried from a remote datastore using a SPARQL endpoint.</p>
       </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="8878089108-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="7242387857-4">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w">
-  </span><span class="p" data-group-id="8878089108-3">}</span><span class="w">
-</span><span class="p" data-group-id="8878089108-2">]</span></code></pre>
+  </span><span class="p" data-group-id="7242387857-3">}</span><span class="w">
+</span><span class="p" data-group-id="7242387857-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="lib_graph_from_cypher/0">
+    <div class="detail-header">
+    <a href="#lib_graph_from_cypher/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">lib_graph_from_cypher()</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.from_cypher/0</p>
+  </section>
+</section>
+<section class="detail" id="lib_graph_from_cypher/1">
+    <div class="detail-header">
+    <a href="#lib_graph_from_cypher/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">lib_graph_from_cypher(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.from_cypher/1</p>
+  </section>
+</section>
+<section class="detail" id="lib_graph_from_sparql/0">
+    <div class="detail-header">
+    <a href="#lib_graph_from_sparql/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">lib_graph_from_sparql()</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.from_sparql/0</p>
+  </section>
+</section>
+<section class="detail" id="lib_graph_from_sparql/1">
+    <div class="detail-header">
+    <a href="#lib_graph_from_sparql/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">lib_graph_from_sparql(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.from_sparql/1</p>
+  </section>
+</section>
+<section class="detail" id="list_lib_graph_images/0">
+    <div class="detail-header">
+    <a href="#list_lib_graph_images/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_lib_graph_images()</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.list_graph_images/0</p>
+  </section>
+</section>
+<section class="detail" id="list_lib_graphs/0">
+    <div class="detail-header">
+    <a href="#list_lib_graphs/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_lib_graphs()</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.list_graphs/0</p>
   </section>
 </section>
 <section class="detail" id="list_lpg_graphs/0">
@@ -845,6 +1001,30 @@ queried from a remote datastore using a SPARQL endpoint.</p>
           </div>
   <section class="docstring">
 <p>Delegates to TestMatch.RDF.books/0</p>
+  </section>
+</section>
+<section class="detail" id="read_dot_graph/0">
+    <div class="detail-header">
+    <a href="#read_dot_graph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_dot_graph()</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.read_graph/0</p>
+  </section>
+</section>
+<section class="detail" id="read_dot_graph/1">
+    <div class="detail-header">
+    <a href="#read_dot_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_dot_graph(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.read_graph/1</p>
   </section>
 </section>
 <section class="detail" id="read_lpg_graph/0">
@@ -1075,6 +1255,54 @@ queried from a remote datastore using a SPARQL endpoint.</p>
 <p>Delegates to TestMatch.RDF.SPARQL.Client.wikidata_sparql_endpoint/0</p>
   </section>
 </section>
+<section class="detail" id="write_dot_graph/1">
+    <div class="detail-header">
+    <a href="#write_dot_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_dot_graph(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.write_graph/1</p>
+  </section>
+</section>
+<section class="detail" id="write_dot_graph/2">
+    <div class="detail-header">
+    <a href="#write_dot_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_dot_graph(arg1, arg2)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.write_graph/2</p>
+  </section>
+</section>
+<section class="detail" id="write_lib_graph/1">
+    <div class="detail-header">
+    <a href="#write_lib_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lib_graph(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.write_lib_graph/1</p>
+  </section>
+</section>
+<section class="detail" id="write_lib_graph/2">
+    <div class="detail-header">
+    <a href="#write_lib_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lib_graph(arg1, arg2)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.write_lib_graph/2</p>
+  </section>
+</section>
 <section class="detail" id="write_lpg_graph/1">
     <div class="detail-header">
     <a href="#write_lpg_graph/1" class="detail-link" title="Link to this function">
@@ -1169,6 +1397,30 @@ queried from a remote datastore using a SPARQL endpoint.</p>
           </div>
   <section class="docstring">
 <p>Delegates to TestMatch.RDF.write_query/2</p>
+  </section>
+</section>
+<section class="detail" id="write_to_png/1">
+    <div class="detail-header">
+    <a href="#write_to_png/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_to_png(arg)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.to_png/1</p>
+  </section>
+</section>
+<section class="detail" id="write_to_png/2">
+    <div class="detail-header">
+    <a href="#write_to_png/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_to_png(arg1, arg2)</span>
+          </div>
+  <section class="docstring">
+<p>Delegates to TestMatch.Lib.to_png/2</p>
   </section>
 </section>
           </div>

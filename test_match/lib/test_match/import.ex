@@ -22,7 +22,7 @@ defmodule TestMatch.Import do
     )
   end
 
-  def read_relationships_file(g, relationships_file \\ @relationships_file ) do
+  def read_relationships_file(g, relationships_file \\ @relationships_file) do
     File.stream!(@csv_dir <> relationships_file)
     |> CSV.decode(separator: ?\,, headers: true)
     |> Enum.reduce(
@@ -33,5 +33,4 @@ defmodule TestMatch.Import do
       end
     )
   end
-
 end

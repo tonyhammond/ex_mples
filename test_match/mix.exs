@@ -22,14 +22,13 @@ defmodule TestMatch.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.20", only: :dev, runtime: false},
 
       # data import
-      {:csv, "~> 2.1"},
-      # {:nimble_csv, "~> 0.3"},
+      {:csv, "~> 2.3"},
 
       # native graphs
-      {:libgraph, "~> 0.7"},
+      {:libgraph, "~> 0.13"},
 
       # property graphs
       {:bolt_sips, "~> 1.5"},

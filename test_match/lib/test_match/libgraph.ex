@@ -36,9 +36,15 @@ defmodule TestMatch.Lib do
 
   @dot_binary "/usr/local/bin/dot"
   @neato_binary "/usr/local/bin/neato"
+  @twopi_binary "/usr/local/bin/twopi"
+  @circo_binary "/usr/local/bin/circo"
+  @fdp_binary "/usr/local/bin/fdp"
+  @sfdp_binary "/usr/local/bin/sfdp"
+  @patchwork_binary "/usr/local/bin/patchwork"
+  @osage_binary "/usr/local/bin/osage"
 
   @sparql_query "select * where {?s ?p ?o}"
-  @cypher_query "match (n)-[r]->(o) return n,r,o limit 100"
+  @cypher_query "match (n)-[r]->(o) return n,r,o"
 
   ##
 
@@ -61,7 +67,6 @@ defmodule TestMatch.Lib do
       "temp.ttl"
   """
   def temp_graph_file(), do: @temp_graph_file
-
 
   @doc """
   Lists Lib graphs in the Lib graphs library.
@@ -149,25 +154,44 @@ defmodule TestMatch.Lib do
   """
   def write_lib_graph(lib_graph, graph_file \\ temp_graph_file()) do
     graphs_dir = @graphs_dir
+
     graph_data =
       Graph.to_dot(lib_graph)
-      |>
-      case do
+      |> case do
         {:ok, dot} -> dot
         {:error, error} -> raise error
       end
+
     File.write!(graphs_dir <> graph_file, graph_data)
 
     TestMatch.Graph.new(graph_data, graph_file, :lib)
   end
 
-  def to_png(graph, binary \\ :dot) do
+  @doc """
+  Writes a graph to a `.png` file in the Lib graph images library.
 
-    binary = case binary do
-      :dot -> @dot_binary
-      :neato -> @neato_binary
-      _  -> @dot_binary
-    end
+  :dot − filter for drawing directed graphs
+  :neato − filter for drawing undirected graphs
+  :twopi − filter for radial layouts of graphs
+  :circo − filter for circular layout of graphs
+  :fdp − filter for drawing undirected graphs
+  :sfdp − filter for drawing large undirected graphs
+  :patchwork − filter for squarified tree maps
+  :osage − filter for array-based layouts
+  """
+  def to_png(graph, binary \\ :dot) do
+    binary =
+      case binary do
+        :dot -> @dot_binary
+        :neato -> @neato_binary
+        :twopi -> @twopi_binary
+        :circo -> @circo_binary
+        :fdp -> @fdp_binary
+        :sfdp -> @sfdp_binary
+        :patchwork -> @patchwork_binary
+        :osage -> @osage_binary
+        _ -> @dot_binary
+      end
 
     dot_file = @graphs_dir <> graph.file
     # png_file = Path.dirname(dot_file) <> "/images/" <> Path.basename(dot_file, ".dot") <> ".png"
@@ -206,34 +230,89 @@ defmodule TestMatch.Lib do
   #   }
   # ]
 
+  @doc """
+  Executes cypher query and returns a graph.
+  """
   def from_cypher(query \\ @cypher_query) do
-
     alias Bolt.Sips.Types.{Node, Relationship}
 
     g = Graph.new()
 
     results = TestMatch.cypher!(query)
 
-    (
-      results |> Enum.reduce(
-        g,
-        fn result, g ->
-          %Node{id: n, properties: np} = result["n"]
-          %Node{id: o, properties: no} = result["o"]
-          %Relationship{end: re, id: r, properties: ro, start: rs, type: rl} = result["r"]
-          :ets.insert(@node_table, {n, np})
-          :ets.insert(@node_table, {o, no})
-          :ets.insert(@edge_table, {r, rs, re, ro})
-          Graph.add_edge(
-            g,
-            String.to_atom(Integer.to_string(n)),
-            String.to_atom(Integer.to_string(o)),
-            label: String.to_atom(rl)
-          )
-        end
-      )
-    )
+    results
+    |> Enum.reduce(
+      g,
+      fn result, g ->
+        # match nodes
+        %Node{id: n, labels: _nl, properties: _np} = result["n"]
+        %Node{id: o, labels: _ol, properties: _op} = result["o"]
 
+        # match relationship
+        %Relationship{end: re, id: _r, properties: _ro, start: rs, type: rl} = result["r"]
+
+        # build graph
+        g
+        |> Graph.add_vertex(
+          # String.to_atom(Integer.to_string(n)), _nl
+          String.to_atom(Integer.to_string(n))
+        )
+        |> Graph.add_vertex(
+          # String.to_atom(Integer.to_string(o)), _ol
+          String.to_atom(Integer.to_string(o))
+        )
+        |> Graph.add_edge(
+          String.to_atom(Integer.to_string(rs)),
+          String.to_atom(Integer.to_string(re)),
+          label: String.to_atom(rl)
+        )
+      end
+    )
+  end
+
+  @doc """
+  Executes cypher query and returns a graph with properties in ETS tables.
+  """
+  def from_cypher_with_properties(query \\ @cypher_query) do
+    alias Bolt.Sips.Types.{Node, Relationship}
+
+    g = Graph.new()
+
+    results = TestMatch.cypher!(query)
+
+    results
+    |> Enum.reduce(
+      g,
+      fn result, g ->
+        # match nodes
+        %Node{id: n, labels: _nl, properties: np} = result["n"]
+        %Node{id: o, labels: _ol, properties: op} = result["o"]
+
+        # match relationship
+        %Relationship{end: re, id: r, properties: rp, start: rs, type: rl} = result["r"]
+
+        # store properties in ETS
+        :ets.insert(@node_table, {n, np})
+        :ets.insert(@node_table, {o, op})
+        :ets.insert(@edge_table, {r, rs, re, rp})
+
+        # build graph
+        g
+        |> Graph.add_vertex(
+          # String.to_atom(Integer.to_string(n)), _nl
+          String.to_atom(Integer.to_string(n))
+        )
+        |> Graph.add_vertex(
+          # String.to_atom(Integer.to_string(o)), _ol
+          String.to_atom(Integer.to_string(o))
+        )
+        |> Graph.add_edge(
+          String.to_atom(Integer.to_string(rs)),
+          String.to_atom(Integer.to_string(re)),
+          label: String.to_atom(rl)
+        )
+      end
+    )
   end
 
   # iex> sparql! "select * where {?s ?p ?o} limit 1"
@@ -249,7 +328,6 @@ defmodule TestMatch.Lib do
   # }
 
   def from_sparql(query \\ @sparql_query) do
-
     alias SPARQL.Query.Result
 
     g = Graph.new()
@@ -258,26 +336,35 @@ defmodule TestMatch.Lib do
       case TestMatch.sparql!(query) do
         %RDF.Graph{descriptions: _descriptions} ->
           raise "! SPARQL 'CONSTRUCT', 'DESCRIBE' queries not supported"
+
         %Result{results: true} ->
           raise "! SPARQL 'ASK' queries not supported"
-        %Result{results: results} -> results
-        _ -> raise "! Unrecognized result format"
+
+        %Result{results: results} ->
+          results
+
+        _ ->
+          raise "! Unrecognized result format"
       end
 
-    (
-      results |> Enum.reduce(
-        g,
-        fn result, g ->
-          Graph.add_edge(
-            g,
-            String.to_atom(result["s"].value),
-            String.to_atom(result["o"].value),
-            label: String.to_atom(result["p"].value)
-          )
-        end
-      )
+    results
+    |> Enum.reduce(
+      g,
+      fn result, g ->
+        # uri = URI.parse(result["o"].value)
+        # object =
+        # case is_nil(uri.scheme) && is_nil(uri.authority) do
+        #   false -> "<" <> result["o"].value <> ">"
+        #   true -> "\"" <> result["o"].value <> "\""
+        # end
+        Graph.add_edge(
+          g,
+          String.to_atom(result["s"].value),
+          String.to_atom(result["o"].value),
+          label: String.to_atom(result["p"].value)
+        )
+      end
     )
-
   end
 
   ##
@@ -290,16 +377,10 @@ defmodule TestMatch.Lib do
     :ets.new(@edge_table, [:named_table])
   end
 
-  # @doc """
-  # Reads RDF data from ETS table and prints it.
-  # """
   # def read_table(table_name) do
   #   :ets.tab2list(table_name) |> Enum.each(&_read_tuple/1)
   # end
   # result.results |> Enum.each(
   #   fn t -> :ets.insert(table_name, _build_spo_tuple(t)) end
   # )
-  # {System.os_time(), s, p, o, t}
-
-
 end

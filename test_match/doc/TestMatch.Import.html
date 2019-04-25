@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.20.2">
     <meta name="project" content="test_match v0.1.0">
-    <title>TestMatch.RDF.BIBO — test_match v0.1.0</title>
+    <title>TestMatch.Import — test_match v0.1.0</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
     <script src="dist/sidebar_items-5b0dbc388f.js"></script>
       <script src="docs_config.js"></script>
@@ -67,9 +67,12 @@ test_match      </a>
 
       <h1>
         <small class="app-vsn">test_match v0.1.0</small>
-TestMatch.RDF.BIBO              </h1>
+TestMatch.Import              </h1>
 
 
+        <section id="moduledoc">
+<p>Imports CSV data from priv/csv/</p>
+        </section>
 
         <section id="summary" class="details-list">
           <h1 class="section-heading">
@@ -85,9 +88,13 @@ TestMatch.RDF.BIBO              </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#__iris__/0">__iris__()</a>
+    <a href="#read_nodes_file/2">read_nodes_file(g, nodes_file \\ &quot;sw-nodes.csv&quot;)</a>
   </div>
-    <div class="summary-synopsis"><p>Returns all known IRIs of the vocabulary.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_relationships_file/2">read_relationships_file(g, relationships_file \\ &quot;sw-relationships.csv&quot;)</a>
+  </div>
 </div>
   </div>
         </section>
@@ -100,16 +107,30 @@ TestMatch.RDF.BIBO              </h1>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="__iris__/0">
-    <div class="detail-header">
-    <a href="#__iris__/0" class="detail-link" title="Link to this function">
+<section class="detail" id="read_nodes_file/2">
+  
+    <span id="read_nodes_file/1"></span>
+  <div class="detail-header">
+    <a href="#read_nodes_file/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">__iris__()</span>
+    <h1 class="signature">read_nodes_file(g, nodes_file \\ &quot;sw-nodes.csv&quot;)</span>
           </div>
   <section class="docstring">
-<p>Returns all known IRIs of the vocabulary.</p>
+  </section>
+</section>
+<section class="detail" id="read_relationships_file/2">
+  
+    <span id="read_relationships_file/1"></span>
+  <div class="detail-header">
+    <a href="#read_relationships_file/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_relationships_file(g, relationships_file \\ &quot;sw-relationships.csv&quot;)</span>
+          </div>
+  <section class="docstring">
   </section>
 </section>
           </div>

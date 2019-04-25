@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.20.2">
+    <meta name="project" content="test_match v0.1.0">
+    <title>TestMatch.Lib — test_match v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
+    <script src="dist/sidebar_items-5b0dbc388f.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+test_match      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="app-vsn">test_match v0.1.0</small>
+TestMatch.Lib              </h1>
+
+
+        <section id="moduledoc">
+<p>Module for read and writing a library of :libgraph graphs.</p>
+<p>The <a href="#read_graph/1"><code class="inline">read_graph/1</code></a> and <a href="#write_graph/2"><code class="inline">write_graph/2</code></a> functions allow for reading and writing
+RDF graphs to the project data repository. (Default file names are provided
+with the <a href="#read_graph/0"><code class="inline">read_graph/0</code></a> and <a href="#write_graph/1"><code class="inline">write_graph/1</code></a> forms.)
+The <a href="#list_graphs/0"><code class="inline">list_graphs/0</code></a> function lists graph file names.</p>
+<p>Some simple accessor functions are also available:</p>
+<ul>
+<li><a href="#graphs_dir/0"><code class="inline">graphs_dir/0</code></a>, <a href="#graph_file/0"><code class="inline">graph_file/0</code></a>, <a href="#temp_graph_file/0"><code class="inline">temp_graph_file/0</code></a>
+</li>
+</ul>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_ets_tables/0">create_ets_tables()</a>
+  </div>
+    <div class="summary-synopsis"><p>Create ETS tables</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#from_cypher/1">from_cypher(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</a>
+  </div>
+    <div class="summary-synopsis"><p>Executes cypher query and returns a graph.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#from_cypher_with_properties/1">from_cypher_with_properties(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</a>
+  </div>
+    <div class="summary-synopsis"><p>Executes cypher query and returns a graph with properties in ETS tables.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#from_sparql/1">from_sparql(query \\ &quot;select * where {?s ?p ?o}&quot;)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#graph_file/0">graph_file()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns a default Lib graph file.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#graphs_dir/0">graphs_dir()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the Lib graphs directory.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_graph_images/0">list_graph_images()</a>
+  </div>
+    <div class="summary-synopsis"><p>Lists Lib graphs in the Lib graph images library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_graphs/0">list_graphs()</a>
+  </div>
+    <div class="summary-synopsis"><p>Lists Lib graphs in the Lib graphs library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_graph/1">read_graph(graph_file \\ graph_file())</a>
+  </div>
+    <div class="summary-synopsis"><p>Reads a Lib graph from the Lib graphs library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#temp_graph_file/0">temp_graph_file()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns a temp Lib graph file for writing.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#to_png/2">to_png(graph, binary \\ :dot)</a>
+  </div>
+    <div class="summary-synopsis"><p>Writes a graph to a <code class="inline">.png</code> file in the Lib graph images library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_graph/2">write_graph(graph_data, graph_file \\ temp_graph_file())</a>
+  </div>
+    <div class="summary-synopsis"><p>Writes a Lib graph to a file in the Lib graphs library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write_lib_graph/2">write_lib_graph(lib_graph, graph_file \\ temp_graph_file())</a>
+  </div>
+    <div class="summary-synopsis"><p>Writes a Lib graph to a file in the Lib graphs library.</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_ets_tables/0">
+    <div class="detail-header">
+    <a href="#create_ets_tables/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_ets_tables()</span>
+          </div>
+  <section class="docstring">
+<p>Create ETS tables</p>
+  </section>
+</section>
+<section class="detail" id="from_cypher/1">
+  
+    <span id="from_cypher/0"></span>
+  <div class="detail-header">
+    <a href="#from_cypher/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">from_cypher(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</span>
+          </div>
+  <section class="docstring">
+<p>Executes cypher query and returns a graph.</p>
+  </section>
+</section>
+<section class="detail" id="from_cypher_with_properties/1">
+  
+    <span id="from_cypher_with_properties/0"></span>
+  <div class="detail-header">
+    <a href="#from_cypher_with_properties/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">from_cypher_with_properties(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</span>
+          </div>
+  <section class="docstring">
+<p>Executes cypher query and returns a graph with properties in ETS tables.</p>
+  </section>
+</section>
+<section class="detail" id="from_sparql/1">
+  
+    <span id="from_sparql/0"></span>
+  <div class="detail-header">
+    <a href="#from_sparql/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">from_sparql(query \\ &quot;select * where {?s ?p ?o}&quot;)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="graph_file/0">
+    <div class="detail-header">
+    <a href="#graph_file/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">graph_file()</span>
+          </div>
+  <section class="docstring">
+<p>Returns a default Lib graph file.</p>
+<h2 id="graph_file/0-examples" class="section-heading">
+  <a href="#graph_file/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">graph_file</span><span class="p" data-group-id="6202623004-1">(</span><span class="p" data-group-id="6202623004-1">)</span><span class="w">
+</span><span class="s">&quot;default.ttl&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="graphs_dir/0">
+    <div class="detail-header">
+    <a href="#graphs_dir/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">graphs_dir()</span>
+          </div>
+  <section class="docstring">
+<p>Returns the Lib graphs directory.</p>
+  </section>
+</section>
+<section class="detail" id="list_graph_images/0">
+    <div class="detail-header">
+    <a href="#list_graph_images/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_graph_images()</span>
+          </div>
+  <section class="docstring">
+<p>Lists Lib graphs in the Lib graph images library.</p>
+<h2 id="list_graph_images/0-examples" class="section-heading">
+  <a href="#list_graph_images/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graph_images</span><span class="p" data-group-id="9698387066-1">(</span><span class="p" data-group-id="9698387066-1">)</span><span class="w">
+</span><span class="p" data-group-id="9698387066-2">[</span><span class="s">&quot;tony.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.png&quot;</span><span class="p" data-group-id="9698387066-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="list_graphs/0">
+    <div class="detail-header">
+    <a href="#list_graphs/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_graphs()</span>
+          </div>
+  <section class="docstring">
+<p>Lists Lib graphs in the Lib graphs library.</p>
+<h2 id="list_graphs/0-examples" class="section-heading">
+  <a href="#list_graphs/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graphs</span><span class="p" data-group-id="9071713200-1">(</span><span class="p" data-group-id="9071713200-1">)</span><span class="w">
+</span><span class="p" data-group-id="9071713200-2">[</span><span class="s">&quot;tony.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.dot&quot;</span><span class="p" data-group-id="9071713200-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_graph/1">
+  
+    <span id="read_graph/0"></span>
+  <div class="detail-header">
+    <a href="#read_graph/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_graph(graph_file \\ graph_file())</span>
+          </div>
+  <section class="docstring">
+<p>Reads a Lib graph from the Lib graphs library.</p>
+<h2 id="read_graph/1-examples" class="section-heading">
+  <a href="#read_graph/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="2323088316-1">(</span><span class="p" data-group-id="2323088316-1">)</span><span class="w">
+</span><span class="p" data-group-id="2323088316-2">%</span><span class="nc" data-group-id="2323088316-2">TestMatch.Graph</span><span class="p" data-group-id="2323088316-2">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;http://dbpedia.org/resource/Hello_World&gt;</span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
+  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="w">
+</span><span class="p" data-group-id="2323088316-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="2323088316-3">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="2323088316-3">)</span><span class="w">
+</span><span class="p" data-group-id="2323088316-4">%</span><span class="nc" data-group-id="2323088316-4">TestMatch.Graph</span><span class="p" data-group-id="2323088316-4">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
+  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="w">
+</span><span class="p" data-group-id="2323088316-4">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="temp_graph_file/0">
+    <div class="detail-header">
+    <a href="#temp_graph_file/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">temp_graph_file()</span>
+          </div>
+  <section class="docstring">
+<p>Returns a temp Lib graph file for writing.</p>
+<h2 id="temp_graph_file/0-examples" class="section-heading">
+  <a href="#temp_graph_file/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">temp_graph_file</span><span class="p" data-group-id="1319200186-1">(</span><span class="p" data-group-id="1319200186-1">)</span><span class="w">
+</span><span class="s">&quot;temp.ttl&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="to_png/2">
+  
+    <span id="to_png/1"></span>
+  <div class="detail-header">
+    <a href="#to_png/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">to_png(graph, binary \\ :dot)</span>
+          </div>
+  <section class="docstring">
+<p>Writes a graph to a <code class="inline">.png</code> file in the Lib graph images library.</p>
+<p>:dot − filter for drawing directed graphs
+:neato − filter for drawing undirected graphs
+:twopi − filter for radial layouts of graphs
+:circo − filter for circular layout of graphs
+:fdp − filter for drawing undirected graphs
+:sfdp − filter for drawing large undirected graphs
+:patchwork − filter for squarified tree maps
+:osage − filter for array-based layouts</p>
+  </section>
+</section>
+<section class="detail" id="write_graph/2">
+  
+    <span id="write_graph/1"></span>
+  <div class="detail-header">
+    <a href="#write_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_graph(graph_data, graph_file \\ temp_graph_file())</span>
+          </div>
+  <section class="docstring">
+<p>Writes a Lib graph to a file in the Lib graphs library.</p>
+<h2 id="write_graph/2-examples" class="section-heading">
+  <a href="#write_graph/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="0708882348-1">(</span><span class="s">&quot;my.dot&quot;</span><span class="p" data-group-id="0708882348-1">)</span><span class="w">
+</span><span class="p" data-group-id="0708882348-2">%</span><span class="nc" data-group-id="0708882348-2">TestMatch.Graph</span><span class="p" data-group-id="0708882348-2">{</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
+  </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.dot&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/lib/graphs/my.dot&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lib</span><span class="p">,</span><span class="w">
+  </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/lib/graphs/my.dot&quot;</span><span class="w">
+</span><span class="p" data-group-id="0708882348-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="write_lib_graph/2">
+  
+    <span id="write_lib_graph/1"></span>
+  <div class="detail-header">
+    <a href="#write_lib_graph/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">write_lib_graph(lib_graph, graph_file \\ temp_graph_file())</span>
+          </div>
+  <section class="docstring">
+<p>Writes a Lib graph to a file in the Lib graphs library.</p>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.20.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+
