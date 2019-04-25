@@ -71,7 +71,7 @@ TestMatch.Import              </h1>
 
 
         <section id="moduledoc">
-<p>Imports CSV data from priv/csv/</p>
+<p>Module for importing CSV data from <code class="inline">priv/csv/</code>.</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -88,13 +88,15 @@ TestMatch.Import              </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#read_nodes_file/2">read_nodes_file(g, nodes_file \\ &quot;sw-nodes.csv&quot;)</a>
+    <a href="#read_nodes_file/2">read_nodes_file(g, nodes_file)</a>
   </div>
+    <div class="summary-synopsis"><p>Reads a CSV <code class="inline">nodes_file</code> and adds vertexes to the <a href="https://hexdocs.pm/libgraph/0.13.3/Graph.html"><code class="inline">Graph</code></a> <code class="inline">g</code> that is passed.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#read_relationships_file/2">read_relationships_file(g, relationships_file \\ &quot;sw-relationships.csv&quot;)</a>
+    <a href="#read_relationships_file/2">read_relationships_file(g, relationships_file)</a>
   </div>
+    <div class="summary-synopsis"><p>Reads a CSV <code class="inline">relationships_file</code> and adds edges to the <a href="https://hexdocs.pm/libgraph/0.13.3/Graph.html"><code class="inline">Graph</code></a> <code class="inline">g</code> that is passed.</p></div>
 </div>
   </div>
         </section>
@@ -108,29 +110,54 @@ TestMatch.Import              </h1>
 Functions          </h1>
           <div class="functions-list">
 <section class="detail" id="read_nodes_file/2">
-  
-    <span id="read_nodes_file/1"></span>
-  <div class="detail-header">
+    <div class="detail-header">
     <a href="#read_nodes_file/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">read_nodes_file(g, nodes_file \\ &quot;sw-nodes.csv&quot;)</span>
+    <h1 class="signature">read_nodes_file(g, nodes_file)</span>
           </div>
   <section class="docstring">
+<p>Reads a CSV <code class="inline">nodes_file</code> and adds vertexes to the <a href="https://hexdocs.pm/libgraph/0.13.3/Graph.html"><code class="inline">Graph</code></a> <code class="inline">g</code> that is passed.</p>
+<p>The <code class="inline">nodes_file</code> is found at the <code class="inline">@csv_dir</code> location.</p>
+<h2 id="read_nodes_file/2-examples" class="section-heading">
+  <a href="#read_nodes_file/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nc">TestMatch.Import</span><span class="w">
+</span><span class="nc">TestMatch.Import</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Graph</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="6612791079-1">(</span><span class="p" data-group-id="6612791079-1">)</span><span class="w">
+</span><span class="p" data-group-id="6612791079-2">#</span><span class="nc" data-group-id="6612791079-2">Graph</span><span class="p" data-group-id="6612791079-2">&lt;</span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="n">directed</span><span class="p">,</span><span class="w"> </span><span class="ss">vertices</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6612791079-3">[</span><span class="p" data-group-id="6612791079-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">edges</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6612791079-4">[</span><span class="p" data-group-id="6612791079-4">]</span><span class="p" data-group-id="6612791079-2">&gt;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_nodes_file</span><span class="p" data-group-id="6612791079-5">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sw-nodes.csv&quot;</span><span class="p" data-group-id="6612791079-5">)</span><span class="w">
+</span><span class="p" data-group-id="6612791079-6">#</span><span class="nc" data-group-id="6612791079-6">Graph</span><span class="p" data-group-id="6612791079-6">&lt;</span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="n">directed</span><span class="p">,</span><span class="w"> </span><span class="ss">vertices</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6612791079-7">[</span><span class="s">&quot;py4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-client&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;nbconvert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;python-dateutil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;six&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-console&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pyspark&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytz&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;spacy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jupyter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ipykernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;numpy&quot;</span><span class="p" data-group-id="6612791079-7">]</span><span class="p">,</span><span class="w"> </span><span class="ss">edges</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6612791079-8">[</span><span class="p" data-group-id="6612791079-8">]</span><span class="p" data-group-id="6612791079-6">&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="read_relationships_file/2">
-  
-    <span id="read_relationships_file/1"></span>
-  <div class="detail-header">
+    <div class="detail-header">
     <a href="#read_relationships_file/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">read_relationships_file(g, relationships_file \\ &quot;sw-relationships.csv&quot;)</span>
+    <h1 class="signature">read_relationships_file(g, relationships_file)</span>
           </div>
   <section class="docstring">
+<p>Reads a CSV <code class="inline">relationships_file</code> and adds edges to the <a href="https://hexdocs.pm/libgraph/0.13.3/Graph.html"><code class="inline">Graph</code></a> <code class="inline">g</code> that is passed.</p>
+<p>The <code class="inline">relationships_file</code> is found at the <code class="inline">@csv_dir</code> location.</p>
+<h2 id="read_relationships_file/2-examples" class="section-heading">
+  <a href="#read_relationships_file/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_relationships_file</span><span class="p" data-group-id="7600607394-1">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sw-relationships.csv&quot;</span><span class="p" data-group-id="7600607394-1">)</span><span class="w">
+</span><span class="p" data-group-id="7600607394-2">#</span><span class="nc" data-group-id="7600607394-2">Graph</span><span class="p" data-group-id="7600607394-2">&lt;</span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="n">directed</span><span class="p">,</span><span class="w"> </span><span class="ss">vertices</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7600607394-3">[</span><span class="s">&quot;py4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-client&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;nbconvert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;python-dateutil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;six&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-console&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pyspark&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytz&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;spacy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jupyter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ipykernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-core&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;numpy&quot;</span><span class="p" data-group-id="7600607394-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">edges</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7600607394-4">[</span><span class="s">&quot;jpy-client&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-5">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-5">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;jpy-core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-6">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-6">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;python-dateutil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-7">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-7">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;six&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-8">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-8">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;pytz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matplotlib&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-9">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-9">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nbconvert&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-10">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-10">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;jpy-core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;python-dateutil&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-11">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-11">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;six&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-console&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-12">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-12">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;jpy-client&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jpy-console&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-13">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-13">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;ipykernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pyspark&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-14">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-14">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;py4j&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;spacy&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-15">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-15">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;six&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;spacy&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-16">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-16">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jupyter&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-17">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-17">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;nbconvert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jupyter&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-18">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-18">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;jpy-console&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jupyter&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-19">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-19">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;ipykernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pandas&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-20">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-20">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;python-dateutil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pandas&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-21">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-21">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;pytz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pandas&quot;</span><span class="w"> </span><span class="o">-</span><span class="p" data-group-id="7600607394-22">[</span><span class="nc">DEPENDS_ON</span><span class="p" data-group-id="7600607394-22">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;numpy&quot;</span><span class="p" data-group-id="7600607394-4">]</span><span class="p" data-group-id="7600607394-2">&gt;</span></code></pre>
   </section>
 </section>
           </div>

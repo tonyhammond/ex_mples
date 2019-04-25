@@ -182,7 +182,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">dbpedia_sparql_endpoint</span><span class="p" data-group-id="4247977913-1">(</span><span class="p" data-group-id="4247977913-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">dbpedia_sparql_endpoint</span><span class="p" data-group-id="3673331135-1">(</span><span class="p" data-group-id="3673331135-1">)</span><span class="w">
 </span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span></code></pre>
   </section>
 </section>
@@ -201,7 +201,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">local_sparql_endpoint</span><span class="p" data-group-id="5003287981-1">(</span><span class="p" data-group-id="5003287981-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">local_sparql_endpoint</span><span class="p" data-group-id="7170347871-1">(</span><span class="p" data-group-id="7170347871-1">)</span><span class="w">
 </span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span></code></pre>
   </section>
 </section>
@@ -227,14 +227,14 @@ Functions          </h1>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="w">
 </span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="1982601705-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="1982601705-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="5399123262-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="5399123262-1">)</span><span class="w">
 </span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="1982601705-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="1982601705-2">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL_Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="1982601705-3">(</span><span class="p" data-group-id="1982601705-3">)</span><span class="w">
-</span><span class="p" data-group-id="1982601705-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="c1">#RDF.Graph{name: nil</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="5399123262-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="5399123262-2">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL_Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="5399123262-3">(</span><span class="p" data-group-id="5399123262-3">)</span><span class="w">
+</span><span class="p" data-group-id="5399123262-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="c1">#RDF.Graph{name: nil</span><span class="w">
       </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">dbpedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">resource</span><span class="o">/</span><span class="nc">Hello_World</span><span class="o">&gt;</span><span class="w">
           </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">rdf</span><span class="o">-</span><span class="n">schema</span><span class="c1">#label&gt;</span><span class="w">
-              </span><span class="sx">~L&quot;Hello World&quot;en</span><span class="p" data-group-id="1982601705-4">}</span><span class="err">}</span></code></pre>
+              </span><span class="sx">~L&quot;Hello World&quot;en</span><span class="p" data-group-id="5399123262-4">}</span><span class="err">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="rquery!/2">
@@ -259,7 +259,7 @@ Functions          </h1>
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="w">
 </span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="6747701510-1">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="6747701510-1">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL_Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="6747701510-2">(</span><span class="p" data-group-id="6747701510-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_rdf_query</span><span class="p" data-group-id="1456417945-1">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="1456417945-1">)</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">  </span><span class="nc">SPARQL_Client</span><span class="o">.</span><span class="n">rquery</span><span class="p" data-group-id="1456417945-2">(</span><span class="p" data-group-id="1456417945-2">)</span><span class="w">
 </span><span class="c1">#RDF.Graph{name: nil</span><span class="w">
      </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">dbpedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">resource</span><span class="o">/</span><span class="nc">Hello_World</span><span class="o">&gt;</span><span class="w">
          </span><span class="err">~</span><span class="nc">I</span><span class="o">&lt;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">rdf</span><span class="o">-</span><span class="n">schema</span><span class="c1">#label&gt;</span><span class="w">
@@ -281,7 +281,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="5654382852-1">(</span><span class="p" data-group-id="5654382852-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="4682743579-1">(</span><span class="p" data-group-id="4682743579-1">)</span><span class="w">
 </span><span class="s">&quot;http://localhost:7200/repositories/test-graph&quot;</span></code></pre>
   </section>
 </section>
@@ -300,7 +300,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="7565014054-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="7565014054-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_endpoint</span><span class="p" data-group-id="0285752656-1">(</span><span class="ss">:sparql_dbpedia</span><span class="p" data-group-id="0285752656-1">)</span><span class="w">
 </span><span class="s">&quot;http://dbpedia.org/sparql&quot;</span></code></pre>
   </section>
 </section>
@@ -319,7 +319,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="1657072421-1">(</span><span class="p" data-group-id="1657072421-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="3349906931-1">(</span><span class="p" data-group-id="3349906931-1">)</span><span class="w">
 </span><span class="s">&quot;construct</span><span class="se">\n</span><span class="s">{ ?s ?p ?o }</span><span class="se">\n</span><span class="s">where {</span><span class="se">\n</span><span class="s">  ?s ?p ?o</span><span class="se">\n</span><span class="s">} limit 1</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -339,10 +339,10 @@ Functions          </h1>
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_rdf_queries</span><span class="w">
-</span><span class="p" data-group-id="2254696283-1">[</span><span class="s">&quot;cypher.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;london.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;elixir.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;default.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;neo4j.rq&quot;</span><span class="p">,</span><span class="w">
- </span><span class="s">&quot;triples_by_uri.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;triples.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="2254696283-1">]</span><span class="w">
+</span><span class="p" data-group-id="4080915103-1">[</span><span class="s">&quot;cypher.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;london.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;elixir.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;default.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;neo4j.rq&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;triples_by_uri.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;triples.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="4080915103-1">]</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="2254696283-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="2254696283-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">sparql_query</span><span class="p" data-group-id="4080915103-2">(</span><span class="s">&quot;hello.rq&quot;</span><span class="p" data-group-id="4080915103-2">)</span><span class="w">
 </span><span class="s">&quot;construct</span><span class="se">\n</span><span class="s">{ ?s ?p ?o }</span><span class="se">\n</span><span class="s">where {</span><span class="se">\n</span><span class="s">  bind (&lt;http://dbpedia.org/resource/Hello_World&gt; as ?s)</span><span class="se">\n</span><span class="s">  ?s ?p ?o</span><span class="se">\n</span><span class="s">  filter (isLiteral(?o) &amp;&amp; langMatches(lang(?o), </span><span class="se">\&quot;</span><span class="s">en</span><span class="se">\&quot;</span><span class="s">))</span><span class="se">\n</span><span class="s">}</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
   </section>
 </section>
@@ -361,8 +361,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_sparql_services</span><span class="p" data-group-id="6362729373-1">(</span><span class="p" data-group-id="6362729373-1">)</span><span class="w">
-</span><span class="p" data-group-id="6362729373-2">[</span><span class="ss">:sparql_dbpedia</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_local</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_wikidata</span><span class="p" data-group-id="6362729373-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_sparql_services</span><span class="p" data-group-id="9242050531-1">(</span><span class="p" data-group-id="9242050531-1">)</span><span class="w">
+</span><span class="p" data-group-id="9242050531-2">[</span><span class="ss">:sparql_dbpedia</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_local</span><span class="p">,</span><span class="w"> </span><span class="ss">:sparql_wikidata</span><span class="p" data-group-id="9242050531-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="triples/1">
@@ -406,7 +406,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">wikidata_sparql_endpoint</span><span class="p" data-group-id="0263003932-1">(</span><span class="p" data-group-id="0263003932-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">wikidata_sparql_endpoint</span><span class="p" data-group-id="9293886086-1">(</span><span class="p" data-group-id="9293886086-1">)</span><span class="w">
 </span><span class="s">&quot;https://query.wikidata.org/bigdata/namespace/wdq/sparql&quot;</span></code></pre>
   </section>
 </section>

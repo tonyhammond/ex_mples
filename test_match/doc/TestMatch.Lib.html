@@ -71,7 +71,7 @@ TestMatch.Lib              </h1>
 
 
         <section id="moduledoc">
-<p>Module for read and writing a library of :libgraph graphs.</p>
+<p>Module for reading and writing a library of <code class="inline">libgraph</code> graphs.</p>
 <p>The <a href="#read_graph/1"><code class="inline">read_graph/1</code></a> and <a href="#write_graph/2"><code class="inline">write_graph/2</code></a> functions allow for reading and writing
 RDF graphs to the project data repository. (Default file names are provided
 with the <a href="#read_graph/0"><code class="inline">read_graph/0</code></a> and <a href="#write_graph/1"><code class="inline">write_graph/1</code></a> forms.)
@@ -251,7 +251,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">graph_file</span><span class="p" data-group-id="6202623004-1">(</span><span class="p" data-group-id="6202623004-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">graph_file</span><span class="p" data-group-id="4746511651-1">(</span><span class="p" data-group-id="4746511651-1">)</span><span class="w">
 </span><span class="s">&quot;default.ttl&quot;</span></code></pre>
   </section>
 </section>
@@ -282,8 +282,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graph_images</span><span class="p" data-group-id="9698387066-1">(</span><span class="p" data-group-id="9698387066-1">)</span><span class="w">
-</span><span class="p" data-group-id="9698387066-2">[</span><span class="s">&quot;tony.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.png&quot;</span><span class="p" data-group-id="9698387066-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graph_images</span><span class="p" data-group-id="9810654387-1">(</span><span class="p" data-group-id="9810654387-1">)</span><span class="w">
+</span><span class="p" data-group-id="9810654387-2">[</span><span class="s">&quot;tony.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.png&quot;</span><span class="p" data-group-id="9810654387-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="list_graphs/0">
@@ -301,8 +301,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graphs</span><span class="p" data-group-id="9071713200-1">(</span><span class="p" data-group-id="9071713200-1">)</span><span class="w">
-</span><span class="p" data-group-id="9071713200-2">[</span><span class="s">&quot;tony.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.dot&quot;</span><span class="p" data-group-id="9071713200-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graphs</span><span class="p" data-group-id="4745809493-1">(</span><span class="p" data-group-id="4745809493-1">)</span><span class="w">
+</span><span class="p" data-group-id="4745809493-2">[</span><span class="s">&quot;tony.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.dot&quot;</span><span class="p" data-group-id="4745809493-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="read_graph/1">
@@ -322,23 +322,23 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="2323088316-1">(</span><span class="p" data-group-id="2323088316-1">)</span><span class="w">
-</span><span class="p" data-group-id="2323088316-2">%</span><span class="nc" data-group-id="2323088316-2">TestMatch.Graph</span><span class="p" data-group-id="2323088316-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="1469240172-1">(</span><span class="p" data-group-id="1469240172-1">)</span><span class="w">
+</span><span class="p" data-group-id="1469240172-2">%</span><span class="nc" data-group-id="1469240172-2">TestMatch.Graph</span><span class="p" data-group-id="1469240172-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;http://dbpedia.org/resource/Hello_World&gt;</span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="2323088316-2">}</span><span class="w">
+</span><span class="p" data-group-id="1469240172-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="2323088316-3">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="2323088316-3">)</span><span class="w">
-</span><span class="p" data-group-id="2323088316-4">%</span><span class="nc" data-group-id="2323088316-4">TestMatch.Graph</span><span class="p" data-group-id="2323088316-4">{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="1469240172-3">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="1469240172-3">)</span><span class="w">
+</span><span class="p" data-group-id="1469240172-4">%</span><span class="nc" data-group-id="1469240172-4">TestMatch.Graph</span><span class="p" data-group-id="1469240172-4">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="2323088316-4">}</span></code></pre>
+</span><span class="p" data-group-id="1469240172-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="temp_graph_file/0">
@@ -356,7 +356,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">temp_graph_file</span><span class="p" data-group-id="1319200186-1">(</span><span class="p" data-group-id="1319200186-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">temp_graph_file</span><span class="p" data-group-id="5290484417-1">(</span><span class="p" data-group-id="5290484417-1">)</span><span class="w">
 </span><span class="s">&quot;temp.ttl&quot;</span></code></pre>
   </section>
 </section>
@@ -399,14 +399,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="0708882348-1">(</span><span class="s">&quot;my.dot&quot;</span><span class="p" data-group-id="0708882348-1">)</span><span class="w">
-</span><span class="p" data-group-id="0708882348-2">%</span><span class="nc" data-group-id="0708882348-2">TestMatch.Graph</span><span class="p" data-group-id="0708882348-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="2077350282-1">(</span><span class="s">&quot;my.dot&quot;</span><span class="p" data-group-id="2077350282-1">)</span><span class="w">
+</span><span class="p" data-group-id="2077350282-2">%</span><span class="nc" data-group-id="2077350282-2">TestMatch.Graph</span><span class="p" data-group-id="2077350282-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.dot&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/lib/graphs/my.dot&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lib</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/lib/graphs/my.dot&quot;</span><span class="w">
-</span><span class="p" data-group-id="0708882348-2">}</span></code></pre>
+</span><span class="p" data-group-id="2077350282-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="write_lib_graph/2">

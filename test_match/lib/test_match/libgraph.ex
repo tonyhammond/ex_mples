@@ -1,6 +1,6 @@
 defmodule TestMatch.Lib do
   @moduledoc """
-  Module for read and writing a library of :libgraph graphs.
+  Module for reading and writing a library of `libgraph` graphs.
 
   The `read_graph/1` and `write_graph/2` functions allow for reading and writing
   RDF graphs to the project data repository. (Default file names are provided
