@@ -3,7 +3,7 @@ Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/lates
 
 (Project name `ex_mples` can be read as Elixir – Medium post listing examples.)
 
-![medium-posts-no-tags.png](./images/medium-posts-no-tags.pngjpg)
+![medium-posts-no-tags.png](./images/medium-posts-no-tags.png)
 
 ## Posts | 2019
 
