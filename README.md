@@ -5,13 +5,19 @@ Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/lates
 
 ![medium-posts-no-tags.jpg](./images/medium-posts-no-tags.jpg)
 
-* "[Early steps in Elixir and RDF](https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f)" ([test_vocab](./test_vocab/))
-* "[Querying RDF with Elixir](https://medium.com/@tonyhammond/querying-rdf-with-elixir-2378b39d65cc)" ([test_query](./test_query/))
-* "[Working with SHACL and Elixir](https://medium.com/@tonyhammond/working-with-shacl-and-elixir-4719473d43c1)" ([test_shacl](./test_shacl/))
-* "[Robust compute for RDF queries](https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12)" [(test_super](./test_super/))
-* "[Jupyter Notebooks with Elixir and RDF](https://medium.com/@tonyhammond/jupyter-notebooks-with-elixir-and-rdf-598689c2dad3)" [(test_ipynb](./test_ipynb/))
-* "[Property graphs and Elixir](https://medium.com/@tonyhammond/property-graphs-and-elixir-13672940804b)" [(test_neo4j](./test_neo4j/))
+## Posts | 2019
+
+* "Native graph data in Elixir" [(test_match](./test_match/))
 * "[Graph to graph with Elixir](https://medium.com/@tonyhammond/graph-to-graph-with-elixir-9cd7fd6f2128)" [(test_graph](./test_graph/))
+* "[Property graphs and Elixir](https://medium.com/@tonyhammond/property-graphs-and-elixir-13672940804b)" [(test_neo4j](./test_neo4j/))
+
+## Posts | 2018
+
+* "[Jupyter Notebooks with Elixir and RDF](https://medium.com/@tonyhammond/jupyter-notebooks-with-elixir-and-rdf-598689c2dad3)" [(test_ipynb](./test_ipynb/))
+* "[Robust compute for RDF queries](https://medium.com/@tonyhammond/robust-compute-for-rdf-queries-eb2ad665ef12)" [(test_super](./test_super/))
+* "[Working with SHACL and Elixir](https://medium.com/@tonyhammond/working-with-shacl-and-elixir-4719473d43c1)" ([test_shacl](./test_shacl/))
+* "[Querying RDF with Elixir](https://medium.com/@tonyhammond/querying-rdf-with-elixir-2378b39d65cc)" ([test_query](./test_query/))
+* "[Early steps in Elixir and RDF](https://medium.com/@tonyhammond/early-steps-in-elixir-and-rdf-5078a4ebfe0f)" ([test_vocab](./test_vocab/))
 
 ## Installation
 
