@@ -8,7 +8,7 @@
     <meta name="project" content="test_match v0.1.0">
     <title>TestMatch.Query — test_match v0.1.0</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-5b0dbc388f.js"></script>
+    <script src="dist/sidebar_items-48cb4161d1.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -91,14 +91,14 @@ The other fields are straightforward data access fields:</p>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0740568329-1">(</span><span class="s">&quot;temp.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="0740568329-1">)</span><span class="w">
-</span><span class="p" data-group-id="0740568329-2">%</span><span class="nc" data-group-id="0740568329-2">TestMatch.Query</span><span class="p" data-group-id="0740568329-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0006904705-1">(</span><span class="s">&quot;temp.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="0006904705-1">)</span><span class="w">
+</span><span class="p" data-group-id="0006904705-2">%</span><span class="nc" data-group-id="0006904705-2">TestMatch.Query</span><span class="p" data-group-id="0006904705-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;QUERY_DATA&gt;&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;temp.rq&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_match/priv/rdf/queries/temp.rq&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_match/priv/rdf/queries/temp.rq&quot;</span><span class="w">
-</span><span class="p" data-group-id="0740568329-2">}</span></code></pre>
+</span><span class="p" data-group-id="0006904705-2">}</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -145,14 +145,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="1094165120-1">(</span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="1094165120-1">)</span><span class="w">
-</span><span class="p" data-group-id="1094165120-2">%</span><span class="nc" data-group-id="1094165120-2">TestMatch.Query</span><span class="p" data-group-id="1094165120-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">TestMatch.Query</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="9413856908-1">(</span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:rdf</span><span class="p" data-group-id="9413856908-1">)</span><span class="w">
+</span><span class="p" data-group-id="9413856908-2">%</span><span class="nc" data-group-id="9413856908-2">TestMatch.Query</span><span class="p" data-group-id="9413856908-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.rq&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;.../test_graph/priv/rdf/queries/books.rq&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/queries/books.rq&quot;</span><span class="w">
-</span><span class="p" data-group-id="1094165120-2">}</span></code></pre>
+</span><span class="p" data-group-id="9413856908-2">}</span></code></pre>
   </section>
 </section>
           </div>

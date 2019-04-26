@@ -8,7 +8,7 @@
     <meta name="project" content="test_match v0.1.0">
     <title>TestMatch.Lib — test_match v0.1.0</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-5b0dbc388f.js"></script>
+    <script src="dist/sidebar_items-48cb4161d1.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -99,24 +99,31 @@ The <a href="#list_graphs/0"><code class="inline">list_graphs/0</code></a> funct
   <div class="summary-signature">
     <a href="#create_ets_tables/0">create_ets_tables()</a>
   </div>
-    <div class="summary-synopsis"><p>Create ETS tables.</p></div>
+    <div class="summary-synopsis"><p>Create <code class="inline">@node_table</code> and <code class="inline">@edge_table</code> ETS tables.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#from_cypher/1">from_cypher(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</a>
+    <a href="#cypher_query/0">cypher_query()</a>
   </div>
-    <div class="summary-synopsis"><p>Executes cypher query and returns a graph.</p></div>
+    <div class="summary-synopsis"><p>Returns a default Cypher query.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#from_cypher_with_properties/1">from_cypher_with_properties(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</a>
+    <a href="#from_cypher/1">from_cypher(cypher_query \\ cypher_query())</a>
   </div>
-    <div class="summary-synopsis"><p>Executes cypher query and returns a graph with properties in ETS tables.</p></div>
+    <div class="summary-synopsis"><p>Executes <code class="inline">cypher_query</code> and returns a graph.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#from_sparql/1">from_sparql(query \\ &quot;select * where {?s ?p ?o}&quot;)</a>
+    <a href="#from_cypher_with_properties/1">from_cypher_with_properties(cypher_query \\ cypher_query())</a>
   </div>
+    <div class="summary-synopsis"><p>Executes <code class="inline">cypher_query</code> and returns a graph with properties in ETS tables.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#from_sparql/1">from_sparql(sparql_query \\ sparql_query())</a>
+  </div>
+    <div class="summary-synopsis"><p>Executes <code class="inline">sparql_query</code> and returns a graph.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -147,6 +154,12 @@ The <a href="#list_graphs/0"><code class="inline">list_graphs/0</code></a> funct
     <a href="#read_graph/1">read_graph(graph_file \\ graph_file())</a>
   </div>
     <div class="summary-synopsis"><p>Reads a Lib graph from the Lib graphs library.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sparql_query/0">sparql_query()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns a default SPARQL query.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -192,7 +205,19 @@ Functions          </h1>
     <h1 class="signature">create_ets_tables()</span>
           </div>
   <section class="docstring">
-<p>Create ETS tables.</p>
+<p>Create <code class="inline">@node_table</code> and <code class="inline">@edge_table</code> ETS tables.</p>
+  </section>
+</section>
+<section class="detail" id="cypher_query/0">
+    <div class="detail-header">
+    <a href="#cypher_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cypher_query()</span>
+          </div>
+  <section class="docstring">
+<p>Returns a default Cypher query.</p>
   </section>
 </section>
 <section class="detail" id="from_cypher/1">
@@ -203,10 +228,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">from_cypher(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</span>
+    <h1 class="signature">from_cypher(cypher_query \\ cypher_query())</span>
           </div>
   <section class="docstring">
-<p>Executes cypher query and returns a graph.</p>
+<p>Executes <code class="inline">cypher_query</code> and returns a graph.</p>
   </section>
 </section>
 <section class="detail" id="from_cypher_with_properties/1">
@@ -217,10 +242,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">from_cypher_with_properties(query \\ &quot;match (n)-[r]-&gt;(o) return n,r,o&quot;)</span>
+    <h1 class="signature">from_cypher_with_properties(cypher_query \\ cypher_query())</span>
           </div>
   <section class="docstring">
-<p>Executes cypher query and returns a graph with properties in ETS tables.</p>
+<p>Executes <code class="inline">cypher_query</code> and returns a graph with properties in ETS tables.</p>
   </section>
 </section>
 <section class="detail" id="from_sparql/1">
@@ -231,9 +256,10 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">from_sparql(query \\ &quot;select * where {?s ?p ?o}&quot;)</span>
+    <h1 class="signature">from_sparql(sparql_query \\ sparql_query())</span>
           </div>
   <section class="docstring">
+<p>Executes <code class="inline">sparql_query</code> and returns a graph.</p>
   </section>
 </section>
 <section class="detail" id="graph_file/0">
@@ -251,7 +277,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">graph_file</span><span class="p" data-group-id="8204700417-1">(</span><span class="p" data-group-id="8204700417-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">graph_file</span><span class="p" data-group-id="5926541255-1">(</span><span class="p" data-group-id="5926541255-1">)</span><span class="w">
 </span><span class="s">&quot;default.ttl&quot;</span></code></pre>
   </section>
 </section>
@@ -282,8 +308,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graph_images</span><span class="p" data-group-id="1664129238-1">(</span><span class="p" data-group-id="1664129238-1">)</span><span class="w">
-</span><span class="p" data-group-id="1664129238-2">[</span><span class="s">&quot;tony.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.png&quot;</span><span class="p" data-group-id="1664129238-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graph_images</span><span class="p" data-group-id="9097274505-1">(</span><span class="p" data-group-id="9097274505-1">)</span><span class="w">
+</span><span class="p" data-group-id="9097274505-2">[</span><span class="s">&quot;tony.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.png&quot;</span><span class="p" data-group-id="9097274505-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="list_graphs/0">
@@ -301,8 +327,8 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graphs</span><span class="p" data-group-id="3762388443-1">(</span><span class="p" data-group-id="3762388443-1">)</span><span class="w">
-</span><span class="p" data-group-id="3762388443-2">[</span><span class="s">&quot;tony.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.dot&quot;</span><span class="p" data-group-id="3762388443-2">]</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_graphs</span><span class="p" data-group-id="4918753295-1">(</span><span class="p" data-group-id="4918753295-1">)</span><span class="w">
+</span><span class="p" data-group-id="4918753295-2">[</span><span class="s">&quot;tony.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo.dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo1.dot&quot;</span><span class="p" data-group-id="4918753295-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="read_graph/1">
@@ -322,23 +348,35 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="3969208218-1">(</span><span class="p" data-group-id="3969208218-1">)</span><span class="w">
-</span><span class="p" data-group-id="3969208218-2">%</span><span class="nc" data-group-id="3969208218-2">TestMatch.Graph</span><span class="p" data-group-id="3969208218-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="5313406318-1">(</span><span class="p" data-group-id="5313406318-1">)</span><span class="w">
+</span><span class="p" data-group-id="5313406318-2">%</span><span class="nc" data-group-id="5313406318-2">TestMatch.Graph</span><span class="p" data-group-id="5313406318-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;http://dbpedia.org/resource/Hello_World&gt;</span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/default.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="3969208218-2">}</span><span class="w">
+</span><span class="p" data-group-id="5313406318-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="3969208218-3">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="3969208218-3">)</span><span class="w">
-</span><span class="p" data-group-id="3969208218-4">%</span><span class="nc" data-group-id="3969208218-4">TestMatch.Graph</span><span class="p" data-group-id="3969208218-4">{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_graph</span><span class="p" data-group-id="5313406318-3">(</span><span class="s">&quot;books.ttl&quot;</span><span class="p" data-group-id="5313406318-3">)</span><span class="w">
+</span><span class="p" data-group-id="5313406318-4">%</span><span class="nc" data-group-id="5313406318-4">TestMatch.Graph</span><span class="p" data-group-id="5313406318-4">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:rdf</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/rdf/graphs/books.ttl&quot;</span><span class="w">
-</span><span class="p" data-group-id="3969208218-4">}</span></code></pre>
+</span><span class="p" data-group-id="5313406318-4">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="sparql_query/0">
+    <div class="detail-header">
+    <a href="#sparql_query/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sparql_query()</span>
+          </div>
+  <section class="docstring">
+<p>Returns a default SPARQL query.</p>
   </section>
 </section>
 <section class="detail" id="temp_graph_file/0">
@@ -356,7 +394,7 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">temp_graph_file</span><span class="p" data-group-id="7321569478-1">(</span><span class="p" data-group-id="7321569478-1">)</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">TestMatch.Lib</span><span class="o">.</span><span class="n">temp_graph_file</span><span class="p" data-group-id="6480503745-1">(</span><span class="p" data-group-id="6480503745-1">)</span><span class="w">
 </span><span class="s">&quot;temp.ttl&quot;</span></code></pre>
   </section>
 </section>
@@ -410,14 +448,14 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="1899556573-1">(</span><span class="s">&quot;my.dot&quot;</span><span class="p" data-group-id="1899556573-1">)</span><span class="w">
-</span><span class="p" data-group-id="1899556573-2">%</span><span class="nc" data-group-id="1899556573-2">TestMatch.Graph</span><span class="p" data-group-id="1899556573-2">{</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">write_graph</span><span class="p" data-group-id="1277265045-1">(</span><span class="s">&quot;my.dot&quot;</span><span class="p" data-group-id="1277265045-1">)</span><span class="w">
+</span><span class="p" data-group-id="1277265045-2">%</span><span class="nc" data-group-id="1277265045-2">TestMatch.Graph</span><span class="p" data-group-id="1277265045-2">{</span><span class="w">
   </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; </span><span class="se">\n</span><span class="s">...&quot;</span><span class="w">
   </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my.dot&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/test_graph/priv/lib/graphs/my.dot&quot;</span><span class="p">,</span><span class="w">
   </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="ss">:lib</span><span class="p">,</span><span class="w">
   </span><span class="ss">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///.../test_graph/priv/lib/graphs/my.dot&quot;</span><span class="w">
-</span><span class="p" data-group-id="1899556573-2">}</span></code></pre>
+</span><span class="p" data-group-id="1277265045-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="write_lib_graph/2">

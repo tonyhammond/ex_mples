@@ -14,7 +14,14 @@ defmodule TestMatch.LPG.Cypher.Client do
   @query_file_nodes_and_relationships "nodes_and_relationships.cypher"
   @query_file_paths "paths.cypher"
 
+  @doc """
+  Returns a default Cypher query.
+  """
   def cypher_query(), do: read_query().data
+
+  @doc """
+  Returns a Cypher query from `query_file`.
+  """
   def cypher_query(query_file), do: read_query(query_file).data
 
   @doc """
@@ -37,8 +44,8 @@ defmodule TestMatch.LPG.Cypher.Client do
          }
        ]}
   """
-  def rquery(query \\ cypher_query()) do
-    Bolt.Sips.query(Bolt.Sips.conn(), query)
+  def rquery(cypher_query \\ cypher_query()) do
+    Bolt.Sips.query(Bolt.Sips.conn(), cypher_query)
   end
 
   @doc """
@@ -60,8 +67,8 @@ defmodule TestMatch.LPG.Cypher.Client do
         }
       ]
   """
-  def rquery!(query \\ cypher_query()) do
-    Bolt.Sips.query!(Bolt.Sips.conn(), query)
+  def rquery!(cypher_query \\ cypher_query()) do
+    Bolt.Sips.query!(Bolt.Sips.conn(), cypher_query)
   end
 
   ##

@@ -89,7 +89,7 @@ defmodule TestMatch.RDF.SPARQL.Client do
   def sparql_query(), do: read_query().data
 
   @doc """
-  Returns saved SPARQL query.
+  Returns a SPARQL query from `query_file`.
 
   ## Examples
 
@@ -119,8 +119,8 @@ defmodule TestMatch.RDF.SPARQL.Client do
                 ~I<http://www.w3.org/2000/01/rdf-schema#label>
                     ~L"Hello World"en}}
   """
-  def rquery(query \\ sparql_query(), endpoint \\ sparql_endpoint()) do
-    SPARQL.Client.query(query, endpoint)
+  def rquery(sparql_query \\ sparql_query(), sparql_endpoint \\ sparql_endpoint()) do
+    SPARQL.Client.query(sparql_query, sparql_endpoint)
   end
 
   @doc """
@@ -137,8 +137,8 @@ defmodule TestMatch.RDF.SPARQL.Client do
                ~I<http://www.w3.org/2000/01/rdf-schema#label>
                    ~L"Hello World"en}
   """
-  def rquery!(query \\ sparql_query(), endpoint \\ sparql_endpoint()) do
-    SPARQL.Client.query(query, endpoint)
+  def rquery!(sparql_query \\ sparql_query(), sparql_endpoint \\ sparql_endpoint()) do
+    SPARQL.Client.query(sparql_query, sparql_endpoint)
     |> case do
       {:ok, resp} -> resp
       {:error, error} -> raise error

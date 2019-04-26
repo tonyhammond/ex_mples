@@ -43,8 +43,18 @@ defmodule TestMatch.Lib do
   @patchwork_binary "/usr/local/bin/patchwork"
   @osage_binary "/usr/local/bin/osage"
 
-  @sparql_query "select * where {?s ?p ?o}"
   @cypher_query "match (n)-[r]->(o) return n,r,o"
+  @sparql_query "select * where {?s ?p ?o}"
+
+  @doc """
+  Returns a default Cypher query.
+  """
+  def cypher_query(), do: @cypher_query
+
+  @doc """
+  Returns a default SPARQL query.
+  """
+  def sparql_query(), do: @sparql_query
 
   ##
 
@@ -204,43 +214,15 @@ defmodule TestMatch.Lib do
 
   ##
 
-  # iex> cypher! "match (n)-[r]->(o) return n,r,o limit 1"
-  # [
-  #   %{
-  #     "o" => %Bolt.Sips.Types.Node{
-  #       id: 26703,
-  #       labels: ["Book"],
-  #       properties: %{
-  #         "date" => "2018-03-14",
-  #         "format" => "Paper",
-  #         "iri" => "urn:isbn:978-1-68050-252-7",
-  #         "title" => "Adopting Elixir"
-  #       }
-  #     },
-  #     "n" => %Bolt.Sips.Types.Node{
-  #       id: 26704,
-  #       labels: ["Author"],
-  #       properties: %{"iri" => "https://twitter.com/bgmarx"}
-  #     },
-  #     "r" => %Bolt.Sips.Types.Relationship{
-  #       end: 26704,
-  #       id: 136326,
-  #       properties: %{"role" => "first author"},
-  #       start: 26703,
-  #       type: "AUTHORED_BY"
-  #     }
-  #   }
-  # ]
-
   @doc """
-  Executes cypher query and returns a graph.
+  Executes `cypher_query` and returns a graph.
   """
-  def from_cypher(query \\ @cypher_query) do
+  def from_cypher(cypher_query \\ cypher_query()) do
     alias Bolt.Sips.Types.{Node, Relationship}
 
     g = Graph.new()
 
-    results = TestMatch.cypher!(query)
+    results = TestMatch.cypher!(cypher_query)
 
     results
     |> Enum.reduce(
@@ -288,14 +270,14 @@ defmodule TestMatch.Lib do
   end
 
   @doc """
-  Executes cypher query and returns a graph with properties in ETS tables.
+  Executes `cypher_query` and returns a graph with properties in ETS tables.
   """
-  def from_cypher_with_properties(query \\ @cypher_query) do
+  def from_cypher_with_properties(cypher_query \\ cypher_query()) do
     alias Bolt.Sips.Types.{Node, Relationship}
 
     g = Graph.new()
 
-    results = TestMatch.cypher!(query)
+    results = TestMatch.cypher!(cypher_query)
 
     results
     |> Enum.reduce(
@@ -347,25 +329,16 @@ defmodule TestMatch.Lib do
     )
   end
 
-  # iex> sparql! "select * where {?s ?p ?o} limit 1"
-  # %SPARQL.Query.Result{
-  #   results: [
-  #     %{
-  #       "o" => ~I<http://purl.org/ontology/bibo/Book>,
-  #       "p" => ~I<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
-  #       "s" => ~L"urn:isbn:978-1-68050-252-7"
-  #     }
-  #   ],
-  #   variables: ["s", "p", "o"]
-  # }
-
-  def from_sparql(query \\ @sparql_query) do
+  @doc """
+  Executes `sparql_query` and returns a graph.
+  """
+  def from_sparql(sparql_query \\ sparql_query()) do
     alias SPARQL.Query.Result
 
     g = Graph.new()
 
     results =
-      case TestMatch.sparql!(query) do
+      case TestMatch.sparql!(sparql_query) do
         %RDF.Graph{descriptions: _descriptions} ->
           raise "! SPARQL 'CONSTRUCT', 'DESCRIBE' queries not supported"
 
@@ -396,11 +369,10 @@ defmodule TestMatch.Lib do
   ##
 
   @doc """
-  Create ETS tables.
+  Create `@node_table` and `@edge_table` ETS tables.
   """
   def create_ets_tables do
     :ets.new(@node_table, [:named_table])
     :ets.new(@edge_table, [:named_table])
   end
-
 end

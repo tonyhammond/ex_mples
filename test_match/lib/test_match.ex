@@ -289,6 +289,11 @@ defmodule TestMatch do
 
   # TestMatch.Lib delegates
   @doc "Delegates to TestMatch.Lib.list_graphs/0"
+  defdelegate list_dot_graphs(), to: TestMatch.Lib, as: :list_graphs
+  @doc "Delegates to TestMatch.Lib.list_graph_images/0"
+  defdelegate list_dot_graph_images(), to: TestMatch.Lib, as: :list_graph_images
+
+  @doc "Delegates to TestMatch.Lib.list_graphs/0"
   defdelegate list_lib_graphs(), to: TestMatch.Lib, as: :list_graphs
   @doc "Delegates to TestMatch.Lib.list_graph_images/0"
   defdelegate list_lib_graph_images(), to: TestMatch.Lib, as: :list_graph_images
@@ -322,6 +327,16 @@ defmodule TestMatch do
   defdelegate lib_graph_from_cypher(), to: TestMatch.Lib, as: :from_cypher
   @doc "Delegates to TestMatch.Lib.from_cypher/1"
   defdelegate lib_graph_from_cypher(arg), to: TestMatch.Lib, as: :from_cypher
+
+  @doc "Delegates to TestMatch.Lib.from_cypher_with_properties/0"
+  defdelegate lib_graph_from_cypher_with_properties(),
+    to: TestMatch.Lib,
+    as: :from_cypher_with_properties
+
+  @doc "Delegates to TestMatch.Lib.from_cypher_with_properties/1"
+  defdelegate lib_graph_from_cypher_with_properties(arg),
+    to: TestMatch.Lib,
+    as: :from_cypher_with_properties
 
   @doc "Delegates to TestMatch.Lib.from_sparql/0"
   defdelegate lib_graph_from_sparql(), to: TestMatch.Lib, as: :from_sparql
