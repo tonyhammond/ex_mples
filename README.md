@@ -7,7 +7,7 @@ Elixir examples used in [Medium.com posts](https://medium.com/@tonyhammond/lates
 
 ## Posts | 2019
 
-* "Native graph data in Elixir" [(test_match](./test_match/))
+* "[Native graph data in Elixir](https://medium.com/@tonyhammond/native-graph-data-in-elixir-8c0bb325d451)" [(test_match](./test_match/))
 * "[Graph to graph with Elixir](https://medium.com/@tonyhammond/graph-to-graph-with-elixir-9cd7fd6f2128)" [(test_graph](./test_graph/))
 * "[Property graphs and Elixir](https://medium.com/@tonyhammond/property-graphs-and-elixir-13672940804b)" [(test_neo4j](./test_neo4j/))
 
